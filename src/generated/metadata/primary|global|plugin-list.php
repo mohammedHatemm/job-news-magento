@@ -4566,6 +4566,17 @@
     'Magento\\WebapiAsync\\Controller\\Rest\\VirtualType\\AsynchronousBulkSchemaRequestProcessor' => NULL,
     'Magento\\Catalog\\Block\\Product\\Context' => NULL,
     'Magento\\Wishlist\\Block\\Context' => NULL,
+    'News\\Manger\\Ui\\DataProvider\\News\\NewsGridDataProvider' => NULL,
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\FilterPool' => NULL,
+    'News\\Manger\\Ui\\DataProvider\\News\\NewsGridFilterPool' => NULL,
+    'News\\Manger\\Model\\ResourceModel\\News\\Collection' => 
+    array (
+      'currentPageDetection' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Theme\\Plugin\\Data\\Collection',
+      ),
+    ),
     'Magento\\Framework\\ForeignKey\\Migration\\TableNameArrayIterator' => NULL,
     'OmsTableNameArrayIterator' => NULL,
     'BraintreeFacade' => 
@@ -9542,6 +9553,13 @@
       1 => 
       array (
         0 => 'anonymousAsyncCustomerRequest',
+      ),
+    ),
+    'News\\Manger\\Model\\ResourceModel\\News\\Collection_getCurPage___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'currentPageDetection',
       ),
     ),
     'BraintreeFacade_isActive___self' => 

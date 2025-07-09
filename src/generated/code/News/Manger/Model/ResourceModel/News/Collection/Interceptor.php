@@ -17,6 +17,15 @@ class Interceptor extends \News\Manger\Model\ResourceModel\News\Collection imple
     /**
      * {@inheritdoc}
      */
+    public function addFieldToFilter($field, $condition = null)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'addFieldToFilter');
+        return $pluginInfo ? $this->___callPlugins('addFieldToFilter', func_get_args(), $pluginInfo) : parent::addFieldToFilter($field, $condition);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getCurPage($displacement = 0)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getCurPage');
