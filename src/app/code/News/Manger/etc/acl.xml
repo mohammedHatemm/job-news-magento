@@ -3,15 +3,15 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="News_Manger::news__head" title="News Manager" sortOrder="99">
-                  <resource id="News_Manger::Category" title="Category" sortOrder="10">
-                    <resource id="News_Manger::Category_save" title="save Category" sortOrder="10"/>
-                    <resource id="News_Manger::Category_delete" title="delete Category" sortOrder="20"/>
-                  </resource>
-                  <resource id="News_Manger::News" title="News" sortOrder="20">
-                    <resource id="News_Manger::news_save" title="save News" sortOrder="10"/>
-                    <resource id="News_Manger::news_delete" title="delete News" sortOrder="20"/>
-                  </resource>
+                <resource id="News_Manger::category" title="category" sortOrder="99">
+                    <resource id="News_Manger::Category" title="Category" sortOrder="10">
+                        <resource id="News_Manger::Category_save" title="Save" sortOrder="20"/>
+                        <resource id="News_Manger::Category_delete" title="Delete" sortOrder="30"/>
+                    </resource>
+                    <resource id="News_Manger::News" title="News" sortOrder="20">
+                        <resource id="News_Manger::News_save" title="Save" sortOrder="20"/>
+                        <resource id="News_Manger::News_delete" title="Delete" sortOrder="30"/>
+                    </resource>
                 </resource>
             </resource>
         </resources>

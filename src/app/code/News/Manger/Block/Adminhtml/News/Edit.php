@@ -1,7 +1,20 @@
 <?php
 
-namespace News\Manger\Block\Adminhtml\News\Edit;
+namespace News\Manger\Block\Adminhtml\News;
 
-use Magento\Backend\Block\Widget\Form\Generic;
+use Magento\Backend\Block\Widget\Form\Container;
 
-class Edit extends Generic {}
+class Edit extends Container
+{
+  protected function _construct()
+  {
+    $this->_objectId = 'id';
+    $this->_blockGroup = 'News_Manger';
+    $this->_controller = 'adminhtml_news';
+
+    parent::_construct();
+
+    $this->buttonList->update('save', 'label', __('Save News'));
+    $this->buttonList->update('delete', 'label', __('Delete News'));
+  }
+}

@@ -17,4 +17,79 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
   {
     $this->_init('News\Manger\Model\Category', 'News\Manger\Model\ResourceModel\Category');
   }
+
+  /**
+   * Get options array for select fields
+   *
+   * @return array
+   */
+  public function toOptionArray()
+  {
+    $options = [];
+    $options[] = ['value' => '', 'label' => __('No Parent (Root Category)')];
+
+    foreach ($this->getItems() as $item) {
+      $options[] = [
+        'value' => $item->getId(),
+        'label' => $item->getCategoryName() ?: __('Category #%1', $item->getId())
+      ];
+    }
+
+    return $options;
+  }
+
+  /**
+   * Get options hash for select fields
+   *
+   * @return array
+   */
+  public function toOptionHash()
+  {
+    $options = [];
+    $options[''] = __('No Parent (Root Category)');
+
+    foreach ($this->getItems() as $item) {
+      $options[$item->getId()] = $item->getCategoryName() ?: __('Category #%1', $item->getId());
+    }
+
+    return $options;
+  }
+
+  /**
+   * Add active filter
+   *
+   * @return $this
+   */
+  public function addActiveFilter()
+  {
+    $this->addFieldToFilter('category_status', 1);
+    return $this;
+  }
+
+  /**
+   * Add name filter
+   *
+   * @param string $name
+   * @return $this
+   */
+  public function addNameFilter($name)
+  {
+    $this->addFieldToFilter('category_name', ['like' => '%' . $name . '%']);
+    return $this;
+  }
+
+
+
+  public function joinParentCategory()
+  {
+    if (!$this->getFlag('parent_category_joined')) {
+      $this->getSelect()->joinLeft(
+        ['parent' => $this->getMainTable()],
+        'main_table.parent_id = parent.category_id',
+        ['parent_name' => 'parent.category_name']
+      );
+      $this->setFlag('parent_category_joined', true);
+    }
+    return $this;
+  }
 }

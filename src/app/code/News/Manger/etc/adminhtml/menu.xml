@@ -1,10 +1,28 @@
-<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="News_Manger::news_head"
+             title="News"
+             module="News_Manger"
+             sortOrder="100"
+             resource="News_Manger::news_head" />
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+        <add id="News_Manger::category"
+             title="category"
+             module="News_Manger"
+             sortOrder="10"
+             parent="News_Manger::news_head"
+             action="news/category"
 
-<menu >
-<add id="News_Manger::news__head" title="News_manager" module="News_Manger" resource="News_Manger::news__head" sortOrder="10" parent="Magento_Backend::content" />
-<add id="News_Manger::Category" title="Category" module="News_Manger" resource="News_Manger::Category" parent="News_Manger::news__head" />
-<add id="News_Manger::News" title="News" module="News_Manger" resource="News_Manger::News" parent="News_Manger::news__head" />
-</menu>
+             resource="News_Manger::category" />
+
+        <add id="News_Manger::News"
+             title="news"
+             module="News_Manger"
+             sortOrder="20"
+             parent="News_Manger::news_head"
+             action="news/news/index"
+
+             resource="News_Manger::News" />
+    </menu>
 </config>

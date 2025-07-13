@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">news_listing.news_listing_data_source</item>
-            <item name="deps" xsi:type="string">news_listing.news_listing_data_source</item>
+            <item name="provider" xsi:type="string">news_news_listing.news_news_listing_data_source</item>
+            <item name="deps" xsi:type="string">news_news_listing.news_news_listing_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">news_columns</item>
+        <item name="spinner" xsi:type="string">news_news_columns</item>
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
@@ -15,32 +17,40 @@
             </item>
         </item>
     </argument>
-    <dataSource name="news_listing_data_source">
-       <setting>
-        <update_url path="mui/index/render"/>
-        <strongConfig>
-            <param name="indexField" xsi:type="string">news_id</param>
-        </strongConfig>
-       </setting>
-       <dataProvider class="News\Manger\Model\News\DataProvider" name="news_listing_data_source">
+
+    <!-- Data Source -->
+    <dataSource name="news_news_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
-            <param name="primaryFieldName" xsi:type="string">news_id</param>
-            <param name="requestFieldName" xsi:type="string">id</param>
+            <updateUrl path="mui/index/render"/>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">news_id</param>
+            </storageConfig>
         </settings>
-       </dataProvider>
+        <dataProvider class="News\Manger\Ui\DataProvider\News\NewsGridDataProvider" name="news_news_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>news_id</primaryFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
 
-
-
-    <!-- toolbar -->
+    <!-- Toolbar -->
     <listingToolbar name="listing_top">
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-        <filterSearch name="fulltext"/>
+        <filterSearch name="fulltext">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="placeholder" xsi:type="string" translate="true">Search News...</item>
+                </item>
+            </argument>
+        </filterSearch>
         <filters name="listing_filters"/>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="news_columns">
+
+    <!-- Grid Columns -->
+    <columns name="news_news_columns">
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -48,65 +58,43 @@
                 </item>
             </argument>
         </selectionsColumn>
+
         <column name="news_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="sorting" xsi:type="string">asc</item>
                     <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="filter" xsi:type="string">textRange</item>
                 </item>
             </argument>
         </column>
 
-
-        <!-- clumn title -->
-
-        <column name="title">
+        <column name="news_title">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
                     <item name="label" xsi:type="string" translate="true">Title</item>
-                </item>
-            </argument>
-        </column>
-
-        <!-- clumn content -->
-        <column name="content" class="News\Manger\Ui\Component\Listing\Column\Content">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Content</item>
-                    <item name="truncate" xsi:type="number">100</item>
-                    <item name="nl2br" xsi:type="boolean">true</item>
                 </item>
             </argument>
         </column>
 
-        <!-- clumn created_at -->
-            <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
+        <column name="news_content">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">dateRange</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                    <item name="dataType" xsi:type="string">date</item>
-                    <item name="label" xsi:type="string" translate="true">Created At</item>
+                    <item name="label" xsi:type="string" translate="true">Content</item>
+                    <item name="filter" xsi:type="string">text</item>
                 </item>
             </argument>
         </column>
 
-        <column name="actions" class="News\Manger\Ui\Component\Listing\Column\NewsActions">
+        <actionsColumn name="actions" class="News\Manger\Ui\Component\Listing\Column\NewsActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">news_id</item>
-                    <item name="sortOrder" xsi:type="number">200</item>
+                    <item name="viewUrlPath" xsi:type="string">news/news/edit</item>
+                    <item name="urlEntityParamName" xsi:type="string">id</item>
                 </item>
             </argument>
-        </column>
+        </actionsColumn>
     </columns>
 </listing>

@@ -2,11 +2,15 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
 
-    <!-- جدول الأقسام -->
+    <!-- جدول الأقسام مع دعم الـ Parent Categories -->
     <table name="news_category" resource="default" engine="innodb" comment="News Category Table">
         <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="true" comment="Category ID"/>
         <column xsi:type="varchar" name="category_name" length="255" nullable="false" comment="Category Name"/>
         <column xsi:type="text" name="category_description" nullable="true" comment="Category Description"/>
+
+        <!-- إضافة عمود parent_id لدعم الـ hierarchy -->
+        <column xsi:type="int" name="parent_id" unsigned="true" nullable="true" comment="Parent Category ID"/>
+
         <column xsi:type="smallint" name="category_status" unsigned="true" nullable="false" default="1" comment="Category Status (1=Active, 0=Inactive)"/>
         <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
         <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
@@ -15,12 +19,23 @@
             <column name="category_id"/>
         </constraint>
 
+        <!-- Foreign Key للـ parent category -->
+        <constraint xsi:type="foreign" referenceId="NEWS_CATEGORY_PARENT_ID_FK"
+                   table="news_category" column="parent_id"
+                   referenceTable="news_category" referenceColumn="category_id"
+                   onDelete="SET NULL"/>
+
+        <!-- Indexes -->
         <index referenceId="NEWS_CATEGORY_NAME" indexType="btree">
             <column name="category_name"/>
         </index>
 
         <index referenceId="NEWS_CATEGORY_STATUS" indexType="btree">
             <column name="category_status"/>
+        </index>
+
+        <index referenceId="NEWS_CATEGORY_PARENT_ID" indexType="btree">
+            <column name="parent_id"/>
         </index>
     </table>
 
@@ -70,7 +85,5 @@
             <column name="category_id"/>
         </index>
     </table>
-
-
 
 </schema>

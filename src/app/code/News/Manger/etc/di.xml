@@ -2,45 +2,90 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-    <!-- ========================================== -->
-    <!-- Department Grid Data Provider and Filters -->
-    <!-- ========================================== -->
-
-    <!-- Department Grid Data Provider -->
-    <virtualType name="News\Manger\Ui\DataProvider\News\NewsGridDataProvider"
-                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+    <!-- News Grid Data Provider -->
+    <virtualType name="News\Manger\Ui\DataProvider\News\NewsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">News\Manger\Model\ResourceModel\News\Collection</argument>
-            <argument name="filterPool" xsi:type="object" shared="false">NewsGridFilterPool</argument>
+            <argument name="collection" xsi:type="object">News\Manger\Model\ResourceModel\News\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object">NewsGridFilterPool</argument>
         </arguments>
     </virtualType>
 
-    <!-- Filter Pool for Department Grid -->
-    <virtualType name="News\Manger\Ui\DataProvider\News\NewsGridFilterPool"
-                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <!-- Category Grid Data Provider -->
+    <virtualType name="News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object">News\Manger\Model\ResourceModel\Category\Grid\Collection</argument>
+            <argument name="filterPool" xsi:type="object">CategoryGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- News Filter Pool -->
+    <virtualType name="NewsGridFilterPool" type="Magento\Ui\Model\Filter\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
-                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+                <item name="regular" xsi:type="object">Magento\Ui\Model\Filter\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Ui\Model\Filter\FulltextFilter</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <!-- Register Department Grid collection -->
+    <!-- Category Filter Pool -->
+    <virtualType name="CategoryGridFilterPool" type="Magento\Ui\Model\Filter\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Ui\Model\Filter\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Ui\Model\Filter\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Register Grid Collections -->
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="news_news_listing_data_source" xsi:type="string">News\Manger\Model\ResourceModel\News\Collection</item>
+                <item name="news_news_listing_data_source" xsi:type="string">News\Manger\Model\ResourceModel\News\Grid\Collection</item>
+                <item name="news_category_listing_data_source" xsi:type="string">News\Manger\Model\ResourceModel\Category\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
 
-    <!-- Define the Department SearchResult Collection -->
-    <virtualType name="News\Manger\Model\ResourceModel\News\Collection"
+    <!-- News Search Result -->
+    <virtualType name="News\Manger\Model\ResourceModel\News\Grid\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">news_news</argument>
             <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\News</argument>
         </arguments>
     </virtualType>
-    </config>
+
+    <!-- Category Search Result -->
+    <virtualType name="News\Manger\Model\ResourceModel\Category\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">news_category</argument>
+            <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Preferences -->
+    <preference for="News\Manger\Api\NewsRepositoryInterface" type="News\Manger\Model\NewsRepository"/>
+    <preference for="News\Manger\Api\CategoryRepositoryInterface" type="News\Manger\Model\CategoryRepository"/>
+
+    <!-- News Collection -->
+    <type name="News\Manger\Model\ResourceModel\News\Collection">
+        <arguments>
+            <argument name="eventPrefix" xsi:type="string">news_news_collection</argument>
+            <argument name="eventObject" xsi:type="string">news_news_collection</argument>
+            <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\News</argument>
+        </arguments>
+    </type>
+
+    <!-- Category Collection -->
+    <type name="News\Manger\Model\ResourceModel\Category\Collection">
+        <arguments>
+            <argument name="eventPrefix" xsi:type="string">news_category_collection</argument>
+            <argument name="eventObject" xsi:type="string">news_category_collection</argument>
+            <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>
+        </arguments>
+    </type>
+
+</config>

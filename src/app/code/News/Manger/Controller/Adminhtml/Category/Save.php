@@ -1,17 +1,17 @@
 <?php
 
-namespace News\Manger\Controller\Adminhtml\News;
+namespace News\Manger\Controller\Adminhtml\Category;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Stdlib\DateTime\Filter\Date as DateFilter;
-use News\Manger\Model\NewsFactory;
+use News\Manger\Model\CategoryFactory;
 
 class Save extends \Magento\Backend\App\Action
 {
-  const ADMIN_RESOURCE = 'News_Manger::news_save';
-  const PAGE_TITLE = 'Save News';
+  const ADMIN_RESOURCE = 'News_Manger::category_save';
+  const PAGE_TITLE = 'Save Category';
 
   /**
    * @var DataPersistorInterface
@@ -19,9 +19,9 @@ class Save extends \Magento\Backend\App\Action
   protected $dataPersistor;
 
   /**
-   * @var NewsFactory
+   * @var CategoryFactory
    */
-  protected $newsFactory;
+  protected $categoryFactory;
 
   /**
    * @var DateFilter
@@ -31,17 +31,17 @@ class Save extends \Magento\Backend\App\Action
   /**
    * @param Context $context
    * @param DataPersistorInterface $dataPersistor
-   * @param NewsFactory $newsFactory
+   * @param CategoryFactory $categoryFactory
    * @param DateFilter $dateFilter
    */
   public function __construct(
     Context $context,
     DataPersistorInterface $dataPersistor,
-    NewsFactory $newsFactory,
+    CategoryFactory $categoryFactory,
     DateFilter $dateFilter
   ) {
     $this->dataPersistor = $dataPersistor;
-    $this->newsFactory = $newsFactory;
+    $this->categoryFactory = $categoryFactory;
     $this->dateFilter = $dateFilter;
     parent::__construct($context);
   }
@@ -58,21 +58,31 @@ class Save extends \Magento\Backend\App\Action
     $data = $this->getRequest()->getPostValue();
 
     if ($data) {
-      $id = $this->getRequest()->getParam('news_id');
+      $id = $this->getRequest()->getParam('category_id');
 
       // Initialize model
-      $model = $this->newsFactory->create();
+      $model = $this->categoryFactory->create();
       if ($id) {
         $model->load($id);
         if (!$model->getId()) {
-          $this->messageManager->addErrorMessage(__('This news no longer exists.'));
+          $this->messageManager->addErrorMessage(__('This category no longer exists.'));
           return $resultRedirect->setPath('*/*/');
         }
       }
 
       // Validate required fields
-      if (empty($data['title'])) {
-        $this->messageManager->addErrorMessage(__('Please provide the news title.'));
+      if (empty($data['category_name'])) {
+        $this->messageManager->addErrorMessage(__('Please provide the category name.'));
+        return $this->redirectWithData($resultRedirect, $data, $id);
+      }
+
+      if (empty($data['category_description'])) {
+        $this->messageManager->addErrorMessage(__('Please provide the category description.'));
+        return $this->redirectWithData($resultRedirect, $data, $id);
+      }
+
+      if (!isset($data['category_status']) || $data['category_status'] === '') {
+        $this->messageManager->addErrorMessage(__('Please select the category status.'));
         return $this->redirectWithData($resultRedirect, $data, $id);
       }
 
@@ -84,27 +94,40 @@ class Save extends \Magento\Backend\App\Action
           $data['created_at'] = null;
         }
       } else {
-        $data['created_at'] = date('Y-m-d H:i:s');
+        if (!$id) { // Only set created_at for new records
+          $data['created_at'] = date('Y-m-d H:i:s');
+        }
       }
+
+      // Always set updated_at
+      $data['updated_at'] = date('Y-m-d H:i:s');
+
+      // Handle parent category
+      if (isset($data['category_parent']) && $data['category_parent'] === '') {
+        $data['category_parent'] = null;
+      }
+
+      // Remove form_key from data
+      unset($data['form_key']);
 
       $model->setData($data);
 
       try {
         $model->save();
-        $this->messageManager->addSuccessMessage(__('The news has been saved.'));
-        $this->dataPersistor->clear('news_news');
+        $this->messageManager->addSuccessMessage(__('The category has been saved.'));
+        $this->dataPersistor->clear('news_category');
 
         if ($this->getRequest()->getParam('back')) {
-          return $resultRedirect->setPath('*/*/edit', ['news_id' => $model->getId(), '_current' => true]);
+          return $resultRedirect->setPath('*/*/edit', ['category_id' => $model->getId(), '_current' => true]);
         }
         return $resultRedirect->setPath('*/*/');
       } catch (LocalizedException $e) {
         $this->messageManager->addErrorMessage($e->getMessage());
       } catch (\Exception $e) {
-        $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the news.'));
+        $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the category.'));
       }
 
-      $this->dataPersistor->set('news_news', $data);
+      $this->dataPersistor->set('news_category', $data);
       return $this->redirectWithData($resultRedirect, $data, $id);
     }
 
@@ -121,9 +144,9 @@ class Save extends \Magento\Backend\App\Action
    */
   private function redirectWithData($resultRedirect, $data, $id)
   {
-    $this->dataPersistor->set('news_news', $data);
+    $this->dataPersistor->set('news_category', $data);
     if ($id) {
-      return $resultRedirect->setPath('*/*/edit', ['news_id' => $id]);
+      return $resultRedirect->setPath('*/*/edit', ['category_id' => $id]);
     }
     return $resultRedirect->setPath('*/*/new');
   }
