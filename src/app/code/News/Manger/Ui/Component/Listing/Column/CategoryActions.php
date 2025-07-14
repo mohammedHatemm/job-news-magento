@@ -8,6 +8,7 @@ use Magento\Framework\UrlInterface;
 class CategoryActions extends Column
 {
     const URL_PATH_EDIT = 'news/category/edit';
+    const URL_PATH_DELETE = 'news/category/delete';
 
     /** @var UrlInterface */
     protected $urlBuilder;
@@ -33,10 +34,30 @@ class CategoryActions extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 if (isset($item['category_id'])) {
-                    $item[$this->getData('name')]['edit'] = [
-                        'href' => $this->urlBuilder->getUrl($this->editUrl, ['id' => $item['category_id']]),
+                    $name = $this->getData('name');
+
+                    // Edit action
+                    $item[$name]['edit'] = [
+                        'href' => $this->urlBuilder->getUrl(
+                            $this->editUrl,
+                            ['id' => $item['category_id']]
+                        ),
                         'label' => __('Edit'),
                         'hidden' => false,
+                    ];
+
+                    // Delete action
+                    $item[$name]['delete'] = [
+                        'href' => $this->urlBuilder->getUrl(
+                            self::URL_PATH_DELETE,
+                            ['id' => $item['category_id']]
+                        ),
+                        'label' => __('Delete'),
+                        'confirm' => [
+                            'title' => __('Delete "%1"', $item['category_name']),
+                            'message' => __('Are you sure you want to delete the category "%1"?', $item['category_name']),
+                        ],
+                        'post' => true,
                     ];
                 }
             }

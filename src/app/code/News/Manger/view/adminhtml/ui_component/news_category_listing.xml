@@ -57,26 +57,37 @@
             </argument>
         </selectionsColumn>
 
-        <column name="category_id">
+        <column name="category_id" sortOrder="10">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="filter" xsi:type="string">text</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="filter" xsi:type="string">textRange</item>
                 </item>
             </argument>
         </column>
 
-        <column name="category_name">
+        <column name="category_name" sortOrder="20">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="label" xsi:type="string" translate="true">Category Name</item>
                     <item name="filter" xsi:type="string">text</item>
                 </item>
             </argument>
         </column>
 
-        <column name="category_status">
+        <column name="parent_name" sortOrder="30">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Parent Category</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="category_status" sortOrder="40">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="options" xsi:type="object">News\Manger\Ui\Component\Options\CategoryStatus</item>
@@ -88,24 +99,33 @@
             </argument>
         </column>
 
-        <column name="category_description">
+        <column name="category_description" sortOrder="50">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">Description</item>
-                    <item name="dataType" xsi:type="string">select</item>
-                    <item name="filter" xsi:type="string">select</item>
-                    <item name="sortable" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
                 </item>
             </argument>
         </column>
 
-        <column name="parent_name">  <!-- كان category_parent -->
+        <column name="created_at" sortOrder="60">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Parent</item>
-                    <item name="dataType" xsi:type="string">text</item>  <!-- مش select -->
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="sortable" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">Created At</item>
+                    <item name="filter" xsi:type="string">date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="updated_at" sortOrder="70">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Updated At</item>
+                    <item name="filter" xsi:type="string">date</item>
+                    <item name="dataType" xsi:type="string">date</item>
                 </item>
             </argument>
         </column>

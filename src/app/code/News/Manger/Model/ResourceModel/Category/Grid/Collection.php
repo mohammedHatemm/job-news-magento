@@ -30,84 +30,76 @@ class Collection extends CategoryCollection implements SearchResultInterface
     $this->setMainTable($mainTable);
   }
 
+  protected function _initSelect()
+  {
+    parent::_initSelect();
+
+    // Join with parent category to get parent name
+    $this->getSelect()->joinLeft(
+      ['parent' => $this->getTable('news_category')],
+      'main_table.parent_id = parent.category_id',
+      ['parent_name' => 'IFNULL(parent.category_name, "No Parent")']
+    );
+
+    // Log the SQL query for debugging
+    $this->_logger->debug('Grid Collection SQL: ' . $this->getSelect()->__toString());
+
+    return $this;
+  }
+
   /**
-   * @return AggregationInterface
+   * Add field to filter
+   *
+   * @param array|string $field
+   * @param string|int|array|null $condition
+   * @return $this
    */
+  public function addFieldToFilter($field, $condition = null)
+  {
+    if ($field === 'parent_name') {
+      $this->getSelect()->where('parent.category_name LIKE ?', '%' . $condition['like'] . '%');
+      return $this;
+    }
+
+    return parent::addFieldToFilter($field, $condition);
+  }
+
   public function getAggregations()
   {
     return $this->aggregations;
   }
 
-  /**
-   * @param AggregationInterface $aggregations
-   * @return $this
-   */
   public function setAggregations($aggregations)
   {
     $this->aggregations = $aggregations;
     return $this;
   }
 
-  /**
-   * Get all IDs
-   *
-   * @param null $limit
-   * @param null $offset
-   * @return array
-   */
   public function getAllIds($limit = null, $offset = null)
   {
     return $this->getConnection()->fetchCol($this->_getAllIdsSelect($limit, $offset), $this->_bindParams);
   }
 
-  /**
-   * Get search criteria.
-   *
-   * @return \Magento\Framework\Api\SearchCriteriaInterface|null
-   */
   public function getSearchCriteria()
   {
     return null;
   }
 
-  /**
-   * Set search criteria.
-   *
-   * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
-   * @return $this
-   */
   public function setSearchCriteria(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria = null)
   {
     return $this;
   }
 
-  /**
-   * Get total count.
-   *
-   * @return int
-   */
   public function getTotalCount()
   {
     return $this->getSize();
   }
 
-  /**
-   * Set total count.
-   *
-   * @param int $totalCount
-   * @return $this
-   */
   public function setTotalCount($totalCount)
   {
     return $this;
   }
 
-  /**
-   * Set items list.
-   *
-   * @param \Magento\Framework\Api\ExtensibleDataInterface[] $items
-   * @return $this
-   */
   public function setItems(array $items = null)
   {
     return $this;

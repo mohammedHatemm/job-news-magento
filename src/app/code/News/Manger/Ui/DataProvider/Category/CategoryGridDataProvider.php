@@ -3,7 +3,7 @@
 namespace News\Manger\Ui\DataProvider\Category;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
-use News\Manger\Model\ResourceModel\Category\Collection;
+use News\Manger\Model\ResourceModel\Category\Grid\Collection;
 use Psr\Log\LoggerInterface;
 
 class CategoryGridDataProvider extends AbstractDataProvider
@@ -30,32 +30,71 @@ class CategoryGridDataProvider extends AbstractDataProvider
     array $data = []
   ) {
     $this->collection = $collection;
-    $this->collection->joinParentCategory();
     $this->logger = $logger;
     parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
   }
 
-  /**
-   * Get data
-   *
-   * @return array
-   */
   public function getData()
   {
     if (isset($this->loadedData)) {
       return $this->loadedData;
     }
 
-    $items = $this->collection->getItems();
-    $this->loadedData = [];
+    try {
+      // Log the collection class to make sure we're using the right one
+      $this->logger->debug('Collection Class: ' . get_class($this->collection));
 
-    foreach ($items as $item) {
-      $this->loadedData[$item->getId()] = $item->getData();
+      // Log the SQL query
+      $this->logger->debug('Collection SQL: ' . $this->collection->getSelect()->__toString());
+
+      $items = $this->collection->getItems();
+      $this->logger->debug('Collection Size: ' . $this->collection->getSize());
+
+      $formattedItems = [];
+      foreach ($items as $item) {
+        $data = $item->getData();
+
+        // Log each item's data
+        $this->logger->debug('Item Data: ' . json_encode($data));
+
+        // Ensure parent_name exists
+        if (!isset($data['parent_name']) || $data['parent_name'] === null) {
+          $data['parent_name'] = 'No Parent';
+        }
+
+        $formattedItems[] = $data;
+      }
+
+      $this->loadedData = [
+        'totalRecords' => $this->collection->getSize(),
+        'items' => $formattedItems
+      ];
+
+      $this->logger->debug('Final LoadedData: ' . json_encode($this->loadedData));
+    } catch (\Exception $e) {
+      $this->logger->error('CategoryGridDataProvider Error: ' . $e->getMessage());
+      $this->logger->error('Stack Trace: ' . $e->getTraceAsString());
+      $this->loadedData = [
+        'totalRecords' => 0,
+        'items' => []
+      ];
     }
 
-    return [
-      'totalRecords' => $this->collection->getSize(),
-      'items' => array_values($this->loadedData)
-    ];
+    return $this->loadedData;
+  }
+
+  /**
+   * Get data for specific fields
+   *
+   * @return array
+   */
+  public function getMeta()
+  {
+    $meta = parent::getMeta();
+
+    // Add custom meta if needed
+    $meta['news_category_columns']['children']['parent_name']['arguments']['data']['config']['visible'] = true;
+
+    return $meta;
   }
 }

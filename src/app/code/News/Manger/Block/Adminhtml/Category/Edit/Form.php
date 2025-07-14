@@ -119,8 +119,8 @@ class Form extends Generic
     try {
       $parentOptions = $this->getCategoryOptions();
 
-      $fieldset->addField('category_parent', 'select', [
-        'name' => 'category_parent',
+      $fieldset->addField('parent_id', 'select', [
+        'name' => 'parent_id',
         'label' => __('Parent Category'),
         'title' => __('Parent Category'),
         'required' => false,
@@ -128,8 +128,8 @@ class Form extends Generic
       ]);
     } catch (\Exception $e) {
       // في حالة فشل تحميل الفئات، إضافة حقل نصي بدلاً من select
-      $fieldset->addField('category_parent', 'text', [
-        'name' => 'category_parent',
+      $fieldset->addField('parent_id', 'text', [
+        'name' => 'parent_id',
         'label' => __('Parent Category ID'),
         'title' => __('Parent Category ID'),
         'required' => false,

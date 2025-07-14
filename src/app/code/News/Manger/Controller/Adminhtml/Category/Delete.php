@@ -26,7 +26,7 @@ class Delete extends Action
 
   public function execute()
   {
-    $id = $this->getRequest()->getParam('category_id');
+    $id = $this->getRequest()->getParam('id'); // ← تم التصحيح هنا
     $resultRedirect = $this->resultRedirectFactory->create();
 
     if ($id) {
@@ -41,7 +41,7 @@ class Delete extends Action
         return $resultRedirect->setPath('*/*/');
       } catch (\Exception $e) {
         $this->messageManager->addErrorMessage($e->getMessage());
-        return $resultRedirect->setPath('*/*/edit', ['category_id' => $id]);
+        return $resultRedirect->setPath('*/*/edit', ['id' => $id]); // ← مسار الرجوع عند الخطأ
       }
     }
 

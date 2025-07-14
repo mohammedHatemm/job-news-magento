@@ -77,19 +77,4 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     $this->addFieldToFilter('category_name', ['like' => '%' . $name . '%']);
     return $this;
   }
-
-
-
-  public function joinParentCategory()
-  {
-    if (!$this->getFlag('parent_category_joined')) {
-      $this->getSelect()->joinLeft(
-        ['parent' => $this->getMainTable()],
-        'main_table.parent_id = parent.category_id',
-        ['parent_name' => 'parent.category_name']
-      );
-      $this->setFlag('parent_category_joined', true);
-    }
-    return $this;
-  }
 }

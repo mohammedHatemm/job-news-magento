@@ -134,24 +134,45 @@ class Category extends AbstractModel implements IdentityInterface
   }
 
   /**
-   * Get category parent
+   * Get parent ID
    *
    * @return int|null
    */
-  public function getCategoryParent()
+  public function getParentId()
   {
-    return $this->getData('category_parent');
+    return $this->getData('parent_id');
   }
 
   /**
-   * Set category parent
+   * Set parent ID
    *
-   * @param int $categoryParent
+   * @param int $parentId
    * @return $this
    */
-  public function setCategoryParent($categoryParent)
+  public function setParentId($parentId)
   {
-    return $this->setData('category_parent', $categoryParent);
+    return $this->setData('parent_id', $parentId);
+  }
+
+  /**
+   * Get parent name (if loaded via join)
+   *
+   * @return string|null
+   */
+  public function getParentName()
+  {
+    return $this->getData('parent_name');
+  }
+
+  /**
+   * Set parent name
+   *
+   * @param string $parentName
+   * @return $this
+   */
+  public function setParentName($parentName)
+  {
+    return $this->setData('parent_name', $parentName);
   }
 
   /**
@@ -221,17 +242,29 @@ class Category extends AbstractModel implements IdentityInterface
     return parent::beforeSave();
   }
 
-
-  public function getParentId()
+  /**
+   * Load parent category
+   *
+   * @return \News\Manger\Model\Category|null
+   */
+  public function getParentCategory()
   {
-    return $this->getData('parent_id');
+    if (!$this->getParentId()) {
+      return null;
+    }
+
+    return $this->_getResource()->load($this->getParentId());
   }
 
   /**
-   * Set parent ID
+   * Get children categories
+   *
+   * @return \News\Manger\Model\ResourceModel\Category\Collection
    */
-  public function setParentId($parentId)
+  public function getChildrenCategories()
   {
-    return $this->setData('parent_id', $parentId);
+    $collection = $this->getCollection();
+    $collection->addFieldToFilter('parent_id', $this->getId());
+    return $collection;
   }
 }
