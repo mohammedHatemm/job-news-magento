@@ -235,3 +235,76 @@ Trace: <pre>#1 Magento\Framework\DB\Statement\Pdo\Mysql->_execute() called at [v
 [2025-07-15T08:02:25.380753+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
 [2025-07-15T08:02:37.969079+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
 [2025-07-15T08:02:49.188924+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:05:36.091940+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:05:57.165292+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:06:14.451303+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:06:22.736161+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:06:32.805392+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:06:43.508587+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:07:10.835066+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:07:10.874580+00:00] main.ERROR: The "componentType" configuration parameter is required for the "parent_name" component. [] []
+[2025-07-15T08:07:30.874116+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:11:34.180481+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:11:55.013177+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:17:29.695956+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:17:43.213105+00:00] main.ERROR: The XML in file "/var/www/html/app/code/News/Manger/view/adminhtml/ui_component/news_category_listing.xml" is invalid:
+Opening and ending tag mismatch: argument line 136 and item
+Line: 141
+
+Opening and ending tag mismatch: actionsColumn line 135 and argument
+Line: 142
+
+Opening and ending tag mismatch: columns line 51 and actionsColumn
+Line: 143
+
+Opening and ending tag mismatch: listing line 2 and columns
+Line: 144
+
+Extra content at the end of the document
+Line: 145
+
+Verify the XML and try again. [] []
+[2025-07-15T08:17:46.251793+00:00] main.ERROR: The XML in file "/var/www/html/app/code/News/Manger/view/adminhtml/ui_component/news_category_listing.xml" is invalid:
+Opening and ending tag mismatch: argument line 136 and item
+Line: 141
+
+Opening and ending tag mismatch: actionsColumn line 135 and argument
+Line: 142
+
+Opening and ending tag mismatch: columns line 51 and actionsColumn
+Line: 143
+
+Opening and ending tag mismatch: listing line 2 and columns
+Line: 144
+
+Extra content at the end of the document
+Line: 145
+
+Verify the XML and try again. [] []
+[2025-07-15T08:19:10.938786+00:00] main.ERROR: The XML in file "/var/www/html/app/code/News/Manger/view/adminhtml/ui_component/news_category_listing.xml" is invalid:
+Opening and ending tag mismatch: columns line 51 and listing
+Line: 145
+
+Premature end of data in tag listing line 2
+Line: 146
+
+Verify the XML and try again. [] []
+[2025-07-15T08:20:25.631948+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:20:31.317521+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:20:42.069801+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:20:51.080291+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:21:00.822799+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:21:08.947136+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:21:13.740095+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:21:19.641149+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:28:32.695206+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:28:47.977207+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:33:43.583474+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:33:52.158769+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:41:12.225858+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:41:15.014474+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:41:17.450699+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:41:21.851419+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:41:36.701652+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:53:47.700997+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:54:03.966677+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []

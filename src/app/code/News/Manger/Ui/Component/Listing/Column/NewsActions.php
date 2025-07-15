@@ -7,10 +7,10 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
 
-class NewsActions extends Column
+class CategoryActions extends Column
 {
-  const URL_PATH_EDIT = 'news/news/edit';
-  const URL_PATH_DELETE = 'news/news/delete';
+  const URL_PATH_EDIT = 'news/category/edit';
+  const URL_PATH_DELETE = 'news/category/delete'; // لازم تكون عامل Controller لـ Delete
 
   protected $urlBuilder;
 
@@ -29,34 +29,31 @@ class NewsActions extends Column
   {
     if (isset($dataSource['data']['items'])) {
       foreach ($dataSource['data']['items'] as &$item) {
-        if (isset($item['news_id'])) {
+        if (isset($item['category_id'])) {
           $item[$this->getData('name')] = [
             'edit' => [
               'href' => $this->urlBuilder->getUrl(
-                static::URL_PATH_EDIT,
-                [
-                  'news_id' => $item['news_id']
-                ]
+                self::URL_PATH_EDIT,
+                ['category_id' => $item['category_id']]
               ),
               'label' => __('Edit')
             ],
             'delete' => [
               'href' => $this->urlBuilder->getUrl(
-                static::URL_PATH_DELETE,
-                [
-                  'news_id' => $item['news_id']
-                ]
+                self::URL_PATH_DELETE,
+                ['category_id' => $item['category_id']]
               ),
               'label' => __('Delete'),
               'confirm' => [
-                'title' => __('Delete News'),
-                'message' => __('Are you sure you want to delete this news?')
+                'title' => __('Delete Category'),
+                'message' => __('Are you sure you want to delete this category?')
               ]
             ]
           ];
         }
       }
     }
+
     return $dataSource;
   }
 }

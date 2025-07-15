@@ -6,45 +6,65 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Registry;
-use News\Manger\Model\Category;
+use News\Manger\Model\CategoryFactory;
 
 class Edit extends Action
 {
   const ADMIN_RESOURCE = 'News_Manger::category_save';
 
+  /**
+   * @var PageFactory
+   */
   protected $_resultPageFactory;
+
+  /**
+   * @var Registry
+   */
   protected $_coreRegistry;
-  protected $_model;
+
+  /**
+   * @var CategoryFactory
+   */
+  protected $categoryFactory;
 
   public function __construct(
     Context $context,
     PageFactory $resultPageFactory,
     Registry $registry,
-    Category $model
+    CategoryFactory $categoryFactory
   ) {
     parent::__construct($context);
     $this->_resultPageFactory = $resultPageFactory;
     $this->_coreRegistry = $registry;
-    $this->_model = $model;
+    $this->categoryFactory = $categoryFactory;
   }
 
+  /**
+   * Init admin category edit page
+   *
+   * @return \Magento\Framework\View\Result\Page
+   */
   protected function _initAction()
   {
     $resultPage = $this->_resultPageFactory->create();
     if (!$resultPage) {
       throw new \Exception('Result Page is FALSE - layout handle missing?');
     }
-    // ← تأكد هذا ليس null
+
     $resultPage->setActiveMenu('News_Manger::category')
       ->addBreadcrumb(__('Category'), __('Category'))
       ->addBreadcrumb(__('Manage Categories'), __('Manage Categories'));
+
     return $resultPage;
   }
 
+  /**
+   * Edit action
+   */
   public function execute()
   {
     $id = $this->getRequest()->getParam('category_id');
-    $model = $this->_model;
+    $model = $this->categoryFactory->create();
 
     if ($id) {
       $model->load($id);
@@ -59,6 +79,7 @@ class Edit extends Action
       $model->setData($data);
     }
 
+    // Register model to use it in the form block
     $this->_coreRegistry->register('news_category', $model);
 
     $resultPage = $this->_initAction();

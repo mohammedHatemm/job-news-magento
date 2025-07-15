@@ -121,25 +121,8 @@ class Form extends Generic
     }
 
     // إضافة حقول التاريخ للعرض فقط
-    if ($model->getId()) {
-      $fieldset->addField('created_at_display', 'label', [
-        'name' => 'created_at_display',
-        'label' => __('Created At'),
-        'title' => __('Created At'),
-        'value' => $model->getCreatedAt() ?
-          $this->_localeDate->date($model->getCreatedAt())->format('Y-m-d H:i:s') :
-          __('Not Available')
-      ]);
 
-      $fieldset->addField('updated_at_display', 'label', [
-        'name' => 'updated_at_display',
-        'label' => __('Updated At'),
-        'title' => __('Updated At'),
-        'value' => $model->getUpdatedAt() ?
-          $this->_localeDate->date($model->getUpdatedAt())->format('Y-m-d H:i:s') :
-          __('Not Available')
-      ]);
-    }
+
 
     // تحديد قيم النموذج مع التحقق من البيانات
     $formData = $model->getData();

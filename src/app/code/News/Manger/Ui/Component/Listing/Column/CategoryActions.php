@@ -40,7 +40,7 @@ class CategoryActions extends Column
                     $item[$name]['edit'] = [
                         'href' => $this->urlBuilder->getUrl(
                             $this->editUrl,
-                            ['id' => $item['category_id']]
+                            ['category_id' => $item['category_id']]
                         ),
                         'label' => __('Edit'),
                         'hidden' => false,

@@ -130,14 +130,16 @@
             </argument>
         </column>
 
-        <actionsColumn name="actions" class="News\Manger\Ui\Component\Listing\Column\CategoryActions">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">category_id</item>
-                    <item name="viewUrlPath" xsi:type="string">news/category/edit</item>
-                    <item name="urlEntityParamName" xsi:type="string">id</item>
-                </item>
-            </argument>
-        </actionsColumn>
-    </columns>
+
+
+       <actionsColumn name="actions" class="News\Manger\Ui\Component\Listing\Column\CategoryActions">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="indexField" xsi:type="string">category_id</item>
+            <item name="viewUrlPath" xsi:type="string">news/category/edit</item>
+            <item name="urlEntityParamName" xsi:type="string">category_id</item>
+        </item>
+    </argument>
+</actionsColumn>
+</columns>
 </listing>
