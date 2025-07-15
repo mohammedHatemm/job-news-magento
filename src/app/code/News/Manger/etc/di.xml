@@ -41,7 +41,8 @@
     </virtualType>
 
     <!-- Category Grid Collection (SearchResult) -->
-    <virtualType name="CategoryGridSearchResult" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="CategoryGridSearchResult" type="News\Manger\Model\ResourceModel\Category\Grid\Collection">
+
         <arguments>
             <argument name="mainTable" xsi:type="string">news_category</argument>
             <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>

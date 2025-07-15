@@ -4106,3 +4106,844 @@ Verify the XML and try again. [] []
 [2025-07-15T08:54:06.698753+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"1","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","orig_data":null} [] []
 [2025-07-15T08:54:06.698907+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"0","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","orig_data":null} [] []
 [2025-07-15T08:54:06.699146+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"id_field_name":"category_id","category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"1","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"0","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"1","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"0","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T09:05:02.540421+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.555974+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.556936+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.557658+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.558362+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.558985+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.559666+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.560364+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.561178+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.561853+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.562507+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.563165+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.565859+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.566736+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:02.567456+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:14.177482+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:25.090363+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-07-15T09:05:25.091416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-07-15T09:05:25.092477+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-07-15T09:05:25.093442+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-07-15T09:05:25.094454+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-07-15T09:05:26.380029+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.394769+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.395631+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.396400+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.397891+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.398793+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.399335+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.399961+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.400595+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.401129+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.401807+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.402408+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.403037+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.403837+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:26.404383+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T09:05:52.518974+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:06:53.708075+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:06:53.886428+00:00] main.DEBUG: Item Magento_Backend::system_currency was removed [] []
+[2025-07-15T09:06:53.898992+00:00] main.DEBUG: Add of item with id Magento_Config::system_config was processed [] []
+[2025-07-15T09:06:53.899324+00:00] main.DEBUG: Add of item with id Magento_AdminNotification::system_adminnotification was processed [] []
+[2025-07-15T09:06:53.899597+00:00] main.DEBUG: Add of item with id Magento_Theme::design_config was processed [] []
+[2025-07-15T09:06:53.899795+00:00] main.DEBUG: Add of item with id Magento_Theme::system_design_theme was processed [] []
+[2025-07-15T09:06:53.899996+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design_schedule was processed [] []
+[2025-07-15T09:06:53.900196+00:00] main.DEBUG: Add of item with id Magento_Backend::system_store was processed [] []
+[2025-07-15T09:06:53.900410+00:00] main.DEBUG: Add of item with id Magento_Backend::dashboard was processed [] []
+[2025-07-15T09:06:53.900622+00:00] main.DEBUG: Add of item with id Magento_Backend::system was processed [] []
+[2025-07-15T09:06:53.900893+00:00] main.DEBUG: Add of item with id Magento_Backend::system_tools was processed [] []
+[2025-07-15T09:06:53.901171+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design was processed [] []
+[2025-07-15T09:06:53.901375+00:00] main.DEBUG: Add of item with id Magento_Backend::system_convert was processed [] []
+[2025-07-15T09:06:53.901651+00:00] main.DEBUG: Add of item with id Magento_Backend::system_cache was processed [] []
+[2025-07-15T09:06:53.901864+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing was processed [] []
+[2025-07-15T09:06:53.902136+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_communications was processed [] []
+[2025-07-15T09:06:53.902340+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_seo was processed [] []
+[2025-07-15T09:06:53.902552+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_user_content was processed [] []
+[2025-07-15T09:06:53.902773+00:00] main.DEBUG: Add of item with id Magento_Backend::content was processed [] []
+[2025-07-15T09:06:53.902958+00:00] main.DEBUG: Add of item with id Magento_Backend::content_elements was processed [] []
+[2025-07-15T09:06:53.903156+00:00] main.DEBUG: Add of item with id Magento_Backend::stores was processed [] []
+[2025-07-15T09:06:53.903431+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_settings was processed [] []
+[2025-07-15T09:06:53.903658+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_attributes was processed [] []
+[2025-07-15T09:06:53.903861+00:00] main.DEBUG: Add of item with id Magento_Backend::other_settings was processed [] []
+[2025-07-15T09:06:53.904067+00:00] main.DEBUG: Add of item with id Magento_Backend::system_other_settings was processed [] []
+[2025-07-15T09:06:53.904273+00:00] main.DEBUG: Add of item with id Magento_User::system_acl was processed [] []
+[2025-07-15T09:06:53.904557+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_users was processed [] []
+[2025-07-15T09:06:53.904777+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_roles was processed [] []
+[2025-07-15T09:06:53.905000+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_locks was processed [] []
+[2025-07-15T09:06:53.905194+00:00] main.DEBUG: Add of item with id Magento_Customer::customer was processed [] []
+[2025-07-15T09:06:53.905473+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_manage was processed [] []
+[2025-07-15T09:06:53.905703+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_online was processed [] []
+[2025-07-15T09:06:53.905913+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_group was processed [] []
+[2025-07-15T09:06:53.906113+00:00] main.DEBUG: Add of item with id Magento_Backup::system_tools_backup was processed [] []
+[2025-07-15T09:06:53.906322+00:00] main.DEBUG: Add of item with id Magento_Indexer::system_index was processed [] []
+[2025-07-15T09:06:53.906537+00:00] main.DEBUG: Add of item with id Magento_Variable::system_variable was processed [] []
+[2025-07-15T09:06:53.906825+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_page was processed [] []
+[2025-07-15T09:06:53.907042+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_block was processed [] []
+[2025-07-15T09:06:53.907245+00:00] main.DEBUG: Add of item with id Magento_Integration::system_extensions was processed [] []
+[2025-07-15T09:06:53.907517+00:00] main.DEBUG: Add of item with id Magento_Integration::system_integrations was processed [] []
+[2025-07-15T09:06:53.907788+00:00] main.DEBUG: Add of item with id Magento_Search::search_terms was processed [] []
+[2025-07-15T09:06:53.908005+00:00] main.DEBUG: Add of item with id Magento_Search::search_synonyms was processed [] []
+[2025-07-15T09:06:53.908202+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog was processed [] []
+[2025-07-15T09:06:53.908466+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_products was processed [] []
+[2025-07-15T09:06:53.908691+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_categories was processed [] []
+[2025-07-15T09:06:53.908958+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_attributes was processed [] []
+[2025-07-15T09:06:53.909169+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_sets was processed [] []
+[2025-07-15T09:06:53.909430+00:00] main.DEBUG: Add of item with id Magento_Catalog::inventory was processed [] []
+[2025-07-15T09:06:53.909654+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo was processed [] []
+[2025-07-15T09:06:53.909921+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo_catalog was processed [] []
+[2025-07-15T09:06:53.910130+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media was processed [] []
+[2025-07-15T09:06:53.910402+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media_gallery was processed [] []
+[2025-07-15T09:06:53.910625+00:00] main.DEBUG: Add of item with id Magento_Sales::sales was processed [] []
+[2025-07-15T09:06:53.910891+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_operation was processed [] []
+[2025-07-15T09:06:53.911156+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_order was processed [] []
+[2025-07-15T09:06:53.911374+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_invoice was processed [] []
+[2025-07-15T09:06:53.911596+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_shipment was processed [] []
+[2025-07-15T09:06:53.911816+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_creditmemo was processed [] []
+[2025-07-15T09:06:53.912023+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_transactions was processed [] []
+[2025-07-15T09:06:53.912233+00:00] main.DEBUG: Add of item with id Magento_Sales::system_order_statuses was processed [] []
+[2025-07-15T09:06:53.912440+00:00] main.DEBUG: Add of item with id Magento_Widget::cms_widget_instance was processed [] []
+[2025-07-15T09:06:53.912722+00:00] main.DEBUG: Add of item with id Magento_Analytics::business_intelligence was processed [] []
+[2025-07-15T09:06:53.912983+00:00] main.DEBUG: Add of item with id Magento_Analytics::advanced_reporting was processed [] []
+[2025-07-15T09:06:53.913189+00:00] main.DEBUG: Add of item with id Magento_Analytics::bi_essentials was processed [] []
+[2025-07-15T09:06:53.913453+00:00] main.DEBUG: Add of item with id Magento_Downloadable::report_products_downloads was processed [] []
+[2025-07-15T09:06:53.913695+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_template was processed [] []
+[2025-07-15T09:06:53.913872+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_queue was processed [] []
+[2025-07-15T09:06:53.914083+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_subscriber was processed [] []
+[2025-07-15T09:06:53.914347+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_problem was processed [] []
+[2025-07-15T09:06:53.914619+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_import was processed [] []
+[2025-07-15T09:06:53.914825+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_export was processed [] []
+[2025-07-15T09:06:53.915011+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_history was processed [] []
+[2025-07-15T09:06:53.915212+00:00] main.DEBUG: Add of item with id Magento_Email::template was processed [] []
+[2025-07-15T09:06:53.915437+00:00] main.DEBUG: Add of item with id Magento_EncryptionKey::system_crypt_key was processed [] []
+[2025-07-15T09:06:53.915688+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::inventory was processed [] []
+[2025-07-15T09:06:53.915965+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::source was processed [] []
+[2025-07-15T09:06:53.916176+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::stock was processed [] []
+[2025-07-15T09:06:53.916389+00:00] main.DEBUG: Add of item with id Magento_Reports::report was processed [] []
+[2025-07-15T09:06:53.916620+00:00] main.DEBUG: Add of item with id Magento_Reports::report_marketing was processed [] []
+[2025-07-15T09:06:53.916834+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot was processed [] []
+[2025-07-15T09:06:53.917097+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_sales was processed [] []
+[2025-07-15T09:06:53.917291+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_tax was processed [] []
+[2025-07-15T09:06:53.917482+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_invoiced was processed [] []
+[2025-07-15T09:06:53.917701+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_shipping was processed [] []
+[2025-07-15T09:06:53.917917+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_refunded was processed [] []
+[2025-07-15T09:06:53.918125+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_coupons was processed [] []
+[2025-07-15T09:06:53.918331+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_product was processed [] []
+[2025-07-15T09:06:53.918546+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_abandoned was processed [] []
+[2025-07-15T09:06:53.918749+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products was processed [] []
+[2025-07-15T09:06:53.918913+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_bestsellers was processed [] []
+[2025-07-15T09:06:53.919072+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_sold was processed [] []
+[2025-07-15T09:06:53.919247+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_viewed was processed [] []
+[2025-07-15T09:06:53.919446+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_lowstock was processed [] []
+[2025-07-15T09:06:53.919684+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers was processed [] []
+[2025-07-15T09:06:53.919978+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_accounts was processed [] []
+[2025-07-15T09:06:53.920182+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_totals was processed [] []
+[2025-07-15T09:06:53.920404+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_orders was processed [] []
+[2025-07-15T09:06:53.920639+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics was processed [] []
+[2025-07-15T09:06:53.920916+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics_refresh was processed [] []
+[2025-07-15T09:06:53.921129+00:00] main.DEBUG: Add of item with id Magento_Search::report_search_term was processed [] []
+[2025-07-15T09:06:53.921348+00:00] main.DEBUG: Add of item with id Magento_LoginAsCustomerLog::login_log was processed [] []
+[2025-07-15T09:06:53.921570+00:00] main.DEBUG: Add of item with id Magento_Marketplace::partners was processed [] []
+[2025-07-15T09:06:53.921790+00:00] main.DEBUG: Add of item with id Magento_SalesRule::promo_quote was processed [] []
+[2025-07-15T09:06:53.921994+00:00] main.DEBUG: Add of item with id Magento_Sitemap::catalog_sitemap was processed [] []
+[2025-07-15T09:06:53.922163+00:00] main.DEBUG: Add of item with id Magento_PageBuilder::templates was processed [] []
+[2025-07-15T09:06:53.922331+00:00] main.DEBUG: Add of item with id Magento_PaymentServicesDashboard::paymentservicesdashboard was processed [] []
+[2025-07-15T09:06:53.922512+00:00] main.DEBUG: Add of item with id Magento_Paypal::report_salesroot_paypal_settlement_reports was processed [] []
+[2025-07-15T09:06:53.922684+00:00] main.DEBUG: Add of item with id Magento_Paypal::paypal_billing_agreement was processed [] []
+[2025-07-15T09:06:53.922849+00:00] main.DEBUG: Add of item with id Magento_CheckoutAgreements::sales_checkoutagreement was processed [] []
+[2025-07-15T09:06:53.923014+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_ratings was processed [] []
+[2025-07-15T09:06:53.923241+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_pending was processed [] []
+[2025-07-15T09:06:53.923408+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_reviews_all was processed [] []
+[2025-07-15T09:06:53.923582+00:00] main.DEBUG: Add of item with id Magento_Review::report_review was processed [] []
+[2025-07-15T09:06:53.923813+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_customer was processed [] []
+[2025-07-15T09:06:53.923986+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_product was processed [] []
+[2025-07-15T09:06:53.924158+00:00] main.DEBUG: Add of item with id Magento_ServicesId::configuration was processed [] []
+[2025-07-15T09:06:53.924377+00:00] main.DEBUG: Add of item with id Magento_ServicesId::services_id was processed [] []
+[2025-07-15T09:06:53.924563+00:00] main.DEBUG: Add of item with id Magento_UrlRewrite::urlrewrite was processed [] []
+[2025-07-15T09:06:53.924742+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax was processed [] []
+[2025-07-15T09:06:53.924963+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rules was processed [] []
+[2025-07-15T09:06:53.925139+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rates was processed [] []
+[2025-07-15T09:06:53.925304+00:00] main.DEBUG: Add of item with id Magento_TaxImportExport::system_convert_tax was processed [] []
+[2025-07-15T09:06:53.925466+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging was processed [] []
+[2025-07-15T09:06:53.925713+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging_bulk_operations was processed [] []
+[2025-07-15T09:06:53.925889+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency was processed [] []
+[2025-07-15T09:06:53.926084+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_rates was processed [] []
+[2025-07-15T09:06:53.926221+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_symbols was processed [] []
+[2025-07-15T09:06:53.926385+00:00] main.DEBUG: Add of item with id News_Manger::news_head was processed [] []
+[2025-07-15T09:06:53.926680+00:00] main.DEBUG: Add of item with id News_Manger::category was processed [] []
+[2025-07-15T09:06:53.926883+00:00] main.DEBUG: Add of item with id News_Manger::News was processed [] []
+[2025-07-15T09:06:53.927052+00:00] main.DEBUG: Add of item with id PayPal_Braintree::settlement_report was processed [] []
+[2025-07-15T09:06:53.927217+00:00] main.DEBUG: Add of item with id PayPal_Braintree::virtual_terminal was processed [] []
+[2025-07-15T09:06:54.176097+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T09:06:54.176513+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T09:06:54.178595+00:00] main.DEBUG: Collection Size: 5 [] []
+[2025-07-15T09:06:54.179024+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"id_field_name":"category_id","category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"Enabled","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T09:07:06.984807+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T09:07:06.985079+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T09:07:06.986554+00:00] main.DEBUG: Collection Size: 5 [] []
+[2025-07-15T09:07:06.986771+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"id_field_name":"category_id","category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"Enabled","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T09:07:07.217028+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T09:07:07.217424+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T09:07:07.219192+00:00] main.DEBUG: Collection Size: 5 [] []
+[2025-07-15T09:07:07.219550+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"id_field_name":"category_id","category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"Enabled","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T09:28:30.223540+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.272380+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.287973+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.288857+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.289507+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.290150+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.290720+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.291293+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.291982+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.292606+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.293244+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.293771+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.294277+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.297027+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.297848+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T09:28:50.298525+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:02.296082+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:13.683292+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-07-15T09:29:13.684615+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-07-15T09:29:13.685658+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-07-15T09:29:13.686748+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-07-15T09:29:13.687805+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-07-15T09:29:15.034246+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.049250+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.050002+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.050821+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.052835+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.053931+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.054688+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.055352+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.055948+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.056507+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.057174+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.057840+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.058632+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.059409+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T09:29:15.060094+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T09:30:06.352444+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-07-15T09:30:06.354542+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-07-15T09:30:18.939606+00:00] main.DEBUG: Source class "\News\Manger\Model\NewsInterface" for "News\Manger\Model\NewsRepository" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\News\\Manger\\Model\\NewsInterface\" for \"News\\Manger\\Model\\NewsRepository\" generation does not exist. at /var/www/html/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-07-15T09:30:18.939945+00:00] main.DEBUG: Source class "\News\Manger\Model\CategoryInterface" for "News\Manger\Model\CategoryRepository" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\News\\Manger\\Model\\CategoryInterface\" for \"News\\Manger\\Model\\CategoryRepository\" generation does not exist. at /var/www/html/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-07-15T09:31:29.261802+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.262205+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.262402+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.262661+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.262868+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263047+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263214+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263379+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263562+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263730+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.263892+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.264053+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.264216+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.264376+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.264551+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.264719+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.265027+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.265196+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:31:29.265450+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.265640+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.265806+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.265967+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.266146+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T09:31:29.266345+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.266524+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:31:29.266710+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T09:31:52.270758+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/index/key/399b893e7a0a9f2c1a231a70955a380f7764ebe472aabacf4efb6e307febdd40/","invalidateInfo":{"tags":["BACKEND_MAINMENU"],"mode":"matchingAnyTag"}} []
+[2025-07-15T09:31:52.405141+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/index/key/399b893e7a0a9f2c1a231a70955a380f7764ebe472aabacf4efb6e307febdd40/","invalidateInfo":{"tags":["PB_EDITOR_CONFIG","CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T09:31:52.440194+00:00] main.DEBUG: Item Magento_Backend::system_currency was removed [] []
+[2025-07-15T09:31:52.449635+00:00] main.DEBUG: Add of item with id Magento_Config::system_config was processed [] []
+[2025-07-15T09:31:52.449848+00:00] main.DEBUG: Add of item with id Magento_AdminNotification::system_adminnotification was processed [] []
+[2025-07-15T09:31:52.450004+00:00] main.DEBUG: Add of item with id Magento_Theme::design_config was processed [] []
+[2025-07-15T09:31:52.450128+00:00] main.DEBUG: Add of item with id Magento_Theme::system_design_theme was processed [] []
+[2025-07-15T09:31:52.450244+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design_schedule was processed [] []
+[2025-07-15T09:31:52.450356+00:00] main.DEBUG: Add of item with id Magento_Backend::system_store was processed [] []
+[2025-07-15T09:31:52.450467+00:00] main.DEBUG: Add of item with id Magento_Backend::dashboard was processed [] []
+[2025-07-15T09:31:52.450600+00:00] main.DEBUG: Add of item with id Magento_Backend::system was processed [] []
+[2025-07-15T09:31:52.450729+00:00] main.DEBUG: Add of item with id Magento_Backend::system_tools was processed [] []
+[2025-07-15T09:31:52.450856+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design was processed [] []
+[2025-07-15T09:31:52.450970+00:00] main.DEBUG: Add of item with id Magento_Backend::system_convert was processed [] []
+[2025-07-15T09:31:52.451096+00:00] main.DEBUG: Add of item with id Magento_Backend::system_cache was processed [] []
+[2025-07-15T09:31:52.451208+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing was processed [] []
+[2025-07-15T09:31:52.451333+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_communications was processed [] []
+[2025-07-15T09:31:52.451449+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_seo was processed [] []
+[2025-07-15T09:31:52.451643+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_user_content was processed [] []
+[2025-07-15T09:31:52.451790+00:00] main.DEBUG: Add of item with id Magento_Backend::content was processed [] []
+[2025-07-15T09:31:52.451902+00:00] main.DEBUG: Add of item with id Magento_Backend::content_elements was processed [] []
+[2025-07-15T09:31:52.452010+00:00] main.DEBUG: Add of item with id Magento_Backend::stores was processed [] []
+[2025-07-15T09:31:52.452140+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_settings was processed [] []
+[2025-07-15T09:31:52.452254+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_attributes was processed [] []
+[2025-07-15T09:31:52.452382+00:00] main.DEBUG: Add of item with id Magento_Backend::other_settings was processed [] []
+[2025-07-15T09:31:52.452501+00:00] main.DEBUG: Add of item with id Magento_Backend::system_other_settings was processed [] []
+[2025-07-15T09:31:52.452625+00:00] main.DEBUG: Add of item with id Magento_User::system_acl was processed [] []
+[2025-07-15T09:31:52.452750+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_users was processed [] []
+[2025-07-15T09:31:52.452859+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_roles was processed [] []
+[2025-07-15T09:31:52.452964+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_locks was processed [] []
+[2025-07-15T09:31:52.453069+00:00] main.DEBUG: Add of item with id Magento_Customer::customer was processed [] []
+[2025-07-15T09:31:52.453188+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_manage was processed [] []
+[2025-07-15T09:31:52.453296+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_online was processed [] []
+[2025-07-15T09:31:52.453402+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_group was processed [] []
+[2025-07-15T09:31:52.453519+00:00] main.DEBUG: Add of item with id Magento_Backup::system_tools_backup was processed [] []
+[2025-07-15T09:31:52.453634+00:00] main.DEBUG: Add of item with id Magento_Indexer::system_index was processed [] []
+[2025-07-15T09:31:52.453740+00:00] main.DEBUG: Add of item with id Magento_Variable::system_variable was processed [] []
+[2025-07-15T09:31:52.453870+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_page was processed [] []
+[2025-07-15T09:31:52.454027+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_block was processed [] []
+[2025-07-15T09:31:52.454138+00:00] main.DEBUG: Add of item with id Magento_Integration::system_extensions was processed [] []
+[2025-07-15T09:31:52.454261+00:00] main.DEBUG: Add of item with id Magento_Integration::system_integrations was processed [] []
+[2025-07-15T09:31:52.454385+00:00] main.DEBUG: Add of item with id Magento_Search::search_terms was processed [] []
+[2025-07-15T09:31:52.454507+00:00] main.DEBUG: Add of item with id Magento_Search::search_synonyms was processed [] []
+[2025-07-15T09:31:52.454623+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog was processed [] []
+[2025-07-15T09:31:52.454744+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_products was processed [] []
+[2025-07-15T09:31:52.454852+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_categories was processed [] []
+[2025-07-15T09:31:52.454971+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_attributes was processed [] []
+[2025-07-15T09:31:52.455080+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_sets was processed [] []
+[2025-07-15T09:31:52.455201+00:00] main.DEBUG: Add of item with id Magento_Catalog::inventory was processed [] []
+[2025-07-15T09:31:52.455308+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo was processed [] []
+[2025-07-15T09:31:52.455428+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo_catalog was processed [] []
+[2025-07-15T09:31:52.455549+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media was processed [] []
+[2025-07-15T09:31:52.455678+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media_gallery was processed [] []
+[2025-07-15T09:31:52.455787+00:00] main.DEBUG: Add of item with id Magento_Sales::sales was processed [] []
+[2025-07-15T09:31:52.455907+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_operation was processed [] []
+[2025-07-15T09:31:52.456030+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_order was processed [] []
+[2025-07-15T09:31:52.456138+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_invoice was processed [] []
+[2025-07-15T09:31:52.456243+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_shipment was processed [] []
+[2025-07-15T09:31:52.456350+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_creditmemo was processed [] []
+[2025-07-15T09:31:52.456468+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_transactions was processed [] []
+[2025-07-15T09:31:52.456600+00:00] main.DEBUG: Add of item with id Magento_Sales::system_order_statuses was processed [] []
+[2025-07-15T09:31:52.456709+00:00] main.DEBUG: Add of item with id Magento_Widget::cms_widget_instance was processed [] []
+[2025-07-15T09:31:52.456829+00:00] main.DEBUG: Add of item with id Magento_Analytics::business_intelligence was processed [] []
+[2025-07-15T09:31:52.456952+00:00] main.DEBUG: Add of item with id Magento_Analytics::advanced_reporting was processed [] []
+[2025-07-15T09:31:52.457060+00:00] main.DEBUG: Add of item with id Magento_Analytics::bi_essentials was processed [] []
+[2025-07-15T09:31:52.457180+00:00] main.DEBUG: Add of item with id Magento_Downloadable::report_products_downloads was processed [] []
+[2025-07-15T09:31:52.457301+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_template was processed [] []
+[2025-07-15T09:31:52.457408+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_queue was processed [] []
+[2025-07-15T09:31:52.457525+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_subscriber was processed [] []
+[2025-07-15T09:31:52.457655+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_problem was processed [] []
+[2025-07-15T09:31:52.457812+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_import was processed [] []
+[2025-07-15T09:31:52.457993+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_export was processed [] []
+[2025-07-15T09:31:52.458175+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_history was processed [] []
+[2025-07-15T09:31:52.458357+00:00] main.DEBUG: Add of item with id Magento_Email::template was processed [] []
+[2025-07-15T09:31:52.458551+00:00] main.DEBUG: Add of item with id Magento_EncryptionKey::system_crypt_key was processed [] []
+[2025-07-15T09:31:52.458733+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::inventory was processed [] []
+[2025-07-15T09:31:52.458875+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::source was processed [] []
+[2025-07-15T09:31:52.459047+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::stock was processed [] []
+[2025-07-15T09:31:52.459200+00:00] main.DEBUG: Add of item with id Magento_Reports::report was processed [] []
+[2025-07-15T09:31:52.459308+00:00] main.DEBUG: Add of item with id Magento_Reports::report_marketing was processed [] []
+[2025-07-15T09:31:52.459464+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot was processed [] []
+[2025-07-15T09:31:52.459663+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_sales was processed [] []
+[2025-07-15T09:31:52.459780+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_tax was processed [] []
+[2025-07-15T09:31:52.459886+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_invoiced was processed [] []
+[2025-07-15T09:31:52.459990+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_shipping was processed [] []
+[2025-07-15T09:31:52.460095+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_refunded was processed [] []
+[2025-07-15T09:31:52.460245+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_coupons was processed [] []
+[2025-07-15T09:31:52.460416+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_product was processed [] []
+[2025-07-15T09:31:52.460558+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_abandoned was processed [] []
+[2025-07-15T09:31:52.460675+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products was processed [] []
+[2025-07-15T09:31:52.460782+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_bestsellers was processed [] []
+[2025-07-15T09:31:52.460906+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_sold was processed [] []
+[2025-07-15T09:31:52.461013+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_viewed was processed [] []
+[2025-07-15T09:31:52.461117+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_lowstock was processed [] []
+[2025-07-15T09:31:52.461221+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers was processed [] []
+[2025-07-15T09:31:52.461354+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_accounts was processed [] []
+[2025-07-15T09:31:52.461463+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_totals was processed [] []
+[2025-07-15T09:31:52.461594+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_orders was processed [] []
+[2025-07-15T09:31:52.461699+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics was processed [] []
+[2025-07-15T09:31:52.461840+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics_refresh was processed [] []
+[2025-07-15T09:31:52.462016+00:00] main.DEBUG: Add of item with id Magento_Search::report_search_term was processed [] []
+[2025-07-15T09:31:52.462168+00:00] main.DEBUG: Add of item with id Magento_LoginAsCustomerLog::login_log was processed [] []
+[2025-07-15T09:31:52.462276+00:00] main.DEBUG: Add of item with id Magento_Marketplace::partners was processed [] []
+[2025-07-15T09:31:52.462382+00:00] main.DEBUG: Add of item with id Magento_SalesRule::promo_quote was processed [] []
+[2025-07-15T09:31:52.462487+00:00] main.DEBUG: Add of item with id Magento_Sitemap::catalog_sitemap was processed [] []
+[2025-07-15T09:31:52.462617+00:00] main.DEBUG: Add of item with id Magento_PageBuilder::templates was processed [] []
+[2025-07-15T09:31:52.462724+00:00] main.DEBUG: Add of item with id Magento_PaymentServicesDashboard::paymentservicesdashboard was processed [] []
+[2025-07-15T09:31:52.462831+00:00] main.DEBUG: Add of item with id Magento_Paypal::report_salesroot_paypal_settlement_reports was processed [] []
+[2025-07-15T09:31:52.462935+00:00] main.DEBUG: Add of item with id Magento_Paypal::paypal_billing_agreement was processed [] []
+[2025-07-15T09:31:52.463040+00:00] main.DEBUG: Add of item with id Magento_CheckoutAgreements::sales_checkoutagreement was processed [] []
+[2025-07-15T09:31:52.463145+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_ratings was processed [] []
+[2025-07-15T09:31:52.463271+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_pending was processed [] []
+[2025-07-15T09:31:52.463380+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_reviews_all was processed [] []
+[2025-07-15T09:31:52.463484+00:00] main.DEBUG: Add of item with id Magento_Review::report_review was processed [] []
+[2025-07-15T09:31:52.463631+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_customer was processed [] []
+[2025-07-15T09:31:52.463741+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_product was processed [] []
+[2025-07-15T09:31:52.463845+00:00] main.DEBUG: Add of item with id Magento_ServicesId::configuration was processed [] []
+[2025-07-15T09:31:52.463965+00:00] main.DEBUG: Add of item with id Magento_ServicesId::services_id was processed [] []
+[2025-07-15T09:31:52.464075+00:00] main.DEBUG: Add of item with id Magento_UrlRewrite::urlrewrite was processed [] []
+[2025-07-15T09:31:52.464180+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax was processed [] []
+[2025-07-15T09:31:52.464302+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rules was processed [] []
+[2025-07-15T09:31:52.464412+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rates was processed [] []
+[2025-07-15T09:31:52.464529+00:00] main.DEBUG: Add of item with id Magento_TaxImportExport::system_convert_tax was processed [] []
+[2025-07-15T09:31:52.464641+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging was processed [] []
+[2025-07-15T09:31:52.464780+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging_bulk_operations was processed [] []
+[2025-07-15T09:31:52.464893+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency was processed [] []
+[2025-07-15T09:31:52.465014+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_rates was processed [] []
+[2025-07-15T09:31:52.465122+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_symbols was processed [] []
+[2025-07-15T09:31:52.465226+00:00] main.DEBUG: Add of item with id News_Manger::news_head was processed [] []
+[2025-07-15T09:31:52.465344+00:00] main.DEBUG: Add of item with id News_Manger::category was processed [] []
+[2025-07-15T09:31:52.465452+00:00] main.DEBUG: Add of item with id News_Manger::News was processed [] []
+[2025-07-15T09:31:52.465574+00:00] main.DEBUG: Add of item with id PayPal_Braintree::settlement_report was processed [] []
+[2025-07-15T09:31:52.465680+00:00] main.DEBUG: Add of item with id PayPal_Braintree::virtual_terminal was processed [] []
+[2025-07-15T09:31:54.213018+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:00.921413+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:00.924690+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:01.039292+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:01.039509+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:01.041267+00:00] main.DEBUG: Collection Size: 5 [] []
+[2025-07-15T09:32:01.041461+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"Enabled","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","parent_name":"cate 2"},{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"cate 2"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:03.271768+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:03.288876+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:03.289093+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:03.290475+00:00] main.DEBUG: Collection Size: 5 [] []
+[2025-07-15T09:32:03.290732+00:00] main.DEBUG: Final LoadedData: {"totalRecords":5,"items":[{"category_id":"7","category_name":"cate 2","category_description":"sdfljsdklsjkljkldfkdjlksdfjklsdjkl","parent_id":"8","category_status":"Enabled","created_at":"2025-07-15 08:11:54","updated_at":"2025-07-15 08:54:03","parent_name":"cate 2"},{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"7","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"cate 2"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:18.509464+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/delete/id/7/key/765a1c470f12bd9cc9432a48de84b5f3b57ebb2375974b39807ea2a1a615d332/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T09:32:18.511025+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/delete/id/7/key/765a1c470f12bd9cc9432a48de84b5f3b57ebb2375974b39807ea2a1a615d332/","invalidateInfo":{"tags":["news_manger_category_7","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:32:18.607879+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:18.632635+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:18.686047+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:18.686294+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:18.687727+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:18.687958+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:20.225021+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:20.245041+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:20.245596+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:20.248874+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:20.249302+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:25.051565+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:25.099943+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:25.203183+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:25.203619+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:25.206235+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:25.206673+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:26.371638+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:26.388380+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:26.388873+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:26.391552+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:26.391934+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 08:20:41","parent_name":"No Parent"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:36.184740+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:40.915195+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T09:32:40.915998+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_8","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:32:40.918174+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_8","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:32:41.007981+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:41.034559+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:41.092991+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:41.093216+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:41.094884+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:41.095130+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:41.768241+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:41.777830+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:41.778046+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:41.779829+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:41.780119+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":null,"category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 08:28:47","parent_name":"No Parent"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:46.923608+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:51.467640+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T09:32:51.468953+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_10","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:32:51.471729+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_10","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:32:51.659341+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:32:51.698358+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:51.742851+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:51.743121+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:51.744455+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:51.744708+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"9","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 09:32:51","parent_name":"category1"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:52.406856+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:52.416303+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:32:52.416570+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:32:52.418114+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:32:52.418380+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"9","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 09:32:51","parent_name":"category1"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 08:33:51","parent_name":"No Parent"}]} [] []
+[2025-07-15T09:32:59.608666+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:33:03.428211+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T09:33:03.428829+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_11","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:33:03.430442+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/4594d74c33da649689a519068f54900ca168e5736de00bf0beb2804f6738136a/","invalidateInfo":{"tags":["news_manger_category_11","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T09:33:03.516804+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:33:03.539605+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:33:03.594031+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:33:03.594292+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:33:03.595740+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:33:03.595939+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"9","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 09:32:51","parent_name":"category1"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":"10","category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 09:33:03","parent_name":"\u0633\u064a\u0628\u0633\u064a\u0628"}]} [] []
+[2025-07-15T09:33:04.815749+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:33:04.829729+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:33:04.830068+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:33:04.832179+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:33:04.832517+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"9","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 09:32:51","parent_name":"category1"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":"10","category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 09:33:03","parent_name":"\u0633\u064a\u0628\u0633\u064a\u0628"}]} [] []
+[2025-07-15T09:36:31.064819+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:36:31.077436+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:36:31.077734+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'ca'))) [] []
+[2025-07-15T09:36:31.080762+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fulltext' in 'WHERE', query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'ca'))) ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:36:31.081173+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []
+[2025-07-15T09:36:36.755243+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:36:36.772556+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:36:36.772895+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:36:36.774905+00:00] main.DEBUG: Collection Size: 4 [] []
+[2025-07-15T09:36:36.775194+00:00] main.DEBUG: Final LoadedData: {"totalRecords":4,"items":[{"category_id":"8","category_name":"cate 2","category_description":"zcxcz","parent_id":"11","category_status":"Enabled","created_at":"2025-07-15 08:20:41","updated_at":"2025-07-15 09:32:40","parent_name":"dsf"},{"category_id":"9","category_name":"category1","category_description":"nmnmn","parent_id":null,"category_status":"Disabled","created_at":"2025-07-15 08:21:19","updated_at":"2025-07-15 08:21:19","parent_name":"No Parent"},{"category_id":"10","category_name":"\u0633\u064a\u0628\u0633\u064a\u0628","category_description":"\u0633\u064a\u0628\u0633\u064a\u0628\u0633","parent_id":"9","category_status":"Enabled","created_at":"2025-07-15 08:28:47","updated_at":"2025-07-15 09:32:51","parent_name":"category1"},{"category_id":"11","category_name":"dsf","category_description":"fdsfs","parent_id":"10","category_status":"Disabled","created_at":"2025-07-15 08:33:51","updated_at":"2025-07-15 09:33:03","parent_name":"\u0633\u064a\u0628\u0633\u064a\u0628"}]} [] []
+[2025-07-15T09:36:44.661789+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:36:44.674454+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:36:44.674725+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'c'))) [] []
+[2025-07-15T09:36:44.675767+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fulltext' in 'WHERE', query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'c'))) ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:36:44.676084+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []
+[2025-07-15T09:36:57.139702+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:36:57.149074+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:36:57.149313+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'c'))) AND (`category_id` LIKE '%1%') [] []
+[2025-07-15T09:36:57.150367+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fulltext' in 'WHERE', query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (((`fulltext` = 'c'))) AND (`category_id` LIKE '%1%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:36:57.150693+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []
+[2025-07-15T09:37:00.927255+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:37:00.936516+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:37:00.936705+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_id` LIKE '%1%') [] []
+[2025-07-15T09:37:00.937668+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'category_id' in WHERE is ambiguous, query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_id` LIKE '%1%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:37:00.937959+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []
+[2025-07-15T09:37:09.526944+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:37:09.539868+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:37:09.540152+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_id` LIKE '%20%') [] []
+[2025-07-15T09:37:09.541295+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'category_id' in WHERE is ambiguous, query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_id` LIKE '%20%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:37:09.541684+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []
+[2025-07-15T09:37:23.099582+00:00] main.DEBUG: Grid Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id [] []
+[2025-07-15T09:37:23.109633+00:00] main.DEBUG: Collection Class: News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor [] []
+[2025-07-15T09:37:23.109922+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_name` LIKE '%cat%') [] []
+[2025-07-15T09:37:23.111003+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'category_name' in WHERE is ambiguous, query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_name` LIKE '%cat%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T09:37:23.111378+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): Magento\Framework\Data\Collection\AbstractDb->getData()
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#14 /var/www/html/vendor/magento/framework/Data/Collection.php(340): Magento\Framework\Data\Collection\AbstractDb->load()
+#15 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): Magento\Framework\Data\Collection->getItems()
+#16 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#17 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#18 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#19 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#20 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#21 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#22 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#23 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#24 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#25 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#26 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#29 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#30 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#31 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#32 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(32): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#33 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#35 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#38 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#39 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#40 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#43 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#45 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#46 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#49 {main} [] []

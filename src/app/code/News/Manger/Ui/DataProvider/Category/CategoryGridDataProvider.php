@@ -54,8 +54,8 @@ class CategoryGridDataProvider extends AbstractDataProvider
       foreach ($items as $item) {
         $data = $item->getData();
 
-        // Log each item's data
-        $this->logger->debug('Item Data: ' . json_encode($data));
+        // Transform category_status
+        $data['category_status'] = $data['category_status'] == 1 ? __('Enabled') : __('Disabled');
 
         // Ensure parent_name exists
         if (!isset($data['parent_name']) || $data['parent_name'] === null) {
