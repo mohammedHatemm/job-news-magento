@@ -4,11 +4,14 @@ namespace News\Manger\Block\Adminhtml\Category\Edit;
 
 use Magento\Backend\Block\Widget\Form\Generic;
 use Magento\Framework\Exception\LocalizedException;
+use Psr\Log\LoggerInterface;
 
 class Form extends Generic
 {
   protected $_systemStore;
   protected $_categoryCollection;
+  protected $_categoryFactory;
+  protected $_logger;
 
   public function __construct(
     \Magento\Backend\Block\Template\Context $context,
@@ -16,10 +19,14 @@ class Form extends Generic
     \Magento\Framework\Data\FormFactory $formFactory,
     \Magento\Store\Model\System\Store $systemStore,
     \News\Manger\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
+    \News\Manger\Model\CategoryFactory $categoryFactory,
+    LoggerInterface $logger,
     array $data = []
   ) {
     $this->_systemStore = $systemStore;
     $this->_categoryCollection = $categoryCollectionFactory->create();
+    $this->_categoryFactory = $categoryFactory;
+    $this->_logger = $logger;
     parent::__construct($context, $registry, $formFactory, $data);
   }
 
@@ -36,7 +43,7 @@ class Form extends Generic
 
     // التأكد من وجود الـ model
     if (!$model) {
-      $model = $this->_objectManager->create(\News\Manger\Model\Category::class);
+      $model = $this->_categoryFactory->create();
     }
 
     $form = $this->_formFactory->create([
@@ -90,34 +97,9 @@ class Form extends Generic
       ]
     ]);
 
-    // إضافة حقول التاريخ مع التحقق من وجود البيانات
-    if ($model->getId()) {
-      $fieldset->addField('created_at', 'date', [
-        'name' => 'created_at',
-        'label' => __('Created At'),
-        'title' => __('Created At'),
-        'disabled' => true,
-        'readonly' => true,
-        'format' => 'yyyy-MM-dd HH:mm:ss',
-        'date_format' => 'yyyy-MM-dd',
-        'time_format' => 'HH:mm:ss'
-      ]);
-
-      $fieldset->addField('updated_at', 'date', [
-        'name' => 'updated_at',
-        'label' => __('Updated At'),
-        'title' => __('Updated At'),
-        'disabled' => true,
-        'readonly' => true,
-        'format' => 'yyyy-MM-dd HH:mm:ss',
-        'date_format' => 'yyyy-MM-dd',
-        'time_format' => 'HH:mm:ss'
-      ]);
-    }
-
     // إضافة حقل Parent Category مع التحقق من البيانات
     try {
-      $parentOptions = $this->getCategoryOptions();
+      $parentOptions = $this->getCategoryOptions($model->getId());
 
       $fieldset->addField('parent_id', 'select', [
         'name' => 'parent_id',
@@ -127,6 +109,7 @@ class Form extends Generic
         'values' => $parentOptions
       ]);
     } catch (\Exception $e) {
+      $this->_logger->error('Error loading category options: ' . $e->getMessage());
       // في حالة فشل تحميل الفئات، إضافة حقل نصي بدلاً من select
       $fieldset->addField('parent_id', 'text', [
         'name' => 'parent_id',
@@ -137,19 +120,32 @@ class Form extends Generic
       ]);
     }
 
+    // إضافة حقول التاريخ للعرض فقط
+    if ($model->getId()) {
+      $fieldset->addField('created_at_display', 'label', [
+        'name' => 'created_at_display',
+        'label' => __('Created At'),
+        'title' => __('Created At'),
+        'value' => $model->getCreatedAt() ?
+          $this->_localeDate->date($model->getCreatedAt())->format('Y-m-d H:i:s') :
+          __('Not Available')
+      ]);
+
+      $fieldset->addField('updated_at_display', 'label', [
+        'name' => 'updated_at_display',
+        'label' => __('Updated At'),
+        'title' => __('Updated At'),
+        'value' => $model->getUpdatedAt() ?
+          $this->_localeDate->date($model->getUpdatedAt())->format('Y-m-d H:i:s') :
+          __('Not Available')
+      ]);
+    }
+
     // تحديد قيم النموذج مع التحقق من البيانات
     $formData = $model->getData();
 
     // التأكد من صحة البيانات قبل تحديدها
-    if (is_array($formData)) {
-      // تنظيف البيانات التي قد تسبب مشاكل في التنسيق
-      if (isset($formData['created_at']) && empty($formData['created_at'])) {
-        unset($formData['created_at']);
-      }
-      if (isset($formData['updated_at']) && empty($formData['updated_at'])) {
-        unset($formData['updated_at']);
-      }
-
+    if (is_array($formData) && !empty($formData)) {
       $form->setValues($formData);
     }
 
@@ -162,9 +158,10 @@ class Form extends Generic
   /**
    * الحصول على خيارات الفئات الأب
    *
+   * @param int|null $excludeId
    * @return array
    */
-  protected function getCategoryOptions()
+  protected function getCategoryOptions($excludeId = null)
   {
     $options = [
       ['value' => '', 'label' => __('No Parent (Root Category)')]
@@ -174,14 +171,19 @@ class Form extends Generic
       $collection = $this->_categoryCollection->load();
 
       foreach ($collection as $category) {
+        // استبعاد الفئة الحالية لمنع الحلقة المفرغة
+        if ($excludeId && $category->getId() == $excludeId) {
+          continue;
+        }
+
         $options[] = [
           'value' => $category->getId(),
           'label' => $category->getCategoryName() ?: __('Category #%1', $category->getId())
         ];
       }
     } catch (\Exception $e) {
-      // في حالة الخطأ، إرجاع الخيار الافتراضي فقط
       $this->_logger->error('Error loading category options: ' . $e->getMessage());
+      throw $e;
     }
 
     return $options;
@@ -196,10 +198,13 @@ class Form extends Generic
   {
     parent::_prepareLayout();
 
-    if ($this->getRequest()->getParam('back')) {
-      $this->getLayout()->getBlock('page.title')->setPageTitle(__('Edit Category'));
-    } else {
-      $this->getLayout()->getBlock('page.title')->setPageTitle(__('New Category'));
+    $pageTitle = $this->getLayout()->getBlock('page.title');
+    if ($pageTitle) {
+      if ($this->getRequest()->getParam('category_id')) {
+        $pageTitle->setPageTitle(__('Edit Category'));
+      } else {
+        $pageTitle->setPageTitle(__('New Category'));
+      }
     }
 
     return $this;

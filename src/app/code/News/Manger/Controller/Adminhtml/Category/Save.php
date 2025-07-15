@@ -5,8 +5,8 @@ namespace News\Manger\Controller\Adminhtml\Category;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\Stdlib\DateTime\Filter\Date as DateFilter;
 use News\Manger\Model\CategoryFactory;
+use Psr\Log\LoggerInterface;
 
 class Save extends \Magento\Backend\App\Action
 {
@@ -24,25 +24,25 @@ class Save extends \Magento\Backend\App\Action
   protected $categoryFactory;
 
   /**
-   * @var DateFilter
+   * @var LoggerInterface
    */
-  protected $dateFilter;
+  protected $logger;
 
   /**
    * @param Context $context
    * @param DataPersistorInterface $dataPersistor
    * @param CategoryFactory $categoryFactory
-   * @param DateFilter $dateFilter
+   * @param LoggerInterface $logger
    */
   public function __construct(
     Context $context,
     DataPersistorInterface $dataPersistor,
     CategoryFactory $categoryFactory,
-    DateFilter $dateFilter
+    LoggerInterface $logger
   ) {
     $this->dataPersistor = $dataPersistor;
     $this->categoryFactory = $categoryFactory;
-    $this->dateFilter = $dateFilter;
+    $this->logger = $logger;
     parent::__construct($context);
   }
 
@@ -71,44 +71,24 @@ class Save extends \Magento\Backend\App\Action
       }
 
       // Validate required fields
-      if (empty($data['category_name'])) {
-        $this->messageManager->addErrorMessage(__('Please provide the category name.'));
-        return $this->redirectWithData($resultRedirect, $data, $id);
-      }
-
-      if (empty($data['category_description'])) {
-        $this->messageManager->addErrorMessage(__('Please provide the category description.'));
-        return $this->redirectWithData($resultRedirect, $data, $id);
-      }
-
-      if (!isset($data['category_status']) || $data['category_status'] === '') {
-        $this->messageManager->addErrorMessage(__('Please select the category status.'));
+      $validationErrors = $this->validateData($data);
+      if (!empty($validationErrors)) {
+        foreach ($validationErrors as $error) {
+          $this->messageManager->addErrorMessage($error);
+        }
         return $this->redirectWithData($resultRedirect, $data, $id);
       }
 
       // Prepare data
-      if (isset($data['created_at']) && $data['created_at']) {
-        try {
-          $data['created_at'] = $this->dateFilter->filter($data['created_at']);
-        } catch (\Exception $e) {
-          $data['created_at'] = null;
-        }
-      } else {
-        if (!$id) { // Only set created_at for new records
-          $data['created_at'] = date('Y-m-d H:i:s');
+      $data = $this->prepareData($data, $model);
+
+      // Check for parent category circular reference
+      if (isset($data['parent_id']) && $data['parent_id'] && $id) {
+        if ($this->hasCircularReference($data['parent_id'], $id)) {
+          $this->messageManager->addErrorMessage(__('Cannot set parent category: This would create a circular reference.'));
+          return $this->redirectWithData($resultRedirect, $data, $id);
         }
       }
-
-      // Always set updated_at
-      $data['updated_at'] = date('Y-m-d H:i:s');
-
-      // Handle parent category
-      if (isset($data['category_parent']) && $data['category_parent'] === '') {
-        $data['category_parent'] = null;
-      }
-
-      // Remove form_key from data
-      unset($data['form_key']);
 
       $model->setData($data);
 
@@ -123,8 +103,10 @@ class Save extends \Magento\Backend\App\Action
         return $resultRedirect->setPath('*/*/');
       } catch (LocalizedException $e) {
         $this->messageManager->addErrorMessage($e->getMessage());
+        $this->logger->error('LocalizedException while saving category: ' . $e->getMessage());
       } catch (\Exception $e) {
         $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the category.'));
+        $this->logger->error('Exception while saving category: ' . $e->getMessage());
       }
 
       $this->dataPersistor->set('news_category', $data);
@@ -132,6 +114,95 @@ class Save extends \Magento\Backend\App\Action
     }
 
     return $resultRedirect->setPath('*/*/');
+  }
+
+  /**
+   * Validate form data
+   *
+   * @param array $data
+   * @return array
+   */
+  private function validateData($data)
+  {
+    $errors = [];
+
+    if (empty($data['category_name']) || trim($data['category_name']) === '') {
+      $errors[] = __('Please provide the category name.');
+    }
+
+    if (empty($data['category_description']) || trim($data['category_description']) === '') {
+      $errors[] = __('Please provide the category description.');
+    }
+
+    if (!isset($data['category_status']) || $data['category_status'] === '') {
+      $errors[] = __('Please select the category status.');
+    }
+
+    // Validate parent_id if provided
+    if (isset($data['parent_id']) && $data['parent_id'] !== '' && !is_numeric($data['parent_id'])) {
+      $errors[] = __('Parent category ID must be numeric.');
+    }
+
+    return $errors;
+  }
+
+  /**
+   * Prepare data for saving
+   *
+   * @param array $data
+   * @param \News\Manger\Model\Category $model
+   * @return array
+   */
+  private function prepareData($data, $model)
+  {
+    // Handle parent category
+    if (isset($data['parent_id']) && $data['parent_id'] === '') {
+      $data['parent_id'] = null;
+    }
+
+    // Set timestamps
+    if (!$model->getId()) {
+      // New record
+      $data['created_at'] = date('Y-m-d H:i:s');
+    }
+    $data['updated_at'] = date('Y-m-d H:i:s');
+
+    // Remove unnecessary fields
+    unset($data['form_key']);
+    unset($data['created_at_display']);
+    unset($data['updated_at_display']);
+
+    // Trim string values
+    $data['category_name'] = trim($data['category_name']);
+    $data['category_description'] = trim($data['category_description']);
+
+    return $data;
+  }
+
+  /**
+   * Check for circular reference in parent-child relationship
+   *
+   * @param int $parentId
+   * @param int $categoryId
+   * @return bool
+   */
+  private function hasCircularReference($parentId, $categoryId)
+  {
+    if ($parentId == $categoryId) {
+      return true;
+    }
+
+    try {
+      $parentModel = $this->categoryFactory->create()->load($parentId);
+      if ($parentModel->getId() && $parentModel->getParentId()) {
+        return $this->hasCircularReference($parentModel->getParentId(), $categoryId);
+      }
+    } catch (\Exception $e) {
+      $this->logger->error('Error checking circular reference: ' . $e->getMessage());
+      return false;
+    }
+
+    return false;
   }
 
   /**

@@ -2414,3 +2414,358 @@ Trace: <pre>#1 Magento\Framework\DB\Statement\Pdo\Mysql->_execute() called at [v
 #42 Magento\Framework\App\Bootstrap->run() called at [pub/index.php:30]
 </pre> [] []
 [2025-07-15T07:42:04.854561+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T07:52:30.005328+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T07:52:30.171459+00:00] main.CRITICAL: Exception: Deprecated Functionality: Creation of dynamic property News\Manger\Ui\DataProvider\News\NewsGridDataProvider::$loadedData is deprecated in /var/www/html/app/code/News/Manger/Ui/DataProvider/News/NewsGridDataProvider.php on line 35 in /var/www/html/vendor/magento/framework/App/ErrorHandler.php:62
+Stack trace:
+#0 /var/www/html/app/code/News/Manger/Ui/DataProvider/News/NewsGridDataProvider.php(35): Magento\Framework\App\ErrorHandler->handler(8192, 'Creation of dyn...', '/var/www/html/a...', 35)
+#1 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\News\NewsGridDataProvider->getData()
+#2 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#3 /var/www/html/vendor/magento/framework/View/Layout/Generic.php(75): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#4 /var/www/html/vendor/magento/framework/View/Layout/Generator/Structure.php(46): Magento\Framework\View\Layout\Generic->build(Object(Magento\Ui\Component\Listing))
+#5 /var/www/html/vendor/magento/module-ui/TemplateEngine/Xhtml/Result.php(102): Magento\Framework\View\Layout\Generator\Structure->generate(Object(Magento\Ui\Component\Listing))
+#6 /var/www/html/vendor/magento/module-ui/TemplateEngine/Xhtml/Result.php(124): Magento\Ui\TemplateEngine\Xhtml\Result->appendLayoutConfiguration()
+#7 /var/www/html/vendor/magento/module-ui/Component/Wrapper/UiComponent.php(73): Magento\Ui\TemplateEngine\Xhtml\Result->__toString()
+#8 /var/www/html/vendor/magento/framework/View/Element/AbstractBlock.php(1128): Magento\Ui\Component\Wrapper\UiComponent->_toHtml()
+#9 /var/www/html/vendor/magento/framework/View/Element/AbstractBlock.php(1132): Magento\Framework\View\Element\AbstractBlock->Magento\Framework\View\Element\{closure}()
+#10 /var/www/html/vendor/magento/framework/View/Element/AbstractBlock.php(676): Magento\Framework\View\Element\AbstractBlock->_loadCache()
+#11 /var/www/html/vendor/magento/framework/View/Layout.php(591): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#12 /var/www/html/vendor/magento/framework/View/Layout.php(553): Magento\Framework\View\Layout->_renderUiComponent('news_news_listi...')
+#13 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('news_news_listi...')
+#14 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('news_news_listi...')
+#15 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('news_news_listi...', false)
+#16 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('news_news_listi...', false)
+#17 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('content', false)
+#18 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('content')
+#19 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('content')
+#20 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('content', false)
+#21 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('content', false)
+#22 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('main.col', false)
+#23 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('main.col')
+#24 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('main.col')
+#25 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('main.col', false)
+#26 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('main.col', false)
+#27 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('admin.scope.col...', false)
+#28 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('admin.scope.col...')
+#29 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('admin.scope.col...')
+#30 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('admin.scope.col...', false)
+#31 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('admin.scope.col...', false)
+#32 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('page.main.conta...', false)
+#33 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('page.main.conta...')
+#34 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('page.main.conta...')
+#35 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('page.main.conta...', false)
+#36 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('page.main.conta...', false)
+#37 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('page.content', false)
+#38 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('page.content')
+#39 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('page.content')
+#40 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('page.content', false)
+#41 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('page.content', false)
+#42 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('page.wrapper', false)
+#43 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('page.wrapper')
+#44 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('page.wrapper')
+#45 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('page.wrapper', false)
+#46 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('page.wrapper', false)
+#47 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('backend.page', false)
+#48 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('backend.page')
+#49 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('backend.page')
+#50 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('backend.page', false)
+#51 /var/www/html/vendor/magento/framework/View/Layout.php(606): Magento\Framework\View\Layout\Interceptor->renderElement('backend.page', false)
+#52 /var/www/html/vendor/magento/framework/View/Layout.php(557): Magento\Framework\View\Layout->_renderContainer('root', false)
+#53 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(149): Magento\Framework\View\Layout->renderNonCachedElement('root')
+#54 /var/www/html/vendor/magento/framework/View/Layout.php(510): Magento\Framework\View\Layout\Interceptor->renderNonCachedElement('root')
+#55 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(140): Magento\Framework\View\Layout->renderElement('root', true)
+#56 /var/www/html/vendor/magento/framework/View/Layout.php(975): Magento\Framework\View\Layout\Interceptor->renderElement('root')
+#57 /var/www/html/generated/code/Magento/Framework/View/Layout/Interceptor.php(347): Magento\Framework\View\Layout->getOutput()
+#58 /var/www/html/vendor/magento/framework/View/Result/Page.php(260): Magento\Framework\View\Layout\Interceptor->getOutput()
+#59 /var/www/html/vendor/magento/framework/View/Result/Layout.php(171): Magento\Framework\View\Result\Page->render(Object(Magento\Framework\App\Response\Http\Interceptor))
+#60 /var/www/html/generated/code/Magento/Backend/Model/View/Result/Page/Interceptor.php(140): Magento\Framework\View\Result\Layout->renderResult(Object(Magento\Framework\App\Response\Http\Interceptor))
+#61 /var/www/html/vendor/magento/framework/App/Http.php(120): Magento\Backend\Model\View\Result\Page\Interceptor->renderResult(Object(Magento\Framework\App\Response\Http\Interceptor))
+#62 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#63 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#64 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#65 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#66 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#67 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#68 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#69 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#70 {main} {"exception":"[object] (Exception(code: 0): Deprecated Functionality: Creation of dynamic property News\\Manger\\Ui\\DataProvider\\News\\NewsGridDataProvider::$loadedData is deprecated in /var/www/html/app/code/News/Manger/Ui/DataProvider/News/NewsGridDataProvider.php on line 35 at /var/www/html/vendor/magento/framework/App/ErrorHandler.php:62)"} []
+[2025-07-15T07:52:33.506825+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T07:52:33.655392+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T07:52:33.655669+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T07:52:33.656793+00:00] main.DEBUG: Collection Size: 0 [] []
+[2025-07-15T07:52:33.656969+00:00] main.DEBUG: Final LoadedData: {"totalRecords":0,"items":[]} [] []
+[2025-07-15T07:52:35.177947+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T07:52:35.178424+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T07:52:35.180192+00:00] main.DEBUG: Collection Size: 0 [] []
+[2025-07-15T07:52:35.180507+00:00] main.DEBUG: Final LoadedData: {"totalRecords":0,"items":[]} [] []
+[2025-07-15T07:56:31.868516+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T07:56:38.720278+00:00] main.CRITICAL: Exception message: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`magento`.`news_category`, CONSTRAINT `NEWS_CATEGORY_PARENT_ID_NEWS_CATEGORY_CATEGORY_ID` FOREIGN KEY (`parent_id`) REFERENCES `news_category` (`category_id`) ON DELETE SET NULL), query was: INSERT INTO `news_category` (`category_name`, `category_description`, `parent_id`, `category_status`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?, '2025-07-15 07:56:38', '2025-07-15 07:56:38')
+Trace: <pre>#1 Magento\Framework\DB\Statement\Pdo\Mysql->_execute() called at [vendor/magento/zend-db/library/Zend/Db/Statement.php:313]
+#2 Zend_Db_Statement->execute() called at [vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php:480]
+#3 Zend_Db_Adapter_Abstract->query() called at [vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php:242]
+#4 Zend_Db_Adapter_Pdo_Abstract->query() called at [vendor/magento/framework/DB/Adapter/Pdo/Mysql.php:614]
+#5 Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}() called at [vendor/magento/framework/DB/Adapter/Pdo/Mysql.php:639]
+#6 Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery() called at [vendor/magento/framework/DB/Adapter/Pdo/Mysql.php:614]
+#7 Magento\Framework\DB\Adapter\Pdo\Mysql->_query() called at [vendor/magento/framework/DB/Adapter/Pdo/Mysql.php:703]
+#8 Magento\Framework\DB\Adapter\Pdo\Mysql->query() called at [generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php:95]
+#9 Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->query() called at [vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php:576]
+#10 Zend_Db_Adapter_Abstract->insert() called at [generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php:1058]
+#11 Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->insert() called at [vendor/magento/framework/Model/ResourceModel/Db/AbstractDb.php:759]
+#12 Magento\Framework\Model\ResourceModel\Db\AbstractDb->saveNewObject() called at [vendor/magento/framework/Model/ResourceModel/Db/AbstractDb.php:399]
+#13 Magento\Framework\Model\ResourceModel\Db\AbstractDb->save() called at [vendor/magento/framework/Model/AbstractModel.php:663]
+#14 Magento\Framework\Model\AbstractModel->save() called at [app/code/News/Manger/Controller/Adminhtml/Category/Save.php:116]
+#15 News\Manger\Controller\Adminhtml\Category\Save->execute() called at [vendor/magento/framework/Interception/Interceptor.php:58]
+#16 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->___callParent() called at [vendor/magento/framework/Interception/Interceptor.php:138]
+#17 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/framework/Interception/Interceptor.php:153]
+#18 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->___callPlugins() called at [generated/code/News/Manger/Controller/Adminhtml/Category/Save/Interceptor.php:23]
+#19 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->execute() called at [vendor/magento/framework/App/Action/Action.php:111]
+#20 Magento\Framework\App\Action\Action->dispatch() called at [vendor/magento/module-backend/App/AbstractAction.php:151]
+#21 Magento\Backend\App\AbstractAction->dispatch() called at [vendor/magento/framework/Interception/Interceptor.php:58]
+#22 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->___callParent() called at [vendor/magento/framework/Interception/Interceptor.php:138]
+#23 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/module-backend/App/Action/Plugin/Authentication.php:145]
+#24 Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch() called at [vendor/magento/framework/Interception/Interceptor.php:135]
+#25 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/framework/Interception/Interceptor.php:153]
+#26 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->___callPlugins() called at [generated/code/News/Manger/Controller/Adminhtml/Category/Save/Interceptor.php:32]
+#27 News\Manger\Controller\Adminhtml\Category\Save\Interceptor->dispatch() called at [vendor/magento/framework/App/FrontController.php:245]
+#28 Magento\Framework\App\FrontController->getActionResponse() called at [vendor/magento/framework/App/FrontController.php:212]
+#29 Magento\Framework\App\FrontController->processRequest() called at [vendor/magento/framework/App/FrontController.php:146]
+#30 Magento\Framework\App\FrontController->dispatch() called at [vendor/magento/framework/Interception/Interceptor.php:58]
+#31 Magento\Framework\App\FrontController\Interceptor->___callParent() called at [vendor/magento/framework/Interception/Interceptor.php:138]
+#32 Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/framework/Interception/Interceptor.php:153]
+#33 Magento\Framework\App\FrontController\Interceptor->___callPlugins() called at [generated/code/Magento/Framework/App/FrontController/Interceptor.php:23]
+#34 Magento\Framework\App\FrontController\Interceptor->dispatch() called at [vendor/magento/framework/App/Http.php:116]
+#35 Magento\Framework\App\Http->launch() called at [vendor/magento/framework/Interception/Interceptor.php:58]
+#36 Magento\Framework\App\Http\Interceptor->___callParent() called at [vendor/magento/framework/Interception/Interceptor.php:138]
+#37 Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php:38]
+#38 Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch() called at [vendor/magento/framework/Interception/Interceptor.php:135]
+#39 Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}() called at [vendor/magento/framework/Interception/Interceptor.php:153]
+#40 Magento\Framework\App\Http\Interceptor->___callPlugins() called at [generated/code/Magento/Framework/App/Http/Interceptor.php:23]
+#41 Magento\Framework\App\Http\Interceptor->launch() called at [vendor/magento/framework/App/Bootstrap.php:264]
+#42 Magento\Framework\App\Bootstrap->run() called at [pub/index.php:30]
+</pre> [] []
+[2025-07-15T07:56:38.892353+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T07:58:46.508563+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.586585+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.600774+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.601616+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.602351+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.602944+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.603455+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.604047+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.604570+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.605173+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.605744+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.606260+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.606919+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.609782+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.610681+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:27.611515+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:39.208197+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:49.847689+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-07-15T07:59:49.848279+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-07-15T07:59:49.848766+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-07-15T07:59:49.849197+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-07-15T07:59:49.849651+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-07-15T07:59:50.904428+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.920659+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.921330+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.921981+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.923392+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.924772+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.925461+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.926010+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.926510+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.926999+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.927745+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.928622+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.929663+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.930467+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-07-15T07:59:50.931239+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-07-15T08:00:40.608548+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-07-15T08:00:40.611246+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-07-15T08:00:52.059160+00:00] main.DEBUG: Source class "\News\Manger\Model\NewsInterface" for "News\Manger\Model\NewsRepository" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\News\\Manger\\Model\\NewsInterface\" for \"News\\Manger\\Model\\NewsRepository\" generation does not exist. at /var/www/html/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-07-15T08:00:52.059691+00:00] main.DEBUG: Source class "\News\Manger\Model\CategoryInterface" for "News\Manger\Model\CategoryRepository" generation does not exist. {"exception":"[object] (RuntimeException(code: 0): Source class \"\\News\\Manger\\Model\\CategoryInterface\" for \"News\\Manger\\Model\\CategoryRepository\" generation does not exist. at /var/www/html/vendor/magento/framework/Code/Generator.php:223)"} []
+[2025-07-15T08:02:11.628223+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T08:02:11.629117+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category_3","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T08:02:11.630682+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category_3","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T08:02:13.659829+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:02:13.800264+00:00] main.DEBUG: Item Magento_Backend::system_currency was removed [] []
+[2025-07-15T08:02:13.811856+00:00] main.DEBUG: Add of item with id Magento_Config::system_config was processed [] []
+[2025-07-15T08:02:13.812166+00:00] main.DEBUG: Add of item with id Magento_AdminNotification::system_adminnotification was processed [] []
+[2025-07-15T08:02:13.812405+00:00] main.DEBUG: Add of item with id Magento_Theme::design_config was processed [] []
+[2025-07-15T08:02:13.812609+00:00] main.DEBUG: Add of item with id Magento_Theme::system_design_theme was processed [] []
+[2025-07-15T08:02:13.812809+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design_schedule was processed [] []
+[2025-07-15T08:02:13.813003+00:00] main.DEBUG: Add of item with id Magento_Backend::system_store was processed [] []
+[2025-07-15T08:02:13.813191+00:00] main.DEBUG: Add of item with id Magento_Backend::dashboard was processed [] []
+[2025-07-15T08:02:13.813381+00:00] main.DEBUG: Add of item with id Magento_Backend::system was processed [] []
+[2025-07-15T08:02:13.813613+00:00] main.DEBUG: Add of item with id Magento_Backend::system_tools was processed [] []
+[2025-07-15T08:02:13.813820+00:00] main.DEBUG: Add of item with id Magento_Backend::system_design was processed [] []
+[2025-07-15T08:02:13.813999+00:00] main.DEBUG: Add of item with id Magento_Backend::system_convert was processed [] []
+[2025-07-15T08:02:13.814217+00:00] main.DEBUG: Add of item with id Magento_Backend::system_cache was processed [] []
+[2025-07-15T08:02:13.814395+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing was processed [] []
+[2025-07-15T08:02:13.814621+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_communications was processed [] []
+[2025-07-15T08:02:13.814800+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_seo was processed [] []
+[2025-07-15T08:02:13.814989+00:00] main.DEBUG: Add of item with id Magento_Backend::marketing_user_content was processed [] []
+[2025-07-15T08:02:13.815173+00:00] main.DEBUG: Add of item with id Magento_Backend::content was processed [] []
+[2025-07-15T08:02:13.815374+00:00] main.DEBUG: Add of item with id Magento_Backend::content_elements was processed [] []
+[2025-07-15T08:02:13.815568+00:00] main.DEBUG: Add of item with id Magento_Backend::stores was processed [] []
+[2025-07-15T08:02:13.815790+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_settings was processed [] []
+[2025-07-15T08:02:13.815966+00:00] main.DEBUG: Add of item with id Magento_Backend::stores_attributes was processed [] []
+[2025-07-15T08:02:13.816177+00:00] main.DEBUG: Add of item with id Magento_Backend::other_settings was processed [] []
+[2025-07-15T08:02:13.816361+00:00] main.DEBUG: Add of item with id Magento_Backend::system_other_settings was processed [] []
+[2025-07-15T08:02:13.816554+00:00] main.DEBUG: Add of item with id Magento_User::system_acl was processed [] []
+[2025-07-15T08:02:13.816774+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_users was processed [] []
+[2025-07-15T08:02:13.816949+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_roles was processed [] []
+[2025-07-15T08:02:13.817133+00:00] main.DEBUG: Add of item with id Magento_User::system_acl_locks was processed [] []
+[2025-07-15T08:02:13.817316+00:00] main.DEBUG: Add of item with id Magento_Customer::customer was processed [] []
+[2025-07-15T08:02:13.817539+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_manage was processed [] []
+[2025-07-15T08:02:13.817717+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_online was processed [] []
+[2025-07-15T08:02:13.817901+00:00] main.DEBUG: Add of item with id Magento_Customer::customer_group was processed [] []
+[2025-07-15T08:02:13.818084+00:00] main.DEBUG: Add of item with id Magento_Backup::system_tools_backup was processed [] []
+[2025-07-15T08:02:13.818268+00:00] main.DEBUG: Add of item with id Magento_Indexer::system_index was processed [] []
+[2025-07-15T08:02:13.818452+00:00] main.DEBUG: Add of item with id Magento_Variable::system_variable was processed [] []
+[2025-07-15T08:02:13.818681+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_page was processed [] []
+[2025-07-15T08:02:13.818855+00:00] main.DEBUG: Add of item with id Magento_Cms::cms_block was processed [] []
+[2025-07-15T08:02:13.819038+00:00] main.DEBUG: Add of item with id Magento_Integration::system_extensions was processed [] []
+[2025-07-15T08:02:13.819252+00:00] main.DEBUG: Add of item with id Magento_Integration::system_integrations was processed [] []
+[2025-07-15T08:02:13.819451+00:00] main.DEBUG: Add of item with id Magento_Search::search_terms was processed [] []
+[2025-07-15T08:02:13.819642+00:00] main.DEBUG: Add of item with id Magento_Search::search_synonyms was processed [] []
+[2025-07-15T08:02:13.819826+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog was processed [] []
+[2025-07-15T08:02:13.820037+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_products was processed [] []
+[2025-07-15T08:02:13.820211+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_categories was processed [] []
+[2025-07-15T08:02:13.820421+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_attributes was processed [] []
+[2025-07-15T08:02:13.820610+00:00] main.DEBUG: Add of item with id Magento_Catalog::catalog_attributes_sets was processed [] []
+[2025-07-15T08:02:13.820820+00:00] main.DEBUG: Add of item with id Magento_Catalog::inventory was processed [] []
+[2025-07-15T08:02:13.820993+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo was processed [] []
+[2025-07-15T08:02:13.821203+00:00] main.DEBUG: Add of item with id Magento_CatalogRule::promo_catalog was processed [] []
+[2025-07-15T08:02:13.821376+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media was processed [] []
+[2025-07-15T08:02:13.821594+00:00] main.DEBUG: Add of item with id Magento_MediaGalleryUi::media_gallery was processed [] []
+[2025-07-15T08:02:13.821770+00:00] main.DEBUG: Add of item with id Magento_Sales::sales was processed [] []
+[2025-07-15T08:02:13.821982+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_operation was processed [] []
+[2025-07-15T08:02:13.822180+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_order was processed [] []
+[2025-07-15T08:02:13.822355+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_invoice was processed [] []
+[2025-07-15T08:02:13.822546+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_shipment was processed [] []
+[2025-07-15T08:02:13.822747+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_creditmemo was processed [] []
+[2025-07-15T08:02:13.822930+00:00] main.DEBUG: Add of item with id Magento_Sales::sales_transactions was processed [] []
+[2025-07-15T08:02:13.823113+00:00] main.DEBUG: Add of item with id Magento_Sales::system_order_statuses was processed [] []
+[2025-07-15T08:02:13.823296+00:00] main.DEBUG: Add of item with id Magento_Widget::cms_widget_instance was processed [] []
+[2025-07-15T08:02:13.823516+00:00] main.DEBUG: Add of item with id Magento_Analytics::business_intelligence was processed [] []
+[2025-07-15T08:02:13.823724+00:00] main.DEBUG: Add of item with id Magento_Analytics::advanced_reporting was processed [] []
+[2025-07-15T08:02:13.823897+00:00] main.DEBUG: Add of item with id Magento_Analytics::bi_essentials was processed [] []
+[2025-07-15T08:02:13.824106+00:00] main.DEBUG: Add of item with id Magento_Downloadable::report_products_downloads was processed [] []
+[2025-07-15T08:02:13.824305+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_template was processed [] []
+[2025-07-15T08:02:13.824477+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_queue was processed [] []
+[2025-07-15T08:02:13.824678+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_subscriber was processed [] []
+[2025-07-15T08:02:13.824890+00:00] main.DEBUG: Add of item with id Magento_Newsletter::newsletter_problem was processed [] []
+[2025-07-15T08:02:13.825090+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_import was processed [] []
+[2025-07-15T08:02:13.825264+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_export was processed [] []
+[2025-07-15T08:02:13.825445+00:00] main.DEBUG: Add of item with id Magento_ImportExport::system_convert_history was processed [] []
+[2025-07-15T08:02:13.825645+00:00] main.DEBUG: Add of item with id Magento_Email::template was processed [] []
+[2025-07-15T08:02:13.825829+00:00] main.DEBUG: Add of item with id Magento_EncryptionKey::system_crypt_key was processed [] []
+[2025-07-15T08:02:13.826011+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::inventory was processed [] []
+[2025-07-15T08:02:13.826222+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::source was processed [] []
+[2025-07-15T08:02:13.826394+00:00] main.DEBUG: Add of item with id Magento_InventoryAdminUi::stock was processed [] []
+[2025-07-15T08:02:13.826583+00:00] main.DEBUG: Add of item with id Magento_Reports::report was processed [] []
+[2025-07-15T08:02:13.826771+00:00] main.DEBUG: Add of item with id Magento_Reports::report_marketing was processed [] []
+[2025-07-15T08:02:13.826954+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot was processed [] []
+[2025-07-15T08:02:13.827166+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_sales was processed [] []
+[2025-07-15T08:02:13.827339+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_tax was processed [] []
+[2025-07-15T08:02:13.827531+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_invoiced was processed [] []
+[2025-07-15T08:02:13.827720+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_shipping was processed [] []
+[2025-07-15T08:02:13.827902+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_refunded was processed [] []
+[2025-07-15T08:02:13.828084+00:00] main.DEBUG: Add of item with id Magento_Reports::report_salesroot_coupons was processed [] []
+[2025-07-15T08:02:13.828267+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_product was processed [] []
+[2025-07-15T08:02:13.828451+00:00] main.DEBUG: Add of item with id Magento_Reports::report_shopcart_abandoned was processed [] []
+[2025-07-15T08:02:13.828646+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products was processed [] []
+[2025-07-15T08:02:13.828830+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_bestsellers was processed [] []
+[2025-07-15T08:02:13.829032+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_sold was processed [] []
+[2025-07-15T08:02:13.829216+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_viewed was processed [] []
+[2025-07-15T08:02:13.829399+00:00] main.DEBUG: Add of item with id Magento_Reports::report_products_lowstock was processed [] []
+[2025-07-15T08:02:13.829589+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers was processed [] []
+[2025-07-15T08:02:13.829807+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_accounts was processed [] []
+[2025-07-15T08:02:13.829980+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_totals was processed [] []
+[2025-07-15T08:02:13.830163+00:00] main.DEBUG: Add of item with id Magento_Reports::report_customers_orders was processed [] []
+[2025-07-15T08:02:13.830345+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics was processed [] []
+[2025-07-15T08:02:13.830563+00:00] main.DEBUG: Add of item with id Magento_Reports::report_statistics_refresh was processed [] []
+[2025-07-15T08:02:13.830743+00:00] main.DEBUG: Add of item with id Magento_Search::report_search_term was processed [] []
+[2025-07-15T08:02:13.830927+00:00] main.DEBUG: Add of item with id Magento_LoginAsCustomerLog::login_log was processed [] []
+[2025-07-15T08:02:13.831111+00:00] main.DEBUG: Add of item with id Magento_Marketplace::partners was processed [] []
+[2025-07-15T08:02:13.831298+00:00] main.DEBUG: Add of item with id Magento_SalesRule::promo_quote was processed [] []
+[2025-07-15T08:02:13.831482+00:00] main.DEBUG: Add of item with id Magento_Sitemap::catalog_sitemap was processed [] []
+[2025-07-15T08:02:13.831678+00:00] main.DEBUG: Add of item with id Magento_PageBuilder::templates was processed [] []
+[2025-07-15T08:02:13.831862+00:00] main.DEBUG: Add of item with id Magento_PaymentServicesDashboard::paymentservicesdashboard was processed [] []
+[2025-07-15T08:02:13.832045+00:00] main.DEBUG: Add of item with id Magento_Paypal::report_salesroot_paypal_settlement_reports was processed [] []
+[2025-07-15T08:02:13.832228+00:00] main.DEBUG: Add of item with id Magento_Paypal::paypal_billing_agreement was processed [] []
+[2025-07-15T08:02:13.832411+00:00] main.DEBUG: Add of item with id Magento_CheckoutAgreements::sales_checkoutagreement was processed [] []
+[2025-07-15T08:02:13.832610+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_ratings was processed [] []
+[2025-07-15T08:02:13.832825+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_pending was processed [] []
+[2025-07-15T08:02:13.832997+00:00] main.DEBUG: Add of item with id Magento_Review::catalog_reviews_ratings_reviews_all was processed [] []
+[2025-07-15T08:02:13.833180+00:00] main.DEBUG: Add of item with id Magento_Review::report_review was processed [] []
+[2025-07-15T08:02:13.833392+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_customer was processed [] []
+[2025-07-15T08:02:13.833574+00:00] main.DEBUG: Add of item with id Magento_Review::report_review_product was processed [] []
+[2025-07-15T08:02:13.833760+00:00] main.DEBUG: Add of item with id Magento_ServicesId::configuration was processed [] []
+[2025-07-15T08:02:13.833971+00:00] main.DEBUG: Add of item with id Magento_ServicesId::services_id was processed [] []
+[2025-07-15T08:02:13.834146+00:00] main.DEBUG: Add of item with id Magento_UrlRewrite::urlrewrite was processed [] []
+[2025-07-15T08:02:13.834330+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax was processed [] []
+[2025-07-15T08:02:13.834550+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rules was processed [] []
+[2025-07-15T08:02:13.834729+00:00] main.DEBUG: Add of item with id Magento_Tax::sales_tax_rates was processed [] []
+[2025-07-15T08:02:13.834912+00:00] main.DEBUG: Add of item with id Magento_TaxImportExport::system_convert_tax was processed [] []
+[2025-07-15T08:02:13.835105+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging was processed [] []
+[2025-07-15T08:02:13.835319+00:00] main.DEBUG: Add of item with id Magento_AsynchronousOperations::system_magento_logging_bulk_operations was processed [] []
+[2025-07-15T08:02:13.835501+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency was processed [] []
+[2025-07-15T08:02:13.835716+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_rates was processed [] []
+[2025-07-15T08:02:13.835889+00:00] main.DEBUG: Add of item with id Magento_CurrencySymbol::system_currency_symbols was processed [] []
+[2025-07-15T08:02:13.836072+00:00] main.DEBUG: Add of item with id News_Manger::news_head was processed [] []
+[2025-07-15T08:02:13.836284+00:00] main.DEBUG: Add of item with id News_Manger::category was processed [] []
+[2025-07-15T08:02:13.836457+00:00] main.DEBUG: Add of item with id News_Manger::News was processed [] []
+[2025-07-15T08:02:13.836656+00:00] main.DEBUG: Add of item with id PayPal_Braintree::settlement_report was processed [] []
+[2025-07-15T08:02:13.836839+00:00] main.DEBUG: Add of item with id PayPal_Braintree::virtual_terminal was processed [] []
+[2025-07-15T08:02:14.028579+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:14.028822+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:14.030021+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:14.030198+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:14.030335+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:19.363980+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-15T08:02:19.364396+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-15T08:02:22.402660+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:22.402920+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:22.404026+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:22.404180+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:22.404345+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:22.505885+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:22.506135+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:22.507148+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:22.507288+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:22.507408+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:25.380753+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:02:25.456613+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:25.456859+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:25.457924+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:25.458136+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:25.458315+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:31.670634+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:31.670998+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:31.672236+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:31.672386+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:31.672515+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:31.769020+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:31.769280+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:31.770430+00:00] main.DEBUG: Collection Size: 1 [] []
+[2025-07-15T08:02:31.770595+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:31.770704+00:00] main.DEBUG: Final LoadedData: {"totalRecords":1,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:37.969079+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:02:49.080187+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-07-15T08:02:49.081246+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T08:02:49.085635+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/admin/news/category/save/key/6ce876cc3b43e5be927f2ec450c93726304fe2dd6c09807554058618278946d8/","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-07-15T08:02:49.188924+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T08:02:49.267473+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:49.267710+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:49.268841+00:00] main.DEBUG: Collection Size: 2 [] []
+[2025-07-15T08:02:49.269037+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:49.269146+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"4","category_name":"dfd","category_description":"sdf","parent_id":"3","category_status":"0","created_at":"2025-07-15 08:02:49","updated_at":"2025-07-15 08:02:49","orig_data":null} [] []
+[2025-07-15T08:02:49.269245+00:00] main.DEBUG: Final LoadedData: {"totalRecords":2,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"4","category_name":"dfd","category_description":"sdf","parent_id":"3","category_status":"0","created_at":"2025-07-15 08:02:49","updated_at":"2025-07-15 08:02:49","orig_data":null,"parent_name":"No Parent"}]} [] []
+[2025-07-15T08:02:49.936881+00:00] main.DEBUG: Collection Class: Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor [] []
+[2025-07-15T08:02:49.937186+00:00] main.DEBUG: Collection SQL: SELECT `main_table`.* FROM `news_category` AS `main_table` [] []
+[2025-07-15T08:02:49.938729+00:00] main.DEBUG: Collection Size: 2 [] []
+[2025-07-15T08:02:49.938942+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null} [] []
+[2025-07-15T08:02:49.939113+00:00] main.DEBUG: Item Data: {"id_field_name":"category_id","category_id":"4","category_name":"dfd","category_description":"sdf","parent_id":"3","category_status":"0","created_at":"2025-07-15 08:02:49","updated_at":"2025-07-15 08:02:49","orig_data":null} [] []
+[2025-07-15T08:02:49.939275+00:00] main.DEBUG: Final LoadedData: {"totalRecords":2,"items":[{"id_field_name":"category_id","category_id":"3","category_name":"cate 2","category_description":"sgfgd","parent_id":null,"category_status":"1","created_at":"2025-07-15 08:02:11","updated_at":"2025-07-15 08:02:11","orig_data":null,"parent_name":"No Parent"},{"id_field_name":"category_id","category_id":"4","category_name":"dfd","category_description":"sdf","parent_id":"3","category_status":"0","created_at":"2025-07-15 08:02:49","updated_at":"2025-07-15 08:02:49","orig_data":null,"parent_name":"No Parent"}]} [] []
