@@ -29,7 +29,7 @@ class Edit extends Action
 
   public function execute()
   {
-    $id = $this->getRequest()->getParam('id');
+    $id = $this->getRequest()->getParam('news_id');
     $model = $this->newsFactory->create();
 
     if ($id) {

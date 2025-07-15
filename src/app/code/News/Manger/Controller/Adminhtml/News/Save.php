@@ -71,7 +71,7 @@ class Save extends \Magento\Backend\App\Action
             }
 
             // Validate required fields
-            if (empty($data['title'])) {
+            if (empty($data['news_title'])) {
                 $this->messageManager->addErrorMessage(__('Please provide the news title.'));
                 return $this->redirectWithData($resultRedirect, $data, $id);
             }

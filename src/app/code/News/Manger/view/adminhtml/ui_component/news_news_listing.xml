@@ -18,7 +18,7 @@
         </item>
     </argument>
 
-    <!-- Data Source -->
+    <!-- ✅ Data Source -->
     <dataSource name="news_news_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <updateUrl path="mui/index/render"/>
@@ -34,7 +34,7 @@
         </dataProvider>
     </dataSource>
 
-    <!-- Toolbar -->
+    <!-- ✅ Toolbar -->
     <listingToolbar name="listing_top">
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
@@ -49,7 +49,7 @@
         <paging name="listing_paging"/>
     </listingToolbar>
 
-    <!-- Grid Columns -->
+    <!-- ✅ Columns -->
     <columns name="news_news_columns">
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
@@ -77,6 +77,18 @@
                 </item>
             </argument>
         </column>
+
+        <!-- ✅ Parent News Column -->
+ <column name="parent_name">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Parent Category</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="filter" xsi:type="string">text</item>
+            <item name="sortable" xsi:type="boolean">true</item>
+        </item>
+    </argument>
+</column>
 
         <column name="news_content">
             <argument name="data" xsi:type="array">

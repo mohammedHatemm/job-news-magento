@@ -663,3 +663,348 @@ Verify the XML and try again. [] []
 #47 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
 #48 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
 #49 {main} [] []
+[2025-07-15T09:52:40.940386+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.940386+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.942904+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.942961+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.943273+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.943347+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.943644+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.943665+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.943964+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944050+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944261+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944358+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944499+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944598+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944735+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944881+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.944994+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945139+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945263+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945390+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945612+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945591+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945832+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.945850+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946048+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946079+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946302+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946326+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946522+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946545+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946740+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.946771+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.947196+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.947221+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.947449+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.947467+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T09:52:40.947802+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.947820+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948043+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948093+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948299+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948351+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948521+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948638+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.948768+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T09:52:40.948898+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T09:52:40.949037+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.949282+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.949308+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.949596+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T09:52:40.949629+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T09:52:40.949974+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T09:53:06.842859+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:53:13.317714+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T09:53:13.409557+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider, News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider::__construct(): Argument #5 ($filterPool) must be of type Magento\Ui\Model\Filter\FilterPool, Magento\Framework\Logger\LoggerProxy given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-15T09:53:13.411976+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider, News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider::__construct(): Argument #5 ($filterPool) must be of type Magento\Ui\Model\Filter\FilterPool, Magento\Framework\Logger\LoggerProxy given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-15T09:53:15.418707+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-15T09:54:48.311248+00:00] main.ERROR: Impossible to process constructor argument Parameter #4 [ <required> Magento\Ui\Model\Filter\FilterPool $filterPool ] of News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider class [] []
+[2025-07-15T09:58:26.932504+00:00] main.ERROR: Impossible to process constructor argument Parameter #4 [ <required> Magento\Ui\Model\Filter\FilterPool $filterPool ] of News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider class [] []
+[2025-07-15T10:00:47.241285+00:00] main.ERROR: Impossible to process constructor argument Parameter #4 [ <required> Magento\Ui\Model\Filter\FilterPool $filterPool ] of News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider class
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/ClassReaderDecorator.php(35): Magento\Framework\Code\Reader\ClassReader->getConstructor('News\\Manger\\Ui\\...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/Decorator/Area.php(53): Magento\Setup\Module\Di\Code\Reader\ClassReaderDecorator->getConstructor('News\\Manger\\Ui\\...')
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Area.php(116): Magento\Setup\Module\Di\Code\Reader\Decorator\Area->getList('/var/www/html/a...')
+#3 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Area.php(87): Magento\Setup\Module\Di\App\Task\Operation\Area->getDefinitionsCollection('/var/www/html/a...')
+#4 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Area->doOperation()
+#5 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#6 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#12 {main} [] []
+[2025-07-15T10:06:50.532249+00:00] main.ERROR: Class "Magento\Ui\DataProvider\AddFilterToCollection" does not exist [] []
+[2025-07-15T10:48:19.187602+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.188339+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.188676+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.188974+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.189331+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.189670+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.190019+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.190401+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.190872+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.191410+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.191912+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.192340+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.192631+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.192910+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.193213+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.193525+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.194056+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.194388+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T10:48:19.194819+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.195133+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.195434+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.195707+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.195980+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T10:48:19.196364+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.196650+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T10:48:19.196984+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T10:48:45.036411+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:48:55.207787+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:48:59.954763+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'category_name' in WHERE is ambiguous, query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_name` LIKE '%cat%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T10:48:59.955614+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(95): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->query(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1094): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array, 2)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#14 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(419): Magento\Framework\Data\Collection\AbstractDb->getData()
+#15 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->getData()
+#16 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(401): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#17 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->loadWithFilter(false, false)
+#18 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(392): Magento\Framework\Data\Collection\AbstractDb->load(false, false)
+#19 /var/www/html/vendor/magento/framework/Data/Collection.php(340): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->load()
+#20 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(554): Magento\Framework\Data\Collection->getItems()
+#21 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->getItems()
+#22 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#23 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#24 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#25 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#26 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#29 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#30 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#31 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#32 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#33 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#35 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#38 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(41): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#39 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#40 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#43 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#45 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#46 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#47 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#48 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#49 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#50 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#51 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#52 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#53 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#54 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#55 {main} [] []
+[2025-07-15T10:49:03.705766+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:49:13.728420+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:49:16.056739+00:00] main.ERROR: CategoryGridDataProvider Error: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'category_name' in WHERE is ambiguous, query was: SELECT `main_table`.*, IFNULL(parent.category_name, "No Parent") AS `parent_name` FROM `news_category` AS `main_table`
+ LEFT JOIN `news_category` AS `parent` ON main_table.parent_id = parent.category_id WHERE (`category_name` LIKE '%cat%') ORDER BY category_id ASC
+ LIMIT 20 [] []
+[2025-07-15T10:49:16.057281+00:00] main.ERROR: Stack Trace: #0 /var/www/html/vendor/magento/framework/DB/Statement/Pdo/Mysql.php(89): Magento\Framework\DB\Statement\Pdo\Mysql->tryExecute(Object(Closure))
+#1 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Statement.php(313): Magento\Framework\DB\Statement\Pdo\Mysql->_execute(Array)
+#2 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(480): Zend_Db_Statement->execute(Array)
+#3 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Pdo/Abstract.php(242): Zend_Db_Adapter_Abstract->query('SELECT `main_ta...', Array)
+#4 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Zend_Db_Adapter_Pdo_Abstract->query('SELECT `main_ta...', Array)
+#5 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(639): Magento\Framework\DB\Adapter\Pdo\Mysql->Magento\Framework\DB\Adapter\Pdo\{closure}()
+#6 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(614): Magento\Framework\DB\Adapter\Pdo\Mysql->performQuery(Object(Closure))
+#7 /var/www/html/vendor/magento/framework/DB/Adapter/Pdo/Mysql.php(703): Magento\Framework\DB\Adapter\Pdo\Mysql->_query('SELECT `main_ta...', Array)
+#8 /var/www/html/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(95): Magento\Framework\DB\Adapter\Pdo\Mysql->query(Object(Magento\Framework\DB\Select), Array)
+#9 /var/www/html/vendor/magento/zend-db/library/Zend/Db/Adapter/Abstract.php(737): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->query(Object(Magento\Framework\DB\Select), Array)
+#10 /var/www/html/generated/code/Magento/Framework/DB/Adapter/Pdo/Mysql/Interceptor.php(1094): Zend_Db_Adapter_Abstract->fetchAll(Object(Magento\Framework\DB\Select), Array, 2)
+#11 /var/www/html/vendor/magento/framework/Data/Collection/Db/FetchStrategy/Query.php(21): Magento\Framework\DB\Adapter\Pdo\Mysql\Interceptor->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#12 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(1011): Magento\Framework\Data\Collection\Db\FetchStrategy\Query->fetchAll(Object(Magento\Framework\DB\Select), Array)
+#13 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(900): Magento\Framework\Data\Collection\AbstractDb->_fetchAll(Object(Magento\Framework\DB\Select))
+#14 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(419): Magento\Framework\Data\Collection\AbstractDb->getData()
+#15 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(793): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->getData()
+#16 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(401): Magento\Framework\Data\Collection\AbstractDb->loadWithFilter(false, false)
+#17 /var/www/html/vendor/magento/framework/Data/Collection/AbstractDb.php(777): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->loadWithFilter(false, false)
+#18 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(392): Magento\Framework\Data\Collection\AbstractDb->load(false, false)
+#19 /var/www/html/vendor/magento/framework/Data/Collection.php(340): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->load()
+#20 /var/www/html/generated/code/News/Manger/Model/ResourceModel/Category/Grid/Collection/Interceptor.php(554): Magento\Framework\Data\Collection->getItems()
+#21 /var/www/html/app/code/News/Manger/Ui/DataProvider/Category/CategoryGridDataProvider.php(50): News\Manger\Model\ResourceModel\Category\Grid\Collection\Interceptor->getItems()
+#22 /var/www/html/vendor/magento/module-ui/Component/Listing.php(38): News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider->getData()
+#23 /var/www/html/vendor/magento/framework/View/Element/UiComponent/Context.php(250): Magento\Ui\Component\Listing->getDataSourceData()
+#24 /var/www/html/vendor/magento/framework/View/Element/UiComponent/ContentType/Json.php(69): Magento\Framework\View\Element\UiComponent\Context->getDataSourceData(Object(Magento\Ui\Component\Listing))
+#25 /var/www/html/vendor/magento/module-ui/Component/AbstractComponent.php(158): Magento\Framework\View\Element\UiComponent\ContentType\Json->render(Object(Magento\Ui\Component\Listing), 'templates/listi...')
+#26 /var/www/html/vendor/magento/module-ui/Controller/Adminhtml/Index/Render.php(91): Magento\Ui\Component\AbstractComponent->render()
+#27 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Ui\Controller\Adminhtml\Index\Render->execute()
+#28 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('execute', Array)
+#29 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}()
+#30 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(23): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('execute', Array, Array)
+#31 /var/www/html/vendor/magento/framework/App/Action/Action.php(111): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->execute()
+#32 /var/www/html/vendor/magento/module-backend/App/AbstractAction.php(151): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#33 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#34 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callParent('dispatch', Array)
+#35 /var/www/html/vendor/magento/module-backend/App/Action/Plugin/Authentication.php(145): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#36 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\Backend\App\Action\Plugin\Authentication->aroundDispatch(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Closure), Object(Magento\Framework\App\Request\Http))
+#37 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#38 /var/www/html/generated/code/Magento/Ui/Controller/Adminhtml/Index/Render/Interceptor.php(41): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->___callPlugins('dispatch', Array, Array)
+#39 /var/www/html/vendor/magento/framework/App/FrontController.php(245): Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#40 /var/www/html/vendor/magento/framework/App/FrontController.php(212): Magento\Framework\App\FrontController->getActionResponse(Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor), Object(Magento\Framework\App\Request\Http))
+#41 /var/www/html/vendor/magento/framework/App/FrontController.php(146): Magento\Framework\App\FrontController->processRequest(Object(Magento\Framework\App\Request\Http), Object(Magento\Ui\Controller\Adminhtml\Index\Render\Interceptor))
+#42 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\FrontController->dispatch(Object(Magento\Framework\App\Request\Http))
+#43 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\FrontController\Interceptor->___callParent('dispatch', Array)
+#44 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\FrontController\Interceptor->Magento\Framework\Interception\{closure}(Object(Magento\Framework\App\Request\Http))
+#45 /var/www/html/generated/code/Magento/Framework/App/FrontController/Interceptor.php(23): Magento\Framework\App\FrontController\Interceptor->___callPlugins('dispatch', Array, Array)
+#46 /var/www/html/vendor/magento/framework/App/Http.php(116): Magento\Framework\App\FrontController\Interceptor->dispatch(Object(Magento\Framework\App\Request\Http))
+#47 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Framework\App\Http->launch()
+#48 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Framework\App\Http\Interceptor->___callParent('launch', Array)
+#49 /var/www/html/vendor/magento/module-application-performance-monitor/Plugin/ApplicationPerformanceMonitor.php(38): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#50 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(135): Magento\ApplicationPerformanceMonitor\Plugin\ApplicationPerformanceMonitor->aroundLaunch(Object(Magento\Framework\App\Http\Interceptor), Object(Closure))
+#51 /var/www/html/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Framework\App\Http\Interceptor->Magento\Framework\Interception\{closure}()
+#52 /var/www/html/generated/code/Magento/Framework/App/Http/Interceptor.php(23): Magento\Framework\App\Http\Interceptor->___callPlugins('launch', Array, NULL)
+#53 /var/www/html/vendor/magento/framework/App/Bootstrap.php(264): Magento\Framework\App\Http\Interceptor->launch()
+#54 /var/www/html/pub/index.php(30): Magento\Framework\App\Bootstrap->run(Object(Magento\Framework\App\Http\Interceptor))
+#55 {main} [] []
+[2025-07-15T10:49:32.438705+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:49:40.580944+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:49:52.823907+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:50:01.752737+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:50:07.315467+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:52:51.098364+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:53:55.288098+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:54:00.720795+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:54:08.529578+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:57:42.577798+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:58:13.298436+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T10:58:13.339567+00:00] main.ERROR: Class "Magento\Ui\Component\Listing\Columns\Text" does not exist [] []
+[2025-07-15T11:00:44.786229+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:00:44.911082+00:00] main.ERROR: Class "Magento\Ui\Component\Listing\Columns\Text" does not exist [] []
+[2025-07-15T11:21:43.671958+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.672616+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.672971+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.673289+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.673561+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.673839+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.674143+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.674409+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.674734+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.674989+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.675267+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.675519+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.675868+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.676314+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.676755+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.677188+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.677768+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.678206+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T11:21:43.678899+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.679342+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.679718+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.680002+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.680295+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T11:21:43.680678+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.681100+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T11:21:43.681588+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T11:22:06.131742+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:22:16.429740+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:22:16.502173+00:00] main.ERROR: Class "Magento\Ui\Component\Listing\Columns\Text" does not exist [] []
+[2025-07-15T11:23:19.041782+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:23:37.960038+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:23:44.500865+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:25:28.130395+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:26:06.446646+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T11:27:00.771822+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:00:55.935309+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.936383+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.937004+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.937666+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.938030+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.938449+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.938798+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.939260+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.939618+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.939956+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.940329+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.940665+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.941000+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.941368+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.941700+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.942074+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.943057+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.943731+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:00:55.946087+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.946843+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.947497+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.948557+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.949349+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T12:00:55.949946+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.950456+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:00:55.951092+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T12:02:20.840549+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.841425+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.841895+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.842255+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.842545+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.842808+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.843045+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.843355+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.843664+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.843958+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.844326+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.844611+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.844900+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.845321+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.845659+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.845960+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.846461+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.846731+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-15T12:02:20.847182+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.847452+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.847666+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.847870+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.848072+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-15T12:02:20.848373+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.848586+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-15T12:02:20.848817+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-15T12:02:33.825802+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:02:40.672587+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:02:48.671410+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:03:06.804520+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:03:45.198861+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:03:48.194119+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:05:53.967913+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:06:07.226194+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:06:30.097733+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:06:35.147286+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:06:50.976389+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:07:13.219499+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:07:19.879644+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:07:35.734789+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:19:27.463849+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:19:27.536315+00:00] main.ERROR: Class "Magento\Ui\Component\Listing\Columns\Text" does not exist [] []
+[2025-07-15T12:34:07.661910+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:34:38.026542+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:34:48.981810+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:34:58.062513+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:35:51.129167+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-15T12:35:53.873474+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []

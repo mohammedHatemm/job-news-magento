@@ -17,6 +17,15 @@ class Interceptor extends \Magento\Framework\App\Config\Storage\Writer implement
     /**
      * {@inheritdoc}
      */
+    public function delete($path, $scope = 'default', $scopeId = 0)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'delete');
+        return $pluginInfo ? $this->___callPlugins('delete', func_get_args(), $pluginInfo) : parent::delete($path, $scope, $scopeId);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function save($path, $value, $scope = 'default', $scopeId = 0)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'save');
