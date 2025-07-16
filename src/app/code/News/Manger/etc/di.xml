@@ -88,4 +88,62 @@
         </arguments>
     </type>
 
+
+
+
+    <!-- new adding  -->
+
+  <type name="News\Manger\Ui\DataProvider\Category\CategoryFormDataProvider">
+        <arguments>
+            <argument name="name" xsi:type="string">category_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">category_id</argument>
+            <argument name="requestFieldName" xsi:type="string">category_id</argument>
+        </arguments>
+    </type>
+
+    <!-- Configure Category Grid DataProvider with new dependencies -->
+    <type name="News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object">CategoryGridSearchResult</argument>
+            <argument name="name" xsi:type="string">category_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">category_id</argument>
+            <argument name="requestFieldName" xsi:type="string">category_id</argument>
+        </arguments>
+    </type>
+
+    <!-- Category Factory for dependency injection -->
+     <type name="News\Manger\Ui\DataProvider\Category\CategoryFormDataProvider">
+        <arguments>
+            <argument name="name" xsi:type="string">category_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">category_id</argument>
+            <argument name="requestFieldName" xsi:type="string">category_id</argument>
+        </arguments>
+    </type>
+
+    <!-- Configure Category Grid DataProvider with new dependencies -->
+    <type name="News\Manger\Ui\DataProvider\Category\CategoryGridDataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object">CategoryGridSearchResult</argument>
+            <argument name="name" xsi:type="string">category_grid_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">category_id</argument>
+            <argument name="requestFieldName" xsi:type="string">category_id</argument>
+        </arguments>
+    </type>
+
+    <!-- Category Factory for dependency injection -->
+    <type name="News\Manger\Model\CategoryFactory">
+        <arguments>
+            <argument name="objectManager" xsi:type="object">Magento\Framework\ObjectManagerInterface</argument>
+        </arguments>
+    </type>
+
+    <!-- Add Category Helper for common operations -->
+    <type name="News\Manger\Helper\Category">
+        <arguments>
+            <argument name="categoryFactory" xsi:type="object">News\Manger\Model\CategoryFactory</argument>
+        </arguments>
+    </type>
+
+    <!-- end new addding  -->
+
 </config>

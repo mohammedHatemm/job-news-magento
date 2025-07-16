@@ -110,6 +110,51 @@
             </argument>
         </column>
 
+        <column name="formatted_name" sortOrder="55">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Formatted Name</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                    <item name="componentType" xsi:type="string">column</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="full_path" sortOrder="80">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Full Path</item>
+                    <item name="componentType" xsi:type="string">column</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                </item>
+            </argument>
+        </column>
+<!-- child count  -->
+ <column name="children_count" sortOrder="86">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Children Count</item>
+            <item name="componentType" xsi:type="string">column</item>
+            <item name="dataType" xsi:type="string">number</item>
+            <item name="sortable" xsi:type="boolean">false</item>
+        </item>
+    </argument>
+</column>
+
+
+<!-- ✅ العمود المضاف لحل الخطأ -->
+        <column name="level" sortOrder="85">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Level</item>
+                    <item name="componentType" xsi:type="string">column</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+
         <column name="created_at" sortOrder="60">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -130,16 +175,14 @@
             </argument>
         </column>
 
-
-
-       <actionsColumn name="actions" class="News\Manger\Ui\Component\Listing\Column\CategoryActions">
-    <argument name="data" xsi:type="array">
-        <item name="config" xsi:type="array">
-            <item name="indexField" xsi:type="string">category_id</item>
-            <item name="viewUrlPath" xsi:type="string">news/category/edit</item>
-            <item name="urlEntityParamName" xsi:type="string">category_id</item>
-        </item>
-    </argument>
-</actionsColumn>
-</columns>
+        <actionsColumn name="actions" class="News\Manger\Ui\Component\Listing\Column\CategoryActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">category_id</item>
+                    <item name="viewUrlPath" xsi:type="string">news/category/edit</item>
+                    <item name="urlEntityParamName" xsi:type="string">category_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
 </listing>

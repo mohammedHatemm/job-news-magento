@@ -3,7 +3,7 @@
 namespace News\Manger\Ui\DataProvider\News;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
-use News\Manger\Model\ResourceModel\News\CollectionFactory;
+use News\Manger\Model\ResourceModel\News\Grid\Collection;
 use Psr\Log\LoggerInterface;
 
 class NewsGridDataProvider extends AbstractDataProvider
@@ -20,12 +20,12 @@ class NewsGridDataProvider extends AbstractDataProvider
     $name,
     $primaryFieldName,
     $requestFieldName,
-    CollectionFactory $collectionFactory,
+    Collection $collection,
     LoggerInterface $logger,
     array $meta = [],
     array $data = []
   ) {
-    $this->collection = $collectionFactory->create();
+    $this->collection = $collection;
     $this->logger = $logger;
     parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
   }
@@ -42,18 +42,10 @@ class NewsGridDataProvider extends AbstractDataProvider
     foreach ($this->collection->getItems() as $item) {
       $data = $item->getData();
 
-      // ✅ Add parent_name logic
-      // if (isset($data['parent_id']) && $data['parent_id']) {
-      //   try {
-      //     $parent = $this->collection->getItemById($data['parent_id']);
-      //     $data['parent_name'] = $parent ? $parent->getData('news_title') : __('Unknown Parent');
-      //   } catch (\Exception $e) {
-      //     $data['parent_name'] = __('Error');
-      //     $this->logger->error('Error getting parent: ' . $e->getMessage());
-      //   }
-      // } else {
-      //   $data['parent_name'] = __('No Parent');
-      // }
+      // Ensure parent_name fallback
+      if (!isset($data['parent_name']) || $data['parent_name'] === null) {
+        $data['parent_name'] = __('No Parent');
+      }
 
       $this->loadedData[$item->getId()] = $data;
     }
