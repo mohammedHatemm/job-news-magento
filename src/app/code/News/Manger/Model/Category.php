@@ -437,33 +437,41 @@ class Category extends AbstractModel implements IdentityInterface
    */
   public function validateHierarchy()
   {
-    // Check if trying to set itself as parent
+    // السماح للفئة بأن تكون فئة جذر (بدون أب)
+    if ($this->getParentId() === null || $this->getParentId() === '' || $this->getParentId() === 0) {
+      return true; // فئة جذر صحيحة
+    }
+
+    // منع الفئة من أن تكون أب لنفسها
     if ($this->getParentId() == $this->getId()) {
       return false;
     }
 
-    // Check if trying to set a descendant as parent (circular reference)
+    // التحقق من وجود الفئة الأب
+    $parentCategory = $this->_categoryFactory->create();
+    $this->_getResource()->load($parentCategory, $this->getParentId());
+
+    if (!$parentCategory->getId()) {
+      return false; // الفئة الأب غير موجودة
+    }
+
+    // منع المراجع الدائرية - التحقق من أن الفئة الأب المختارة ليست من أحفاد الفئة الحالية
     if ($this->getId() && $this->getParentId()) {
       if ($this->isAncestorOf($this->getParentId())) {
-        return false;
+        return false; // مرجع دائري
       }
     }
 
-    // Check depth limit
-    if ($this->getParentId()) {
-      // 🚀 تصحيح
-      $parentCategory = $this->_categoryFactory->create();
-      $this->_getResource()->load($parentCategory, $this->getParentId());
+    // التحقق من حد العمق المسموح
+    $parentLevel = $parentCategory->getLevel();
+    $maxDepth = $this->getMaxAllowedDepth();
 
-      if ($parentCategory->getLevel() >= ($this->getMaxAllowedDepth() - 1)) {
-        return false;
-      }
+    if ($parentLevel >= ($maxDepth - 1)) {
+      return false; // تجاوز الحد الأقصى للعمق
     }
 
     return true;
   }
-
-  // ... (The rest of the file from getSiblings to the end has no errors and remains the same)
 
   public function getFormattedName($prefix = '├── ')
 

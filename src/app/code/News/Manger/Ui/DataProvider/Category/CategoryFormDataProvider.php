@@ -141,7 +141,7 @@ class CategoryFormDataProvider extends AbstractDataProvider
     $html = '<div class="category-info">';
     $html .= '<p><strong>' . __('Current Level:') . '</strong> ' . $category->getLevel() . '</p>';
     $html .= '<p><strong>' . __('Full Path:') . '</strong> ' . $category->getPath() . '</p>';
-    $html .= '<p><strong>' . __('Children Count:') . '</strong> ' . $category->getChildrenCount() . '</p>';
+    // $html .= '<p><strong>' . __('Children Count:') . '</strong> ' . $category->getChildrenCount() . '</p>';
 
     if ($category->hasChildren()) {
       $html .= '<p><strong>' . __('Has Children:') . '</strong> ' . __('Yes') . '</p>';

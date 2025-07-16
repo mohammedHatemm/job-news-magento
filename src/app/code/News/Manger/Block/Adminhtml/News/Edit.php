@@ -8,7 +8,7 @@ class Edit extends Container
 {
   protected function _construct()
   {
-    $this->_objectId = 'id';
+    $this->_objectId = 'news_id';
     $this->_blockGroup = 'News_Manger';
     $this->_controller = 'adminhtml_news';
 

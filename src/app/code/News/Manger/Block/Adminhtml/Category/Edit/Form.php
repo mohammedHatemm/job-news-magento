@@ -97,16 +97,17 @@ class Form extends Generic
       ]
     ]);
 
-    // إضافة حقل Parent Category مع التحقق من البيانات
+    // إضافة حقل Parent Category مع Breadcrumb Style
     try {
-      $parentOptions = $this->getCategoryOptions($model->getId());
+      $parentOptions = $this->getBreadcrumbCategoryOptions($model->getId());
 
       $fieldset->addField('parent_id', 'select', [
         'name' => 'parent_id',
         'label' => __('Parent Category'),
         'title' => __('Parent Category'),
         'required' => false,
-        'values' => $parentOptions
+        'values' => $parentOptions,
+        'note' => __('Select a parent category to create hierarchy. You can choose any level.')
       ]);
     } catch (\Exception $e) {
       $this->_logger->error('Error loading category options: ' . $e->getMessage());
@@ -119,10 +120,6 @@ class Form extends Generic
         'note' => __('Enter parent category ID or leave empty for root category')
       ]);
     }
-
-    // إضافة حقول التاريخ للعرض فقط
-
-
 
     // تحديد قيم النموذج مع التحقق من البيانات
     $formData = $model->getData();
@@ -139,37 +136,118 @@ class Form extends Generic
   }
 
   /**
-   * الحصول على خيارات الفئات الأب
+   * الحصول على خيارات الفئات بنمط Breadcrumb
    *
    * @param int|null $excludeId
    * @return array
    */
-  protected function getCategoryOptions($excludeId = null)
+  protected function getBreadcrumbCategoryOptions($excludeId = null)
   {
     $options = [
       ['value' => '', 'label' => __('No Parent (Root Category)')]
     ];
 
     try {
+      // جلب كل الفئات
       $collection = $this->_categoryCollection->load();
 
+      // تحويل الفئات إلى array مع معرف الفئة كمفتاح
+      $categoriesById = [];
       foreach ($collection as $category) {
-        // استبعاد الفئة الحالية لمنع الحلقة المفرغة
-        if ($excludeId && $category->getId() == $excludeId) {
-          continue;
-        }
-
-        $options[] = [
-          'value' => $category->getId(),
-          'label' => $category->getCategoryName() ?: __('Category #%1', $category->getId())
-        ];
+        $categoriesById[$category->getId()] = $category;
       }
+
+      // بناء الهيكل الهرمي
+      $hierarchyOptions = $this->buildHierarchyOptions($categoriesById, $excludeId);
+
+      // دمج الخيارات
+      $options = array_merge($options, $hierarchyOptions);
     } catch (\Exception $e) {
-      $this->_logger->error('Error loading category options: ' . $e->getMessage());
+      $this->_logger->error('Error loading breadcrumb category options: ' . $e->getMessage());
       throw $e;
     }
 
     return $options;
+  }
+
+  /**
+   * بناء خيارات الهيكل الهرمي
+   *
+   * @param array $categoriesById
+   * @param int|null $excludeId
+   * @return array
+   */
+  protected function buildHierarchyOptions($categoriesById, $excludeId = null)
+  {
+    $options = [];
+
+    // العثور على الفئات الجذرية (بدون والد)
+    $rootCategories = [];
+    foreach ($categoriesById as $category) {
+      if (!$category->getParentId()) {
+        $rootCategories[] = $category;
+      }
+    }
+
+    // ترتيب الفئات الجذرية حسب الاسم
+    usort($rootCategories, function ($a, $b) {
+      return strcmp($a->getCategoryName(), $b->getCategoryName());
+    });
+
+    // بناء الهيكل الهرمي لكل فئة جذرية
+    foreach ($rootCategories as $rootCategory) {
+      $this->addCategoryToOptions($rootCategory, $categoriesById, $options, $excludeId);
+    }
+
+    return $options;
+  }
+
+  /**
+   * إضافة فئة وأطفالها إلى الخيارات
+   *
+   * @param \News\Manger\Model\Category $category
+   * @param array $categoriesById
+   * @param array &$options
+   * @param int|null $excludeId
+   * @param string $breadcrumbPath
+   */
+  protected function addCategoryToOptions($category, $categoriesById, &$options, $excludeId = null, $breadcrumbPath = '')
+  {
+    // استبعاد الفئة الحالية لمنع الحلقة المفرغة
+    if ($excludeId && $category->getId() == $excludeId) {
+      return;
+    }
+
+    // بناء مسار breadcrumb
+    $currentPath = $breadcrumbPath;
+    if ($currentPath) {
+      $currentPath .= ' > ';
+    }
+    $currentPath .= $category->getCategoryName() ?: __('Category #%1', $category->getId());
+
+    // إضافة الفئة الحالية إلى الخيارات
+    $options[] = [
+      'value' => $category->getId(),
+      'label' => $currentPath
+    ];
+
+    // العثور على الفئات الفرعية
+    $children = [];
+    foreach ($categoriesById as $childCategory) {
+      if ($childCategory->getParentId() == $category->getId()) {
+        $children[] = $childCategory;
+      }
+    }
+
+    // ترتيب الفئات الفرعية حسب الاسم
+    usort($children, function ($a, $b) {
+      return strcmp($a->getCategoryName(), $b->getCategoryName());
+    });
+
+    // إضافة الفئات الفرعية بشكل تكراري
+    foreach ($children as $child) {
+      $this->addCategoryToOptions($child, $categoriesById, $options, $excludeId, $currentPath);
+    }
   }
 
   /**

@@ -7,6 +7,7 @@
                     <resource id="News_Manger::Category" title="Category" sortOrder="10">
                         <resource id="News_Manger::Category_save" title="Save" sortOrder="20"/>
                         <resource id="News_Manger::Category_delete" title="Delete" sortOrder="30"/>
+                        <resource id="News_Manger::Category_view" title="View" sortOrder="40"/>
                     </resource>
                     <resource id="News_Manger::News" title="News" sortOrder="20">
                         <resource id="News_Manger::News_save" title="Save" sortOrder="20"/>

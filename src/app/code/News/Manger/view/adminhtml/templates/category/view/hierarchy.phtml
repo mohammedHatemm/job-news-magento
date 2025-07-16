@@ -1,0 +1,11 @@
+<?php
+
+/** @var \News\Manger\Block\Adminhtml\Category\View\Hierarchy $block */ ?>
+<div class="admin__page-section">
+  <h2><?= __('Category Hierarchy') ?></h2>
+  <ul>
+    <?php foreach ($block->getBreadcrumbPath() as $item): ?>
+      <li><?= $item['name'] ?> (<?= __('Level') ?>: <?= $item['level'] ?>)</li>
+    <?php endforeach; ?>
+  </ul>
+</div>

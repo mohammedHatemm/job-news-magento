@@ -83,9 +83,11 @@ class Save extends \Magento\Backend\App\Action
       $data = $this->prepareData($data, $model);
 
       // Check for parent category circular reference
-      if (isset($data['parent_id']) && $data['parent_id'] && $id) {
-        if ($this->hasCircularReference($data['parent_id'], $id)) {
-          $this->messageManager->addErrorMessage(__('Cannot set parent category: This would create a circular reference.'));
+      if (isset($data['parent_id']) && $data['parent_id'] !== null && $id) {
+        if ($this->hasCircularReference((int)$data['parent_id'], (int)$id)) {
+          $this->messageManager->addErrorMessage(
+            __('Cannot set parent category: This would create a circular reference.')
+          );
           return $this->redirectWithData($resultRedirect, $data, $id);
         }
       }
@@ -98,14 +100,20 @@ class Save extends \Magento\Backend\App\Action
         $this->dataPersistor->clear('news_category');
 
         if ($this->getRequest()->getParam('back')) {
-          return $resultRedirect->setPath('*/*/edit', ['category_id' => $model->getId(), '_current' => true]);
+          return $resultRedirect->setPath(
+            '*/*/edit',
+            ['category_id' => $model->getId(), '_current' => true]
+          );
         }
         return $resultRedirect->setPath('*/*/');
       } catch (LocalizedException $e) {
         $this->messageManager->addErrorMessage($e->getMessage());
         $this->logger->error('LocalizedException while saving category: ' . $e->getMessage());
       } catch (\Exception $e) {
-        $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the category.'));
+        $this->messageManager->addExceptionMessage(
+          $e,
+          __('Something went wrong while saving the category.')
+        );
         $this->logger->error('Exception while saving category: ' . $e->getMessage());
       }
 
@@ -138,10 +146,10 @@ class Save extends \Magento\Backend\App\Action
       $errors[] = __('Please select the category status.');
     }
 
-    // Validate parent_id if provided
-    if (isset($data['parent_id']) && $data['parent_id'] !== '' && !is_numeric($data['parent_id'])) {
-      $errors[] = __('Parent category ID must be numeric.');
-    }
+    // Only validate parent_id if it's set and not empty
+    // if (isset($data['parent_id']) && $data['parent_id'] !== '' && !is_numeric($data['parent_id'])) {
+    //   $errors[] = __('Parent category ID must be numeric.');
+    // }
 
     return $errors;
   }
@@ -155,7 +163,7 @@ class Save extends \Magento\Backend\App\Action
    */
   private function prepareData($data, $model)
   {
-    // Handle parent category
+    // Handle parent category - convert empty string to null
     if (isset($data['parent_id']) && $data['parent_id'] === '') {
       $data['parent_id'] = null;
     }
@@ -199,7 +207,6 @@ class Save extends \Magento\Backend\App\Action
       }
     } catch (\Exception $e) {
       $this->logger->error('Error checking circular reference: ' . $e->getMessage());
-      return false;
     }
 
     return false;

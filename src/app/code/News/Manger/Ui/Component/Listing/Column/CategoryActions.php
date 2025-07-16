@@ -9,6 +9,7 @@ class CategoryActions extends Column
 {
     const URL_PATH_EDIT = 'news/category/edit';
     const URL_PATH_DELETE = 'news/category/delete';
+    const URL_PATH_VIEW = 'news/category/view';
 
     /** @var UrlInterface */
     protected $urlBuilder;
@@ -58,6 +59,16 @@ class CategoryActions extends Column
                             'message' => __('Are you sure you want to delete the category "%1"?', $item['category_name']),
                         ],
                         'post' => true,
+                    ];
+
+                    // View action
+                    $item[$name]['view'] = [
+                        'href' => $this->urlBuilder->getUrl(
+                            self::URL_PATH_VIEW,
+                            ['id' => $item['category_id']]
+                        ),
+                        'label' => __('View'),
+                        'hidden' => false,
                     ];
                 }
             }
