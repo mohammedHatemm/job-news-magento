@@ -2646,3 +2646,1043 @@ Verify the XML and try again. [] []
 [2025-07-16T15:07:58.310501+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
 [2025-07-16T15:08:36.727823+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/underscore-umd.js.map' [] []
 [2025-07-16T15:08:36.728866+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/underscore-umd.js.map' [] []
+[2025-07-16T15:10:09.015658+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-16T15:10:11.003340+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/underscore-umd.js.map' [] []
+[2025-07-16T15:10:11.004652+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/underscore-umd.js.map' [] []
+[2025-07-17T05:31:04.509782+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.511720+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.512255+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.512646+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.512981+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.513374+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.513696+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.514012+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.514391+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.514740+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.515043+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.515384+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.515725+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.516119+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.516645+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.517101+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.517760+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.518113+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T05:31:04.518701+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.519028+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.519431+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.519763+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.520057+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-17T05:31:04.520483+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.520840+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T05:31:04.521221+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-17T05:31:17.818578+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T05:31:27.252464+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Ui\DataProvider\News\NewsGridDataProvider, News\Manger\Ui\DataProvider\News\NewsGridDataProvider::__construct(): Argument #4 ($collection) must be of type News\Manger\Model\ResourceModel\News\Grid\Collection, Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-17T05:31:27.253776+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Ui\DataProvider\News\NewsGridDataProvider, News\Manger\Ui\DataProvider\News\NewsGridDataProvider::__construct(): Argument #4 ($collection) must be of type News\Manger\Model\ResourceModel\News\Grid\Collection, Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-17T05:34:04.806774+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T05:44:25.592940+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Ui\DataProvider\News\NewsGridDataProvider, News\Manger\Ui\DataProvider\News\NewsGridDataProvider::__construct(): Argument #4 ($collection) must be of type News\Manger\Model\ResourceModel\News\Grid\Collection, Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-17T05:44:25.594303+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Ui\DataProvider\News\NewsGridDataProvider, News\Manger\Ui\DataProvider\News\NewsGridDataProvider::__construct(): Argument #4 ($collection) must be of type News\Manger\Model\ResourceModel\News\Grid\Collection, Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult\Interceptor given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-17T05:49:47.352447+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T05:50:20.221424+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T05:50:38.095726+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T05:50:44.253111+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:28:41.148043+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.148533+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.148901+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.149133+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.149341+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.149574+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.149789+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.149994+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.150195+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.150395+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.150618+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.150866+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.151066+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.151265+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.151490+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.151716+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.152095+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.152308+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T06:28:41.152633+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.152867+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.153059+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.153294+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.153484+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-17T06:28:41.153735+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.153976+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T06:28:41.154193+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-17T06:29:08.163466+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:29:15.213468+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:29:20.841887+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:29:21.236041+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:29:21.236862+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:29:21.841951+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:29:21.843025+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:29:42.778370+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:30:27.353290+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:30:27.683360+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:30:27.684627+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:30:28.269293+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:30:28.270284+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:30:42.276763+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:30:49.615361+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:30:49.995125+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:30:49.995920+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:30:50.707297+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:30:50.708395+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:31:08.349295+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:37:40.777008+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:37:48.987200+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-17T06:37:48.987794+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-17T06:37:49.035975+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:37:49.036437+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:37:53.336942+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:37:53.338402+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:37:57.334355+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:37:57.721278+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:37:57.722055+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:38:05.723125+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:38:05.724066+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:38:15.680243+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:39:59.775456+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:40:00.213147+00:00] main.ERROR: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:40:00.214038+00:00] main.CRITICAL: Compilation from source: LESS file is empty: adminhtml/Magento/backend/en_US/jquery/jstree/themes/proton/style.min.less [] []
+[2025-07-17T06:40:00.760183+00:00] main.ERROR: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:40:00.761301+00:00] main.CRITICAL: Unable to resolve the source file for 'adminhtml/Magento/backend/en_US/jquery/jstree/jquery.hotkeys.js' [] []
+[2025-07-17T06:41:16.356386+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:41:31.890056+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:41:39.781342+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:55:09.722969+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:55:29.823151+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T06:55:49.557436+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T08:21:58.731443+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.735603+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.736139+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.736621+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.737026+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.737521+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.738035+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.738634+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.739118+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.739567+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.740012+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.740431+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.740815+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.741306+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.741751+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.742232+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.743000+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.743522+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T08:21:58.744145+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.744626+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.745020+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.745509+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.745987+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-17T08:21:58.746510+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.746904+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T08:21:58.747476+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-17T08:22:16.816959+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T08:23:00.568655+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T08:23:00.620372+00:00] main.ERROR: The "componentType" configuration parameter is required for the "children_count" component. [] []
+[2025-07-17T08:23:03.747782+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T08:23:34.694101+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T08:23:46.391348+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-17T08:31:19.421202+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:18:35.825508+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:35.826134+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:35.826896+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:35.827366+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:35.827719+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:35.828049+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:18:36.028292+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:19:27.717381+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:19:27.718242+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:19:27.719029+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:19:27.890060+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:31.004817+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:44.695488+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:47.617228+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:49.577394+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:53.676475+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:20:55.379094+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:21:39.958381+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.958947+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.959219+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.959447+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.959651+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.959892+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.960085+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.960306+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.960501+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.960692+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.960880+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.961069+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.961299+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.961494+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.961681+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.961873+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.962246+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.962473+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-17T09:21:39.962762+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.962980+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.963206+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.963408+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.963595+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-17T09:21:39.963825+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.964020+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-17T09:21:39.964263+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-17T09:41:24.326565+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:41:25.980400+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:41:26.586916+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:41:27.312018+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:41:34.205678+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.206803+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.208391+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.209221+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.209727+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.210204+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:41:34.438281+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T09:42:47.109128+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:42:47.110292+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:42:47.111332+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T09:42:47.264832+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T11:00:38.568346+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T11:00:38.569571+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T11:00:38.570911+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-17T11:00:38.874108+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T11:02:04.412524+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-17T11:02:04.413497+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-17T11:02:28.886762+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T11:02:39.548516+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-17T11:02:55.447565+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-17T11:02:55.448536+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T07:04:59.579216+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:04:59.582537+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:04:59.583585+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:04:59.584096+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:04:59.584481+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:04:59.584984+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:05:00.220337+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T07:05:12.896922+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.897940+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.898575+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.898954+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.899373+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.899864+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.900209+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.900718+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.901129+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.901517+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.901892+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.902215+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.902585+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.902912+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.903232+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.903588+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.904225+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.904625+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T07:05:12.905148+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.905502+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.905827+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.906139+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.906482+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-20T07:05:12.906891+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.907213+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T07:05:12.907577+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-20T07:05:28.323725+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-20T07:05:35.643871+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-20T07:51:43.551828+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:51:43.553261+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:51:43.555028+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T07:51:43.840555+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T07:52:38.993908+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:10:35.632307+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:10:41.300916+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T08:10:41.302113+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T08:10:53.729687+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T08:10:53.730261+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T08:11:26.667894+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:11:37.567064+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.568033+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.568828+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.569285+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.569760+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.570147+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:11:37.804385+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:11:46.766099+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:11:59.858950+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:17:28.429721+00:00] main.CRITICAL: Class "Magento\Framework\Message\MessageManager" does not exist
+Class News\Manger\Controller\User\Save\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-20T08:17:28.430292+00:00] main.ERROR: Class "Magento\Framework\Message\MessageManager" does not exist
+Class News\Manger\Controller\User\Save\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-20T08:19:47.956757+00:00] main.CRITICAL: Class "Magento\Framework\Message\MessageManager" does not exist
+Class News\Manger\Controller\User\Delete\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-20T08:19:47.957339+00:00] main.ERROR: Class "Magento\Framework\Message\MessageManager" does not exist
+Class News\Manger\Controller\User\Delete\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-20T08:22:30.673276+00:00] main.ERROR: The XML in file "/var/www/html/app/code/News/Manger/etc/frontend/routes.xml" is invalid:
+Element 'route', attribute 'frontName': [facet 'pattern'] The value 'news/user' is not accepted by the pattern '[A-Za-z0-9_\-]{1,}'.
+Line: 11
+The xml was: 
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+15:
+
+Element 'route', attribute 'frontName': Warning: No precomputed value available, the value was either invalid or something strange happened.
+Line: 11
+The xml was: 
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+15:
+
+Element 'router': Duplicate key-sequence ['standard'] in unique identity-constraint 'uniqueRouterId'.
+Line: 10
+The xml was: 
+5:        </route>
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+
+Verify the XML and try again. [] []
+[2025-07-20T08:22:31.849868+00:00] main.ERROR: The XML in file "/var/www/html/app/code/News/Manger/etc/frontend/routes.xml" is invalid:
+Element 'route', attribute 'frontName': [facet 'pattern'] The value 'news/user' is not accepted by the pattern '[A-Za-z0-9_\-]{1,}'.
+Line: 11
+The xml was: 
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+15:
+
+Element 'route', attribute 'frontName': Warning: No precomputed value available, the value was either invalid or something strange happened.
+Line: 11
+The xml was: 
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+15:
+
+Element 'router': Duplicate key-sequence ['standard'] in unique identity-constraint 'uniqueRouterId'.
+Line: 10
+The xml was: 
+5:        </route>
+6:    </router>
+7:
+8:
+9:    <router id="standard">
+10:        <route id="news_user" frontName="news/user">
+11:            <module name="News_Manger"/>
+12:        </route>
+13:    </router>
+14:</config>
+
+Verify the XML and try again. [] []
+[2025-07-20T08:27:42.067490+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.068730+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.070278+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.071094+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.071685+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.072223+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:27:42.764576+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:29:54.517808+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:30:00.886170+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:30:11.196791+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:30:23.528875+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:35:17.438922+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:35:51.494361+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:36:24.791280+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:36:28.896050+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:36:52.848337+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:40:27.227360+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:40:44.165849+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.168707+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.170178+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.170940+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.171476+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.171971+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:40:44.476600+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:41:01.839986+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:45:23.210125+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:46:32.411071+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:49:35.772506+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:35.773120+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:35.773627+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:35.774072+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:35.774336+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:35.774595+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:49:36.059430+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:50:58.368803+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T08:50:58.370133+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T08:59:33.775144+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.775761+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.776469+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.776788+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.777006+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.777213+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T08:59:33.946034+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:59:37.083448+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T08:59:37.085272+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T08:59:41.428555+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T08:59:42.354700+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T08:59:42.355681+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:03:32.010328+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:03:32.712913+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:03:32.713902+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:05:13.033972+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:05:13.699870+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:05:16.483662+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T09:05:16.484210+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T09:05:27.055485+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:05:27.056608+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:05:39.339054+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:06:30.332124+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:22:01.590350+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.591112+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.591942+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.592430+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.592747+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.593031+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:22:01.813258+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:34:20.212835+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.213470+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.214108+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.214502+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.214820+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.215053+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T09:34:20.374282+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:34:43.137998+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:34:48.744989+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:34:56.772389+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:43:56.907026+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:48:33.234480+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:49:03.723171+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:49:04.366187+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:49:34.247131+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:49:42.057464+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:49:52.954460+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:50:43.722863+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:53:06.290903+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:53:11.888262+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T09:56:33.413420+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:56:33.414756+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:56:39.757745+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T09:56:39.759675+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T10:00:24.159712+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:00:29.173607+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T10:00:29.174810+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T10:00:45.553210+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T10:00:45.555756+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T10:03:35.808464+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:03:53.020745+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:04:32.500997+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:06:54.429029+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:15:50.929359+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:45:45.622939+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:47:42.357424+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:52:15.969509+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:56:43.485743+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T10:58:48.920271+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T10:58:48.921441+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:00:16.940027+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:00:30.477335+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:00:30.482523+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:05:30.963067+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:05:30.964163+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:20:40.296068+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:20:40.296995+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:20:40.298129+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:20:40.716516+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:21:16.566016+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:21:16.566811+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:21:16.567574+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:21:16.751008+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:22:22.595493+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:22:22.596194+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:22:22.596863+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:22:22.781712+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:24:26.571992+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:26.572870+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:26.573689+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:26.782600+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:24:54.374249+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:54.375371+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:54.376476+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-20T11:24:54.559452+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:25:52.305906+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:26:06.617876+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:26:10.844317+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:26:44.516400+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:26:44.517573+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:30:19.257035+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:30:20.313985+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:30:20.315266+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T11:30:22.320859+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.321613+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.322032+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.322391+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.322766+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.323125+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.323492+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.323865+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.324204+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.324532+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.324898+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.325234+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.325564+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.325918+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.326251+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.326587+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.327189+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.327565+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-20T11:30:22.328079+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.328485+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.328859+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.329238+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.329566+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-20T11:30:22.330012+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.330347+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-20T11:30:22.330717+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-20T11:40:32.107083+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:52:18.728095+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T11:57:50.483247+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:00:02.510298+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:06:13.730314+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:06:58.224755+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:08:10.919830+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:10:53.205714+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:12:17.707533+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:13:35.402533+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:15:49.724276+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:26:42.800880+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:26:55.299107+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T12:26:55.299868+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T12:28:05.285627+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:29:39.998559+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:36:41.944933+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:39:13.912044+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:39:46.959868+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:42:23.082944+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:43:21.961500+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:47:33.852807+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:48:51.468897+00:00] main.ERROR: Invalid return type [] []
+[2025-07-20T12:50:19.175540+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:55:13.772518+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:58:58.031674+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T12:58:58.033771+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T12:59:50.973893+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T12:59:54.636755+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T12:59:54.637252+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T13:00:04.599220+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:00:04.604797+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:00:20.151570+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:00:20.152452+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:08:49.386793+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:08:56.837965+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T13:08:56.838838+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T13:14:37.203586+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:17:23.864110+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:23:25.403392+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:24:43.088000+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:24:48.316463+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:25:00.429494+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:25:40.834516+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:25:53.417041+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:25:59.163084+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:26:06.185690+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:31:56.306896+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:32:14.844421+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:32:14.845324+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:43:39.706321+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:43:40.742917+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:43:40.744317+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:46:59.088063+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:46:59.732447+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:46:59.733390+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:47:44.842051+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:47:45.592693+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:47:45.593854+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:48:12.818619+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:48:13.649266+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:48:13.650384+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:48:46.931393+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T13:48:47.645444+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:48:47.646202+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:49:05.568614+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:49:05.569896+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:49:21.527311+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T13:49:21.530559+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:24:39.248600+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:24:41.489365+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:24:41.491285+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:39:21.556497+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:39:22.623088+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:39:22.624454+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:45:18.585756+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:45:38.800520+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:45:38.801913+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:51:15.802247+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:54:14.244593+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:54:24.765279+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:54:24.766609+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:12.643963+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:57:13.490874+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:13.492138+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:24.040972+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:57:24.761811+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:24.763093+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:32.495208+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:57:33.178647+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:33.179787+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:39.448636+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T14:57:40.085757+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:40.086818+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:45.273253+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T14:57:45.274531+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:17:15.006838+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:17:16.555466+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:17:16.556996+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:18:42.138942+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:18:43.364583+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:18:43.365686+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:21:14.832758+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:21:14.834104+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:19.388922+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:23:19.981069+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:19.982233+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:25.215025+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:23:25.978909+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:25.980261+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:34.599283+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:23:35.332539+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:35.333680+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:43.291833+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:23:43.915376+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:43.916423+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:52.981565+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:23:52.982552+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:27.900549+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:26:28.579435+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:28.580707+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:32.873531+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:26:33.613394+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:33.615283+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:40.756013+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:26:40.757287+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:30:42.952283+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:30:43.651015+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:30:43.652609+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:31:09.853269+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:31:10.631529+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:31:10.632539+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:31:18.264645+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:31:18.975689+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:31:18.977109+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:33:04.643670+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:33:05.302662+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:33:05.304307+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:33:23.362890+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:33:24.026109+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:33:24.026907+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:36:23.167433+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:36:23.169210+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:38:14.252087+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:38:15.086329+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:38:15.087380+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:39:15.874099+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:39:15.875343+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:39:27.049792+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:39:27.753333+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:39:27.754969+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:40:51.775769+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:40:51.776884+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:48:46.568969+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:48:48.147396+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:48:48.149061+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:56:06.568994+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T15:56:37.823242+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T15:56:37.824375+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-20T15:56:42.613002+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:56:42.615633+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:58:01.310862+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:58:01.312212+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:58:47.408899+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T15:58:47.410555+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T16:09:20.527753+00:00] main.ERROR: Impossible to process constructor argument Parameter #1 [ <required> News\Manger\Model\ResourceModel\News\CollectionFactory $newsCollectionFactory ] of News\Manger\Block\Adminhtml\Category\View\NewsCount class
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/ClassReaderDecorator.php(35): Magento\Framework\Code\Reader\ClassReader->getConstructor('News\\Manger\\Blo...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/Decorator/Area.php(53): Magento\Setup\Module\Di\Code\Reader\ClassReaderDecorator->getConstructor('News\\Manger\\Blo...')
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Area.php(116): Magento\Setup\Module\Di\Code\Reader\Decorator\Area->getList('/var/www/html/a...')
+#3 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Area.php(87): Magento\Setup\Module\Di\App\Task\Operation\Area->getDefinitionsCollection('/var/www/html/a...')
+#4 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Area->doOperation()
+#5 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#6 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#12 {main} [] []
+[2025-07-20T16:28:00.906451+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-20T16:28:15.051007+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-20T16:28:15.052184+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:31:20.586629+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:20.588977+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:20.589769+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:20.590143+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:20.590402+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:20.590641+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:21.023971+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:31:30.030737+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:30.032207+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:30.033707+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:31:30.310985+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:33:40.814267+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:33:40.814981+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:33:40.815823+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T06:33:41.010638+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:33:48.606061+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:33:48.607353+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:33:48.659117+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/Magento_Customer/js/zxcvbn.js.map' [] []
+[2025-07-21T06:33:48.660325+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/Magento_Customer/js/zxcvbn.js.map' [] []
+[2025-07-21T06:35:26.273524+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:35:27.438733+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:35:27.439786+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:35:36.295446+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:35:37.024876+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:35:37.025775+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-07-21T06:45:27.439422+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:57:59.583219+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T06:58:16.562921+00:00] main.CRITICAL: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-21T06:58:16.565282+00:00] main.ERROR: Class "News\Manger\Controller\User\View\Interceptor" does not exist [] []
+[2025-07-21T06:58:17.387661+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T07:01:45.153682+00:00] main.CRITICAL: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-21T07:01:45.154606+00:00] main.ERROR: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-21T07:10:58.886291+00:00] main.CRITICAL: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-21T07:10:58.888106+00:00] main.ERROR: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-21T07:18:03.149268+00:00] main.CRITICAL: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-21T07:18:03.150901+00:00] main.ERROR: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-21T07:31:09.156769+00:00] main.CRITICAL: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only. [] []
+[2025-07-21T07:31:09.157482+00:00] main.ERROR: Class "News\Manger\Api\NewsRepositoryInterface" does not exist
+Class News\Manger\Controller\User\View\Interceptor generation error: The requested class did not generate properly, because the 'generated' directory permission is read-only. If --- after running the 'bin/magento setup:di:compile' CLI command when the 'generated' directory permission is set to write --- the requested class did not generate properly, then you must add the generated class object to the signature of the related construct method, only.
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Generator.php(69): Magento\Framework\Code\Generator->generateClass('News\\Manger\\Con...')
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/Interception.php(100): Magento\Setup\Module\Di\Code\Generator->generateList(Array)
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\Interception->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-07-21T07:59:12.316172+00:00] main.CRITICAL: Class "News\Manger\Block\User\News\View" does not exist [] []
+[2025-07-21T07:59:12.318511+00:00] main.ERROR: Invalid block type: News\Manger\Block\User\News\View [] []
+[2025-07-21T07:59:12.989262+00:00] main.CRITICAL: Class "News\Manger\Block\User\News\View" does not exist [] []
+[2025-07-21T07:59:12.991297+00:00] main.ERROR: Invalid block type: News\Manger\Block\User\News\View [] []
+[2025-07-21T08:06:19.810719+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:12:47.737483+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:12:47.997849+00:00] main.ERROR: Warning: Undefined array key "news_created_at" in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 22 [] []
+[2025-07-21T08:13:51.059261+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:13:51.139637+00:00] main.ERROR: Warning: Undefined array key "news_created_at" in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 22 [] []
+[2025-07-21T08:14:23.316816+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:14:23.375393+00:00] main.ERROR: Warning: Undefined array key "news_created_at" in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 22 [] []
+[2025-07-21T08:15:14.792778+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:15:14.837556+00:00] main.ERROR: Warning: Undefined array key "news_created_at" in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 22 [] []
+[2025-07-21T08:16:57.556382+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:16:57.773880+00:00] main.ERROR: Warning: Undefined array key "news_created_at" in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 22 [] []
+[2025-07-21T08:19:38.810909+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:20:00.713870+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:22:45.246527+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:22:48.554922+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:22:57.117267+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:23:01.229173+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:24:09.029428+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:24:09.117285+00:00] main.ERROR: Invalid method News\Manger\Block\User\News\Index::truncateString [] []
+[2025-07-21T08:25:16.486496+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:25:16.567511+00:00] main.ERROR: Invalid method News\Manger\Block\User\News\Index::truncateString [] []
+[2025-07-21T08:27:42.816730+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:36:52.111154+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:36:52.412602+00:00] main.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_news` AS `main_table` WHERE (`status` = '1') ORDER BY created_at DESC
+ [] []
+[2025-07-21T08:38:26.861484+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:38:26.977742+00:00] main.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_news` AS `main_table` WHERE (`status` = '1') ORDER BY created_at DESC
+ [] []
+[2025-07-21T08:39:30.297368+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:39:30.388611+00:00] main.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_news` AS `main_table` WHERE (`status` = '1') ORDER BY created_at DESC
+ [] []
+[2025-07-21T08:52:36.047217+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:52:36.132550+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T08:52:36.136792+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T08:52:36.139963+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T08:52:55.080528+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:53:08.412625+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T08:53:08.452576+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T08:53:08.457787+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T08:53:08.461138+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T08:53:12.291135+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:01:33.744083+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:01:33.828396+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:01:33.832402+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '6') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:01:56.246530+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:01:56.298913+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T09:01:56.304612+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T09:01:56.307925+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T09:01:59.230172+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:01:59.279242+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:01:59.283463+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '6') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:02:57.807106+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:02:57.912616+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:02:57.917654+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '6') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:04:43.319392+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:04:43.400648+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:04:43.406397+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '6') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:25:16.132557+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:16.220263+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T09:25:16.224461+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T09:25:16.228643+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T09:25:19.573557+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:23.806506+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:23.856979+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T09:25:23.860432+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T09:25:23.863857+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T09:25:26.871128+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:29.447878+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:29.484903+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T09:25:29.488516+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T09:25:29.490535+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T09:25:31.516884+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:33.939422+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:25:33.987850+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '6') [] []
+[2025-07-21T09:25:33.990992+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '4') [] []
+[2025-07-21T09:25:33.993724+00:00] main.ERROR: Error in getCategoriesForNews: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nac.category_id' in 'ON', query was: SELECT `nc`.`category_name` AS `name` FROM `news_news` AS `nac`
+ LEFT JOIN `news_category` AS `nc` ON nac.category_id = nc.category_id WHERE (nac.news_id = '3') [] []
+[2025-07-21T09:26:06.555139+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:26:06.616655+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:26:06.620632+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '4') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:27:19.925240+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:27:19.987255+00:00] main.ERROR: Warning: Undefined variable $statistics in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 37 [] []
+[2025-07-21T09:27:48.064608+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:27:48.159272+00:00] main.ERROR: Warning: Undefined variable $statistics in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 37 [] []
+[2025-07-21T09:27:57.283580+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:27:57.323446+00:00] main.ERROR: Warning: Undefined variable $statistics in /var/www/html/app/code/News/Manger/view/frontend/templates/user/news/view.phtml on line 37 [] []
+[2025-07-21T09:34:24.628855+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:34:24.720776+00:00] main.ERROR: Error loading all categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'main_table.id' in 'SELECT', query was: SELECT `main_table`.`category_id`, `main_table`.`id`, `main_table`.`category_name`, `main_table`.`parent_id`, `main_table`.`category_description`, `main_table`.`sort_order` FROM `news_category` AS `main_table` [] []
+[2025-07-21T09:34:24.725800+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '4') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-07-21T09:34:43.434385+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.435734+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.437209+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.437935+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.438515+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.439100+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-07-21T09:34:43.791446+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-07-21T09:34:52.236119+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.237107+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.237655+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.238160+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.238613+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.239117+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.239568+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.240040+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.240488+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.240950+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.241409+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.241877+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.242336+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.242788+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.243237+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.243693+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.244609+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.245117+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T09:34:52.245827+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.246292+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.246710+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.247187+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.247600+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-21T09:34:52.248143+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.248562+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T09:34:52.249051+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-21T09:35:11.831978+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:35:22.407626+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:35:53.796007+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:36:07.758061+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:36:47.890617+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:36:59.912083+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:37:06.934813+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:37:16.783409+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T09:45:16.988283+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:45:01.179392+00:00] main.INFO: Theme layout update file '/var/www/html/app/code/News/Manger/view/adminhtml/layout/news_category_view.xml' is not valid.
+XML declaration allowed only at the start of the document
+ Line: 18
+Extra content at the end of the document
+ Line: 19 [] []
+[2025-07-21T10:45:01.180157+00:00] main.ERROR: Theme layout update file '/var/www/html/app/code/News/Manger/view/adminhtml/layout/news_category_view.xml' is not valid.
+XML declaration allowed only at the start of the document
+ Line: 18
+Extra content at the end of the document
+ Line: 19 [] []
+[2025-07-21T10:46:16.801681+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.802491+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.803084+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.803513+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.803960+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.804297+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.804603+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.805029+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.805330+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.805623+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.805935+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.806234+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.806526+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.806824+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.807126+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.807418+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.807990+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.808316+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2025-07-21T10:46:16.808800+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.809213+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.809520+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.809859+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.810273+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2025-07-21T10:46:16.810631+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.811039+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2025-07-21T10:46:16.811363+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2025-07-21T10:46:24.082182+00:00] main.ERROR: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-21T10:46:24.082686+00:00] main.CRITICAL: The "/var/www/html/var/tmp/alternative-source-css.lock" file can't be deleted.  [] []
+[2025-07-21T10:46:41.309832+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:46:55.675359+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:47:15.402151+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:49:12.183345+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:12.184629+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:24.418986+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:24.420687+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:28.133194+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:28.133795+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:30.285627+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:49:35.110860+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:49:35.111585+00:00] main.ERROR: Type Error occurred when creating object: News\Manger\Model\Category, News\Manger\Model\Category::__construct(): Argument #3 ($scopeConfig) must be of type Magento\Framework\App\Config\ScopeConfigInterface, null given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-07-21T10:54:59.138592+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2025-07-21T10:55:03.687127+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []

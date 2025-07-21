@@ -10,19 +10,16 @@ class Collection extends SearchResult
   {
     parent::_initSelect();
 
-    // Join pivot table
     $this->getSelect()->joinLeft(
       ['nnc' => 'news_news_category'],
       'main_table.news_id = nnc.news_id',
       []
     )
-      // Join category table
       ->joinLeft(
         ['category' => 'news_category'],
         'nnc.category_id = category.category_id',
         ['category_name' => 'category.category_name']
       )
-      // ✅ Join parent category table to get parent_name
       ->joinLeft(
         ['parent' => 'news_category'],
         'category.parent_id = parent.category_id',

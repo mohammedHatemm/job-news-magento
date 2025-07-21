@@ -23,6 +23,10 @@
              parent="News_Manger::news_head"
              action="news/news/index"
 
+
              resource="News_Manger::News" />
+
+
+
     </menu>
 </config>

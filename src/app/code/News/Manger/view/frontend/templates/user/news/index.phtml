@@ -1,0 +1,143 @@
+<?php
+
+/** @var \News\Manger\Block\User\News\Index $block */
+?>
+
+<div class="news-list-container">
+  <h1><?= $block->escapeHtml(__('News')) ?></h1>
+
+  <?php $collection = $block->getNewsCollection(); ?>
+
+  <?php if ($collection && $collection->count()): ?>
+    <div class="news-grid">
+      <?php foreach ($collection as $news): ?>
+        <div class="news-card">
+          <div class="news-card-content">
+            <h2 class="news-title">
+              <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>">
+                <?= $block->escapeHtml($news->getNewsTitle()) ?>
+              </a>
+            </h2>
+
+            <div class="news-excerpt">
+              <p><?= $block->escapeHtml($block->getExcerpt($news->getNewsContent())) ?></p>
+            </div>
+
+            <?php $categories = $block->getCategoriesForNews($news->getId()); ?>
+            <?php if (!empty($categories)): ?>
+              <div class="news-categories">
+                <?php foreach ($categories as $categoryName): ?>
+                  <span class="category-tag"><?= $block->escapeHtml($categoryName) ?></span>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+          </div>
+
+          <div class="news-card-footer">
+            <span class="news-meta">
+              <?= $block->escapeHtml(__('Published on: %1', $block->formatDate($news->getCreatedAt(), \IntlDateFormatter::MEDIUM))) ?>
+            </span>
+            <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>" class="btn-read-more">
+              <?= $block->escapeHtml(__('Read More')) ?>
+            </a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php else: ?>
+    <div class="message info empty">
+      <div><?= $block->escapeHtml(__('There are no news items to display.')) ?></div>
+    </div>
+  <?php endif; ?>
+</div>
+
+<style>
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .news-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .news-card-content {
+    padding: 20px;
+  }
+
+  .news-title a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+  }
+
+  .news-title a:hover {
+    color: #007bff;
+  }
+
+  .news-excerpt {
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .news-categories {
+    margin-top: 15px;
+  }
+
+  .category-tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .news-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .news-meta {
+    font-size: 0.85rem;
+    color: #777;
+  }
+
+  .btn-read-more {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .btn-read-more:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+</style>

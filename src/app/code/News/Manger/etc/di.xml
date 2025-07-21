@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+<!--
+File: app/code/News/Manger/etc/di.xml
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
@@ -32,10 +35,13 @@
     </type>
 
     <!-- Search Result Virtual Types -->
-    <virtualType name="NewsGridSearchResult" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="NewsGridSearchResult" type="News\Manger\Model\ResourceModel\News\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">news_news</argument>
             <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\News</argument>
+            <argument name="eventPrefix" xsi:type="string">news_news_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">news_news_grid_collection</argument>
+            <argument name="model" xsi:type="string">News\Manger\Model\News</argument>
         </arguments>
     </virtualType>
 
@@ -74,8 +80,9 @@
     </type>
 
     <!-- Repositories -->
-    <preference for="News\Manger\Api\NewsRepositoryInterface" type="News\Manger\Model\NewsRepository"/>
-    <preference for="News\Manger\Api\CategoryRepositoryInterface" type="News\Manger\Model\CategoryRepository"/>
+    <!-- <preference for="News\Manger\Api\NewsRepositoryInterface" type="News\Manger\Model\NewsRepository"/>
+    <preference for="News\Manger\Api\CategoryRepositoryInterface" type="News\Manger\Model\CategoryRepository"/> -->
+
 
     <!-- Collections -->
     <type name="News\Manger\Model\ResourceModel\News\Collection">
@@ -83,6 +90,7 @@
             <argument name="eventPrefix" xsi:type="string">news_news_collection</argument>
             <argument name="eventObject" xsi:type="string">news_news_collection</argument>
             <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\News</argument>
+            <argument name="model" xsi:type="string">News\Manger\Model\News</argument>
         </arguments>
     </type>
 
