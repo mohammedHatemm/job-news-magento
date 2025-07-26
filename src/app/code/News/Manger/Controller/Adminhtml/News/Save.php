@@ -2,60 +2,50 @@
 
 namespace News\Manger\Controller\Adminhtml\News;
 
+use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Stdlib\DateTime\Filter\Date as DateFilter;
 use News\Manger\Model\NewsFactory;
+use Magento\Framework\App\ResourceConnection;
+use Psr\Log\LoggerInterface;
 
-class Save extends \Magento\Backend\App\Action
+class Save extends Action
 {
     const ADMIN_RESOURCE = 'News_Manger::news_save';
     const PAGE_TITLE = 'Save News';
 
-    /**
-     * @var DataPersistorInterface
-     */
     protected $dataPersistor;
-
-    /**
-     * @var NewsFactory
-     */
     protected $newsFactory;
-
-    /**
-     * @var DateFilter
-     */
     protected $dateFilter;
+    protected $resourceConnection;
+    protected $logger;
 
-    /**
-     * @param Context $context
-     * @param DataPersistorInterface $dataPersistor
-     * @param NewsFactory $newsFactory
-     * @param DateFilter $dateFilter
-     */
     public function __construct(
         Context $context,
         DataPersistorInterface $dataPersistor,
         NewsFactory $newsFactory,
-        DateFilter $dateFilter
+        DateFilter $dateFilter,
+        ResourceConnection $resourceConnection,
+        LoggerInterface $logger
     ) {
         $this->dataPersistor = $dataPersistor;
         $this->newsFactory = $newsFactory;
         $this->dateFilter = $dateFilter;
+        $this->resourceConnection = $resourceConnection;
+        $this->logger = $logger;
         parent::__construct($context);
     }
 
-    /**
-     * Save action
-     *
-     * @return \Magento\Framework\Controller\ResultInterface
-     */
     public function execute()
     {
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         $data = $this->getRequest()->getPostValue();
+
+        // Log POST data for debugging
+        $this->logger->info('POST Data: ' . json_encode($data));
 
         if ($data) {
             $id = $this->getRequest()->getParam('news_id');
@@ -87,10 +77,18 @@ class Save extends \Magento\Backend\App\Action
                 $data['created_at'] = date('Y-m-d H:i:s');
             }
 
+            // Extract category_ids and remove from model data
+            $categoryIds = isset($data['category_ids']) && is_array($data['category_ids']) ? $data['category_ids'] : [];
+            unset($data['category_ids']);
+
             $model->setData($data);
 
             try {
                 $model->save();
+
+                // Save category associations
+                $this->saveCategoryAssociations($model->getId(), $categoryIds);
+
                 $this->messageManager->addSuccessMessage(__('The news has been saved.'));
                 $this->dataPersistor->clear('news_news');
 
@@ -101,9 +99,11 @@ class Save extends \Magento\Backend\App\Action
             } catch (LocalizedException $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
             } catch (\Exception $e) {
+                $this->logger->error('Error saving news: ' . $e->getMessage());
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the news.'));
             }
 
+            $data['category_ids'] = $categoryIds;
             $this->dataPersistor->set('news_news', $data);
             return $this->redirectWithData($resultRedirect, $data, $id);
         }
@@ -111,14 +111,56 @@ class Save extends \Magento\Backend\App\Action
         return $resultRedirect->setPath('*/*/');
     }
 
-    /**
-     * Redirect with form data
-     *
-     * @param \Magento\Framework\Controller\ResultInterface $resultRedirect
-     * @param array $data
-     * @param int|null $id
-     * @return \Magento\Framework\Controller\ResultInterface
-     */
+    private function saveCategoryAssociations($newsId, $categoryIds)
+    {
+        $this->logger->info('Saving categories for news ' . $newsId . ': ' . json_encode($categoryIds));
+        $connection = $this->resourceConnection->getConnection();
+        $table = $connection->getTableName('news_news_category');
+
+        // Validate category IDs
+        $validCategoryIds = [];
+        if (!empty($categoryIds)) {
+            $validCategoryIds = $connection->fetchCol(
+                "SELECT category_id FROM news_category WHERE category_id IN (?)",
+                $categoryIds
+            );
+            if (empty($validCategoryIds)) {
+                $this->logger->info('No valid category IDs found for news ' . $newsId);
+            }
+        }
+
+        // Delete existing associations
+        try {
+            $connection->delete($table, ['news_id = ?' => $newsId]);
+            $this->logger->info('Deleted existing associations for news ' . $newsId);
+        } catch (\Exception $e) {
+            $this->logger->error('Error deleting existing category associations: ' . $e->getMessage());
+            throw $e;
+        }
+
+        // Insert new associations
+        if (!empty($validCategoryIds)) {
+            $data = [];
+            foreach ($validCategoryIds as $categoryId) {
+                if (!empty($categoryId)) {
+                    $data[] = [
+                        'news_id' => (int)$newsId,
+                        'category_id' => (int)$categoryId
+                    ];
+                }
+            }
+            if (!empty($data)) {
+                try {
+                    $connection->insertMultiple($table, $data);
+                    $this->logger->info('Inserted new category associations for news ' . $newsId);
+                } catch (\Exception $e) {
+                    $this->logger->error('Error inserting category associations: ' . $e->getMessage());
+                    throw $e;
+                }
+            }
+        }
+    }
+
     private function redirectWithData($resultRedirect, $data, $id)
     {
         $this->dataPersistor->set('news_news', $data);
@@ -128,11 +170,6 @@ class Save extends \Magento\Backend\App\Action
         return $resultRedirect->setPath('*/*/new');
     }
 
-    /**
-     * Is the user allowed to view the page.
-     *
-     * @return bool
-     */
     protected function _isAllowed()
     {
         return $this->_authorization->isAllowed(static::ADMIN_RESOURCE);

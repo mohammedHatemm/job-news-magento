@@ -7,7 +7,7 @@
         <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="true" comment="Category ID"/>
         <column xsi:type="varchar" name="category_name" length="255" nullable="false" comment="Category Name"/>
         <column xsi:type="text" name="category_description" nullable="true" comment="Category Description"/>
-        <column xsi:type="int" name="parent_id" unsigned="true" nullable="true" comment="Parent Category ID"/>
+        <column xsi:type="json" name="parent_ids" nullable="true" comment="Parent Category IDs Array"/>
         <column xsi:type="smallint" name="category_status" unsigned="true" nullable="false" default="1" comment="Category Status"/>
         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"/>
         <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"/>
@@ -15,10 +15,6 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="category_id"/>
         </constraint>
-
-        <constraint xsi:type="foreign" referenceId="NEWS_CATEGORY_PARENT_ID_FK" table="news_category"
-                    column="parent_id" referenceTable="news_category" referenceColumn="category_id"
-                    onDelete="SET NULL"/>
 
         <index referenceId="NEWS_CATEGORY_NAME_IDX" indexType="btree">
             <column name="category_name"/>

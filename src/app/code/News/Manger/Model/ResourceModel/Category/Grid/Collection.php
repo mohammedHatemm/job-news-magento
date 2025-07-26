@@ -10,45 +10,56 @@ class Collection extends CategoryCollection implements SearchResultInterface
 {
   protected $aggregations;
 
+  /**
+   * @param \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory
+   * @param \Psr\Log\LoggerInterface $logger
+   * @param \Magento\Framework\Data\Collection\Db\FetchStrategyInterface $fetchStrategy
+   * @param \Magento\Framework\Event\ManagerInterface $eventManager
+   * @param \Magento\Framework\DB\Adapter\AdapterInterface $connection
+   * @param \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource
+   */
   public function __construct(
     \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory,
     \Psr\Log\LoggerInterface $logger,
     \Magento\Framework\Data\Collection\Db\FetchStrategyInterface $fetchStrategy,
     \Magento\Framework\Event\ManagerInterface $eventManager,
-    $mainTable,
-    $eventPrefix,
-    $eventObject,
-    $resourceModel,
-    $model = 'News\Manger\Model\Category',
-    $connection = null,
+    \Magento\Framework\DB\Adapter\AdapterInterface $connection = null,
     \Magento\Framework\Model\ResourceModel\Db\AbstractDb $resource = null
   ) {
     parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $connection, $resource);
-    $this->_eventPrefix = $eventPrefix;
-    $this->_eventObject = $eventObject;
-    $this->_init($model, $resourceModel);
-    $this->setMainTable($mainTable);
   }
 
+  /**
+   * Initialize resource model
+   */
+  protected function _construct()
+  {
+    $this->_init('News\Manger\Model\Category', 'News\Manger\Model\ResourceModel\Category');
+    $this->_eventPrefix = 'news_manger_category_grid_collection';
+    $this->_eventObject = 'category_grid_collection';
+  }
+
+  /**
+   * Initialize select with parent information
+   *
+   * @return $this
+   */
   protected function _initSelect()
   {
     parent::_initSelect();
 
-    // Join with parent category to get parent name
+    // Add parent name to the select for grid display
     $this->getSelect()->joinLeft(
       ['parent' => $this->getTable('news_category')],
       'main_table.parent_id = parent.category_id',
-      ['parent_name' => 'IFNULL(parent.category_name, "No Parent")']
+      ['parent_name' => 'COALESCE(parent.category_name, "Root Category")']
     );
-
-    // Log the SQL query for debugging
-    $this->_logger->debug('Grid Collection SQL: ' . $this->getSelect()->__toString());
 
     return $this;
   }
 
   /**
-   * Add field to filter
+   * Add field to filter - handle parent name filtering
    *
    * @param array|string $field
    * @param string|int|array|null $condition
@@ -57,51 +68,144 @@ class Collection extends CategoryCollection implements SearchResultInterface
   public function addFieldToFilter($field, $condition = null)
   {
     if ($field === 'parent_name') {
-      $this->getSelect()->where('parent.category_name LIKE ?', '%' . $condition['like'] . '%');
+      if (isset($condition['like'])) {
+        $this->getSelect()->where('parent.category_name LIKE ?', $condition['like']);
+      } elseif (isset($condition['eq'])) {
+        $this->getSelect()->where('parent.category_name = ?', $condition['eq']);
+      }
       return $this;
     }
 
     return parent::addFieldToFilter($field, $condition);
   }
 
+  /**
+   * Add order for grid
+   *
+   * @param string $field
+   * @param string $direction
+   * @return $this
+   */
+  public function setOrder($field, $direction = self::SORT_ORDER_DESC)
+  {
+    if ($field === 'parent_name') {
+      $this->getSelect()->order('parent.category_name ' . $direction);
+    } else {
+      parent::setOrder($field, $direction);
+    }
+    return $this;
+  }
+
+  /**
+   * Get aggregations
+   *
+   * @return AggregationInterface
+   */
   public function getAggregations()
   {
     return $this->aggregations;
   }
 
+  /**
+   * Set aggregations
+   *
+   * @param AggregationInterface $aggregations
+   * @return $this
+   */
   public function setAggregations($aggregations)
   {
     $this->aggregations = $aggregations;
     return $this;
   }
 
-  public function getAllIds($limit = null, $offset = null)
-  {
-    return $this->getConnection()->fetchCol($this->_getAllIdsSelect($limit, $offset), $this->_bindParams);
-  }
-
+  /**
+   * Get search criteria
+   *
+   * @return \Magento\Framework\Api\Search\SearchCriteriaInterface|null
+   */
   public function getSearchCriteria()
   {
     return null;
   }
 
+  /**
+   * Set search criteria
+   *
+   * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+   * @return $this
+   */
   public function setSearchCriteria(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria = null)
   {
     return $this;
   }
 
+  /**
+   * Get total count
+   *
+   * @return int
+   */
   public function getTotalCount()
   {
     return $this->getSize();
   }
 
+  /**
+   * Set total count
+   *
+   * @param int $totalCount
+   * @return $this
+   */
   public function setTotalCount($totalCount)
   {
     return $this;
   }
 
+  /**
+   * Set items list
+   *
+   * @param \Magento\Framework\Api\Search\DocumentInterface[] $items
+   * @return $this
+   */
   public function setItems(array $items = null)
   {
+    return $this;
+  }
+
+  /**
+   * Add custom filter for category status
+   *
+   * @param int|array $status
+   * @return $this
+   */
+  public function addStatusFilter($status)
+  {
+    $this->addFieldToFilter('category_status', $status);
+    return $this;
+  }
+
+  /**
+   * Add filter for root categories
+   *
+   * @param bool $isRoot
+   * @return $this
+   */
+  public function addRootFilter($isRoot = true)
+  {
+    $condition = $isRoot ? ['null' => true] : ['notnull' => true];
+    $this->addFieldToFilter('parent_id', $condition);
+    return $this;
+  }
+
+  /**
+   * Add level filter
+   *
+   * @param int $level
+   * @return $this
+   */
+  public function addLevelFilter($level)
+  {
+    // Note: This requires a custom SQL as level is calculated
+    $this->getSelect()->where('main_table.level = ?', $level);
     return $this;
   }
 }

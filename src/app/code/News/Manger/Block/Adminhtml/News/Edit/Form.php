@@ -3,34 +3,27 @@
 namespace News\Manger\Block\Adminhtml\News\Edit;
 
 use Magento\Backend\Block\Widget\Form\Generic;
-use Magento\Framework\Data\FormFactory;
-use Magento\Backend\Block\Template\Context;
-use Magento\Framework\Registry;
-use News\Manger\Model\ResourceModel\Category\CollectionFactory as CategoryCollectionFactory;
+use News\Manger\Model\CategoryFactory;
+use Psr\Log\LoggerInterface;
 
 class Form extends Generic
 {
-  /**
-   * @var CategoryCollectionFactory
-   */
-  protected $categoryCollectionFactory;
+  protected $categoryFactory;
+  protected $logger;
 
-  /**
-   * Form constructor.
-   */
   public function __construct(
-    Context $context,
-    Registry $registry,
-    FormFactory $formFactory,
-    CategoryCollectionFactory $categoryCollectionFactory
+    \Magento\Backend\Block\Template\Context $context,
+    \Magento\Framework\Registry $registry,
+    \Magento\Framework\Data\FormFactory $formFactory,
+    CategoryFactory $categoryFactory,
+    LoggerInterface $logger,
+    array $data = []
   ) {
-    $this->categoryCollectionFactory = $categoryCollectionFactory;
-    parent::__construct($context, $registry, $formFactory);
+    $this->categoryFactory = $categoryFactory;
+    $this->logger = $logger;
+    parent::__construct($context, $registry, $formFactory, $data);
   }
 
-  /**
-   * Prepare form
-   */
   protected function _prepareForm()
   {
     /** @var \News\Manger\Model\News $model */
@@ -41,7 +34,8 @@ class Form extends Generic
       'data' => [
         'id' => 'edit_form',
         'action' => $this->getData('action'),
-        'method' => 'post'
+        'method' => 'post',
+        'enctype' => 'multipart/form-data'
       ]
     ]);
 
@@ -93,60 +87,126 @@ class Form extends Generic
       ]
     );
 
-
-
-    // عرض قائمة أسماء التصنيفات
     try {
-      $parentOptions = $this->getCategoryOptions($model->getId());
+      $categoryOptions = $this->getCategoryOptions($model->getId());
 
-      $fieldset->addField('parent_id', 'select', [
-        'name' => 'parent_id',
-        'label' => __('Parent Category'),
-        'title' => __('Parent Category'),
-        'required' => false,
-        'values' => $parentOptions
-      ]);
+      $fieldset->addField(
+        'category_ids',
+        'multiselect',
+        [
+          'name' => 'category_ids[]',
+          'label' => __('Categories'),
+          'title' => __('Categories'),
+          'required' => false,
+          'values' => $categoryOptions,
+          'note' => __('Select one or more categories for this news.')
+        ]
+      );
     } catch (\Exception $e) {
-      $this->_logger->error('Error loading category options: ' . $e->getMessage());
-      $fieldset->addField('parent_id', 'text', [
-        'name' => 'parent_id',
-        'label' => __('Parent Category ID'),
-        'title' => __('Parent Category ID'),
-        'required' => false,
-        'note' => __('Enter parent category ID or leave empty')
+      $this->logger->error('Error loading category options: ' . $e->getMessage());
+      $fieldset->addField('category_ids', 'note', [
+        'label' => __('Categories'),
+        'text' => __('Could not load category options. Please check logs.')
       ]);
     }
 
-    $form->setValues($model->getData());
+    $formData = $model->getData();
+
+    // Load existing category IDs for the news
+    if ($model->getId()) {
+      $categoryIds = $this->getCategoryIdsForNews($model->getId());
+      $formData['category_ids'] = $categoryIds;
+    } else {
+      $formData['category_ids'] = [];
+    }
+
+    $form->setValues($formData);
     $form->setUseContainer(true);
     $this->setForm($form);
 
     return parent::_prepareForm();
   }
 
-  /**
-   * Load available categories to populate the select field
-   */
-  protected function getCategoryOptions($currentId = null)
+  protected function getCategoryOptions($excludeId = null): array
   {
-    $collection = $this->categoryCollectionFactory->create();
-    $collection->addFieldToSelect(['category_id', 'category_name']);
+    $collection = $this->categoryFactory->create()->getCollection()->addOrder('category_name', 'ASC');
+    $options = [];
+    $categoryMap = [];
+    $childrenMap = [];
 
-    $collection->addFieldToFilter('category_status', ['eq' => 1]);
+    // Build category hierarchy
+    foreach ($collection as $category) {
+      if ($excludeId && $category->getId() == $excludeId) {
+        continue;
+      }
+      $categoryId = $category->getId();
+      $parentIds = json_decode($category->getData('parent_ids') ?: '[]', true);
 
-    if ($currentId) {
-      $collection->addFieldToFilter('category_id', ['neq' => $currentId]);
+      $categoryMap[$categoryId] = $category;
+
+      if (empty($parentIds)) {
+        $childrenMap[0][] = $categoryId;
+      } else {
+        foreach ($parentIds as $parentId) {
+          $childrenMap[$parentId][] = $categoryId;
+        }
+      }
     }
 
-    $options = [['value' => '', 'label' => __('-- Please Select --')]];
-
-    foreach ($collection as $category) {
-      $options[] = [
-        'value' => $category->getCategoryId(),
-        'label' => $category->getCategoryName()
-      ];
+    // Generate hierarchical options
+    if (isset($childrenMap[0])) {
+      foreach ($childrenMap[0] as $rootCategoryId) {
+        if (isset($categoryMap[$rootCategoryId])) {
+          $this->addCategoryToOptions(
+            $categoryMap[$rootCategoryId],
+            $categoryMap,
+            $childrenMap,
+            $options
+          );
+        }
+      }
     }
 
     return $options;
+  }
+
+  protected function addCategoryToOptions($category, array $categoryMap, array $childrenMap, array &$options, string $breadcrumbPath = '')
+  {
+    $currentPath = $breadcrumbPath ? ($breadcrumbPath . ' > ') : '';
+    $currentPath .= $category->getCategoryName() ?: __('Category #%1', $category->getId());
+
+    $options[] = [
+      'value' => $category->getId(),
+      'label' => $currentPath,
+    ];
+
+    $categoryId = $category->getId();
+    if (isset($childrenMap[$categoryId])) {
+      foreach ($childrenMap[$categoryId] as $childId) {
+        if (isset($categoryMap[$childId])) {
+          $this->addCategoryToOptions(
+            $categoryMap[$childId],
+            $categoryMap,
+            $childrenMap,
+            $options,
+            $currentPath
+          );
+        }
+      }
+    }
+  }
+
+  protected function getCategoryIdsForNews($newsId)
+  {
+    try {
+      $connection = $this->_objectManager->get(\Magento\Framework\App\ResourceConnection::class)->getConnection();
+      $select = $connection->select()
+        ->from($connection->getTableName('news_news_category'), ['category_id'])
+        ->where('news_id = ?', $newsId);
+      return $connection->fetchCol($select);
+    } catch (\Exception $e) {
+      $this->logger->error('Error getting category IDs for news: ' . $e->getMessage());
+      return [];
+    }
   }
 }

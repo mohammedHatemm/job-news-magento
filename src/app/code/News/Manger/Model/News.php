@@ -7,7 +7,7 @@ class News extends \Magento\Framework\Model\AbstractModel
   const NEWS_ID = 'news_id';
   const TITLE = 'news_title';
   const CONTENT = 'news_content';
-  const CREATED_AT = 'news_created_at';
+  const CREATED_AT = 'created_at';
   const STATUS = 'news_status';
 
   protected $_eventPrefix = 'news';

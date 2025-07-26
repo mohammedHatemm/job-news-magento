@@ -4,7 +4,7 @@
 $news = $block->getNews();
 $newsInfo = $block->getDetailedNewsInfo();
 $sharingLinks = $block->getSharingLinks();
-
+$categoryPaths = $block->getDetailedCategoryPathsForCurrentNews();
 ?>
 
 <?php if ($news): ?>
@@ -31,8 +31,6 @@ $sharingLinks = $block->getSharingLinks();
         <span><?= $block->escapeHtml(__('Views: %1', number_format($newsInfo['view_count']))) ?></span>
       </div>
 
-
-
       <?php if ($newsInfo['is_featured']): ?>
         <div class="meta-item featured-badge">
           <i class="icon-star"></i>
@@ -42,26 +40,21 @@ $sharingLinks = $block->getSharingLinks();
     </div>
 
     <!-- التسلسل الهرمي للفئات -->
-    <?php $categoryPaths = $block->getDetailedCategoryPathsForCurrentNews(); ?>
     <?php if (!empty($categoryPaths)): ?>
       <div class="news-view-categories">
         <h3><?= $block->escapeHtml(__('Categories')) ?></h3>
-        <?php foreach ($categoryPaths as $pathData): ?>
-          <div class="category-hierarchy">
-            <div class="breadcrumb-path">
-              <?php foreach ($pathData['path_items'] as $index => $item): ?>
-                <?php if ($index > 0): ?><span class="separator"> > </span><?php endif; ?>
-                <a href="<?= $block->escapeUrl($item['url']) ?>"
-                  class="category-link level-<?= $item['level'] ?>">
-                  <?= $block->escapeHtml($item['name']) ?>
-                </a>
-              <?php endforeach; ?>
-            </div>
-            <div class="hierarchy-info">
-              <span class="depth-info"><?= $block->escapeHtml(__('Depth: %1 levels', $pathData['depth'])) ?></span>
-            </div>
-          </div>
-        <?php endforeach; ?>
+        <div class="category-tags">
+          <?php foreach ($categoryPaths as $pathData): ?>
+            <a href="<?= $block->escapeUrl($pathData['url']) ?>" class="category-tag">
+              <?= $block->escapeHtml($pathData['name']) ?>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php else: ?>
+      <div class="news-view-categories">
+        <h3><?= $block->escapeHtml(__('Categories')) ?></h3>
+        <p><?= $block->escapeHtml(__('No Categories Assigned')) ?></p>
       </div>
     <?php endif; ?>
 
@@ -86,7 +79,6 @@ $sharingLinks = $block->getSharingLinks();
     <div class="news-view-content">
       <?= $newsInfo['content'] ?>
     </div>
-
 
     <!-- معلومات إضافية -->
     <div class="additional-info">
@@ -201,7 +193,7 @@ $sharingLinks = $block->getSharingLinks();
     <!-- رابط العودة -->
     <div class="back-link-container">
       <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user')) ?>" class="back-link">
-        &larr; <?= $block->escapeHtml(__('Back to News List')) ?>
+        ← <?= $block->escapeHtml(__('Back to News List')) ?>
       </a>
     </div>
   </div>
@@ -258,49 +250,26 @@ $sharingLinks = $block->getSharingLinks();
       border-left: 4px solid #3498db;
     }
 
-    .category-hierarchy {
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 15px;
     }
 
-    .breadcrumb-path {
-      margin-bottom: 5px;
-    }
-
-    .category-link {
-      color: #2980b9;
+    .category-tag {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
       text-decoration: none;
-      font-weight: 500;
-      padding: 2px 6px;
-      border-radius: 4px;
+      font-size: 0.9rem;
       transition: background-color 0.3s;
     }
 
-    .category-link:hover {
-      background-color: #e8f4fd;
-      text-decoration: underline;
-    }
-
-    .level-0 {
-      font-weight: bold;
-    }
-
-    .level-1 {
-      font-weight: 600;
-    }
-
-    .level-2 {
-      font-weight: normal;
-    }
-
-    .separator {
-      color: #bdc3c7;
-      margin: 0 8px;
-    }
-
-    .hierarchy-info {
-      font-size: 0.8rem;
-      color: #95a5a6;
-      font-style: italic;
+    .category-tag:hover {
+      background-color: #2980b9;
     }
 
     .featured-image-container {
@@ -328,37 +297,6 @@ $sharingLinks = $block->getSharingLinks();
       line-height: 1.8;
       font-size: 1.1rem;
       color: #2c3e50;
-    }
-
-
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      margin-top: 15px;
-    }
-
-    .stat-item {
-      text-align: center;
-      background: white;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #2980b9;
-      margin-bottom: 5px;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: #7f8c8d;
-      text-transform: uppercase;
     }
 
     .additional-info {
@@ -546,7 +484,7 @@ $sharingLinks = $block->getSharingLinks();
     <h2><?= $block->escapeHtml(__('News Not Found')) ?></h2>
     <p><?= $block->escapeHtml(__('Sorry, the news article you are looking for could not be found.')) ?></p>
     <a href="<?= $block->escapeUrl($block->getBackUrl()) ?>" class="back-link">
-      &larr; <?= $block->escapeHtml(__('Back to News List')) ?>
+      ← <?= $block->escapeHtml(__('Back to News List')) ?>
     </a>
   </div>
 

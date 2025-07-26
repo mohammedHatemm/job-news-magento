@@ -22,4 +22,13 @@ class Interceptor extends \Magento\Framework\App\StaticResource implements \Mage
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'launch');
         return $pluginInfo ? $this->___callPlugins('launch', func_get_args(), $pluginInfo) : parent::launch();
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function catchException(\Magento\Framework\App\Bootstrap $bootstrap, \Exception $exception)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'catchException');
+        return $pluginInfo ? $this->___callPlugins('catchException', func_get_args(), $pluginInfo) : parent::catchException($bootstrap, $exception);
+    }
 }

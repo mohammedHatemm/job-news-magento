@@ -2,15 +2,16 @@
 
 namespace News\Manger\Block\Adminhtml\Category;
 
-use Magento\Backend\Block\Widget\Container;
+use Magento\Backend\Block\Template;
+use Magento\Backend\Block\Template\Context;
 use Magento\Framework\Registry;
 
-class View extends Container
+class View extends Template
 {
   protected $registry;
 
   public function __construct(
-    \Magento\Backend\Block\Widget\Context $context,
+    Context $context,
     Registry $registry,
     array $data = []
   ) {
@@ -18,29 +19,23 @@ class View extends Container
     parent::__construct($context, $data);
   }
 
-  protected function _construct()
-  {
-    parent::_construct();
-    $this->setTemplate('News_Manger::category/view/view.phtml');
-
-    // Add back button
-    $this->buttonList->add(
-      'back',
-      [
-        'label' => __('Back'),
-        'onclick' => "setLocation('" . $this->getBackUrl() . "')",
-        'class' => 'back'
-      ]
-    );
-  }
-
-  public function getBackUrl()
-  {
-    return $this->getUrl('*/*/');
-  }
-
-  public function getCategory()
+  public function getCurrentCategory()
   {
     return $this->registry->registry('current_category');
+  }
+
+  public function hasCategory()
+  {
+    $category = $this->getCurrentCategory();
+    return $category && $category->getId();
+  }
+
+  public function getBreadcrumbPaths()
+  {
+    $category = $this->getCurrentCategory();
+    if (!$category || !$category->getId()) {
+      return [];
+    }
+    return $category->getBreadcrumbPaths();
   }
 }

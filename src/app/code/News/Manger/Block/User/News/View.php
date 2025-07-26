@@ -5,6 +5,7 @@ namespace News\Manger\Block\User\News;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\Registry;
+use News\Manger\Model\Category;
 use News\Manger\Model\ResourceModel\Category\CollectionFactory as CategoryCollectionFactory;
 use Magento\Framework\App\ResourceConnection;
 use Psr\Log\LoggerInterface;
@@ -15,8 +16,6 @@ class View extends Template
   protected $categoryCollectionFactory;
   protected $resourceConnection;
   protected $logger;
-
-  private $allCategories;
 
   public function __construct(
     Context $context,
@@ -33,42 +32,41 @@ class View extends Template
     parent::__construct($context, $data);
   }
 
-  /**
-   * جلب الخبر الحالي
-   */
   public function getNews()
   {
     return $this->coreRegistry->registry('current_news');
   }
 
-  /**
-   * جلب التسلسل الهرمي المفصل لجميع التصنيفات المرتبطة بالخبر الحالي
-   * @return array
-   */
   public function getDetailedCategoryPathsForCurrentNews(): array
   {
     $news = $this->getNews();
     if (!$news) {
+      $this->logger->debug('No News Found');
       return [];
     }
 
-    $this->loadAllCategoriesOnce();
     $categoryIds = $this->getCategoryIdsForNews($news->getId());
+    $this->logger->debug('Category IDs for News ' . $news->getId() . ': ' . json_encode($categoryIds));
 
     $paths = [];
     foreach ($categoryIds as $categoryId) {
-      $pathData = $this->buildDetailedCategoryPath($categoryId);
-      if (!empty($pathData)) {
-        $paths[] = $pathData;
+      $category = $this->categoryCollectionFactory->create()->addFieldToFilter('category_id', $categoryId)->getFirstItem();
+      if ($category->getId()) {
+        $breadcrumbPaths = $category->getBreadcrumbPaths();
+        foreach ($breadcrumbPaths as $breadcrumb) {
+          $paths[] = [
+            'name' => implode(' > ', array_column($breadcrumb, 'name')),
+            'url' => $this->getUrl('newsuser/category/view', ['id' => $categoryId]),
+            'level' => $category->getLevel()
+          ];
+        }
       }
     }
+    $this->logger->debug('Category Paths for News ' . $news->getId() . ': ' . json_encode($paths));
+
     return $paths;
   }
 
-  /**
-   * جلب جميع معلومات الخبر المفصلة
-   * @return array
-   */
   public function getDetailedNewsInfo(): array
   {
     $news = $this->getNews();
@@ -95,10 +93,6 @@ class View extends Template
     ];
   }
 
-  /**
-   * جلب إحصائيات الخبر
-   * @return array
-   */
   public function getNewsStatistics(): array
   {
     $news = $this->getNews();
@@ -114,11 +108,6 @@ class View extends Template
     ];
   }
 
-  /**
-   * حساب وقت القراءة التقريبي
-   * @param string $content
-   * @return int
-   */
   private function calculateReadingTime($content): int
   {
     $wordCount = str_word_count(strip_tags($content));
@@ -126,10 +115,6 @@ class View extends Template
     return max(1, ceil($wordCount / $readingSpeed));
   }
 
-  /**
-   * جلب الأخبار ذات الصلة (نفس الفئات)
-   * @return array
-   */
   public function getRelatedNews($limit = 5): array
   {
     $news = $this->getNews();
@@ -140,7 +125,6 @@ class View extends Template
     try {
       $connection = $this->resourceConnection->getConnection();
 
-      // جلب الأخبار التي تشارك نفس الفئات
       $select = $connection->select()
         ->from(['n' => $this->resourceConnection->getTableName('news_news')], [
           'id',
@@ -183,68 +167,6 @@ class View extends Template
     }
   }
 
-  /**
-   * بناء التسلسل الهرمي المفصل للفئة
-   * @param int $categoryId
-   * @return array
-   */
-  private function buildDetailedCategoryPath(int $categoryId): array
-  {
-    if (!isset($this->allCategories[$categoryId])) {
-      return [];
-    }
-
-    $pathItems = [];
-    $currentId = $categoryId;
-    $level = 0;
-
-    while ($currentId && isset($this->allCategories[$currentId])) {
-      $category = $this->allCategories[$currentId];
-      array_unshift($pathItems, [
-        'id' => $currentId,
-        'name' => $category['category_name'],
-        'level' => $level,
-        'url' => $this->getUrl('newsuser/category/view', ['id' => $currentId])
-      ]);
-      $currentId = $category['parent_id'];
-      $level++;
-    }
-
-    return [
-      'path_string' => implode(' / ', array_column($pathItems, 'name')),
-      'path_items' => $pathItems,
-      'depth' => count($pathItems),
-      'leaf_category' => end($pathItems)
-    ];
-  }
-
-  private function loadAllCategoriesOnce(): void
-  {
-    if ($this->allCategories === null) {
-      $this->allCategories = [];
-      try {
-        $collection = $this->categoryCollectionFactory->create();
-        $collection->addFieldToSelect(['id', 'category_name', 'parent_id', 'category_description', 'sort_order']);
-
-        foreach ($collection as $category) {
-          $this->allCategories[$category->getId()] = [
-            'category_name' => $category->getCategoryName(),
-            'parent_id' => $category->getParentId(),
-            'category_description' => $category->getCategoryDescription(),
-            'sort_order' => $category->getSortOrder()
-          ];
-        }
-      } catch (\Exception $e) {
-        $this->logger->error('Error loading all categories: ' . $e->getMessage());
-      }
-    }
-  }
-
-  /**
-   * تنسيق التاريخ
-   * @param string $date
-   * @return string
-   */
   public function formatArabicDate($date): string
   {
     if (!$date) {
@@ -275,10 +197,6 @@ class View extends Template
     return "{$day} {$month} {$year} - {$time}";
   }
 
-  /**
-   * جلب رابط المشاركة
-   * @return array
-   */
   public function getSharingLinks(): array
   {
     $news = $this->getNews();

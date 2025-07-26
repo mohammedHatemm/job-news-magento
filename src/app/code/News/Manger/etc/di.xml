@@ -48,10 +48,11 @@ File: app/code/News/Manger/etc/di.xml
     <virtualType name="CategoryGridSearchResult" type="News\Manger\Model\ResourceModel\Category\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">news_category</argument>
-            <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>
             <argument name="eventPrefix" xsi:type="string">news_category_grid_collection</argument>
             <argument name="eventObject" xsi:type="string">news_category_grid_collection</argument>
             <argument name="model" xsi:type="string">News\Manger\Model\Category</argument>
+            <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>
+            <argument name="connection" xsi:type="object">Magento\Framework\App\ResourceConnection</argument>
         </arguments>
     </virtualType>
 

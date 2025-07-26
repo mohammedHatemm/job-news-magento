@@ -19,9 +19,24 @@ class Hierarchy extends Template
     parent::__construct($context, $data);
   }
 
-  public function getBreadcrumbPath()
+  // تغيير اسم الـ method لتتطابق مع الموجود في الـ model
+  public function getBreadcrumbPaths()
   {
     $category = $this->registry->registry('current_category');
-    return $category ? $category->getBreadcrumbPath() : [];
+    if (!$category || !$category->getId()) {
+      return [];
+    }
+    return $category->getBreadcrumbPaths();
+  }
+
+  public function getCurrentCategory()
+  {
+    return $this->registry->registry('current_category');
+  }
+
+  public function hasCategory()
+  {
+    $category = $this->getCurrentCategory();
+    return $category && $category->getId();
   }
 }

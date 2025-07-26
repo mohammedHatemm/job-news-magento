@@ -120,13 +120,15 @@
                 </item>
             </argument>
         </column>
-
-        <column name="full_path" sortOrder="80">
+        <column name="full_path_array" sortOrder="90">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Full Path</item>
+                    <item name="label" xsi:type="string" translate="true">Full Path Array</item>
                     <item name="componentType" xsi:type="string">column</item>
                     <item name="dataType" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="escape" xsi:type="boolean">false</item> <!-- إضافة للسماح بـ HTML -->
+                    <item name="render" xsi:type="string">html</item> <!-- إضافة لضمان عرض HTML -->
                 </item>
             </argument>
         </column>
@@ -141,6 +143,29 @@
         </item>
     </argument>
 </column>
+
+<column name="full_path_array">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Full Path Array</item>
+            <item name="componentType" xsi:type="string">column</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="sortable" xsi:type="boolean">false</item>
+        </item>
+    </argument>
+</column>
+
+<column name="direct_parents">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Direct Parent</item>
+            <item name="componentType" xsi:type="string">column</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="sortable" xsi:type="boolean">false</item>
+        </item>
+    </argument>
+</column>
+
 
 
 <!-- ✅ العمود المضاف لحل الخطأ -->
