@@ -20,9 +20,10 @@
     },
     "version": "2.4.7",
     "require": {
-        "magento/product-community-edition": "2.4.7",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
-        "magento/composer-root-update-plugin": "^2.0.4"
+        "magento/composer-root-update-plugin": "^2.0.4",
+        "magento/product-community-edition": "2.4.7",
+        "markshust/magento2-module-simpledata": "^2.0"
     },
     "autoload": {
         "exclude-from-classmap": [

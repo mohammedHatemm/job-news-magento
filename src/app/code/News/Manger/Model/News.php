@@ -70,4 +70,20 @@ class News extends \Magento\Framework\Model\AbstractModel
   {
     return $this->setData(self::STATUS, $status);
   }
+
+
+
+  public function getBreadcrumbPath($categoryId)
+  {
+    $path = [];
+    $current = $this->load($categoryId);
+    while ($current && $current->getId()) {
+      array_unshift($path, $current->getCategoryName());
+      $parentIds = json_decode($current->getParentIds() ?: '[]');
+      $parentId = is_array($parentIds) && count($parentIds) > 0 ? $parentIds[0] : null;
+      if (!$parentId || $parentId == $current->getId()) break;
+      $current = $this->load($parentId);
+    }
+    return implode(' > ', $path);
+  }
 }

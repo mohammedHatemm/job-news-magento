@@ -81,9 +81,8 @@ File: app/code/News/Manger/etc/di.xml
     </type>
 
     <!-- Repositories -->
-    <!-- <preference for="News\Manger\Api\NewsRepositoryInterface" type="News\Manger\Model\NewsRepository"/>
-    <preference for="News\Manger\Api\CategoryRepositoryInterface" type="News\Manger\Model\CategoryRepository"/> -->
-
+    <preference for="News\Manger\Api\NewsRepositoryInterface" type="News\Manger\Model\NewsRepository"/>
+    <preference for="News\Manger\Api\CategoryRepositoryInterface" type="News\Manger\Model\CategoryRepository"/>
 
     <!-- Collections -->
     <type name="News\Manger\Model\ResourceModel\News\Collection">
@@ -100,6 +99,104 @@ File: app/code/News/Manger/etc/di.xml
             <argument name="eventPrefix" xsi:type="string">news_category_collection</argument>
             <argument name="eventObject" xsi:type="string">news_category_collection</argument>
             <argument name="resourceModel" xsi:type="string">News\Manger\Model\ResourceModel\Category</argument>
+        </arguments>
+    </type>
+
+    <!-- API Data Interfaces -->
+    <preference for="News\Manger\Api\Data\CategoryInterface"
+                type="News\Manger\Model\Data\Category" />
+
+    <preference for="News\Manger\Api\Data\NewsInterface"
+                type="News\Manger\Model\Data\News" />
+
+    <preference for="News\Manger\Api\Data\CategorySearchResultsInterface"
+                type="News\Manger\Model\Data\CategorySearchResults" />
+
+    <preference for="News\Manger\Api\Data\NewsSearchResultsInterface"
+                type="News\Manger\Model\Data\NewsSearchResults" />
+
+    <!-- API Repository Interfaces -->
+    <preference for="News\Manger\Api\CategoryRepositoryInterface"
+                type="News\Manger\Model\CategoryRepository" />
+
+    <preference for="News\Manger\Api\NewsRepositoryInterface"
+                type="News\Manger\Model\NewsRepository" />
+
+    <!-- Virtual Types for Search Results -->
+    <virtualType name="NewsCategorySearchResults" type="News\Manger\Model\Data\CategorySearchResults">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="items" xsi:type="string">News\Manger\Api\Data\CategoryInterface[]</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="NewsSearchResults" type="News\Manger\Model\Data\NewsSearchResults">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="items" xsi:type="string">News\Manger\Api\Data\NewsInterface[]</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Data Model Factories -->
+    <virtualType name="News\Manger\Model\Data\CategoryFactory" type="Magento\Framework\ObjectManager\Config\Config">
+        <arguments>
+            <argument name="instanceType" xsi:type="string">News\Manger\Model\Data\Category</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- API Data Models -->
+    <type name="News\Manger\Model\Data\Category">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="category_id" xsi:type="string">category_id</item>
+                <item name="category_name" xsi:type="string">category_name</item>
+                <item name="category_description" xsi:type="string">category_description</item>
+                <item name="status" xsi:type="string">status</item>
+                <item name="created_at" xsi:type="string">created_at</item>
+                <item name="updated_at" xsi:type="string">updated_at</item>
+                <item name="parent_ids" xsi:type="string">parent_ids</item>
+                <item name="child_ids" xsi:type="string">child_ids</item>
+                <item name="news_ids" xsi:type="string">news_ids</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="News\Manger\Model\Data\News">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="news_id" xsi:type="string">news_id</item>
+                <item name="news_title" xsi:type="string">news_title</item>
+                <item name="news_content" xsi:type="string">news_content</item>
+                <item name="news_status" xsi:type="string">news_status</item>
+                <item name="created_at" xsi:type="string">created_at</item>
+                <item name="updated_at" xsi:type="string">updated_at</item>
+                <item name="category_ids" xsi:type="string">category_ids</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- API Repository Models -->
+    <type name="News\Manger\Model\CategoryRepository">
+        <arguments>
+            <argument name="categoryFactory" xsi:type="object">News\Manger\Model\CategoryFactory</argument>
+            <argument name="categoryResource" xsi:type="object">News\Manger\Model\ResourceModel\Category</argument>
+            <argument name="categoryCollectionFactory" xsi:type="object">News\Manger\Model\ResourceModel\Category\CollectionFactory</argument>
+            <argument name="searchResultsFactory" xsi:type="object">News\Manger\Api\Data\CategorySearchResultsInterfaceFactory</argument>
+            <argument name="newsSearchResultsFactory" xsi:type="object">News\Manger\Api\Data\NewsSearchResultsInterfaceFactory</argument>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor</argument>
+            <argument name="searchCriteriaBuilder" xsi:type="object">Magento\Framework\Api\SearchCriteriaBuilder</argument>
+            <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+        </arguments>
+    </type>
+
+    <type name="News\Manger\Model\NewsRepository">
+        <arguments>
+            <argument name="newsFactory" xsi:type="object">News\Manger\Model\NewsFactory</argument>
+            <argument name="newsResource" xsi:type="object">News\Manger\Model\ResourceModel\News</argument>
+            <argument name="newsCollectionFactory" xsi:type="object">News\Manger\Model\ResourceModel\News\CollectionFactory</argument>
+            <argument name="searchResultsFactory" xsi:type="object">NewsSearchResults</argument>
         </arguments>
     </type>
 
