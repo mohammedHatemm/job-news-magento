@@ -1,0 +1,1 @@
+"Fatal Error: 'Class News\\Manger\\Model\\CategoryRepository contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (News\\Manger\\Api\\CategoryRepositoryInterface::delete)' in '\/var\/www\/html\/app\/code\/News\/Manger\/Model\/CategoryRepository.php' on line 24"

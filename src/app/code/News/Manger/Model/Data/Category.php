@@ -2,17 +2,20 @@
 
 namespace News\Manger\Model\Data;
 
+use Magento\Framework\Api\AbstractExtensibleObject;
 use News\Manger\Api\Data\CategoryInterface;
-use Magento\Framework\DataObject;
 
-class Category extends DataObject implements CategoryInterface
+/**
+ * Category data model
+ */
+class Category extends AbstractExtensibleObject implements CategoryInterface
 {
   /**
    * @inheritDoc
    */
   public function getCategoryId()
   {
-    return $this->getData(self::CATEGORY_ID);
+    return $this->_get(self::CATEGORY_ID);
   }
 
   /**
@@ -28,7 +31,7 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getCategoryName()
   {
-    return $this->getData(self::NAME);
+    return $this->_get(self::NAME);
   }
 
   /**
@@ -44,7 +47,7 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getCategoryDescription()
   {
-    return $this->getData(self::DESCRIPTION);
+    return $this->_get(self::DESCRIPTION);
   }
 
   /**
@@ -60,7 +63,7 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getCategoryStatus()
   {
-    return $this->getData(self::STATUS);
+    return $this->_get(self::STATUS);
   }
 
   /**
@@ -76,7 +79,7 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getCreatedAt()
   {
-    return $this->getData(self::CREATED_AT);
+    return $this->_get(self::CREATED_AT);
   }
 
   /**
@@ -92,7 +95,7 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getUpdatedAt()
   {
-    return $this->getData(self::UPDATED_AT);
+    return $this->_get(self::UPDATED_AT);
   }
 
   /**
@@ -108,18 +111,15 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getParentIds()
   {
-    $ids = $this->getData(self::PARENT_IDS);
-    return is_array($ids) ? $ids : [];
+    $parentIds = $this->_get(self::PARENT_IDS);
+    return is_array($parentIds) ? $parentIds : [];
   }
 
   /**
    * @inheritDoc
    */
-  public function setParentIds($parentIds)
+  public function setParentIds(array $parentIds)
   {
-    if (!is_array($parentIds)) {
-      $parentIds = json_decode($parentIds, true) ?: [];
-    }
     return $this->setData(self::PARENT_IDS, $parentIds);
   }
 
@@ -128,18 +128,15 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getChildIds()
   {
-    $ids = $this->getData(self::CHILD_IDS);
-    return is_array($ids) ? $ids : [];
+    $childIds = $this->_get(self::CHILD_IDS);
+    return is_array($childIds) ? $childIds : [];
   }
 
   /**
    * @inheritDoc
    */
-  public function setChildIds($childIds)
+  public function setChildIds(array $childIds)
   {
-    if (!is_array($childIds)) {
-      $childIds = json_decode($childIds, true) ?: [];
-    }
     return $this->setData(self::CHILD_IDS, $childIds);
   }
 
@@ -148,39 +145,15 @@ class Category extends DataObject implements CategoryInterface
    */
   public function getNewsIds()
   {
-    $ids = $this->getData(self::NEWS_IDS);
-    return is_array($ids) ? $ids : [];
+    $newsIds = $this->_get(self::NEWS_IDS);
+    return is_array($newsIds) ? $newsIds : [];
   }
 
   /**
    * @inheritDoc
    */
-  public function setNewsIds($newsIds)
+  public function setNewsIds(array $newsIds)
   {
-    if (!is_array($newsIds)) {
-      $newsIds = json_decode($newsIds, true) ?: [];
-    }
     return $this->setData(self::NEWS_IDS, $newsIds);
-  }
-
-  /**
-   * Retrieve existing extension attributes object or create a new one.
-   *
-   * @return \News\Manger\Api\Data\CategoryExtensionInterface|null
-   */
-  public function getExtensionAttributes()
-  {
-    return $this->_getExtensionAttributes();
-  }
-
-  /**
-   * Set an extension attributes object.
-   *
-   * @param \News\Manger\Api\Data\CategoryExtensionInterface $extensionAttributes
-   * @return $this
-   */
-  public function setExtensionAttributes(\News\Manger\Api\Data\CategoryExtensionInterface $extensionAttributes)
-  {
-    return $this->_setExtensionAttributes($extensionAttributes);
   }
 }

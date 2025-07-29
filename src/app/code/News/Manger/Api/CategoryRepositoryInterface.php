@@ -9,6 +9,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use News\Manger\Api\Data\CategoryInterface;
 use News\Manger\Api\Data\CategorySearchResultsInterface;
 use News\Manger\Api\Data\NewsSearchResultsInterface;
+use News\Manger\Model\CategoryFactory;
 
 /**
  * Interface for category repository.
@@ -20,12 +21,12 @@ interface CategoryRepositoryInterface
   /**
    * Save a category.
    *
-   * @param CategoryInterface $category
+   * @param CategoryInterface $categoryto
    * @param bool $saveOptions
    * @return CategoryInterface
    * @throws CouldNotSaveException
    */
-  public function save(CategoryInterface $category, $saveOptions = false);
+  public function save(CategoryInterface $category, $saveOptions = false): CategoryInterface;
 
   /**
    * Retrieve a category by ID.
@@ -119,8 +120,7 @@ interface CategoryRepositoryInterface
    * @return CategoryInterface
    * @throws CouldNotSaveException
    */
-  public function create(CategoryInterface $category);
-
+  // public function create(CategoryInterface $category): CategoryInterface;
   /**
    * Update an existing category.
    *
@@ -130,7 +130,7 @@ interface CategoryRepositoryInterface
    * @throws CouldNotSaveException
    * @throws NoSuchEntityException
    */
-  public function update($categoryId, CategoryInterface $category);
+  public function update($categoryId, CategoryInterface $category): CategoryInterface;
 
   /**
    * Validate category data.

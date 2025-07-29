@@ -4,11 +4,6 @@ namespace News\Manger\Api\Data;
 
 use Magento\Framework\Api\ExtensibleDataInterface;
 
-/**
- * Interface for category data.
- *
- * @api
- */
 interface CategoryInterface extends ExtensibleDataInterface
 {
   const CATEGORY_ID = 'category_id';
@@ -22,14 +17,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   const NEWS_IDS = 'news_ids';
 
   /**
-   * Get category ID.
+   * Get category ID
    *
    * @return int|null
    */
   public function getCategoryId();
 
   /**
-   * Set category ID.
+   * Set category ID
    *
    * @param int $id
    * @return $this
@@ -37,14 +32,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setCategoryId($id);
 
   /**
-   * Get category name.
+   * Get category name
    *
-   * @return string
+   * @return string|null
    */
   public function getCategoryName();
 
   /**
-   * Set category name.
+   * Set category name
    *
    * @param string $name
    * @return $this
@@ -52,14 +47,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setCategoryName($name);
 
   /**
-   * Get category description.
+   * Get category description
    *
    * @return string|null
    */
   public function getCategoryDescription();
 
   /**
-   * Set category description.
+   * Set category description
    *
    * @param string $description
    * @return $this
@@ -67,14 +62,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setCategoryDescription($description);
 
   /**
-   * Get category status.
+   * Get category status
    *
-   * @return int
+   * @return int|null
    */
   public function getCategoryStatus();
 
   /**
-   * Set category status.
+   * Set category status
    *
    * @param int $status
    * @return $this
@@ -82,14 +77,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setCategoryStatus($status);
 
   /**
-   * Get creation time.
+   * Get created at date
    *
    * @return string|null
    */
   public function getCreatedAt();
 
   /**
-   * Set creation time.
+   * Set created at date
    *
    * @param string $createdAt
    * @return $this
@@ -97,14 +92,14 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setCreatedAt($createdAt);
 
   /**
-   * Get update time.
+   * Get updated at date
    *
    * @return string|null
    */
   public function getUpdatedAt();
 
   /**
-   * Set update time.
+   * Set updated at date
    *
    * @param string $updatedAt
    * @return $this
@@ -112,47 +107,47 @@ interface CategoryInterface extends ExtensibleDataInterface
   public function setUpdatedAt($updatedAt);
 
   /**
-   * Get parent category IDs.
+   * Get parent IDs
    *
    * @return int[]
    */
   public function getParentIds();
 
   /**
-   * Set parent category IDs.
+   * Set parent IDs
    *
    * @param int[] $parentIds
    * @return $this
    */
-  public function setParentIds($parentIds);
+  public function setParentIds(array $parentIds);
 
   /**
-   * Get child category IDs.
+   * Get child IDs
    *
    * @return int[]
    */
   public function getChildIds();
 
   /**
-   * Set child category IDs.
+   * Set child IDs
    *
    * @param int[] $childIds
    * @return $this
    */
-  public function setChildIds($childIds);
+  public function setChildIds(array $childIds);
 
   /**
-   * Get news IDs.
+   * Get news IDs
    *
    * @return int[]
    */
   public function getNewsIds();
 
   /**
-   * Set news IDs.
+   * Set news IDs
    *
    * @param int[] $newsIds
    * @return $this
    */
-  public function setNewsIds($newsIds);
+  public function setNewsIds(array $newsIds);
 }

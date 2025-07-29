@@ -22,6 +22,7 @@
         <resources>
             <resource ref="anonymous"/>
         </resources>
+
     </route>
 
     <route url="/V1/news/categories/:categoryId" method="PUT">

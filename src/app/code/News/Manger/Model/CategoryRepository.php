@@ -16,7 +16,8 @@ use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SearchResultsInterface;
 
-use News\Manger\Model\Data\CategoryFactory as DataCategoryFactory;
+use News\Manger\Model\CategoryFactory;
+use News\Manger\Api\Data\CategoryInterfaceFactory as DataCategoryFactory;
 
 /**
  * Category repository class
@@ -29,7 +30,7 @@ class CategoryRepository implements CategoryRepositoryInterface
   protected $resource;
 
   /**
-   * @var \News\Manger\Model\CategoryFactory
+   * @var CategoryFactory
    */
   protected $categoryFactory;
 
@@ -59,22 +60,29 @@ class CategoryRepository implements CategoryRepositoryInterface
   protected $searchCriteriaBuilder;
 
   /**
+   * @var \Psr\Log\LoggerInterface
+   */
+  protected $logger;
+
+  /**
    * @param CategoryResource $resource
-   * @param \News\Manger\Model\CategoryFactory $categoryFactory
+   * @param CategoryFactory $categoryFactory
    * @param DataCategoryFactory $dataCategoryFactory
    * @param CategoryCollectionFactory $collectionFactory
    * @param CategorySearchResultsInterfaceFactory $searchResultsFactory
    * @param CollectionProcessorInterface $collectionProcessor
    * @param \Magento\Framework\Api\SearchCriteriaBuilder $searchCriteriaBuilder
+   * @param \Psr\Log\LoggerInterface $logger
    */
   public function __construct(
     CategoryResource $resource,
-    \News\Manger\Model\CategoryFactory $categoryFactory,
+    CategoryFactory $categoryFactory,
     DataCategoryFactory $dataCategoryFactory,
     CategoryCollectionFactory $collectionFactory,
     CategorySearchResultsInterfaceFactory $searchResultsFactory,
     CollectionProcessorInterface $collectionProcessor,
-    \Magento\Framework\Api\SearchCriteriaBuilder $searchCriteriaBuilder
+    \Magento\Framework\Api\SearchCriteriaBuilder $searchCriteriaBuilder,
+    \Psr\Log\LoggerInterface $logger = null
   ) {
     $this->resource = $resource;
     $this->categoryFactory = $categoryFactory;
@@ -83,6 +91,8 @@ class CategoryRepository implements CategoryRepositoryInterface
     $this->searchResultsFactory = $searchResultsFactory;
     $this->collectionProcessor = $collectionProcessor;
     $this->searchCriteriaBuilder = $searchCriteriaBuilder;
+    $this->logger = $logger ?: \Magento\Framework\App\ObjectManager::getInstance()
+      ->get(\Psr\Log\LoggerInterface::class);
   }
 
   /**
@@ -91,82 +101,77 @@ class CategoryRepository implements CategoryRepositoryInterface
   public function save(CategoryInterface $category, $saveOptions = false): CategoryInterface
   {
     try {
-      if (!$category instanceof \Magento\Framework\Model\AbstractModel) {
-        $model = $this->categoryFactory->create();
-        $model->addData($category->getData());
+      // تحويل Data Object إلى Model Object
+      $model = null;
+
+      // إذا كان يوجد ID نحاول تحميل العنصر وتحديثه
+      if ($category->getCategoryId() && is_numeric($category->getCategoryId())) {
+        try {
+          $model = $this->categoryFactory->create();
+          $this->resource->load($model, $category->getCategoryId());
+
+          if (!$model->getId()) {
+            throw new NoSuchEntityException(__('Category with ID "%1" does not exist.', $category->getCategoryId()));
+          }
+        } catch (NoSuchEntityException $e) {
+          throw $e;
+        }
       } else {
-        $model = $category;
+        // عنصر جديد
+        $model = $this->categoryFactory->create();
       }
 
-      // Handle array to JSON
-      if (is_array($model->getParentIds())) {
-        $model->setParentIds(json_encode($model->getParentIds()));
-      }
+      // نسخ البيانات من الـ Data Object إلى الـ Model
+      $model->setData([
+        'category_name'        => $category->getCategoryName(),
+        'category_description' => $category->getCategoryDescription(),
+        'category_status'      => $category->getCategoryStatus(),
+        'parent_ids'           => $category->getParentIds() ?: [],
+        'child_ids'            => $category->getChildIds() ?: [],
+        'news_ids'             => $category->getNewsIds() ?: [],
+      ]);
 
-      if (is_array($model->getChildIds())) {
-        $model->setChildIds(json_encode($model->getChildIds()));
-      }
-
-      if (is_array($model->getNewsIds())) {
-        $model->setNewsIds(json_encode($model->getNewsIds()));
-      }
-
+      // حفظ الموديل في قاعدة البيانات
       $this->resource->save($model);
 
-      return $model;
+      // تحديث الـ Data Object بالقيم الجديدة مثل ID و Timestamps
+      $category->setCategoryId($model->getId());
+      $category->setCreatedAt($model->getCreatedAt());
+      $category->setUpdatedAt($model->getUpdatedAt());
+
+      return $category;
     } catch (\Exception $e) {
-      throw new CouldNotSaveException(__('Could not save the category: %1', $e->getMessage()));
+      throw new CouldNotSaveException(__('Could not save the category: %1', $e->getMessage()), $e);
     }
   }
 
-  public function getById($categoryId): CategoryInterface
-  {
-    $model = $this->categoryFactory->create();
-    $this->resource->load($model, $categoryId);
 
-    if (!$model->getId()) {
-      throw new NoSuchEntityException(__('Category with id "%1" does not exist.', $categoryId));
-    }
-
-    // Create a new data object and populate it with the model data
-    $dataObject = $this->dataCategoryFactory->create();
-    $data = $model->getData();
-
-    // Convert JSON strings to arrays for array-type fields
-    $arrayFields = ['parent_ids', 'child_ids', 'news_ids'];
-    foreach ($arrayFields as $field) {
-      if (isset($data[$field]) && is_string($data[$field])) {
-        $data[$field] = json_decode($data[$field], true) ?: [];
-      }
-    }
-
-    $dataObject->setData($data);
-
-    // Ensure we're returning a CategoryInterface
-    if (!$dataObject instanceof CategoryInterface) {
-      throw new \RuntimeException('Unexpected type returned from factory');
-    }
-
-    return $dataObject;
-  }
-
+  /**
+   * @inheritDoc
+   */
   public function delete(CategoryInterface $category): bool
   {
     try {
-      if (!$category instanceof \Magento\Framework\Model\AbstractModel) {
-        $model = $this->categoryFactory->create();
-        $this->resource->load($model, $category->getId());
-      } else {
-        $model = $category;
+      // We need to get the model to delete it
+      $model = $this->categoryFactory->create();
+      $this->resource->load($model, $category->getCategoryId());
+
+      if (!$model->getId()) {
+        throw new NoSuchEntityException(__('Category with id "%1" does not exist.', $category->getCategoryId()));
       }
 
       $this->resource->delete($model);
-      return true;
     } catch (\Exception $e) {
-      throw new CouldNotDeleteException(__('Could not delete the category: %1', $e->getMessage()));
+      throw new CouldNotDeleteException(
+        __('Could not delete the category: %1', $e->getMessage())
+      );
     }
+    return true;
   }
 
+  /**
+   * @inheritDoc
+   */
   public function deleteById($categoryId): bool
   {
     $category = $this->getById($categoryId);
@@ -188,7 +193,24 @@ class CategoryRepository implements CategoryRepositoryInterface
 
     $searchResults = $this->searchResultsFactory->create();
     $searchResults->setSearchCriteria($searchCriteria);
-    $searchResults->setItems($collection->getItems());
+
+    // Convert models to data objects
+    $items = [];
+    foreach ($collection->getItems() as $model) {
+      $categoryData = $this->dataCategoryFactory->create();
+      $categoryData->setCategoryId($model->getId());
+      $categoryData->setCategoryName($model->getCategoryName());
+      $categoryData->setCategoryDescription($model->getCategoryDescription());
+      $categoryData->setCategoryStatus($model->getCategoryStatus());
+      $categoryData->setCreatedAt($model->getCreatedAt());
+      $categoryData->setUpdatedAt($model->getUpdatedAt());
+      $categoryData->setParentIds($model->getParentIds());
+      $categoryData->setChildIds($model->getChildIds());
+      $categoryData->setNewsIds($model->getNewsIds());
+      $items[] = $categoryData;
+    }
+
+    $searchResults->setItems($items);
     $searchResults->setTotalCount($collection->getSize());
 
     return $searchResults;
@@ -200,13 +222,33 @@ class CategoryRepository implements CategoryRepositoryInterface
   public function getChildren($categoryId)
   {
     $category = $this->getById($categoryId);
-    $childIds = $category->getChildIds();
+    $model = $this->categoryFactory->create();
+    $this->resource->load($model, $categoryId);
 
-    $searchCriteria = $this->searchCriteriaBuilder
-      ->addFilter('category_id', $childIds, 'in')
-      ->create();
+    $children = $model->getChildrenCategories();
 
-    return $this->getList($searchCriteria);
+    $searchResults = $this->searchResultsFactory->create();
+
+    // Convert models to data objects
+    $items = [];
+    foreach ($children->getItems() as $childModel) {
+      $categoryData = $this->dataCategoryFactory->create();
+      $categoryData->setCategoryId($childModel->getId());
+      $categoryData->setCategoryName($childModel->getCategoryName());
+      $categoryData->setCategoryDescription($childModel->getCategoryDescription());
+      $categoryData->setCategoryStatus($childModel->getCategoryStatus());
+      $categoryData->setCreatedAt($childModel->getCreatedAt());
+      $categoryData->setUpdatedAt($childModel->getUpdatedAt());
+      $categoryData->setParentIds($childModel->getParentIds());
+      $categoryData->setChildIds($childModel->getChildIds());
+      $categoryData->setNewsIds($childModel->getNewsIds());
+      $items[] = $categoryData;
+    }
+
+    $searchResults->setItems($items);
+    $searchResults->setTotalCount($children->getSize());
+
+    return $searchResults;
   }
 
   /**
@@ -215,13 +257,33 @@ class CategoryRepository implements CategoryRepositoryInterface
   public function getParents($categoryId)
   {
     $category = $this->getById($categoryId);
-    $parentIds = $category->getParentIds();
+    $model = $this->categoryFactory->create();
+    $this->resource->load($model, $categoryId);
 
-    $searchCriteria = $this->searchCriteriaBuilder
-      ->addFilter('category_id', $parentIds, 'in')
-      ->create();
+    $parents = $model->getParentCategories();
 
-    return $this->getList($searchCriteria);
+    $searchResults = $this->searchResultsFactory->create();
+
+    // Convert models to data objects
+    $items = [];
+    foreach ($parents as $parentModel) {
+      $categoryData = $this->dataCategoryFactory->create();
+      $categoryData->setCategoryId($parentModel->getId());
+      $categoryData->setCategoryName($parentModel->getCategoryName());
+      $categoryData->setCategoryDescription($parentModel->getCategoryDescription());
+      $categoryData->setCategoryStatus($parentModel->getCategoryStatus());
+      $categoryData->setCreatedAt($parentModel->getCreatedAt());
+      $categoryData->setUpdatedAt($parentModel->getUpdatedAt());
+      $categoryData->setParentIds($parentModel->getParentIds());
+      $categoryData->setChildIds($parentModel->getChildIds());
+      $categoryData->setNewsIds($parentModel->getNewsIds());
+      $items[] = $categoryData;
+    }
+
+    $searchResults->setItems($items);
+    $searchResults->setTotalCount(count($parents));
+
+    return $searchResults;
   }
 
   /**
@@ -272,22 +334,22 @@ class CategoryRepository implements CategoryRepositoryInterface
   /**
    * @inheritDoc
    */
-  public function create(CategoryInterface $category)
-  {
-    return $this->save($category);
-  }
-
-  /**
-   * @inheritDoc
-   */
-  public function update($categoryId, CategoryInterface $category)
+  public function update($categoryId, CategoryInterface $category): CategoryInterface
   {
     try {
       $existingCategory = $this->getById($categoryId);
-      $existingCategory->addData($category->getData());
+
+      // Update fields
+      $existingCategory->setCategoryName($category->getCategoryName());
+      $existingCategory->setCategoryDescription($category->getCategoryDescription());
+      $existingCategory->setCategoryStatus($category->getCategoryStatus());
+      $existingCategory->setParentIds($category->getParentIds());
+      $existingCategory->setChildIds($category->getChildIds());
+      $existingCategory->setNewsIds($category->getNewsIds());
+
       return $this->save($existingCategory);
     } catch (\Exception $e) {
-      throw new \Magento\Framework\Exception\CouldNotSaveException(__($e->getMessage()));
+      throw new CouldNotSaveException(__($e->getMessage()));
     }
   }
 
@@ -315,5 +377,24 @@ class CategoryRepository implements CategoryRepositoryInterface
     } catch (NoSuchEntityException $e) {
       return false;
     }
+  }
+
+
+
+  /**
+   * @inheritDoc
+   */
+  public function getById($categoryId): CategoryInterface
+  {
+    $category = $this->categoryFactory->create();
+    $this->resource->load($category, $categoryId);
+
+    if (!$category->getId()) {
+      throw new NoSuchEntityException(
+        __('Category with id "%1" does not exist.', $categoryId)
+      );
+    }
+
+    return $category;
   }
 }

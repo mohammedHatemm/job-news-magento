@@ -7,8 +7,9 @@ use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 use News\Manger\Model\CategoryFactory;
+use News\Manger\Api\Data\CategoryInterface;
 
-class Category extends AbstractModel implements IdentityInterface
+class Category extends AbstractModel implements IdentityInterface, CategoryInterface
 {
   const CACHE_TAG = 'news_manger_category';
   const CATEGORY_ID = 'category_id';
@@ -74,77 +75,180 @@ class Category extends AbstractModel implements IdentityInterface
     );
   }
 
-  // === BASIC GETTERS AND SETTERS ===
+  // === CategoryInterface Implementation ===
+
+  /**
+   * @inheritDoc
+   */
   public function getCategoryId()
   {
     return $this->getData(self::CATEGORY_ID);
   }
 
-  public function setCategoryId($categoryId)
+  /**
+   * @inheritDoc
+   */
+  public function setCategoryId($id)
   {
-    return $this->setData(self::CATEGORY_ID, $categoryId);
+    return $this->setData(self::CATEGORY_ID, $id);
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getCategoryName()
   {
     return $this->getData('category_name');
   }
 
-  public function setCategoryName($categoryName)
+  /**
+   * @inheritDoc
+   */
+  public function setCategoryName($name)
   {
-    return $this->setData('category_name', $categoryName);
+    return $this->setData('category_name', $name);
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getCategoryDescription()
   {
     return $this->getData('category_description');
   }
 
-  public function setCategoryDescription($categoryDescription)
+  /**
+   * @inheritDoc
+   */
+  public function setCategoryDescription($description)
   {
-    return $this->setData('category_description', $categoryDescription);
+    return $this->setData('category_description', $description);
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getCategoryStatus()
   {
     return $this->getData('category_status');
   }
 
-  public function setCategoryStatus($categoryStatus)
+  /**
+   * @inheritDoc
+   */
+  public function setCategoryStatus($status)
   {
-    return $this->setData('category_status', $categoryStatus);
+    return $this->setData('category_status', $status);
   }
 
-  public function getParentIds()
-  {
-    $parentIds = $this->getData('parent_ids');
-    return $parentIds ? json_decode($parentIds, true) : [];
-  }
-
-  public function setParentIds($parentIds)
-  {
-    return $this->setData('parent_ids', json_encode($parentIds));
-  }
-
+  /**
+   * @inheritDoc
+   */
   public function getCreatedAt()
   {
     return $this->getData('created_at');
   }
 
+  /**
+   * @inheritDoc
+   */
   public function setCreatedAt($createdAt)
   {
     return $this->setData('created_at', $createdAt);
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getUpdatedAt()
   {
     return $this->getData('updated_at');
   }
 
+  /**
+   * @inheritDoc
+   */
   public function setUpdatedAt($updatedAt)
   {
     return $this->setData('updated_at', $updatedAt);
   }
+
+  /**
+   * @inheritDoc
+   */
+  public function getParentIds()
+  {
+    $parentIds = $this->getData('parent_ids');
+    if (is_string($parentIds) && !empty($parentIds)) {
+      $decoded = json_decode($parentIds, true);
+      return is_array($decoded) ? $decoded : [];
+    }
+    return is_array($parentIds) ? $parentIds : [];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function setParentIds($parentIds)
+  {
+    if (is_array($parentIds)) {
+      // Store as JSON in database
+      return $this->setData('parent_ids', json_encode($parentIds));
+    }
+    return $this->setData('parent_ids', $parentIds);
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getChildIds()
+  {
+    // This will be dynamically calculated from the database
+    // based on which categories have this category as parent
+    $collection = $this->getCollection();
+    $collection->addFieldToFilter('parent_ids', ['like' => '%"' . $this->getId() . '"%']);
+
+    $childIds = [];
+    foreach ($collection as $child) {
+      $childIds[] = $child->getId();
+    }
+    return $childIds;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function setChildIds($childIds)
+  {
+    // Child IDs are dynamically calculated, so this is just for interface compliance
+    return $this;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getNewsIds()
+  {
+    $newsIds = $this->getData('news_ids');
+    if (is_string($newsIds) && !empty($newsIds)) {
+      $decoded = json_decode($newsIds, true);
+      return is_array($decoded) ? $decoded : [];
+    }
+    return is_array($newsIds) ? $newsIds : [];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function setNewsIds($newsIds)
+  {
+    if (is_array($newsIds)) {
+      return $this->setData('news_ids', json_encode($newsIds));
+    }
+    return $this->setData('news_ids', $newsIds);
+  }
+
+  // === Additional Methods from Original Model ===
 
   public function isActive()
   {
@@ -441,16 +545,30 @@ class Category extends AbstractModel implements IdentityInterface
 
   public function beforeSave()
   {
-    // if (!$this->validateHierarchy()) {
-    //   throw new \Magento\Framework\Exception\LocalizedException(
-    //     __('Invalid category hierarchy. Please check parent category selection.')
-    //   );
-    // }
-    self::clearTreeCache();
+    // Validate hierarchy before saving
+    if (!$this->validateHierarchy()) {
+      throw new \Magento\Framework\Exception\LocalizedException(
+        __('Invalid category hierarchy. Please check parent category selection.')
+      );
+    }
+
+    // Ensure JSON encoding for array fields
+    foreach (['parent_ids', 'child_ids', 'news_ids'] as $field) {
+      $value = $this->getData($field);
+      if (is_array($value)) {
+        $this->setData($field, json_encode($value));
+      }
+    }
+
+    // Set timestamps
     if (!$this->getId()) {
       $this->setCreatedAt(date('Y-m-d H:i:s'));
     }
     $this->setUpdatedAt(date('Y-m-d H:i:s'));
+
+    // Clear cache
+    self::clearTreeCache();
+
     return parent::beforeSave();
   }
 
