@@ -1,0 +1,71 @@
+[2025-07-31T18:47:10.423310+00:00] main.INFO: Source table payment_services_order_status_data_production_submitted_hash does not exist. Skipping data migration... [] []
+[2025-07-31T18:49:52.665779+00:00] main.ERROR: crontab -l 2>/dev/null 2>&1
+no crontab for app [] []
+[2025-07-31T18:49:52.668702+00:00] main.ERROR: crontab -l 2>/dev/null 2>&1
+no crontab for app [] []
+[2025-07-31T18:49:52.719590+00:00] main.INFO: echo "
+#~ MAGENTO START 69dd2b02e1f3a65918182048ea4e29979a849d8942e8f53ed20a4bf10e529b36
+* * * * * /usr/local/bin/php /var/www/html/bin/magento cron:run 2>&1 | grep -v \"Ran jobs by schedule\" >> /var/www/html/var/log/magento.cron.log
+#~ MAGENTO END 69dd2b02e1f3a65918182048ea4e29979a849d8942e8f53ed20a4bf10e529b36
+" 2>&1 | crontab - 2>&1
+ [] []
+[2025-08-01T09:45:06.388757+00:00] main.ERROR: Each method must have a doc block. See News\Manger\Api\NewsRepositoryInterface::validateNews() [] []
+[2025-08-01T09:46:05.069642+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Api\Data\NewsSearchResultsInterfaceFactory, News\Manger\Model\Data\NewsSearchResults given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T09:51:08.423043+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\Data\NewsSearchResultsFactory, News\Manger\Model\Data\NewsSearchResults given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T09:54:44.848802+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\Data\NewsSearchResultsFactory, News\Manger\Model\Data\NewsSearchResults given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T10:48:27.792735+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\NewsSearchResultsFactory, News\Manger\Api\Data\NewsSearchResultsInterfaceFactory given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T10:48:38.981612+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\NewsSearchResultsFactory, News\Manger\Api\Data\NewsSearchResultsInterfaceFactory given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T10:50:12.271949+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\NewsSearchResultsFactory, News\Manger\Api\Data\NewsSearchResultsInterfaceFactory given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T10:51:14.346630+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\NewsSearchResultsFactory, News\Manger\Api\Data\NewsSearchResultsInterfaceFactory given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T10:54:50.871686+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #4 ($searchResultsFactory) must be of type News\Manger\Model\NewsSearchResultsFactory, News\Manger\Api\Data\NewsSearchResultsInterfaceFactory given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-01T14:14:18.370878+00:00] main.ERROR: Error during compilation
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/Decorator/Interceptions.php(85): Magento\Setup\Module\Di\Compiler\Log\Log->report()
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/InterceptionCache.php(61): Magento\Setup\Module\Di\Code\Reader\Decorator\Interceptions->getList('/var/www/html/a...')
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\InterceptionCache->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-08-01T14:44:18.811005+00:00] main.ERROR: Command "cache:fkush" is not defined.
+
+Did you mean one of these?
+    cache:clean
+    cache:clean:payment_services_merchant_scopes
+    cache:disable
+    cache:enable
+    cache:flush
+    cache:status
+#0 /var/www/html/vendor/symfony/console/Application.php(266): Symfony\Component\Console\Application->find('cache:fkush')
+#1 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2025-08-02T05:10:12.878493+00:00] main.CRITICAL: Type Error occurred when creating object: News\Manger\Model\NewsRepository, News\Manger\Model\NewsRepository::__construct(): Argument #10 ($dataObjectHelper) must be of type Magento\Framework\Api\DataObjectHelper, Magento\Framework\Logger\LoggerProxy given, called in /var/www/html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121 [] []
+[2025-08-02T07:02:17.328844+00:00] main.ERROR: Error during compilation
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/Decorator/Interceptions.php(85): Magento\Setup\Module\Di\Compiler\Log\Log->report()
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/InterceptionCache.php(61): Magento\Setup\Module\Di\Code\Reader\Decorator\Interceptions->getList('/var/www/html/a...')
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\InterceptionCache->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
+[2025-08-02T07:08:53.990303+00:00] main.ERROR: Error during compilation
+#0 /var/www/html/setup/src/Magento/Setup/Module/Di/Code/Reader/Decorator/Interceptions.php(85): Magento\Setup\Module\Di\Compiler\Log\Log->report()
+#1 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Operation/InterceptionCache.php(61): Magento\Setup\Module\Di\Code\Reader\Decorator\Interceptions->getList('/var/www/html/a...')
+#2 /var/www/html/setup/src/Magento/Setup/Module/Di/App/Task/Manager.php(56): Magento\Setup\Module\Di\App\Task\Operation\InterceptionCache->doOperation()
+#3 /var/www/html/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php(209): Magento\Setup\Module\Di\App\Task\Manager->process(Object(Closure), Object(Closure))
+#4 /var/www/html/vendor/symfony/console/Command/Command.php(326): Magento\Setup\Console\Command\DiCompileCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/html/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\Component\Console\Application->doRunCommand(Object(Magento\Setup\Console\Command\DiCompileCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/html/vendor/magento/framework/Console/Cli.php(118): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/html/vendor/symfony/console/Application.php(175): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/html/bin/magento(23): Symfony\Component\Console\Application->run()
+#10 {main} [] []
