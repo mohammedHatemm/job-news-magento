@@ -102,7 +102,7 @@ class NewsRepository implements NewsRepositoryInterface
   public function save(NewsInterface $news)
   {
     try {
-      // Validate data
+      // Validate data including category IDs
       $this->validate($news);
 
       $model = null;
@@ -138,17 +138,144 @@ class NewsRepository implements NewsRepositoryInterface
       }
 
       $this->resource->save($model);
+      $newsId = $model->getId();
+
+      // Handle category relations with validation
+      $categoryIds = $news->getCategoryIds() ?: [];
+      if (!empty($categoryIds)) {
+        // Validate and get only existing category IDs
+        $validCategoryIds = $this->validateCategoryIds($categoryIds);
+        $this->updateNewsCategoryRelations($newsId, $validCategoryIds);
+
+        // Log if some categories were invalid
+        if (count($validCategoryIds) !== count($categoryIds)) {
+          $invalidIds = array_diff($categoryIds, $validCategoryIds);
+          $this->logger->warning(
+            'Some category IDs were invalid and skipped for news ID ' . $newsId . ': ' .
+              implode(', ', $invalidIds)
+          );
+        }
+      } else {
+        // Clear all category relations if no categories provided
+        $this->updateNewsCategoryRelations($newsId, []);
+      }
 
       // Update the data object with saved values
       $news->setNewsId($model->getId());
       $news->setCreatedAt($model->getCreatedAt());
       $news->setUpdatedAt($model->getUpdatedAt());
-      $news->setCategoryIds($model->getCategoryIds());
 
       return $news;
+    } catch (LocalizedException $e) {
+      // Re-throw validation errors as-is
+      throw $e;
     } catch (\Exception $e) {
       $this->logger->error('Error saving news: ' . $e->getMessage());
       throw new CouldNotSaveException(__('Could not save news: %1', $e->getMessage()));
+    }
+  }
+
+  /**
+   * Validate that category IDs exist in database
+   *
+   * @param array $categoryIds
+   * @return array Valid category IDs that exist in database
+   */
+  protected function validateCategoryIds(array $categoryIds): array
+  {
+    if (empty($categoryIds)) {
+      return [];
+    }
+
+    try {
+      $connection = $this->resource->getConnection();
+      $categoryTable = $this->resource->getTable('news_category');
+
+      $select = $connection->select()
+        ->from($categoryTable, 'category_id')
+        ->where('category_id IN (?)', $categoryIds);
+
+      $validIds = $connection->fetchCol($select);
+
+      // Convert to integers to match input format
+      return array_map('intval', $validIds);
+    } catch (\Exception $e) {
+      $this->logger->error('Error validating category IDs: ' . $e->getMessage());
+      return [];
+    }
+  }
+
+  /**
+   * Update the category relations for a news item
+   *
+   * @param int $newsId
+   * @param array $categoryIds
+   * @throws CouldNotSaveException
+   */
+  protected function updateNewsCategoryRelations($newsId, array $categoryIds = [])
+  {
+    $connection = $this->resource->getConnection();
+    $tableName = $this->resource->getTable('news_news_category');
+
+    try {
+      // Begin transaction
+      $connection->beginTransaction();
+
+      // Delete existing relations
+      $connection->delete($tableName, ['news_id = ?' => $newsId]);
+
+      if (!empty($categoryIds)) {
+        // Only proceed if we have valid category IDs
+        $validCategoryIds = $this->validateCategoryIds($categoryIds);
+
+        if (!empty($validCategoryIds)) {
+          // Insert new relations
+          $data = [];
+          foreach ($validCategoryIds as $categoryId) {
+            $data[] = [
+              'news_id' => (int)$newsId,
+              'category_id' => (int)$categoryId
+            ];
+          }
+
+          if (!empty($data)) {
+            $connection->insertMultiple($tableName, $data);
+          }
+        }
+      }
+
+      // Commit transaction
+      $connection->commit();
+    } catch (\Exception $e) {
+      // Rollback transaction on error
+      $connection->rollBack();
+      $this->logger->error('Error updating news category relations: ' . $e->getMessage());
+      throw new CouldNotSaveException(__('Could not update news category relations: %1', $e->getMessage()));
+    }
+  }
+
+  /**
+   * Get category IDs from pivot table
+   *
+   * @param int $newsId
+   * @return array
+   */
+  protected function getCategoryIdsFromPivotTable($newsId)
+  {
+    try {
+      $connection = $this->resource->getConnection();
+      $tableName = $this->resource->getTable('news_news_category');
+      $select = $connection->select()
+        ->from($tableName, 'category_id')
+        ->where('news_id = ?', $newsId);
+
+      $categoryIds = $connection->fetchCol($select);
+
+      // Convert to integers
+      return array_map('intval', $categoryIds);
+    } catch (\Exception $e) {
+      $this->logger->error('Error getting category IDs from pivot table: ' . $e->getMessage());
+      return [];
     }
   }
 
@@ -157,6 +284,10 @@ class NewsRepository implements NewsRepositoryInterface
    */
   public function getById($newsId)
   {
+    if (!$newsId || !is_numeric($newsId)) {
+      throw new NoSuchEntityException(__('Invalid news ID provided.'));
+    }
+
     $newsModel = $this->newsFactory->create();
     $this->resource->load($newsModel, $newsId);
 
@@ -172,7 +303,10 @@ class NewsRepository implements NewsRepositoryInterface
     $newsData->setNewsStatus($newsModel->getNewsStatus());
     $newsData->setCreatedAt($newsModel->getCreatedAt());
     $newsData->setUpdatedAt($newsModel->getUpdatedAt());
-    $newsData->setCategoryIds($newsModel->getCategoryIds());
+
+    // Get category IDs from pivot table
+    $categoryIds = $this->getCategoryIdsFromPivotTable($newsModel->getId());
+    $newsData->setCategoryIds($categoryIds);
 
     return $newsData;
   }
@@ -203,7 +337,10 @@ class NewsRepository implements NewsRepositoryInterface
       $newsData->setNewsStatus($model->getNewsStatus());
       $newsData->setCreatedAt($model->getCreatedAt());
       $newsData->setUpdatedAt($model->getUpdatedAt());
-      $newsData->setCategoryIds($model->getCategoryIds());
+
+      // Get category IDs from pivot table
+      $categoryIds = $this->getCategoryIdsFromPivotTable($model->getId());
+      $newsData->setCategoryIds($categoryIds);
 
       $items[] = $newsData;
     }
@@ -227,9 +364,11 @@ class NewsRepository implements NewsRepositoryInterface
         throw new NoSuchEntityException(__('News with id "%1" does not exist.', $news->getNewsId()));
       }
 
+      // Delete category relations first (handled by foreign key CASCADE)
       $this->resource->delete($newsModel);
       return true;
     } catch (\Exception $e) {
+      $this->logger->error('Error deleting news: ' . $e->getMessage());
       throw new CouldNotDeleteException(__('Could not delete news: %1', $e->getMessage()));
     }
   }
@@ -260,6 +399,13 @@ class NewsRepository implements NewsRepositoryInterface
   public function addCategory($newsId, $categoryId)
   {
     try {
+      // Validate category ID exists
+      $validCategoryIds = $this->validateCategoryIds([$categoryId]);
+      if (empty($validCategoryIds)) {
+        $this->logger->error('Invalid category ID: ' . $categoryId);
+        return false;
+      }
+
       // Get current news
       $news = $this->getById($newsId);
       $currentCategories = $news->getCategoryIds();
@@ -309,8 +455,18 @@ class NewsRepository implements NewsRepositoryInterface
   public function setCategories($newsId, array $categoryIds)
   {
     try {
+      // Validate category IDs
+      $validCategoryIds = $this->validateCategoryIds($categoryIds);
+
+      if (count($validCategoryIds) !== count($categoryIds)) {
+        $invalidIds = array_diff($categoryIds, $validCategoryIds);
+        $this->logger->warning(
+          'Some category IDs are invalid and will be skipped: ' . implode(', ', $invalidIds)
+        );
+      }
+
       $news = $this->getById($newsId);
-      $news->setCategoryIds($categoryIds);
+      $news->setCategoryIds($validCategoryIds);
       $this->save($news);
       return true;
     } catch (\Exception $e) {
@@ -319,19 +475,52 @@ class NewsRepository implements NewsRepositoryInterface
     }
   }
 
-
-
   /**
    * @inheritDoc
    */
   public function validate(NewsInterface $news)
   {
-    if (empty($news->getNewsTitle())) {
-      throw new LocalizedException(__('News title is required.'));
+    $errors = [];
+
+    // Validate required fields
+    if (empty(trim($news->getNewsTitle()))) {
+      $errors[] = __('News title is required.');
     }
 
-    if (empty($news->getNewsContent())) {
-      throw new LocalizedException(__('News content is required.'));
+    if (empty(trim($news->getNewsContent()))) {
+      $errors[] = __('News content is required.');
+    }
+
+    // Validate news status
+    $status = $news->getNewsStatus();
+    if ($status !== null && !in_array($status, [0, 1])) {
+      $errors[] = __('News status must be 0 (disabled) or 1 (enabled).');
+    }
+
+    // Validate category IDs if provided
+    $categoryIds = $news->getCategoryIds();
+    if (!empty($categoryIds)) {
+      // Check if all provided IDs are numeric
+      foreach ($categoryIds as $categoryId) {
+        if (!is_numeric($categoryId) || $categoryId <= 0) {
+          $errors[] = __('All category IDs must be positive integers.');
+          break;
+        }
+      }
+
+      // Check if category IDs exist in database
+      if (empty($errors)) {
+        $validCategoryIds = $this->validateCategoryIds($categoryIds);
+        if (count($validCategoryIds) !== count($categoryIds)) {
+          $invalidIds = array_diff($categoryIds, $validCategoryIds);
+          $errors[] = __('Invalid category IDs: %1', implode(', ', $invalidIds));
+        }
+      }
+    }
+
+    // Throw exception if there are validation errors
+    if (!empty($errors)) {
+      throw new LocalizedException(__(implode(' ', $errors)));
     }
 
     return true;
@@ -348,5 +537,73 @@ class NewsRepository implements NewsRepositoryInterface
     } catch (NoSuchEntityException $e) {
       return false;
     }
+  }
+
+  /**
+   * Check if a category exists
+   *
+   * @param int $categoryId
+   * @return bool
+   */
+  public function categoryExists($categoryId): bool
+  {
+    try {
+      $validIds = $this->validateCategoryIds([$categoryId]);
+      return !empty($validIds);
+    } catch (\Exception $e) {
+      $this->logger->error('Error checking category existence: ' . $e->getMessage());
+      return false;
+    }
+  }
+
+  /**
+   * Get news by category ID
+   *
+   * @param int $categoryId
+   * @param SearchCriteriaInterface|null $searchCriteria
+   * @return \News\Manger\Api\Data\NewsSearchResultsInterface
+   */
+  public function getNewsByCategory($categoryId, SearchCriteriaInterface $searchCriteria = null)
+  {
+    $collection = $this->collectionFactory->create();
+
+    // Join with category relation table
+    $collection->getSelect()->joinInner(
+      ['nnc' => $this->resource->getTable('news_news_category')],
+      'main_table.news_id = nnc.news_id',
+      []
+    )->where('nnc.category_id = ?', $categoryId);
+
+    if ($searchCriteria === null) {
+      $searchCriteria = $this->searchCriteriaBuilder->create();
+    }
+
+    $this->collectionProcessor->process($searchCriteria, $collection);
+
+    $searchResults = $this->searchResultsFactory->create();
+    $searchResults->setSearchCriteria($searchCriteria);
+
+    // Convert models to data objects
+    $items = [];
+    foreach ($collection->getItems() as $model) {
+      $newsData = $this->dataNewsFactory->create();
+      $newsData->setNewsId($model->getId());
+      $newsData->setNewsTitle($model->getNewsTitle());
+      $newsData->setNewsContent($model->getNewsContent());
+      $newsData->setNewsStatus($model->getNewsStatus());
+      $newsData->setCreatedAt($model->getCreatedAt());
+      $newsData->setUpdatedAt($model->getUpdatedAt());
+
+      // Get all category IDs for this news item
+      $categoryIds = $this->getCategoryIdsFromPivotTable($model->getId());
+      $newsData->setCategoryIds($categoryIds);
+
+      $items[] = $newsData;
+    }
+
+    $searchResults->setItems($items);
+    $searchResults->setTotalCount($collection->getSize());
+
+    return $searchResults;
   }
 }

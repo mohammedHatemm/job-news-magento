@@ -437,3 +437,197 @@ GraphQL (8:13)
                ^
 9:             categories {
  {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-04T08:28:44.378245+00:00] main.ERROR: Category with id "1" does not exist.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "1"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category with id \"1\" does not exist. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlNoSuchEntityException(code: 0): Category with id \"1\" does not exist. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:48)
+[previous exception] [object] (Magento\\Framework\\Exception\\NoSuchEntityException(code: 0): Category with id \"1\" does not exist. at /var/www/html/app/code/News/Manger/Model/CategoryRepository.php:493)"} []
+[2025-08-04T08:28:53.193610+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:29:14.218394+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:30:42.011656+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:31:40.749034+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:31:49.988468+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:53:30.516369+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:53:39.944477+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:54:05.821546+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:54:30.683072+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T09:09:43.082254+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:10:01.966063+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:41.009128+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:49.014277+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:58.312915+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:16:09.372727+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T11:00:25.515369+00:00] main.ERROR: Cannot query field "news_id_id" on type "News". Did you mean "news_title"?
+
+GraphQL (10:1)
+ 9: ) {
+10: news_id_id
+    ^
+11: news_title
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_id_id\" on type \"News\". Did you mean \"news_title\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-04T11:00:25.516564+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:00:36.725756+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:00:51.020534+00:00] main.ERROR: Field "categories" is not defined by type "NewsInput". Did you mean "category_ids"?
+
+GraphQL (7:1)
+6: news_status: 1
+7: categories: []
+   ^
+8: }
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" is not defined by type \"NewsInput\". Did you mean \"category_ids\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ValuesOfCorrectType.php:117)"} []
+[2025-08-04T11:00:51.021138+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:01:55.657012+00:00] main.ERROR: Invalid category IDs: 1
+
+GraphQL (2:3)
+1: mutation createNews {
+2:   createNews(
+     ^
+3:     input: {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Invalid category IDs: 1 at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Invalid category IDs: 1 at /var/www/html/app/code/News/Manger/Model/Resolver/CreateNews.php:90)"} []

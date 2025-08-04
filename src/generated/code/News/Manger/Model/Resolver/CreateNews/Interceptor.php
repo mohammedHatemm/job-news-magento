@@ -8,10 +8,10 @@ class Interceptor extends \News\Manger\Model\Resolver\CreateNews implements \Mag
 {
     use \Magento\Framework\Interception\Interceptor;
 
-    public function __construct(\News\Manger\Api\NewsRepositoryInterface $newsRepository, \News\Manger\Api\Data\NewsInterfaceFactory $newsFactory)
+    public function __construct(\News\Manger\Api\NewsRepositoryInterface $newsRepository, \News\Manger\Api\Data\NewsInterfaceFactory $newsFactory, \Psr\Log\LoggerInterface $logger)
     {
         $this->___init();
-        parent::__construct($newsRepository, $newsFactory);
+        parent::__construct($newsRepository, $newsFactory, $logger);
     }
 
     /**

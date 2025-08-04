@@ -33,22 +33,15 @@ class UpdateCategory implements ResolverInterface
     array $value = null,
     array $args = null
   ) {
-    // التحقق من المدخلات الأساسية
-    if (!isset($args['id']) || empty($args['input'])) {
-      throw new GraphQlInputException(__('ID and input data are required.'));
-    }
-
     $categoryId = $args['id'];
     $input = $args['input'];
 
     try {
-      // 1. تحسين: التعامل مع NoSuchEntityException بشكل منفصل
       $category = $this->categoryRepository->getById($categoryId);
     } catch (NoSuchEntityException $e) {
       throw new GraphQlNoSuchEntityException(__($e->getMessage()), $e);
     }
 
-    // تحديث الحقول
     if (isset($input['category_name'])) {
       $category->setCategoryName($input['category_name']);
     }
@@ -63,14 +56,11 @@ class UpdateCategory implements ResolverInterface
     }
 
     try {
-      // 2. تحسين: لا حاجة لمتغير جديد، يمكن استخدام نفس كائن category
       $this->categoryRepository->save($category);
     } catch (\Exception $e) {
-      // يتم التقاط أي خطأ آخر غير متوقع أثناء الحفظ
       throw new GraphQlInputException(__('Could not update category: %1', $e->getMessage()));
     }
 
-    // 3. تحسين: تمت إزالة 'model' => $updatedCategory
     return [
       'category_id' => $category->getCategoryId(),
       'category_name' => $category->getCategoryName(),

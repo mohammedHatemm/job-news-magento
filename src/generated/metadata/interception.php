@@ -10255,7 +10255,6 @@
   'Magento\\GraphQl\\Model\\Query\\Logger\\LoggerInterface' => false,
   'Magento\\GraphQl\\Model\\Query\\Logger\\LoggerPool' => false,
   'Magento\\GraphQl\\Model\\Query\\Resolver\\Context' => false,
-  'Magento\\GraphQl\\Model\\Query\\Resolver\\FieldResolver' => false,
   'Magento\\GraphQl\\Model\\Query\\UserContextParametersProcessorInterface' => false,
   'Magento\\GraphQl\\Plugin\\DisableSession' => false,
   'Magento\\GroupedCatalogInventory\\Plugin\\OutOfStockFilter' => false,

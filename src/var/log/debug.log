@@ -4113,3 +4113,533 @@ GraphQL (8:13)
  {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
 [2025-08-03T11:59:26.157615+00:00] main.INFO: NewsList Resolver called with args {"pageSize":20,"currentPage":1,"filters":[]} []
 [2025-08-03T11:59:26.161490+00:00] main.INFO: NewsList results {"total_count":9,"items_count":9,"page_info":{"page_size":20,"current_page":1,"total_pages":1.0}} []
+[2025-08-04T08:28:21.626105+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_11","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:28:21.629736+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_11","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:28:25.075814+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_12","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:28:25.078236+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_12","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:28:44.378245+00:00] main.ERROR: Category with id "1" does not exist.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "1"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category with id \"1\" does not exist. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlNoSuchEntityException(code: 0): Category with id \"1\" does not exist. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:48)
+[previous exception] [object] (Magento\\Framework\\Exception\\NoSuchEntityException(code: 0): Category with id \"1\" does not exist. at /var/www/html/app/code/News/Manger/Model/CategoryRepository.php:493)"} []
+[2025-08-04T08:28:53.193610+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:29:14.218394+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:30:03.303147+00:00] main.INFO: CreateCategory Input: {"category_description":"Technology related news","category_name":"Technology","category_status":1,"parent_ids":[]} [] []
+[2025-08-04T08:30:03.308889+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-08-04T08:30:03.310556+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_19","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:30:03.313970+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_19","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:30:03.314141+00:00] main.INFO: Category created with ID: 19 [] []
+[2025-08-04T08:30:03.314292+00:00] main.INFO: Final createCategory result: {"category_id":19,"category_name":"Technology","category_description":"Technology related news","category_status":1,"created_at":"2025-08-04 08:30:03","updated_at":"2025-08-04 08:30:03","parent_ids":[],"model":{}} [] []
+[2025-08-04T08:30:42.011656+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:31:00.448825+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-08-04T08:31:00.450064+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_2","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:31:00.452223+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_2","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:31:40.749034+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:31:49.988468+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:70)"} []
+[2025-08-04T08:51:16.201290+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.217624+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.218679+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.219636+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.220477+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.221299+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.222254+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.223079+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.223867+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.224671+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.225500+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.226434+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.229682+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.230626+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:16.231495+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:29.550704+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:41.580827+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-08-04T08:51:41.582016+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-08-04T08:51:41.582939+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-08-04T08:51:41.583780+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-08-04T08:51:41.584639+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-08-04T08:51:42.646416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.661531+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.662284+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.663112+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.664903+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.666133+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.666848+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.667515+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.668170+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.668869+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.669692+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.670458+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.671236+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.671935+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:42.672441+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T08:51:56.225762+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T08:51:56.227714+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T08:52:59.391196+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.507865+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.521268+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.522048+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.522713+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.524151+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.525096+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.525995+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.526576+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.527111+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.527657+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.528256+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.529099+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.530113+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.531093+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T08:52:59.531630+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T08:53:30.516369+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:53:39.944477+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:54:05.821546+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T08:54:30.683072+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:78)"} []
+[2025-08-04T09:07:41.526697+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.541569+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.542172+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.542868+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.543428+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.544026+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.544666+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.545256+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.545736+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.546458+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.547114+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.547818+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.550326+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.551356+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:41.551995+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T09:07:53.612682+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:04.551584+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-08-04T09:08:04.552490+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-08-04T09:08:04.553217+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-08-04T09:08:04.554080+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-08-04T09:08:04.555127+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-08-04T09:08:05.516352+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.530416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.531387+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.532024+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.533484+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.534547+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.535123+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.535609+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.536079+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.536792+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.537272+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.537737+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.538311+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.539301+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:05.540163+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T09:08:18.372120+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T09:08:18.374160+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T09:09:18.329566+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.445067+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.459159+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.460054+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.460625+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.461745+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.462824+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.463686+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.464262+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.464775+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.465230+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.465708+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.466168+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.466838+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.467929+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:18.468620+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T09:09:43.082254+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:10:01.966063+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:41.009128+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:49.014277+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:15:58.312915+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:16:09.372727+00:00] main.ERROR: Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         id: "2"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Could not update category: Could not save the category: Invalid category hierarchy. Please check parent category selection. at /var/www/html/app/code/News/Manger/Model/Resolver/UpdateCategory.php:62)"} []
+[2025-08-04T09:16:56.531230+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-08-04T09:16:56.539464+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:16:56.542452+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:17:08.913103+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-08-04T09:17:08.914629+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:17:08.917287+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_4","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:17:23.658737+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category"],"mode":"matchingAnyTag"}} []
+[2025-08-04T09:17:23.660490+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_5","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:17:23.662384+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_category_5","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:18:05.000254+00:00] main.INFO: NewsList Resolver called with args {"pageSize":20,"currentPage":1,"filters":[]} []
+[2025-08-04T09:18:05.004812+00:00] main.INFO: NewsList results {"total_count":11,"items_count":11,"page_info":{"page_size":20,"current_page":1,"total_pages":1.0}} []
+[2025-08-04T09:21:25.384873+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_13","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:21:25.386990+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_13","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:29:20.116363+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_14","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T09:29:20.119089+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_14","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:00:25.915393+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:00:25.916586+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:02:21.937124+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:02:21.937978+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:02:42.423350+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_15","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:02:42.426118+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_15","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:02:42.430380+00:00] main.ERROR: Error updating news category relations: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`magento`.`news_news_category`, CONSTRAINT `NEWS_NEWS_CATEGORY_CATEGORY_ID_NEWS_CATEGORY_CATEGORY_ID` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`category_id`) ON DELETE CASCADE), query was: INSERT  INTO `news_news_category` (`news_id`,`category_id`) VALUES (?, ?), (?, ?), (?, ?) [] []
+[2025-08-04T10:02:42.430902+00:00] main.ERROR: Error saving news: Could not update news category relations: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`magento`.`news_news_category`, CONSTRAINT `NEWS_NEWS_CATEGORY_CATEGORY_ID_NEWS_CATEGORY_CATEGORY_ID` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`category_id`) ON DELETE CASCADE), query was: INSERT  INTO `news_news_category` (`news_id`,`category_id`) VALUES (?, ?), (?, ?), (?, ?) [] []
+[2025-08-04T10:06:52.109579+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_16","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:06:52.111806+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_16","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:07:12.150585+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:07:12.151552+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:09:53.005192+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:09:53.006101+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.695370+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.711649+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.712379+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.712961+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.713539+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.714135+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.714615+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.715070+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.715535+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.715989+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.716454+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.716911+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.721452+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.722513+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:05.723248+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:18.984002+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:30.357139+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-08-04T10:20:30.357689+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-08-04T10:20:30.358070+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-08-04T10:20:30.358388+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-08-04T10:20:30.358753+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-08-04T10:20:31.423675+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.437410+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.438298+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.438890+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.440449+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.441706+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.442419+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.443077+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.443729+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.444587+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.445397+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.446006+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.446600+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.447178+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:31.447741+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:20:45.105240+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:20:45.107380+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:21:52.769433+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.886054+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.900000+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.900785+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.901533+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.902843+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.903823+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.904690+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.905253+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.905799+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.906504+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.907007+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.907518+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.908250+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.908827+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:21:52.909310+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.141782+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.157918+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.158703+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.159263+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.159803+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.160275+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.160830+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.161294+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.161858+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.162427+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.162958+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.163477+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.166117+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.167152+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:22.167862+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:35.859045+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:47.203683+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-08-04T10:45:47.204437+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-08-04T10:45:47.205090+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-08-04T10:45:47.205671+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-08-04T10:45:47.206241+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-08-04T10:45:48.375992+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.392589+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.393458+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.394417+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.396924+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.398557+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.399607+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.400515+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.401272+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.401998+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.402731+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.403300+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.403952+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.404582+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:45:48.405241+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:46:02.826520+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:46:02.828472+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:47:06.376524+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.492252+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.505511+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.506222+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.506843+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.508114+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.509087+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.509825+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.510383+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.510928+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.511396+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.511854+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.512300+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.512819+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.513383+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:47:06.513878+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.919548+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.934779+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.935555+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.936239+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.936887+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.937380+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.937864+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.938352+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.938956+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.939520+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.940180+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.940996+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.943597+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.944398+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:20.945334+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:33.467283+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:43.898939+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_1"}} []
+[2025-08-04T10:50:43.899865+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_2"}} []
+[2025-08-04T10:50:43.900847+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_3"}} []
+[2025-08-04T10:50:43.901706+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_4"}} []
+[2025-08-04T10:50:43.902604+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"identifier":"DB_PDO_MYSQL_DDL_sales_order_status_data_exporter_cl_5"}} []
+[2025-08-04T10:50:44.919330+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.934416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.935351+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.935958+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.937384+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.938432+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.938934+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.939426+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.940026+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.940929+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.941754+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.942589+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.943558+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.944416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:44.944965+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:50:58.736884+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:50:58.739208+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":[],"mode":"all"}} []
+[2025-08-04T10:52:00.020702+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.136903+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.150247+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["LAYOUT_GENERAL_CACHE_TAG"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.151289+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["BLOCK_HTML"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.151937+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COLLECTION_DATA"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.153115+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["REFLECTION"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.154221+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["DB_DDL"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.154907+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["COMPILED_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.155455+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["EAV"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.156016+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["CUSTOMER_NOTIFICATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.156535+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.157416+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["INTEGRATION_API_CONFIG"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.158372+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["GRAPHQL_QUERY_RESOLVER_RESULT"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.159192+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.159981+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["WEBSERVICE"],"mode":"matchingTag"}} []
+[2025-08-04T10:52:00.160629+00:00] main.DEBUG: cache_invalidate:  {"method":"GET","url":"http:/","invalidateInfo":{"tags":["TRANSLATE"],"mode":"matchingTag"}} []
+[2025-08-04T10:55:10.205262+00:00] main.INFO: NewsList Resolver called with args {"pageSize":20,"currentPage":1,"filters":[]} []
+[2025-08-04T10:55:10.219404+00:00] main.INFO: NewsList results {"total_count":15,"items_count":15,"page_info":{"page_size":20,"current_page":1,"total_pages":1.0}} []
+[2025-08-04T10:55:32.927447+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:55:32.929028+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_1","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T10:55:43.134733+00:00] main.INFO: NewsList Resolver called with args {"pageSize":20,"currentPage":1,"filters":[]} []
+[2025-08-04T10:55:43.143747+00:00] main.INFO: NewsList results {"total_count":15,"items_count":15,"page_info":{"page_size":20,"current_page":1,"total_pages":1.0}} []
+[2025-08-04T11:00:25.515369+00:00] main.ERROR: Cannot query field "news_id_id" on type "News". Did you mean "news_title"?
+
+GraphQL (10:1)
+ 9: ) {
+10: news_id_id
+    ^
+11: news_title
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_id_id\" on type \"News\". Did you mean \"news_title\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-04T11:00:25.516564+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:00:36.725756+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:00:51.020534+00:00] main.ERROR: Field "categories" is not defined by type "NewsInput". Did you mean "category_ids"?
+
+GraphQL (7:1)
+6: news_status: 1
+7: categories: []
+   ^
+8: }
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" is not defined by type \"NewsInput\". Did you mean \"category_ids\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ValuesOfCorrectType.php:117)"} []
+[2025-08-04T11:00:51.021138+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (14:1)
+13: news_status
+14: categories
+    ^
+15: created_at
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-04T11:01:46.647127+00:00] main.INFO: CreateNews GraphQL Input: {"category_ids":[],"news_content":"Technology related news","news_status":1,"news_title":"Technology"} [] []
+[2025-08-04T11:01:46.652121+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_17","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T11:01:46.653988+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_17","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T11:01:46.655071+00:00] main.INFO: News created successfully with ID: 17 [] []
+[2025-08-04T11:01:46.655329+00:00] main.INFO: CreateNews Response: {"news_id":17,"news_title":"Technology","news_content":"Technology related news","news_status":1,"created_at":null,"updated_at":null,"category_ids":[],"model":{}} [] []
+[2025-08-04T11:01:55.653795+00:00] main.INFO: CreateNews GraphQL Input: {"category_ids":[1,3],"news_content":"Technology related news","news_status":1,"news_title":"Technology"} [] []
+[2025-08-04T11:01:55.654332+00:00] main.INFO: Processed category IDs: [1,3] [] []
+[2025-08-04T11:01:55.654540+00:00] main.INFO: Setting category IDs: [1,3] [] []
+[2025-08-04T11:01:55.655713+00:00] main.ERROR: LocalizedException in CreateNews: Invalid category IDs: 1 [] []
+[2025-08-04T11:01:55.657012+00:00] main.ERROR: Invalid category IDs: 1
+
+GraphQL (2:3)
+1: mutation createNews {
+2:   createNews(
+     ^
+3:     input: {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Invalid category IDs: 1 at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Invalid category IDs: 1 at /var/www/html/app/code/News/Manger/Model/Resolver/CreateNews.php:90)"} []
+[2025-08-04T11:02:04.173199+00:00] main.INFO: CreateNews GraphQL Input: {"category_ids":[4,3],"news_content":"Technology related news","news_status":1,"news_title":"Technology"} [] []
+[2025-08-04T11:02:04.173608+00:00] main.INFO: Processed category IDs: [4,3] [] []
+[2025-08-04T11:02:04.173751+00:00] main.INFO: Setting category IDs: [4,3] [] []
+[2025-08-04T11:02:04.177197+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_18","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T11:02:04.180893+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/graphql","invalidateInfo":{"tags":["news_manger_news_18","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T11:02:04.183763+00:00] main.INFO: News created successfully with ID: 18 [] []
+[2025-08-04T11:02:04.184084+00:00] main.INFO: CreateNews Response: {"news_id":18,"news_title":"Technology","news_content":"Technology related news","news_status":1,"created_at":null,"updated_at":null,"category_ids":[4,3],"model":{}} [] []
+[2025-08-04T11:03:35.310751+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_19","FPC"],"mode":"matchingTag"}} []
+[2025-08-04T11:03:35.312488+00:00] main.DEBUG: cache_invalidate:  {"method":"POST","url":"https://magento.test/rest/V1/news","invalidateInfo":{"tags":["news_manger_news_19","FPC"],"mode":"matchingTag"}} []

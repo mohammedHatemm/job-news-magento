@@ -19,8 +19,11 @@ type Category {
     updated_at: String
     parent_ids: [Int]
     children: [Category]
+        @resolver(class: "News\\Manger\\Model\\Resolver\\Category\\Children")
     parents: [Category]
+        @resolver(class: "News\\Manger\\Model\\Resolver\\Category\\Parents")
     news: [News]
+        @resolver(class: "News\\Manger\\Model\\Resolver\\Category\\News")
 }
 
 """
@@ -35,6 +38,7 @@ type News {
     created_at: String
     updated_at: String
     categories: [Category]
+        @resolver(class: "News\\Manger\\Model\\Resolver\\News\\Categories")
 }
 
 """
