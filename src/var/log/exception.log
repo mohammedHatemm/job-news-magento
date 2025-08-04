@@ -1,0 +1,439 @@
+[2025-08-03T07:37:48.371030+00:00] main.ERROR: Cannot query field "items" on type "CategoryTree".
+
+GraphQL (9:5)
+ 8:   ) {
+ 9:     items {
+        ^
+10:       category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"items\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T07:37:48.372149+00:00] main.ERROR: Cannot query field "total_count" on type "CategoryTree".
+
+GraphQL (18:5)
+17:     }
+18:     total_count
+        ^
+19:     page_info {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"total_count\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T07:37:48.372448+00:00] main.ERROR: Cannot query field "page_info" on type "CategoryTree".
+
+GraphQL (19:5)
+18:     total_count
+19:     page_info {
+        ^
+20:       current_page
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"page_info\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T08:33:08.202666+00:00] main.ERROR: Cannot query field "items" on type "CategoryTree".
+
+GraphQL (3:5)
+2:   categoryList(pageSize: 20, currentPage: 1) {
+3:     items {
+       ^
+4:       category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"items\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T08:33:08.203597+00:00] main.ERROR: Cannot query field "total_count" on type "CategoryTree".
+
+GraphQL (16:5)
+15:     }
+16:     total_count
+        ^
+17:     page_info {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"total_count\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T08:33:08.203837+00:00] main.ERROR: Cannot query field "page_info" on type "CategoryTree".
+
+GraphQL (17:5)
+16:     total_count
+17:     page_info {
+        ^
+18:       page_size
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"page_info\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T08:41:29.095982+00:00] main.ERROR: Cannot query field "categoryTree" on type "Query".
+
+GraphQL (2:3)
+1: query {
+2:   categoryTree(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"categoryTree\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:26:13.215876+00:00] main.ERROR: Cannot query field "categoryTree" on type "Query".
+
+GraphQL (2:3)
+1: query {
+2:   categoryTree(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"categoryTree\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:31:20.904772+00:00] main.ERROR: Cannot query field "categoryTree" on type "Query".
+
+GraphQL (2:3)
+1: query {
+2:   categoryTree(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"categoryTree\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:32:15.577934+00:00] main.ERROR: Cannot query field "categoryTree" on type "Query".
+
+GraphQL (2:3)
+1: query {
+2:   categoryTree(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"categoryTree\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:32:44.014130+00:00] main.ERROR: Cannot query field "items" on type "CategoryTree".
+
+GraphQL (3:5)
+2:   categoryList(pageSize: 20, currentPage: 1) {
+3:     items {
+       ^
+4:       category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"items\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:32:44.014713+00:00] main.ERROR: Cannot query field "total_count" on type "CategoryTree".
+
+GraphQL (16:5)
+15:     }
+16:     total_count
+        ^
+17:     page_info {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"total_count\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:32:44.015006+00:00] main.ERROR: Cannot query field "page_info" on type "CategoryTree".
+
+GraphQL (17:5)
+16:     total_count
+17:     page_info {
+        ^
+18:       page_size
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"page_info\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:35:13.044973+00:00] main.ERROR: Cannot query field "items" on type "CategoryTree".
+
+GraphQL (3:5)
+2:   categoryList(pageSize: 20, currentPage: 1) {
+3:     items {
+       ^
+4:       category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"items\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:35:13.045520+00:00] main.ERROR: Cannot query field "total_count" on type "CategoryTree".
+
+GraphQL (16:5)
+15:     }
+16:     total_count
+        ^
+17:     page_info {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"total_count\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:35:13.045855+00:00] main.ERROR: Cannot query field "page_info" on type "CategoryTree".
+
+GraphQL (17:5)
+16:     total_count
+17:     page_info {
+        ^
+18:       page_size
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"page_info\" on type \"CategoryTree\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:41:43.504844+00:00] main.ERROR: Cannot query field "NewsById" on type "Query".
+
+GraphQL (2:3)
+1: query GetNewsById {
+2:   NewsById(id: 1) {
+     ^
+3:     news_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"NewsById\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:42:51.858113+00:00] main.ERROR: Cannot query field "NewsById" on type "Query". Did you mean "newsById"?
+
+GraphQL (2:3)
+1: query newsById {
+2:   NewsById(id: 1) {
+     ^
+3:     news_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"NewsById\" on type \"Query\". Did you mean \"newsById\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:46:05.669949+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected
+
+GraphQL (2:3)
+1: query GetNewsList {
+2:   newsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []
+[2025-08-03T09:46:31.675307+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected
+
+GraphQL (2:3)
+1: query newsList {
+2:   newsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []
+[2025-08-03T09:47:08.604346+00:00] main.ERROR: Cannot query field "NewsList" on type "Query". Did you mean "newsList"?
+
+GraphQL (2:3)
+1: query newsList {
+2:   NewsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"NewsList\" on type \"Query\". Did you mean \"newsList\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T09:47:35.106733+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected
+
+GraphQL (2:3)
+1: query newsList {
+2:   newsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php on line 138 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []
+[2025-08-03T09:50:23.621870+00:00] main.ERROR: Call to undefined method Magento\Framework\Api\SearchCriteria::getFilters()
+
+GraphQL (2:3)
+1: query newsList {
+2:   newsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php:79)"} []
+[2025-08-03T10:02:46.496243+00:00] main.ERROR: Cannot query field "NewsList" on type "Query".
+
+GraphQL (2:3)
+1: query NewsList {
+2:   NewsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"NewsList\" on type \"Query\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:03:36.967691+00:00] main.ERROR: Call to undefined method Magento\Framework\Api\SearchCriteria::getFilters()
+
+GraphQL (2:3)
+1: query NewsList {
+2:   NewsList(
+     ^
+3:     pageSize: 10,
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php:79)"} []
+[2025-08-03T10:10:30.183403+00:00] main.ERROR: Cannot query field "news_name" on type "News". Did you mean "news_id"?
+
+GraphQL (5:7)
+4:       news_id
+5:       news_name
+         ^
+6:      
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_name\" on type \"News\". Did you mean \"news_id\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:10:30.183930+00:00] main.ERROR: Cannot query field "category" on type "News".
+
+GraphQL (7:7)
+6:      
+7:       category {
+         ^
+8:         category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category\" on type \"News\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:10:47.527279+00:00] main.ERROR: Cannot query field "news_name" on type "News". Did you mean "news_id"?
+
+GraphQL (5:7)
+4:       news_id
+5:       news_name
+         ^
+6:       news_content
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_name\" on type \"News\". Did you mean \"news_id\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:10:47.527949+00:00] main.ERROR: Cannot query field "category" on type "News".
+
+GraphQL (8:7)
+7:      
+8:       category {
+         ^
+9:         category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category\" on type \"News\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:51:07.090636+00:00] main.ERROR: Cannot query field "category" on type "News".
+
+GraphQL (8:7)
+7:      
+8:       category {
+         ^
+9:         category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category\" on type \"News\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T10:51:34.807395+00:00] main.ERROR: Call to undefined method Magento\Framework\Api\SearchCriteria::getFilters()
+
+GraphQL (2:3)
+1: query {
+2:   NewsList(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Error(code: 0): Call to undefined method Magento\\Framework\\Api\\SearchCriteria::getFilters() at /var/www/html/app/code/News/Manger/Model/Resolver/NewsList.php:79)"} []
+[2025-08-03T11:00:15.168388+00:00] main.ERROR: Unknown argument "category_id" on field "updateCategory" of type "Mutation".
+
+GraphQL (3:9)
+2:     updateCategory(
+3:         category_id: "1"
+           ^
+4:         input: {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Unknown argument \"category_id\" on field \"updateCategory\" of type \"Mutation\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/KnownArgumentNames.php:44)"} []
+[2025-08-03T11:00:15.168901+00:00] main.ERROR: Field "updateCategory" argument "id" of type "Int!" is required but not provided.
+
+GraphQL (2:5)
+1: mutation {
+2:     updateCategory(
+       ^
+3:         category_id: "1"
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"updateCategory\" argument \"id\" of type \"Int!\" is required but not provided. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ProvidedRequiredArguments.php:38)"} []
+[2025-08-03T11:14:15.363372+00:00] main.ERROR: Variable "$id" of required type "Int!" was not provided.
+
+GraphQL (1:25)
+1: mutation DeleteCategory($id: Int!) {
+                           ^
+2:     deleteCategory(id: $id)
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Variable \"$id\" of required type \"Int!\" was not provided. at /var/www/html/vendor/webonyx/graphql-php/src/Executor/Values.php:98)"} []
+[2025-08-03T11:14:23.793448+00:00] main.ERROR: Variable "$id" is never used in operation "DeleteCategory".
+
+GraphQL (1:25)
+1: mutation DeleteCategory($id: Int!) {
+                           ^
+2:     deleteCategory(id: 1)
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Variable \"$id\" is never used in operation \"DeleteCategory\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/NoUnusedVariables.php:41)"} []
+[2025-08-03T11:16:29.264739+00:00] main.ERROR: Variable "$id" is never used in operation "DeleteCategory".
+
+GraphQL (1:25)
+1: mutation DeleteCategory($id: Int!) {
+                           ^
+2:     deleteCategory(id: 1)
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Variable \"$id\" is never used in operation \"DeleteCategory\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/NoUnusedVariables.php:41)"} []
+[2025-08-03T11:17:22.866293+00:00] main.ERROR: Category not found
+
+GraphQL (2:3)
+1: query GetCategoryById {
+2:   categoryById(id: 1) {
+     ^
+3:     category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Category not found at /var/www/html/app/code/News/Manger/Model/Resolver/CategoryById.php:51)"} []
+[2025-08-03T11:18:39.169151+00:00] main.ERROR: News with ID "123" does not exist
+
+GraphQL (2:5)
+1: mutation DeleteNewsExample {
+2:     deleteNews(id: 123)
+       ^
+3: }
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): News with ID \"123\" does not exist at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlNoSuchEntityException(code: 0): News with ID \"123\" does not exist at /var/www/html/app/code/News/Manger/Model/Resolver/DeleteNews.php:64)"} []
+[2025-08-03T11:19:14.378071+00:00] main.ERROR: News not found
+
+GraphQL (2:3)
+1: query newsById {
+2:   newsById(id: 3) {
+     ^
+3:     news_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): News not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): News not found at /var/www/html/app/code/News/Manger/Model/Resolver/NewsById.php:54)"} []
+[2025-08-03T11:21:36.179134+00:00] main.ERROR: Field "news_status_status" is not defined by type "NewsInput". Did you mean "news_status"?
+
+GraphQL (7:13)
+6:             news_content: "Updated description",
+7:             news_status_status: 1,
+               ^
+8:             category_ids: [2, 3]
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"news_status_status\" is not defined by type \"NewsInput\". Did you mean \"news_status\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ValuesOfCorrectType.php:117)"} []
+[2025-08-03T11:21:36.179719+00:00] main.ERROR: Cannot query field "news_id_id" on type "News". Did you mean "news_title"?
+
+GraphQL (11:9)
+10:     ) {
+11:         news_id_id
+            ^
+12:         news_title
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_id_id\" on type \"News\". Did you mean \"news_title\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:21:36.180023+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (15:9)
+14:         news_status
+15:         categories
+            ^
+16:     }
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-03T11:21:45.995107+00:00] main.ERROR: Field "news_status_status" is not defined by type "NewsInput". Did you mean "news_status"?
+
+GraphQL (7:13)
+6:             news_content: "Updated description",
+7:             news_status_status: 1,
+               ^
+8:             category_ids: [2, 3]
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"news_status_status\" is not defined by type \"NewsInput\". Did you mean \"news_status\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ValuesOfCorrectType.php:117)"} []
+[2025-08-03T11:21:45.995570+00:00] main.ERROR: Cannot query field "news_id_id" on type "News". Did you mean "news_title"?
+
+GraphQL (11:9)
+10:     ) {
+11:         news_id_id
+            ^
+12:         news_title
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_id_id\" on type \"News\". Did you mean \"news_title\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:22:00.855139+00:00] main.ERROR: Cannot query field "news_id_id" on type "News". Did you mean "news_title"?
+
+GraphQL (11:9)
+10:     ) {
+11:         news_id_id
+            ^
+12:         news_title
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"news_id_id\" on type \"News\". Did you mean \"news_title\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:22:24.215875+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (15:9)
+14:         news_status
+15:         categories
+            ^
+16:         
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-03T11:22:54.236012+00:00] main.ERROR: Cannot query field "category_ids" on type "News".
+
+GraphQL (15:9)
+14:         news_status
+15:         category_ids
+            ^
+16:         
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:24:29.961566+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (15:9)
+14:         news_status
+15:         categories
+            ^
+16:         
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-03T11:24:51.077415+00:00] main.ERROR: Field "categories" of type "[Category]" must have a sub selection.
+
+GraphQL (15:9)
+14:         news_status
+15:         categories
+            ^
+16:         
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Field \"categories\" of type \"[Category]\" must have a sub selection. at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/ScalarLeafs.php:30)"} []
+[2025-08-03T11:26:11.906036+00:00] main.ERROR: News not found
+
+GraphQL (2:3)
+1: query newsById {
+2:   newsById(id: 3) {
+     ^
+3:     news_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): News not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): News not found at /var/www/html/app/code/News/Manger/Model/Resolver/NewsById.php:54)"} []
+[2025-08-03T11:32:43.914450+00:00] main.ERROR: Cannot query field "category_ids" on type "News". Did you mean "categories"?
+
+GraphQL (8:13)
+7:             news_status
+8:             category_ids
+               ^
+9:             categories {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:38:48.613500+00:00] main.ERROR: Cannot query field "category_ids" on type "News". Did you mean "categories"?
+
+GraphQL (8:13)
+7:             news_status
+8:             category_ids
+               ^
+9:             categories {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:55:38.641260+00:00] main.ERROR: Cannot query field "category_ids" on type "News". Did you mean "categories"?
+
+GraphQL (8:13)
+7:             news_status
+8:             category_ids
+               ^
+9:             categories {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []
+[2025-08-03T11:59:11.432561+00:00] main.ERROR: Cannot query field "category_ids" on type "News". Did you mean "categories"?
+
+GraphQL (8:13)
+7:             news_status
+8:             category_ids
+               ^
+9:             categories {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Cannot query field \"category_ids\" on type \"News\". Did you mean \"categories\"? at /var/www/html/vendor/webonyx/graphql-php/src/Validator/Rules/FieldsOnCorrectType.php:43)"} []

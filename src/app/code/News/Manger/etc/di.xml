@@ -108,7 +108,7 @@
     </type>
 
     <!-- Repository Configuration -->
-    <type name="News\Manger\Model\NewsRepository">
+    <!-- <type name="News\Manger\Model\NewsRepository">
         <arguments>
             <argument name="newsFactory" xsi:type="object">News\Manger\Model\NewsFactory</argument>
             <argument name="resource" xsi:type="object">News\Manger\Model\ResourceModel\News</argument>
@@ -121,7 +121,24 @@
             <argument name="dataObjectHelper" xsi:type="object">Magento\Framework\Api\DataObjectHelper</argument>
             <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
         </arguments>
-    </type>
+    </type> -->
+
+
+    <type name="News\Manger\Model\NewsRepository">
+    <arguments>
+        <argument name="newsFactory" xsi:type="object">News\Manger\Model\NewsFactory</argument>
+        <argument name="resource" xsi:type="object">News\Manger\Model\ResourceModel\News</argument>
+        <argument name="collectionFactory" xsi:type="object">News\Manger\Model\ResourceModel\News\CollectionFactory</argument>
+        <!-- هنا يجب أن يكون factory interface وليس class البيانات -->
+        <argument name="searchResultsFactory" xsi:type="object">News\Manger\Api\Data\NewsSearchResultsInterfaceFactory</argument>
+        <argument name="categorySearchResultsFactory" xsi:type="object">News\Manger\Api\Data\CategorySearchResultsInterfaceFactory</argument>
+        <argument name="collectionProcessor" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor</argument>
+        <argument name="searchCriteriaBuilder" xsi:type="object">Magento\Framework\Api\SearchCriteriaBuilder</argument>
+        <argument name="dataObjectHelper" xsi:type="object">Magento\Framework\Api\DataObjectHelper</argument>
+        <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+    </arguments>
+</type>
+
 
     <type name="News\Manger\Model\CategoryRepository">
         <arguments>
@@ -136,5 +153,21 @@
             <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
         </arguments>
     </type>
+
+
+
+
+<!-- GraphQL Resolver Configuration -->
+<type name="News\Manger\Model\Resolver\CreateNews">
+    <arguments>
+        <argument name="dataNewsFactory" xsi:type="object">News\Manger\Api\Data\NewsInterfaceFactory</argument>
+    </arguments>
+</type>
+
+<type name="News\Manger\Model\Resolver\CreateCategory">
+    <arguments>
+        <argument name="dataCategoryFactory" xsi:type="object">News\Manger\Api\Data\CategoryInterfaceFactory</argument>
+    </arguments>
+</type>
 
 </config>

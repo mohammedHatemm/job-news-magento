@@ -135,14 +135,12 @@ class CategoryRepository implements CategoryRepositoryInterface
       }
 
       // نسخ البيانات من الـ Data Object إلى الـ Model
-      $model->setData([
-        'category_name'        => $category->getCategoryName(),
-        'category_description' => $category->getCategoryDescription(),
-        'category_status'      => $category->getCategoryStatus(),
-        'parent_ids'           => $category->getParentIds() ?: [],
-        'child_ids'            => $category->getChildIds() ?: [],
-        'news_ids'             => $category->getNewsIds() ?: [],
-      ]);
+      $model->setCategoryName($category->getCategoryName());
+      $model->setCategoryDescription($category->getCategoryDescription());
+      $model->setCategoryStatus($category->getCategoryStatus());
+      $model->setParentIds($category->getParentIds() ?: []);
+      $model->setChildIds($category->getChildIds() ?: []);
+      $model->setNewsIds($category->getNewsIds() ?: []);
 
       // حفظ الموديل في قاعدة البيانات
       $this->resource->save($model);
