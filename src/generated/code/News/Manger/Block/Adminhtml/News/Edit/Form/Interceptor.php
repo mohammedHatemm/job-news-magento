@@ -8,10 +8,10 @@ class Interceptor extends \News\Manger\Block\Adminhtml\News\Edit\Form implements
 {
     use \Magento\Framework\Interception\Interceptor;
 
-    public function __construct(\Magento\Backend\Block\Template\Context $context, \Magento\Framework\Registry $registry, \Magento\Framework\Data\FormFactory $formFactory, \News\Manger\Model\CategoryFactory $categoryFactory, \Psr\Log\LoggerInterface $logger, array $data = [])
+    public function __construct(\Magento\Backend\Block\Template\Context $context, \Magento\Framework\Registry $registry, \Magento\Framework\Data\FormFactory $formFactory, \News\Manger\Model\CategoryFactory $categoryFactory, \Psr\Log\LoggerInterface $logger, \News\Manger\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory, array $data = [])
     {
         $this->___init();
-        parent::__construct($context, $registry, $formFactory, $categoryFactory, $logger, $data);
+        parent::__construct($context, $registry, $formFactory, $categoryFactory, $logger, $categoryCollectionFactory, $data);
     }
 
     /**

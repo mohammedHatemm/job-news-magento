@@ -17,6 +17,15 @@ class Interceptor extends \Magento\TwoFactorAuth\Model\TfaSession implements \Ma
     /**
      * {@inheritdoc}
      */
+    public function isGranted() : bool
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'isGranted');
+        return $pluginInfo ? $this->___callPlugins('isGranted', func_get_args(), $pluginInfo) : parent::isGranted();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function start()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'start');

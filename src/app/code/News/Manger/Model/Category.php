@@ -319,7 +319,23 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
     foreach ($this->getFormattedPaths($separator) as $path) {
       $paths[] = $path;
     }
-    return implode(' | ', $paths);
+    // عرض كل مسار في سطر منفصل
+    return implode("\n", $paths);
+  }
+
+  /**
+   * Get paths formatted for HTML display
+   * @param string $separator
+   * @return string
+   */
+  public function getPathHtml($separator = ' > ')
+  {
+    $paths = [];
+    foreach ($this->getFormattedPaths($separator) as $path) {
+      $paths[] = htmlentities($path);
+    }
+    // عرض كل مسار في سطر منفصل مع HTML
+    return implode("<br>", $paths);
   }
 
   public function getBreadcrumbPaths()
@@ -414,37 +430,37 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
     return $current;
   }
 
-  public function validateHierarchy()
-  {
-    $parentIds = $this->getParentIds();
-    if (empty($parentIds)) {
-      return true;
-    }
+  // public function validateHierarchy()
+  // {
+  //   $parentIds = $this->getParentIds();
+  //   if (empty($parentIds)) {
+  //     return true;
+  //   }
 
-    if (in_array($this->getId(), $parentIds)) {
-      return false;
-    }
+  //   if (in_array($this->getId(), $parentIds)) {
+  //     return false;
+  //   }
 
-    foreach ($parentIds as $parentId) {
-      $parentCategory = $this->_categoryFactory->create();
-      $this->_getResource()->load($parentCategory, $parentId);
-      if (!$parentCategory->getId()) {
-        return false;
-      }
+  //   foreach ($parentIds as $parentId) {
+  //     $parentCategory = $this->_categoryFactory->create();
+  //     $this->_getResource()->load($parentCategory, $parentId);
+  //     if (!$parentCategory->getId()) {
+  //       return false;
+  //     }
 
-      if ($this->isAncestorOf($parentId)) {
-        return false;
-      }
+  //     if ($this->isAncestorOf($parentId)) {
+  //       return false;
+  //     }
 
-      $parentLevel = $parentCategory->getLevel();
-      $maxDepth = $this->getMaxAllowedDepth();
-      if ($parentLevel >= ($maxDepth - 1)) {
-        return false;
-      }
-    }
+  //     $parentLevel = $parentCategory->getLevel();
+  //     $maxDepth = $this->getMaxAllowedDepth();
+  //     if ($parentLevel >= ($maxDepth - 1)) {
+  //       return false;
+  //     }
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
   public function getFormattedName($prefix = '├── ')
   {
@@ -481,6 +497,27 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
       $paths[] = implode($separator, $path);
     }
     return $paths;
+  }
+
+  /**
+   * Get paths formatted for HTML display in grid
+   * @return string
+   */
+  public function getFormattedPathsForGridHtml()
+  {
+    $paths = [];
+    $breadcrumbPaths = $this->getBreadcrumbPaths();
+
+    foreach ($breadcrumbPaths as $breadcrumb) {
+      $pathNames = [];
+      foreach ($breadcrumb as $item) {
+        $pathNames[] = htmlspecialchars($item['name']);
+      }
+      $paths[] = implode(' &gt; ', $pathNames);
+    }
+
+    // إرجاع كل مسار في سطر منفصل مع HTML line breaks
+    return implode('<br/>', $paths);
   }
 
   public function getAllPaths()
@@ -546,11 +583,11 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
   public function beforeSave()
   {
     // Validate hierarchy before saving
-    if (!$this->validateHierarchy()) {
-      throw new \Magento\Framework\Exception\LocalizedException(
-        __('Invalid category hierarchy. Please check parent category selection.')
-      );
-    }
+    // if (!$this->validateHierarchy()) {
+    //   throw new \Magento\Framework\Exception\LocalizedException(
+    //     __('Invalid category hierarchy. Please check parent category selection.')
+    //   );
+    // }
 
     // Ensure JSON encoding for array fields
     foreach (['parent_ids', 'child_ids', 'news_ids'] as $field) {
@@ -576,5 +613,29 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
   {
     self::clearTreeCache();
     return parent::afterDelete();
+  }
+
+  public function validateBeforeSave()
+  {
+    parent::validateBeforeSave();
+
+    $parentIds = $this->getParentIds();
+    if (empty($parentIds)) {
+      return true;
+    }
+
+    // تحويل parent_ids إلى مصفوفة إذا كان نصياً
+    if (is_string($parentIds)) {
+      $parentIds = json_decode($parentIds, true);
+    }
+
+    // التحقق فقط من أن الفئة لا تكون أباً لنفسها
+    if (in_array($this->getId(), $parentIds)) {
+      throw new \Magento\Framework\Exception\LocalizedException(
+        __('A category cannot be parent to itself.')
+      );
+    }
+
+    return true;
   }
 }

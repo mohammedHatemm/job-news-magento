@@ -314,31 +314,70 @@ class NewsRepository implements NewsRepositoryInterface
   /**
    * @inheritDoc
    */
+  // public function getList(SearchCriteriaInterface $searchCriteria = null)
+  // {
+  //   $collection = $this->collectionFactory->create();
+
+  //   if ($searchCriteria === null) {
+  //     $searchCriteria = $this->searchCriteriaBuilder->create();
+  //   }
+
+  //   $this->collectionProcessor->process($searchCriteria, $collection);
+
+  //   $searchResults = $this->searchResultsFactory->create();
+  //   $searchResults->setSearchCriteria($searchCriteria);
+
+  //   // Convert models to data objects
+  //   $items = [];
+  //   foreach ($collection->getItems() as $model) {
+  //     $newsData = $this->dataNewsFactory->create();
+  //     $newsData->setNewsId($model->getId());
+  //     $newsData->setNewsTitle($model->getNewsTitle());
+  //     $newsData->setNewsContent($model->getNewsContent());
+  //     $newsData->setNewsStatus($model->getNewsStatus());
+  //     $newsData->setCreatedAt($model->getCreatedAt());
+  //     $newsData->setUpdatedAt($model->getUpdatedAt());
+
+  //     // Get category IDs from pivot table
+  //     $categoryIds = $this->getCategoryIdsFromPivotTable($model->getId());
+  //     $newsData->setCategoryIds($categoryIds);
+
+  //     $items[] = $newsData;
+  //   }
+
+  //   $searchResults->setItems($items);
+  //   $searchResults->setTotalCount($collection->getSize());
+
+  //   return $searchResults;
+  // }
+  /**
+   * @inheritDoc
+   */
   public function getList(SearchCriteriaInterface $searchCriteria = null)
   {
+    // إنشاء مجموعة الأخبار
     $collection = $this->collectionFactory->create();
 
+    // إذا لم يُمرر SearchCriteria، أنشئ افتراضي
     if ($searchCriteria === null) {
       $searchCriteria = $this->searchCriteriaBuilder->create();
     }
 
+    // تطبيق عمليات الفلترة والفرز والpagination على المجموعة
     $this->collectionProcessor->process($searchCriteria, $collection);
 
+    // إنشاء كائن نتائج البحث (SearchResults)
     $searchResults = $this->searchResultsFactory->create();
     $searchResults->setSearchCriteria($searchCriteria);
 
-    // Convert models to data objects
     $items = [];
-    foreach ($collection->getItems() as $model) {
-      $newsData = $this->dataNewsFactory->create();
-      $newsData->setNewsId($model->getId());
-      $newsData->setNewsTitle($model->getNewsTitle());
-      $newsData->setNewsContent($model->getNewsContent());
-      $newsData->setNewsStatus($model->getNewsStatus());
-      $newsData->setCreatedAt($model->getCreatedAt());
-      $newsData->setUpdatedAt($model->getUpdatedAt());
 
-      // Get category IDs from pivot table
+    // تحويل كل عنصر من المجموعة إلى Data Object مناسب
+    foreach ($collection->getItems() as $model) {
+      // تمرير بيانات النموذج عند الإنشاء لData Object (لتجنب مشاكل setData)
+      $newsData = $this->dataNewsFactory->create(['data' => $model->getData()]);
+
+      // جلب جميع معرّفات الفئات المرتبطة بكل خبر
       $categoryIds = $this->getCategoryIdsFromPivotTable($model->getId());
       $newsData->setCategoryIds($categoryIds);
 

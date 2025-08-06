@@ -10,6 +10,7 @@ class Form extends Generic
 {
   protected $categoryFactory;
   protected $logger;
+  protected $_categoryCollectionFactory;
 
   public function __construct(
     \Magento\Backend\Block\Template\Context $context,
@@ -17,10 +18,12 @@ class Form extends Generic
     \Magento\Framework\Data\FormFactory $formFactory,
     CategoryFactory $categoryFactory,
     LoggerInterface $logger,
+    \News\Manger\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
     array $data = []
   ) {
     $this->categoryFactory = $categoryFactory;
     $this->logger = $logger;
+    $this->_categoryCollectionFactory = $categoryCollectionFactory;
     parent::__construct($context, $registry, $formFactory, $data);
   }
 
@@ -41,67 +44,51 @@ class Form extends Generic
 
     $form->setHtmlIdPrefix('news_');
 
-    $fieldset = $form->addFieldset(
-      'base_fieldset',
-      ['legend' => __('General Information'), 'class' => 'fieldset-wide']
-    );
+    $fieldset = $form->addFieldset('base_fieldset', [
+      'legend' => __('General Information'),
+      'class' => 'fieldset-wide'
+    ]);
 
     if ($model->getId()) {
       $fieldset->addField('news_id', 'hidden', ['name' => 'news_id']);
     }
 
-    $fieldset->addField(
-      'news_title',
-      'text',
-      [
-        'name' => 'news_title',
-        'label' => __('Title'),
-        'title' => __('Title'),
-        'required' => true
-      ]
-    );
+    $fieldset->addField('news_title', 'text', [
+      'name' => 'news_title',
+      'label' => __('Title'),
+      'title' => __('Title'),
+      'required' => true
+    ]);
 
-    $fieldset->addField(
-      'news_content',
-      'textarea',
-      [
-        'name' => 'news_content',
-        'label' => __('Content'),
-        'title' => __('Content'),
-        'required' => true
-      ]
-    );
+    $fieldset->addField('news_content', 'textarea', [
+      'name' => 'news_content',
+      'label' => __('Content'),
+      'title' => __('Content'),
+      'required' => true
+    ]);
 
-    $fieldset->addField(
-      'news_status',
-      'select',
-      [
-        'name' => 'news_status',
-        'label' => __('Status'),
-        'title' => __('Status'),
-        'required' => true,
-        'options' => [
-          1 => __('Active'),
-          0 => __('Inactive')
-        ]
+    $fieldset->addField('news_status', 'select', [
+      'name' => 'news_status',
+      'label' => __('Status'),
+      'title' => __('Status'),
+      'required' => true,
+      'options' => [
+        1 => __('Active'),
+        0 => __('Inactive')
       ]
-    );
+    ]);
 
     try {
-      $categoryOptions = $this->getCategoryOptions($model->getId());
+      $categoryOptions = $this->getBreadcrumbCategoryOptions($model->getId());
 
-      $fieldset->addField(
-        'category_ids',
-        'multiselect',
-        [
-          'name' => 'category_ids[]',
-          'label' => __('Categories'),
-          'title' => __('Categories'),
-          'required' => false,
-          'values' => $categoryOptions,
-          'note' => __('Select one or more categories for this news.')
-        ]
-      );
+      $fieldset->addField('category_ids', 'multiselect', [
+        'name' => 'category_ids[]',
+        'label' => __('Categories'),
+        'title' => __('Categories'),
+        'required' => false,
+        'values' => $categoryOptions,
+        'note' => __('Select one or more categories for this news.')
+      ]);
     } catch (\Exception $e) {
       $this->logger->error('Error loading category options: ' . $e->getMessage());
       $fieldset->addField('category_ids', 'note', [
@@ -112,7 +99,7 @@ class Form extends Generic
 
     $formData = $model->getData();
 
-    // Load existing category IDs for the news
+    // جلب قائمة الفئات المختارة بالفعل لهذا الخبر
     if ($model->getId()) {
       $categoryIds = $this->getCategoryIdsForNews($model->getId());
       $formData['category_ids'] = $categoryIds;
@@ -127,14 +114,24 @@ class Form extends Generic
     return parent::_prepareForm();
   }
 
-  protected function getCategoryOptions($excludeId = null): array
+  /**
+   * بناء الخيارات الهرمية بشكل شجري مع مسافات بادئة
+   *
+   * @param int|null $excludeId
+   * @return array
+   */
+  protected function getBreadcrumbCategoryOptions($excludeId = null): array
   {
-    $collection = $this->categoryFactory->create()->getCollection()->addOrder('category_name', 'ASC');
+    $collection = $this->_categoryCollectionFactory->create()->addOrder('category_name', 'ASC');
+    return $this->buildHierarchyOptions($collection, $excludeId);
+  }
+
+  protected function buildHierarchyOptions($collection, $excludeId = null): array
+  {
     $options = [];
     $categoryMap = [];
     $childrenMap = [];
 
-    // Build category hierarchy
     foreach ($collection as $category) {
       if ($excludeId && $category->getId() == $excludeId) {
         continue;
@@ -153,7 +150,6 @@ class Form extends Generic
       }
     }
 
-    // Generate hierarchical options
     if (isset($childrenMap[0])) {
       foreach ($childrenMap[0] as $rootCategoryId) {
         if (isset($categoryMap[$rootCategoryId])) {
@@ -161,7 +157,8 @@ class Form extends Generic
             $categoryMap[$rootCategoryId],
             $categoryMap,
             $childrenMap,
-            $options
+            $options,
+            0
           );
         }
       }
@@ -170,14 +167,14 @@ class Form extends Generic
     return $options;
   }
 
-  protected function addCategoryToOptions($category, array $categoryMap, array $childrenMap, array &$options, string $breadcrumbPath = '')
+  protected function addCategoryToOptions($category, array $categoryMap, array $childrenMap, array &$options, int $level = 0)
   {
-    $currentPath = $breadcrumbPath ? ($breadcrumbPath . ' > ') : '';
-    $currentPath .= $category->getCategoryName() ?: __('Category #%1', $category->getId());
+    $indent = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $level);
+    $label = $indent . $category->getCategoryName();
 
     $options[] = [
       'value' => $category->getId(),
-      'label' => $currentPath,
+      'label' => $label
     ];
 
     $categoryId = $category->getId();
@@ -189,7 +186,7 @@ class Form extends Generic
             $categoryMap,
             $childrenMap,
             $options,
-            $currentPath
+            $level + 1
           );
         }
       }

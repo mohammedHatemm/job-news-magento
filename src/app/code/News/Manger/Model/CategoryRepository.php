@@ -271,6 +271,47 @@ class CategoryRepository implements CategoryRepositoryInterface
   /**
    * @inheritDoc
    */
+  // public function getList(?SearchCriteriaInterface $searchCriteria = null): SearchResultsInterface
+  // {
+  //   $collection = $this->collectionFactory->create();
+
+  //   if ($searchCriteria === null) {
+  //     $searchCriteria = $this->searchCriteriaBuilder->create();
+  //   }
+
+  //   $this->collectionProcessor->process($searchCriteria, $collection);
+
+  //   $searchResults = $this->searchResultsFactory->create();
+  //   $searchResults->setSearchCriteria($searchCriteria);
+
+  //   // Convert models to data objects
+  //   $items = [];
+  //   foreach ($collection->getItems() as $model) {
+  //     $categoryData = $this->dataCategoryFactory->create();
+  //     $categoryData->setCategoryId($model->getId());
+  //     $categoryData->setCategoryName($model->getCategoryName());
+  //     $categoryData->setCategoryDescription($model->getCategoryDescription());
+  //     $categoryData->setCategoryStatus($model->getCategoryStatus());
+  //     $categoryData->setCreatedAt($model->getCreatedAt());
+  //     $categoryData->setUpdatedAt($model->getUpdatedAt());
+  //     $categoryData->setParentIds($model->getParentIds());
+  //     $categoryData->setChildIds($model->getChildIds());
+
+  //     // جلب الـ news IDs من الجدول المنفصل
+  //     $newsIds = $this->getNewsIdsFromPivotTable($model->getId());
+  //     $categoryData->setNewsIds($newsIds);
+
+  //     $items[] = $categoryData;
+  //   }
+
+  //   $searchResults->setItems($items);
+  //   $searchResults->setTotalCount($collection->getSize());
+
+  //   return $searchResults;
+  // }
+  /**
+   * @inheritDoc
+   */
   public function getList(?SearchCriteriaInterface $searchCriteria = null): SearchResultsInterface
   {
     $collection = $this->collectionFactory->create();
@@ -284,20 +325,12 @@ class CategoryRepository implements CategoryRepositoryInterface
     $searchResults = $this->searchResultsFactory->create();
     $searchResults->setSearchCriteria($searchCriteria);
 
-    // Convert models to data objects
     $items = [];
     foreach ($collection->getItems() as $model) {
-      $categoryData = $this->dataCategoryFactory->create();
-      $categoryData->setCategoryId($model->getId());
-      $categoryData->setCategoryName($model->getCategoryName());
-      $categoryData->setCategoryDescription($model->getCategoryDescription());
-      $categoryData->setCategoryStatus($model->getCategoryStatus());
-      $categoryData->setCreatedAt($model->getCreatedAt());
-      $categoryData->setUpdatedAt($model->getUpdatedAt());
-      $categoryData->setParentIds($model->getParentIds());
-      $categoryData->setChildIds($model->getChildIds());
+      // إنشاء Data Object وتمرير البيانات عند الإنشاء
+      $categoryData = $this->dataCategoryFactory->create(['data' => $model->getData()]);
 
-      // جلب الـ news IDs من الجدول المنفصل
+      // جلب علاقات الأخبار المرتبطة
       $newsIds = $this->getNewsIdsFromPivotTable($model->getId());
       $categoryData->setNewsIds($newsIds);
 
@@ -309,6 +342,7 @@ class CategoryRepository implements CategoryRepositoryInterface
 
     return $searchResults;
   }
+
 
   /**
    * @inheritDoc
@@ -393,10 +427,40 @@ class CategoryRepository implements CategoryRepositoryInterface
    */
   public function getNews($categoryId)
   {
-    // This would typically use a different repository for news items
-    // For now, we'll return an empty result
-    return $this->searchResultsFactory->create();
+    try {
+      /** @var \News\Manger\Model\ResourceModel\News\Collection $collection */
+      $collection = $this->newsCollectionFactory->create();
+
+      // Join table to filter news by category_id
+      $collection->getSelect()->join(
+        ['nnc' => $this->resourceConnection->getTableName('news_news_category')],
+        'main_table.news_id = nnc.news_id',
+        []
+      )->where('nnc.category_id = ?', (int)$categoryId);
+
+      $searchResults = $this->searchResultsFactory->create();
+      $searchResults->setItems([]);
+      $searchResults->setTotalCount(0);
+
+      $items = [];
+      foreach ($collection->getItems() as $newsModel) {
+        $newsData = $this->dataNewsFactory->create(['data' => $newsModel->getData()]);
+
+        // يمكنك إضافة الـ category_ids هنا إن رغبت
+        $newsData->setCategoryIds($this->getCategoryIdsFromPivotTable($newsModel->getId()));
+
+        $items[] = $newsData;
+      }
+
+      $searchResults->setItems($items);
+      $searchResults->setTotalCount($collection->getSize());
+      return $searchResults;
+    } catch (\Exception $e) {
+      $this->logger->error('Error fetching news for category ' . $categoryId . ': ' . $e->getMessage());
+      return $this->searchResultsFactory->create();
+    }
   }
+
 
   /**
    * @inheritDoc

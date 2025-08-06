@@ -3186,6 +3186,22 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession' => 
+    array (
+      'bypassTwoFactorAuth' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService' => 
+    array (
+      'bypassTwoFactorAuthForApiTokenGeneration' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuthForApiTokenGeneration',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -9063,6 +9079,34 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\TwoFactorAuth\\Api\\TfaSessionInterface' => NULL,
+    'Magento\\TwoFactorAuth\\Model\\TfaSession' => 
+    array (
+      'session_checker' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Customer\\CustomerData\\Plugin\\SessionChecker',
+      ),
+      'keep_login_as_customer_session_data' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\LoginAsCustomerFrontendUi\\Plugin\\KeepLoginAsCustomerSessionDataPlugin',
+      ),
+      'bypassTwoFactorAuth' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Api\\AdminTokenServiceInterface' => NULL,
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService' => 
+    array (
+      'bypassTwoFactorAuthForApiTokenGeneration' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuthForApiTokenGeneration',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -14006,6 +14050,28 @@
         1 => 'contextPlugin',
         2 => 'authentication',
       ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession_start___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'session_checker',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession_clearStorage___self' => 
+    array (
+      2 => 'keep_login_as_customer_session_data',
+    ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession_isGranted___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'bypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService_createAdminAccessToken___self' => 
+    array (
+      2 => 'bypassTwoFactorAuthForApiTokenGeneration',
     ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 
     array (

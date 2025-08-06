@@ -48,12 +48,16 @@ class Collection extends CategoryCollection implements SearchResultInterface
   {
     parent::_initSelect();
 
-    // Add parent name to the select for grid display
-    $this->getSelect()->joinLeft(
-      ['parent' => $this->getTable('news_category')],
-      'main_table.parent_id = parent.category_id',
-      ['parent_name' => 'COALESCE(parent.category_name, "Root Category")']
-    );
+    // إضافة parent name بطريقة مختلفة
+    $this->getSelect()->columns([
+      'parent_name' => new \Zend_Db_Expr(
+        'CASE
+                WHEN main_table.parent_ids IS NULL OR main_table.parent_ids = "[]" OR main_table.parent_ids = ""
+                THEN "Root Category"
+                ELSE "Has Parents"
+            END'
+      )
+    ]);
 
     return $this;
   }

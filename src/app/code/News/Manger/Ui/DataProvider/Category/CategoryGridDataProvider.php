@@ -61,7 +61,8 @@ class CategoryGridDataProvider extends AbstractDataProvider
         // Path information
         $formattedPaths = $categoryModel->getFormattedPaths(' > ');
         if (!empty($formattedPaths)) {
-          $data['full_path_array'] = implode('<br>', $formattedPaths);
+          // ✅ إصلاح الخطأ هنا - استخدام $data بدلاً من $item و $categoryModel بدلاً من $category
+          $data['full_path_array'] = $categoryModel->getFormattedPathsForGridHtml();
           $data['primary_path'] = $formattedPaths[0];
           $data['all_paths'] = json_encode($formattedPaths);
         } else {

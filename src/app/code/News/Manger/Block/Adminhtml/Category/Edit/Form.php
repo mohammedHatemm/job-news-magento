@@ -8,36 +8,11 @@ use Psr\Log\LoggerInterface;
 
 class Form extends Generic
 {
-  /**
-   * @var \Magento\Store\Model\System\Store
-   */
   protected $_systemStore;
-
-  /**
-   * @var \News\Manger\Model\ResourceModel\Category\CollectionFactory
-   */
   protected $_categoryCollectionFactory;
-
-  /**
-   * @var \News\Manger\Model\CategoryFactory
-   */
   protected $_categoryFactory;
-
-  /**
-   * @var LoggerInterface
-   */
   protected $_logger;
 
-  /**
-   * @param \Magento\Backend\Block\Template\Context $context
-   * @param \Magento\Framework\Registry $registry
-   * @param \Magento\Framework\Data\FormFactory $formFactory
-   * @param \Magento\Store\Model\System\Store $systemStore
-   * @param \News\Manger\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory
-   * @param \News\Manger\Model\CategoryFactory $categoryFactory
-   * @param LoggerInterface $logger
-   * @param array $data
-   */
   public function __construct(
     \Magento\Backend\Block\Template\Context $context,
     \Magento\Framework\Registry $registry,
@@ -55,9 +30,6 @@ class Form extends Generic
     parent::__construct($context, $registry, $formFactory, $data);
   }
 
-  /**
-   * Init form
-   */
   protected function _construct()
   {
     parent::_construct();
@@ -65,16 +37,9 @@ class Form extends Generic
     $this->setTitle(__('Category Information'));
   }
 
-  /**
-   * Prepare form
-   *
-   * @return $this
-   * @throws LocalizedException
-   */
   protected function _prepareForm()
   {
     $model = $this->_coreRegistry->registry('news_category');
-
     if (!$model) {
       $model = $this->_categoryFactory->create();
     }
@@ -87,7 +52,6 @@ class Form extends Generic
         'enctype' => 'multipart/form-data'
       ]
     ]);
-
     $form->setHtmlIdPrefix('category_');
 
     $fieldset = $form->addFieldset('base_fieldset', [
@@ -96,9 +60,7 @@ class Form extends Generic
     ]);
 
     if ($model->getId()) {
-      $fieldset->addField('category_id', 'hidden', [
-        'name' => 'category_id'
-      ]);
+      $fieldset->addField('category_id', 'hidden', ['name' => 'category_id']);
     }
 
     $fieldset->addField('category_name', 'text', [
@@ -142,7 +104,6 @@ class Form extends Generic
       ]);
     } catch (\Exception $e) {
       $this->_logger->error('Error loading category options: ' . $e->getMessage());
-      // Optionally add a disabled field with an error message
       $fieldset->addField('parent_ids', 'note', [
         'label' => __('Parent Categories'),
         'text' => __('Could not load category options. Please check logs.')
@@ -151,7 +112,7 @@ class Form extends Generic
 
     $formData = $model->getData();
 
-    // Ensure parent_ids is an array for the form
+    // تأكد أن parent_ids مصفوفة صحيحة للفورم
     if (isset($formData['parent_ids'])) {
       $decoded = is_string($formData['parent_ids']) ? json_decode($formData['parent_ids'], true) : $formData['parent_ids'];
       $formData['parent_ids'] = is_array($decoded) ? $decoded : [];
@@ -165,8 +126,7 @@ class Form extends Generic
   }
 
   /**
-   * Get category options with breadcrumb path.
-   * This is the main entry point for generating the options.
+   * جلب خيارات الفئات مع مسافات بادئة حسب المستوى
    *
    * @param int|null $excludeId
    * @return array
@@ -178,9 +138,7 @@ class Form extends Generic
   }
 
   /**
-   * Builds a hierarchical options array from a category collection.
-   * This improved method builds a complete parent-child map first,
-   * then recursively generates the options.
+   * بناء الخيارات بشكل هرمي مع مسافات بادئة
    *
    * @param \News\Manger\Model\ResourceModel\Category\Collection $collection
    * @param int|null $excludeId
@@ -192,10 +150,9 @@ class Form extends Generic
     $categoryMap = [];
     $childrenMap = [];
 
-    // First, map all categories by their ID and build a children map
     foreach ($collection as $category) {
       if ($excludeId && $category->getId() == $excludeId) {
-        continue; // Skip the category being edited
+        continue;
       }
       $categoryId = $category->getId();
       $parentIds = json_decode($category->getData('parent_ids') ?: '[]', true);
@@ -203,7 +160,7 @@ class Form extends Generic
       $categoryMap[$categoryId] = $category;
 
       if (empty($parentIds)) {
-        $childrenMap[0][] = $categoryId; // 0 is the virtual root
+        $childrenMap[0][] = $categoryId; // 0 كمفتاح لـ root افتراضي
       } else {
         foreach ($parentIds as $parentId) {
           $childrenMap[$parentId][] = $categoryId;
@@ -211,7 +168,6 @@ class Form extends Generic
       }
     }
 
-    // Now, build the options recursively starting from the virtual root
     if (isset($childrenMap[0])) {
       foreach ($childrenMap[0] as $rootCategoryId) {
         if (isset($categoryMap[$rootCategoryId])) {
@@ -219,7 +175,8 @@ class Form extends Generic
             $categoryMap[$rootCategoryId],
             $categoryMap,
             $childrenMap,
-            $options
+            $options,
+            0  // بداية من المستوى صفر
           );
         }
       }
@@ -229,34 +186,38 @@ class Form extends Generic
   }
 
   /**
-   * A recursive helper function to build the final options array.
+   * دالة مساعدة لإضافة خيار مع مسافة بادئة وفق المستوى الحالي (level)
    *
    * @param \News\Manger\Model\Category $category
    * @param array $categoryMap
    * @param array $childrenMap
    * @param array &$options
-   * @param string $breadcrumbPath
+   * @param int $level
    */
-  protected function addCategoryToOptions($category, array $categoryMap, array $childrenMap, array &$options, string $breadcrumbPath = '')
+  protected function addCategoryToOptions($category, array $categoryMap, array $childrenMap, array &$options, int $level = 0)
   {
-    $currentPath = $breadcrumbPath ? ($breadcrumbPath . ' > ') : '';
-    $currentPath .= $category->getCategoryName() ?: __('Category #%1', $category->getId());
+    // مسافة بادئة (4 مسافات غير منقطعة لكل مستوى)
+    $indent = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $level);
+
+    // بناء التسمية مع المسافة البادئة
+    $label = $indent . $category->getCategoryName();
 
     $options[] = [
       'value' => $category->getId(),
-      'label' => $currentPath,
+      'label' => $label,
     ];
 
     $categoryId = $category->getId();
     if (isset($childrenMap[$categoryId])) {
       foreach ($childrenMap[$categoryId] as $childId) {
         if (isset($categoryMap[$childId])) {
+          // التكرار مع زيادة المستوى
           $this->addCategoryToOptions(
             $categoryMap[$childId],
             $categoryMap,
             $childrenMap,
             $options,
-            $currentPath
+            $level + 1
           );
         }
       }

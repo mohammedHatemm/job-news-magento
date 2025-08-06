@@ -11,6 +11,7 @@
                 <block class="News\Manger\Block\Adminhtml\Category\View\Info" name="info" template="News_Manger::category/view/info.phtml"/>
                 <block class="News\Manger\Block\Adminhtml\Category\View\NewsCount" name="news_count" template="News_Manger::category/view/news_count.phtml"/>
                 <block class="News\Manger\Block\Adminhtml\Category\View\Hierarchy" name="hierarchy" template="News_Manger::category/view/hierarchy.phtml"/>
+
             </block>
         </referenceContainer>
     </body>

@@ -3132,6 +3132,22 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession' => 
+    array (
+      'bypassTwoFactorAuth' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService' => 
+    array (
+      'bypassTwoFactorAuthForApiTokenGeneration' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuthForApiTokenGeneration',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -7513,6 +7529,24 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\TwoFactorAuth\\Api\\TfaSessionInterface' => NULL,
+    'Magento\\TwoFactorAuth\\Model\\TfaSession' => 
+    array (
+      'bypassTwoFactorAuth' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Api\\AdminTokenServiceInterface' => NULL,
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService' => 
+    array (
+      'bypassTwoFactorAuthForApiTokenGeneration' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'MarkShust\\DisableTwoFactorAuth\\Plugin\\BypassTwoFactorAuthForApiTokenGeneration',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -11133,6 +11167,17 @@
       array (
         0 => 'authentication',
       ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\TfaSession_isGranted___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'bypassTwoFactorAuth',
+      ),
+    ),
+    'Magento\\TwoFactorAuth\\Model\\AdminAccessTokenService_createAdminAccessToken___self' => 
+    array (
+      2 => 'bypassTwoFactorAuthForApiTokenGeneration',
     ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 
     array (

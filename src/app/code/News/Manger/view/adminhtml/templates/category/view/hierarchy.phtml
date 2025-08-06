@@ -1,88 +1,434 @@
 <?php
 
 /** @var \News\Manger\Block\Adminhtml\Category\View\Hierarchy $block */
+
+/**
+ * دالة لرسم الشجرة الهرمية
+ */
+function renderCategoryTree($categories, $level = 0, $escaper = null)
+{
+  if (empty($categories)) {
+    return '';
+  }
+
+  $html = '<ul class="hierarchy-tree level-' . $level . '">';
+
+  foreach ($categories as $category) {
+    $hasChildren = isset($category['children']) && !empty($category['children']);
+    $isActive = $category['is_current'] ?? false;
+
+    $html .= '<li class="category-item ' . ($isActive ? 'active' : '') . '">';
+
+    // زر الطي/الفتح إذا كان لديه أطفال
+    if ($hasChildren) {
+      $html .= '<span class="toggle-btn" onclick="toggleCategory(this)">
+                        <i class="fa fa-plus"></i>
+                      </span>';
+    } else {
+      $html .= '<span class="no-children"></span>';
+    }
+
+    // اسم الفئة مع رابط
+    $categoryName = $escaper ? $escaper->escapeHtml($category['name']) : htmlspecialchars($category['name']);
+    $html .= '<a href="' . ($category['view_url'] ?? '#') . '" class="category-link">';
+    $html .= '<span class="category-name">' . $categoryName . '</span>';
+    $html .= '<span class="category-info">(' . (int)($category['news_count'] ?? 0) . ' news)</span>';
+    $html .= '</a>';
+
+    // الأطفال
+    if ($hasChildren) {
+      $html .= '<div class="children-container collapsed">';
+      $html .= renderCategoryTree($category['children'], $level + 1, $escaper);
+      $html .= '</div>';
+    }
+
+    $html .= '</li>';
+  }
+
+  $html .= '</ul>';
+  return $html;
+}
 ?>
-<div class="admin__page-section">
-  <h2><?= __('Category Hierarchy') ?></h2>
+
+<div class="admin__page-section category-hierarchy-section">
+  <h2><?= __('Category Hierarchy Menu') ?></h2>
+
+  <!-- مربع البحث -->
+  <div class="search-container">
+    <input type="text"
+      id="category-search"
+      placeholder="<?= __('Search categories...') ?>"
+      style="width: 300px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px;">
+  </div>
 
   <?php if ($block->hasCategory()): ?>
-    <?php $breadcrumbPaths = $block->getBreadcrumbPaths(); ?>
+    <div class="category-hierarchy-menu">
+      <?php
+      $treeData = $block->getCategoryTreeData();
+      if (!empty($treeData)):
+      ?>
+        <?= renderCategoryTree($treeData, 0, $this) ?>
+      <?php else: ?>
+        <p><?= __('No categories found.') ?></p>
+      <?php endif; ?>
+    </div>
 
-    <?php if (is_array($breadcrumbPaths) && !empty($breadcrumbPaths)): ?>
-      <?php foreach ($breadcrumbPaths as $pathIndex => $path): ?>
-        <div class="hierarchy-path">
-          <h4><?= __('Path %1:', $pathIndex + 1) ?></h4>
-          <ul class="hierarchy-list">
-            <?php foreach ($path as $item): ?>
-              <li class="level-<?= $item['level'] ?>">
-                <?= $this->escapeHtml($item['name']) ?>
-                <span class="level-info">(<?= __('Level') ?>: <?= $item['level'] ?>)</span>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <p><?= __('This is a root category with no parent hierarchy.') ?></p>
-    <?php endif; ?>
-
-    <!-- عرض معلومات إضافية عن الـ category -->
-    <div class="category-info">
+    <!-- معلومات الفئة المحددة -->
+    <div class="selected-category-info">
       <?php $category = $block->getCurrentCategory(); ?>
-      <p><strong><?= __('Category Name:') ?></strong> <?= $this->escapeHtml($category->getCategoryName()) ?></p>
-      <p><strong><?= __('Level:') ?></strong> <?= $category->getLevel() ?></p>
-      <p><strong><?= __('Is Root:') ?></strong> <?= $category->isRoot() ? __('Yes') : __('No') ?></p>
-      <p><strong><?= __('Has Children:') ?></strong> <?= $category->hasChildren() ? __('Yes') : __('No') ?></p>
+      <h3><?= __('Selected Category Information') ?></h3>
+      <div class="category-details">
+        <p><strong><?= __('Category Name:') ?></strong> <?= $this->escapeHtml($category->getCategoryName()) ?></p>
+        <p><strong><?= __('Level:') ?></strong> <?= $category->getLevel() ?></p>
+        <p><strong><?= __('Is Root:') ?></strong> <?= $category->isRoot() ? __('Yes') : __('No') ?></p>
+        <p><strong><?= __('Has Children:') ?></strong> <?= $category->hasChildren() ? __('Yes') : __('No') ?></p>
+        <?php if (method_exists($category, 'getChildrenCount')): ?>
+          <p><strong><?= __('Children Count:') ?></strong> <?= $category->getChildrenCount() ?></p>
+        <?php endif; ?>
+      </div>
     </div>
 
   <?php else: ?>
-    <p><?= __('No category selected or category not found.') ?></p>
+    <div class="category-hierarchy-menu">
+      <?php
+      $treeData = $block->getCategoryTreeData();
+      if (!empty($treeData)):
+      ?>
+        <p><?= __('All Categories:') ?></p>
+        <?= renderCategoryTree($treeData, 0, $this) ?>
+      <?php else: ?>
+        <p><?= __('No categories found.') ?></p>
+      <?php endif; ?>
+    </div>
+    <p><?= __('No specific category selected.') ?></p>
   <?php endif; ?>
 </div>
 
 <style>
-  .hierarchy-path {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
+  /* أساسيات الهيكل */
+  .category-hierarchy-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .hierarchy-list {
+  .category-hierarchy-menu {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+    background: #fafafa;
+    padding: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .search-container {
+    margin-bottom: 15px;
+  }
+
+  /* تنسيق الشجرة */
+  .hierarchy-tree {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
-  .hierarchy-list li {
-    padding: 5px 0;
-    padding-left: calc(var(--level, 0) * 20px);
+  .hierarchy-tree li {
+    margin: 0;
+    position: relative;
   }
 
-  .hierarchy-list .level-1 {
-    --level: 1;
+  .category-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ddd;
   }
 
-  .hierarchy-list .level-2 {
-    --level: 2;
+  .category-item:hover {
+    background-color: rgba(0, 123, 255, 0.05);
   }
 
-  .hierarchy-list .level-3 {
-    --level: 3;
+  .category-item.active {
+    background-color: rgba(0, 123, 255, 0.1);
+    font-weight: bold;
   }
 
-  .hierarchy-list .level-4 {
-    --level: 4;
+  /* أزرار الطي والفتح */
+  .toggle-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    transition: all 0.3s ease;
+    font-size: 12px;
   }
 
-  .level-info {
-    color: #666;
-    font-size: 0.9em;
+  .toggle-btn:hover {
+    background: #007bff;
+    color: white;
+  }
+
+  .toggle-btn.expanded {
+    background: #007bff;
+    color: white;
+  }
+
+  .no-children {
+    width: 20px;
+    margin-right: 8px;
+  }
+
+  /* روابط الفئات */
+  .category-link {
+    text-decoration: none;
+    color: #333;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .category-link:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  .category-name {
+    font-weight: 500;
   }
 
   .category-info {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f8f8;
-    border-radius: 5px;
+    font-size: 12px;
+    color: #666;
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+
+  /* تنسيق المستويات */
+  .level-0>li>.category-link {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .level-1>li {
+    padding-left: 25px;
+  }
+
+  .level-2>li {
+    padding-left: 50px;
+  }
+
+  .level-3>li {
+    padding-left: 75px;
+  }
+
+  .level-4>li {
+    padding-left: 100px;
+  }
+
+  /* حاوي الأطفال */
+  .children-container {
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .children-container.collapsed {
+    max-height: 0;
+  }
+
+  .children-container.expanded {
+    max-height: 2000px;
+  }
+
+  /* معلومات الفئة المحددة */
+  .selected-category-info {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+  }
+
+  .category-details p {
+    margin: 8px 0;
+  }
+
+  .category-details strong {
+    color: #495057;
+    min-width: 120px;
+    display: inline-block;
+  }
+
+  /* خطوط الاتصال */
+  .hierarchy-tree li:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 50%;
+    width: 1px;
+    background: #ddd;
+  }
+
+  .hierarchy-tree li:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background: #ddd;
+  }
+
+  .hierarchy-tree>li:before {
+    display: none;
+  }
+
+  .hierarchy-tree li:last-child:before {
+    bottom: 50%;
+  }
+
+  /* تجاوبية */
+  @media (max-width: 768px) {
+    .category-hierarchy-menu {
+      padding: 10px;
+    }
+
+    .level-1>li {
+      padding-left: 15px;
+    }
+
+    .level-2>li {
+      padding-left: 30px;
+    }
+
+    .level-3>li {
+      padding-left: 45px;
+    }
+
+    .level-4>li {
+      padding-left: 60px;
+    }
+
+    .category-link {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .category-info {
+      margin-top: 4px;
+    }
   }
 </style>
+
+<script>
+  /**
+   * دالة لطي وفتح الفئات
+   */
+  function toggleCategory(button) {
+    const container = button.parentNode.querySelector('.children-container');
+    const icon = button.querySelector('i');
+
+    if (container && container.classList.contains('collapsed')) {
+      // فتح
+      container.classList.remove('collapsed');
+      container.classList.add('expanded');
+      button.classList.add('expanded');
+      if (icon) {
+        icon.textContent = '-';
+      } else {
+        button.innerHTML = '<i>-</i>';
+      }
+    } else if (container) {
+      // طي
+      container.classList.remove('expanded');
+      container.classList.add('collapsed');
+      button.classList.remove('expanded');
+      if (icon) {
+        icon.textContent = '+';
+      } else {
+        button.innerHTML = '<i>+</i>';
+      }
+    }
+  }
+
+  /**
+   * فتح المسار للفئة النشطة
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    // العثور على الفئة النشطة
+    const activeItem = document.querySelector('.category-item.active');
+
+    if (activeItem) {
+      // فتح جميع الآباء للفئة النشطة
+      let parent = activeItem.parentNode;
+      while (parent) {
+        if (parent.classList && parent.classList.contains('children-container')) {
+          parent.classList.remove('collapsed');
+          parent.classList.add('expanded');
+
+          const toggleBtn = parent.parentNode.querySelector('.toggle-btn');
+          if (toggleBtn) {
+            toggleBtn.classList.add('expanded');
+            const icon = toggleBtn.querySelector('i');
+            if (icon) {
+              icon.textContent = '-';
+            }
+          }
+        }
+        parent = parent.parentNode;
+      }
+    }
+
+    // البحث
+    const searchInput = document.getElementById('category-search');
+    if (searchInput) {
+      searchInput.addEventListener('keyup', function() {
+        searchCategories(this.value);
+      });
+    }
+  });
+
+  /**
+   * البحث في الشجرة
+   */
+  function searchCategories(searchTerm) {
+    const items = document.querySelectorAll('.category-item');
+    const term = searchTerm.toLowerCase();
+
+    items.forEach(item => {
+      const nameElement = item.querySelector('.category-name');
+      if (nameElement) {
+        const name = nameElement.textContent.toLowerCase();
+        if (name.includes(term) || term === '') {
+          item.style.display = 'flex';
+          // إظهار الآباء أيضاً
+          let parent = item.parentNode;
+          while (parent) {
+            if (parent.classList && parent.classList.contains('category-item')) {
+              parent.style.display = 'flex';
+            }
+            parent = parent.parentNode;
+          }
+        } else {
+          item.style.display = 'none';
+        }
+      }
+    });
+  }
+</script>
