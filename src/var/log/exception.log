@@ -703,3 +703,75 @@ GraphQL (2:3)
 3:     news_id
  {"exception":"[object] (GraphQL\\Error\\Error(code: 0): News not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
 [previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): News not found at /var/www/html/app/code/News/Manger/Model/Resolver/NewsById.php:54)"} []
+[2025-08-06T07:40:06.312056+00:00] main.ERROR: Invalid category IDs: 4, 3
+
+GraphQL (2:3)
+1: mutation createNews {
+2:   createNews(
+     ^
+3:     input: {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Invalid category IDs: 4, 3 at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Invalid category IDs: 4, 3 at /var/www/html/app/code/News/Manger/Model/Resolver/CreateNews.php:90)"} []
+[2025-08-06T07:49:37.026906+00:00] main.ERROR: Invalid category IDs: 40
+
+GraphQL (2:3)
+1: mutation createNews {
+2:   createNews(
+     ^
+3:     input: {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Invalid category IDs: 40 at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Invalid category IDs: 40 at /var/www/html/app/code/News/Manger/Model/Resolver/CreateNews.php:90)"} []
+[2025-08-06T07:53:09.010590+00:00] main.ERROR: Category not found
+
+GraphQL (2:3)
+1: query GetCategoryById {
+2:   categoryById(id: 48) {
+     ^
+3:     category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Category not found at /var/www/html/app/code/News/Manger/Model/Resolver/CategoryById.php:51)"} []
+[2025-08-06T07:53:18.049632+00:00] main.ERROR: Category not found
+
+GraphQL (2:3)
+1: query GetCategoryById {
+2:   categoryById(id: 49) {
+     ^
+3:     category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Category not found at /var/www/html/app/code/News/Manger/Model/Resolver/CategoryById.php:51)"} []
+[2025-08-06T08:02:05.868103+00:00] main.ERROR: Category not found
+
+GraphQL (2:3)
+1: query GetCategoryById {
+2:   categoryById(id: 53) {
+     ^
+3:     category_id
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Category not found at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (Magento\\Framework\\GraphQl\\Exception\\GraphQlInputException(code: 0): Category not found at /var/www/html/app/code/News/Manger/Model/Resolver/CategoryById.php:51)"} []
+[2025-08-06T08:09:25.005299+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected
+
+GraphQL (2:3)
+1: query {
+2:   CategoryList(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []
+[2025-08-06T08:19:26.036285+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected
+
+GraphQL (2:3)
+1: query {
+2:   CategoryList(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []
+[2025-08-06T08:29:24.688299+00:00] main.ERROR: Too few arguments to function Magento\Framework\Api\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected
+
+GraphQL (2:3)
+1: query {
+2:   CategoryList(pageSize: 20, currentPage: 1) {
+     ^
+3:     items {
+ {"exception":"[object] (GraphQL\\Error\\Error(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/webonyx/graphql-php/src/Error/Error.php:171)
+[previous exception] [object] (ArgumentCountError(code: 0): Too few arguments to function Magento\\Framework\\Api\\SearchCriteriaBuilder::addFilter(), 1 passed in /var/www/html/app/code/News/Manger/Model/Resolver/CategoryList.php on line 127 and at least 2 expected at /var/www/html/vendor/magento/framework/Api/SearchCriteriaBuilder.php:81)"} []

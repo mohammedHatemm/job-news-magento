@@ -69,15 +69,18 @@ class CategoryList implements ResolverInterface
 
     $items = [];
     foreach ($searchResults->getItems() as $category) {
+      // Get complete category data by ID to ensure all fields are loaded
+      $fullCategory = $this->categoryRepository->getById($category->getCategoryId());
+
       $items[] = [
-        'category_id' => $category->getCategoryId(),
-        'category_name' => $category->getCategoryName(),
-        'category_description' => $category->getCategoryDescription(),
-        'category_status' => $category->getCategoryStatus(),
-        'created_at' => $category->getCreatedAt(),
-        'updated_at' => $category->getUpdatedAt(),
-        'parent_ids' => $category->getParentIds(),
-        'model' => $category
+        'category_id' => $fullCategory->getCategoryId(),
+        'category_name' => $fullCategory->getCategoryName(),
+        'category_description' => $fullCategory->getCategoryDescription(),
+        'category_status' => $fullCategory->getCategoryStatus(),
+        'created_at' => $fullCategory->getCreatedAt(),
+        'updated_at' => $fullCategory->getUpdatedAt(),
+        'parent_ids' => $fullCategory->getParentIds(),
+        'model' => $fullCategory
       ];
     }
 

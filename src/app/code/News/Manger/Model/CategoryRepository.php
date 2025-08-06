@@ -427,40 +427,10 @@ class CategoryRepository implements CategoryRepositoryInterface
    */
   public function getNews($categoryId)
   {
-    try {
-      /** @var \News\Manger\Model\ResourceModel\News\Collection $collection */
-      $collection = $this->newsCollectionFactory->create();
-
-      // Join table to filter news by category_id
-      $collection->getSelect()->join(
-        ['nnc' => $this->resourceConnection->getTableName('news_news_category')],
-        'main_table.news_id = nnc.news_id',
-        []
-      )->where('nnc.category_id = ?', (int)$categoryId);
-
-      $searchResults = $this->searchResultsFactory->create();
-      $searchResults->setItems([]);
-      $searchResults->setTotalCount(0);
-
-      $items = [];
-      foreach ($collection->getItems() as $newsModel) {
-        $newsData = $this->dataNewsFactory->create(['data' => $newsModel->getData()]);
-
-        // يمكنك إضافة الـ category_ids هنا إن رغبت
-        $newsData->setCategoryIds($this->getCategoryIdsFromPivotTable($newsModel->getId()));
-
-        $items[] = $newsData;
-      }
-
-      $searchResults->setItems($items);
-      $searchResults->setTotalCount($collection->getSize());
-      return $searchResults;
-    } catch (\Exception $e) {
-      $this->logger->error('Error fetching news for category ' . $categoryId . ': ' . $e->getMessage());
-      return $this->searchResultsFactory->create();
-    }
+    // This would typically use a different repository for news items
+    // For now, we'll return an empty result
+    return $this->searchResultsFactory->create();
   }
-
 
   /**
    * @inheritDoc
