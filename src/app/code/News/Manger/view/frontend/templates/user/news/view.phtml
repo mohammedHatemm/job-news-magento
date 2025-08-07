@@ -8,10 +8,10 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
 ?>
 <?php if ($news): ?>
   <div class="news-view-container">
-    <!-- عنوان الخبر -->
+
     <h1 class="news-view-title"><?= $block->escapeHtml($newsInfo['title']) ?></h1>
 
-    <!-- معلومات أساسية -->
+
     <div class="news-view-meta">
       <div class="meta-item">
         <i class="icon-calendar"></i>
@@ -35,19 +35,17 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       <?php endif; ?>
     </div>
 
-    <!-- ✅ Category Dropdown Menu (شبيه الصورة) -->
     <?php if (!empty($finalCategories)): ?>
       <div class="category-dropdown-container">
         <?php foreach ($finalCategories as $categoryIndex => $finalCategory): ?>
           <?php if (!empty($finalCategory['paths'])): ?>
             <?php
             $mainPath = $finalCategory['paths'][0];
-            $mainCategory = $mainPath[count($mainPath) - 1]; // التصنيف النهائي (الابن)
+            $mainCategory = $mainPath[count($mainPath) - 1];
             $reversedPath = array_reverse($mainPath);
             ?>
 
             <div class="category-dropdown-wrapper">
-              <!-- زر التصنيف الرئيسي -->
               <div class="category-dropdown-btn" onclick="toggleCategoryDropdown(<?= $categoryIndex ?>)">
                 <span class="category-name"><?= $block->escapeHtml($mainCategory['name']) ?></span>
                 <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8">
@@ -55,16 +53,14 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
                 </svg>
               </div>
 
-              <!-- القائمة المنسدلة -->
               <div class="category-dropdown-menu" id="categoryDropdown<?= $categoryIndex ?>">
                 <div class="dropdown-header">
                   <h4><?= $block->escapeHtml(__('Category Path')) ?></h4>
                 </div>
 
-                <!-- المسار الهرمي -->
                 <div class="dropdown-content">
                   <?php foreach ($reversedPath as $pathIndex => $pathCategory): ?>
-                    <a href="<?= $block->escapeUrl($pathCategory['url'] ?? '#') ?>"
+                    <a href="<?= $block->escapeUrl($block->getUrl('newsuser/category/view', ['id' => $pathCategory['id'] ?? null])) ?>"
                       class="dropdown-item <?= ($pathIndex === 0) ? 'current-category' : 'parent-category' ?>">
                       <div class="item-content">
                         <span class="category-title"><?= $block->escapeHtml($pathCategory['name']) ?></span>
@@ -81,7 +77,6 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
                   <?php endforeach; ?>
                 </div>
 
-                <!-- المسارات البديلة بنفس شكل المسار الأساسي -->
                 <?php if (count($finalCategory['paths']) > 1): ?>
                   <?php foreach ($finalCategory['paths'] as $altPathIndex => $altPath): ?>
                     <?php if ($altPathIndex > 0): ?>
@@ -94,7 +89,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
                         </div>
                         <div class="dropdown-content">
                           <?php foreach ($reversedAltPath as $pathIndex => $pathCategory): ?>
-                            <a href="<?= $block->escapeUrl($pathCategory['url'] ?? '#') ?>"
+                            <a href="<?= $block->escapeUrl($block->getUrl('newsuser/category/view', ['id' => $pathCategory['id'] ?? null])) ?>"
                               class="dropdown-item <?= ($pathIndex === 0) ? 'current-category' : 'parent-category' ?>">
                               <div class="item-content">
                                 <span class="category-title"><?= $block->escapeHtml($pathCategory['name']) ?></span>
@@ -121,14 +116,14 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
         <?php endforeach; ?>
       </div>
 
-      <!-- JavaScript للتفاعل -->
+
       <script>
         function toggleCategoryDropdown(index) {
           const dropdown = document.getElementById('categoryDropdown' + index);
           const btn = dropdown.previousElementSibling;
           const arrow = btn.querySelector('.dropdown-arrow');
 
-          // إغلاق باقي القوائم المفتوحة
+
           document.querySelectorAll('.category-dropdown-menu.show').forEach(menu => {
             if (menu.id !== 'categoryDropdown' + index) {
               menu.classList.remove('show');
@@ -139,7 +134,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
             }
           });
 
-          // تبديل حالة القائمة الحالية
+
           dropdown.classList.toggle('show');
           btn.classList.toggle('active');
 
@@ -150,7 +145,6 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
           }
         }
 
-        // إغلاق القوائم عند النقر خارجها
         document.addEventListener('click', function(event) {
           if (!event.target.closest('.category-dropdown-wrapper')) {
             document.querySelectorAll('.category-dropdown-menu.show').forEach(menu => {
@@ -170,16 +164,10 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       </div>
     <?php endif; ?>
 
-    <!-- الصورة المميزة -->
-    <?php if ($newsInfo['featured_image']): ?>
-      <div class="featured-image-container">
-        <img src="<?= $block->escapeUrl($newsInfo['featured_image']) ?>"
-          alt="<?= $block->escapeHtml($newsInfo['title']) ?>"
-          class="featured-image">
-      </div>
-    <?php endif; ?>
 
-    <!-- المقتطف إن وُجد -->
+
+
+
     <?php if ($newsInfo['excerpt']): ?>
       <div class="news-excerpt">
         <h4><?= $block->escapeHtml(__('Summary')) ?></h4>
@@ -187,12 +175,12 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       </div>
     <?php endif; ?>
 
-    <!-- محتوى الخبر -->
+
     <div class="news-view-content">
       <?= $newsInfo['content'] ?>
     </div>
 
-    <!-- معلومات إضافية -->
+
     <div class="additional-info">
       <div class="info-section">
         <h4><?= $block->escapeHtml(__('News Details')) ?></h4>
@@ -230,7 +218,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
         </table>
       </div>
 
-      <!-- SEO Info -->
+
       <?php if ($newsInfo['meta_description'] || $newsInfo['meta_keywords']): ?>
         <div class="info-section">
           <h4><?= $block->escapeHtml(__('SEO Information')) ?></h4>
@@ -250,7 +238,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       <?php endif; ?>
     </div>
 
-    <!-- روابط المشاركة -->
+
     <div class="sharing-section">
       <h4><?= $block->escapeHtml(__('Share this news')) ?></h4>
       <div class="sharing-buttons">
@@ -272,7 +260,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       </div>
     </div>
 
-    <!-- الأخبار ذات الصلة -->
+
     <?php $relatedNews = $block->getRelatedNews(4); ?>
     <?php if (!empty($relatedNews)): ?>
       <div class="related-news-section">
@@ -302,7 +290,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       </div>
     <?php endif; ?>
 
-    <!-- رابط العودة -->
+
     <div class="back-link-container">
       <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user')) ?>" class="back-link">
         ← <?= $block->escapeHtml(__('Back to News List')) ?>
@@ -310,9 +298,8 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
     </div>
   </div>
 
-  <!-- ✅ CSS كامل ومحدث للتصميم الجديد -->
+
   <style>
-    /* الحاوي الأساسي */
     .news-view-container {
       max-width: 1000px;
       margin: 20px auto;
@@ -324,7 +311,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* عنوان الخبر */
+
     .news-view-title {
       font-size: 2.8rem;
       margin-bottom: 25px;
@@ -335,7 +322,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
-    /* المعلومات الأساسية */
+
     .news-view-meta {
       display: flex;
       flex-wrap: wrap;
@@ -370,13 +357,13 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
     }
 
-    /* ✅ Category Dropdown Menu Design (زي الصورة) */
+
     .category-dropdown-container {
       margin-bottom: 30px;
       padding: 20px;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
     }
 
     .category-dropdown-wrapper {
@@ -388,7 +375,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       margin-bottom: 0;
     }
 
-    /* زر الكاتيجوري الرئيسي */
+
     .category-dropdown-btn {
       display: inline-flex;
       align-items: center;
@@ -407,17 +394,17 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
     }
 
     .category-dropdown-btn:hover {
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
       border-color: #3498db;
-      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+      /* box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2); */
       transform: translateY(-1px);
     }
 
     .category-dropdown-btn.active {
-      background: linear-gradient(135deg, #3498db, #2980b9);
+      /* background: linear-gradient(135deg, #3498db, #2980b9); */
       color: white;
       border-color: #2980b9;
-      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      /* box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); */
     }
 
     .category-name {
@@ -517,12 +504,9 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       background: linear-gradient(135deg, #e1bee7, #ce93d8);
     }
 
-    /* المسارات البديلة */
-    .alternative-path-wrapper {
-      /* يضاف تلقائياً في الكود */
-    }
+    .alternative-path-wrapper {}
 
-    /* محتوى العنصر */
+
     .item-content {
       display: flex;
       justify-content: space-between;
@@ -541,7 +525,7 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       color: #795548;
     }
 
-    /* الشارات */
+
     .current-badge {
       background: linear-gradient(135deg, #4caf50, #388e3c);
       color: white;

@@ -1341,6 +1341,7 @@
   'news\\manger\\controller\\adminhtml\\news\\index' => 'News\\Manger\\Controller\\Adminhtml\\News\\Index',
   'news\\manger\\controller\\adminhtml\\news\\newaction' => 'News\\Manger\\Controller\\Adminhtml\\News\\NewAction',
   'news\\manger\\controller\\adminhtml\\news\\save' => 'News\\Manger\\Controller\\Adminhtml\\News\\Save',
+  'news\\manger\\controller\\category\\view' => 'News\\Manger\\Controller\\Category\\View',
   'news\\manger\\controller\\user\\index' => 'News\\Manger\\Controller\\User\\Index',
   'news\\manger\\controller\\user\\view' => 'News\\Manger\\Controller\\User\\View',
   'paypal\\braintree\\controller\\adminhtml\\configuration\\validate' => 'PayPal\\Braintree\\Controller\\Adminhtml\\Configuration\\Validate',
