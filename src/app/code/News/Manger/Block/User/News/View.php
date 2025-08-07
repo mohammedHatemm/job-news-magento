@@ -37,6 +37,10 @@ class View extends Template
     return $this->coreRegistry->registry('current_news');
   }
 
+  /**
+   * تُرجع مصفوفة تمثل مسار التصنيف من الأعلى إلى الأسفل
+   * تُستخدم لعرض المسار الكامل في الواجهة
+   */
   public function getDetailedCategoryPathsForCurrentNews(): array
   {
     $news = $this->getNews();
@@ -50,7 +54,10 @@ class View extends Template
 
     $paths = [];
     foreach ($categoryIds as $categoryId) {
-      $category = $this->categoryCollectionFactory->create()->addFieldToFilter('category_id', $categoryId)->getFirstItem();
+      $category = $this->categoryCollectionFactory->create()
+        ->addFieldToFilter('category_id', $categoryId)
+        ->getFirstItem();
+
       if ($category->getId()) {
         $breadcrumbPaths = $category->getBreadcrumbPaths();
         foreach ($breadcrumbPaths as $breadcrumb) {
@@ -67,6 +74,83 @@ class View extends Template
     return $paths;
   }
 
+  /**
+   * تُرجع مصفوفة من نوع [level => category_id]
+   * تمثل أطول مسار تصنيف مرتبط بالخبر
+   * مثال: [0 => 1, 1 => 2, 2 => 5]
+   */
+  public function getCategoryHierarchyArray(): array
+  {
+    $news = $this->getNews();
+    if (!$news) {
+      return [];
+    }
+
+    $categoryIds = $this->getCategoryIdsForNews($news->getId());
+    $this->logger->debug('Finding hierarchy for news ID: ' . $news->getId());
+
+    $longestPath = [];
+    $longestLength = 0;
+
+    foreach ($categoryIds as $categoryId) {
+      $category = $this->categoryCollectionFactory->create()
+        ->addFieldToFilter('category_id', $categoryId)
+        ->getFirstItem();
+
+      if ($category->getId()) {
+        $breadcrumbPaths = $category->getBreadcrumbPaths();
+        foreach ($breadcrumbPaths as $breadcrumb) {
+          if (count($breadcrumb) > $longestLength) {
+            $longestPath = $breadcrumb;
+            $longestLength = count($breadcrumb);
+          }
+        }
+      }
+    }
+
+    // بناء مصفوفة [level => category_id]
+    $hierarchy = [];
+    foreach ($longestPath as $index => $node) {
+      $hierarchy[$index] = $node['id'];
+    }
+
+    $this->logger->debug('Generated hierarchy array: ' . json_encode($hierarchy));
+    return $hierarchy;
+  }
+
+  /**
+   * تُرجع بيانات تصنيف معين حسب المستوى (level)
+   * تُستخدم لعرض "الاب" أو "الجد" فقط
+   *
+   * @param int $level
+   * @return array|null
+   */
+  public function getCategoryPathForLevel($level): ?array
+  {
+    $hierarchy = $this->getCategoryHierarchyArray();
+    if (!isset($hierarchy[$level])) {
+      return null;
+    }
+
+    $categoryId = $hierarchy[$level];
+    $category = $this->categoryCollectionFactory->create()
+      ->addFieldToFilter('category_id', $categoryId)
+      ->getFirstItem();
+
+    if (!$category->getId()) {
+      return null;
+    }
+
+    return [
+      'id' => $category->getId(),
+      'name' => $category->getCategoryName(),
+      'url' => $this->getUrl('newsuser/category/view', ['id' => $category->getId()])
+    ];
+  }
+
+  /**
+   * تُرجع معلومات مفصلة عن الخبر
+   */
   public function getDetailedNewsInfo(): array
   {
     $news = $this->getNews();
@@ -93,6 +177,9 @@ class View extends Template
     ];
   }
 
+  /**
+   * تُرجع إحصائيات عن محتوى الخبر
+   */
   public function getNewsStatistics(): array
   {
     $news = $this->getNews();
@@ -108,6 +195,9 @@ class View extends Template
     ];
   }
 
+  /**
+   * حساب وقت القراءة التقريبي
+   */
   private function calculateReadingTime($content): int
   {
     $wordCount = str_word_count(strip_tags($content));
@@ -115,6 +205,9 @@ class View extends Template
     return max(1, ceil($wordCount / $readingSpeed));
   }
 
+  /**
+   * جلب الأخبار ذات الصلة
+   */
   public function getRelatedNews($limit = 5): array
   {
     $news = $this->getNews();
@@ -153,6 +246,9 @@ class View extends Template
     }
   }
 
+  /**
+   * جلب category_ids المرتبطة بخبر معين
+   */
   private function getCategoryIdsForNews($newsId)
   {
     try {
@@ -166,7 +262,62 @@ class View extends Template
       return [];
     }
   }
+  /**
+   * تُرجع مصفوفة تحتوي على التصنيف النهائي (الأخير) بدون تكرار،
+   * مع قائمة بالمسارات الكاملة المؤدية إليه
+   */
+  public function getUniqueFinalCategoryWithPaths(): array
+  {
+    $news = $this->getNews();
+    if (!$news) {
+      return [];
+    }
 
+    $categoryIds = $this->getCategoryIdsForNews($news->getId());
+    if (empty($categoryIds)) {
+      return [];
+    }
+
+    $allPaths = [];
+    $finalCategories = [];
+
+    foreach ($categoryIds as $categoryId) {
+      $category = $this->categoryCollectionFactory->create()
+        ->addFieldToFilter('category_id', $categoryId)
+        ->getFirstItem();
+
+      if (!$category->getId()) {
+        continue;
+      }
+
+      $breadcrumbPaths = $category->getBreadcrumbPaths();
+      foreach ($breadcrumbPaths as $breadcrumb) {
+        $allPaths[] = $breadcrumb;
+
+        // استخراج آخر عنصر (التصنيف النهائي)
+        $lastNode = end($breadcrumb);
+        $finalId = $lastNode['id'];
+
+        if (!isset($finalCategories[$finalId])) {
+          $finalCategories[$finalId] = [
+            'id' => $finalId,
+            'name' => $lastNode['name'],
+            'url' => $this->getUrl('newsuser/category/view', ['id' => $finalId]),
+            'paths' => []
+          ];
+        }
+
+        // إضافة المسار الكامل لهذا التصنيف النهائي
+        $finalCategories[$finalId]['paths'][] = $breadcrumb;
+      }
+    }
+
+    // نُرجع فقط التصنيفات النهائية (كل واحد مرة واحدة) مع مساراته
+    return array_values($finalCategories);
+  }
+  /**
+   * تنسيق التاريخ إلى صيغة عربية
+   */
   public function formatArabicDate($date): string
   {
     if (!$date) {
@@ -197,6 +348,9 @@ class View extends Template
     return "{$day} {$month} {$year} - {$time}";
   }
 
+  /**
+   * إنشاء روابط المشاركة
+   */
   public function getSharingLinks(): array
   {
     $news = $this->getNews();

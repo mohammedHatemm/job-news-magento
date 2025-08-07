@@ -1,143 +1,639 @@
 <?php
 
 /** @var \News\Manger\Block\User\News\Index $block */
+
+// دالة مساعدة لعرض الشجرة الهرمية
+function renderCategoryTree($categories, $block, $level = 0)
+{
+  if (empty($categories)) {
+    return '';
+  }
+
+  $html = '<ul class="category-tree-level-' . $level . '">';
+
+  foreach ($categories as $category) {
+    $newsCount = $block->getNewsCountForCategory($category['id']);
+    $hasChildren = isset($category['children']) && !empty($category['children']);
+
+    $html .= '<li class="category-tree-item">';
+    $html .= '<div class="category-item-content">';
+    $html .= '<a href="' . $block->escapeUrl($category['url']) . '" class="category-link">';
+    $html .= '<i class="icon-' . ($hasChildren ? 'folder' : 'file') . '"></i>';
+    $html .= $block->escapeHtml($category['name']);
+    $html .= '</a>';
+    $html .= '<span class="category-meta">(' . $newsCount . ' ' . __('news') . ')</span>';
+    $html .= '</div>';
+
+    if ($hasChildren) {
+      $html .= renderCategoryTree($category['children'], $block, $level + 1);
+    }
+
+    $html .= '</li>';
+  }
+
+  $html .= '</ul>';
+  return $html;
+}
 ?>
 
-<div class="news-list-container">
-  <h1><?= $block->escapeHtml(__('News')) ?></h1>
+<div class="news-page-container">
 
-  <?php $collection = $block->getNewsCollection(); ?>
+  <!-- ✅ قائمة الفئات الهرمية -->
+  <div class="categories-menu-section">
+    <h2><?= $block->escapeHtml(__('Categories Menu')) ?></h2>
 
-  <?php if ($collection && $collection->count()): ?>
-    <div class="news-grid">
-      <?php foreach ($collection as $news): ?>
-        <div class="news-card">
-          <div class="news-card-content">
-            <h2 class="news-title">
-              <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>">
-                <?= $block->escapeHtml($news->getNewsTitle()) ?>
-              </a>
-            </h2>
+    <!-- عرض الفئات كتسلسل هرمي -->
+    <?php $hierarchicalCategories = $block->getHierarchicalCategories(); ?>
+    <?php if (!empty($hierarchicalCategories)): ?>
+      <div class="hierarchical-categories">
+        <h3><?= $block->escapeHtml(__('Category Tree')) ?></h3>
+        <div class="category-tree">
+          <?= renderCategoryTree($hierarchicalCategories, $block) ?>
+        </div>
+      </div>
+    <?php endif; ?>
 
-            <div class="news-excerpt">
-              <p><?= $block->escapeHtml($block->getExcerpt($news->getNewsContent())) ?></p>
-            </div>
-
-            <?php $categories = $block->getCategoriesForNews($news->getId()); ?>
-            <?php if (!empty($categories)): ?>
-              <div class="news-categories">
-                <?php foreach ($categories as $categoryName): ?>
-                  <span class="category-tag"><?= $block->escapeHtml($categoryName) ?></span>
+    <!-- عرض جميع المسارات -->
+    <?php $categoryPaths = $block->getCategoryPaths(); ?>
+    <?php if (!empty($categoryPaths)): ?>
+      <div class="category-paths">
+        <h3><?= $block->escapeHtml(__('All Category Paths')) ?></h3>
+        <div class="paths-list">
+          <?php foreach ($categoryPaths as $path): ?>
+            <div class="path-item level-<?= $path['level'] ?>">
+              <div class="path-string">
+                <i class="icon-folder"></i>
+                <span class="path-text"><?= $block->escapeHtml($path['path_string']) ?></span>
+                <span class="news-count">(<?= $block->getNewsCountForCategory($path['category_id']) ?> <?= __('news') ?>)</span>
+              </div>
+              <div class="path-hierarchy">
+                <?php foreach ($path['path_array'] as $index => $pathItem): ?>
+                  <a href="<?= $block->getUrl('newsuser/category/view', ['id' => $pathItem['id']]) ?>"
+                    class="hierarchy-link level-<?= $index + 1 ?>"
+                    style="margin-left: <?= $index * 20 ?>px;">
+                    <?php if ($index > 0): ?>↳ <?php endif; ?>
+                  <?= $block->escapeHtml($pathItem['name']) ?>
+                  </a>
                 <?php endforeach; ?>
               </div>
-            <?php endif; ?>
-          </div>
-
-          <div class="news-card-footer">
-            <span class="news-meta">
-              <?= $block->escapeHtml(__('Published on: %1', $block->formatDate($news->getCreatedAt(), \IntlDateFormatter::MEDIUM))) ?>
-            </span>
-            <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>" class="btn-read-more">
-              <?= $block->escapeHtml(__('Read More')) ?>
-            </a>
-          </div>
+            </div>
+          <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
-    </div>
-  <?php else: ?>
-    <div class="message info empty">
-      <div><?= $block->escapeHtml(__('There are no news items to display.')) ?></div>
-    </div>
-  <?php endif; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- قائمة الأخبار -->
+  <div class="news-list-container">
+    <h1><?= $block->escapeHtml(__('Latest News')) ?></h1>
+
+    <?php $collection = $block->getNewsCollection(); ?>
+
+    <?php if ($collection && $collection->count()): ?>
+      <div class="news-grid">
+        <?php foreach ($collection as $news): ?>
+          <div class="news-card">
+            <div class="news-card-content">
+              <h2 class="news-title">
+                <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>">
+                  <?= $block->escapeHtml($news->getNewsTitle()) ?>
+                </a>
+              </h2>
+
+              <div class="news-excerpt">
+                <p><?= $block->escapeHtml($block->getExcerpt($news->getNewsContent())) ?></p>
+              </div>
+
+              <?php $categories = $block->getCategoriesForNews($news->getId()); ?>
+              <?php if (!empty($categories)): ?>
+                <div class="news-categories">
+                  <?php foreach ($categories as $categoryName): ?>
+                    <span class="category-tag"><?= $block->escapeHtml($categoryName) ?></span>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+            </div>
+
+            <div class="news-card-footer">
+              <span class="news-meta">
+                <?= $block->escapeHtml(__('Published on: %1', $block->formatDate($news->getCreatedAt(), \IntlDateFormatter::MEDIUM))) ?>
+              </span>
+              <a href="<?= $block->escapeUrl($block->getUrl('newsuser/user/view', ['id' => $news->getId()])) ?>" class="btn-read-more">
+                <?= $block->escapeHtml(__('Read More')) ?>
+              </a>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    <?php else: ?>
+      <div class="message info empty">
+        <div><?= $block->escapeHtml(__('There are no news items to display.')) ?></div>
+      </div>
+    <?php endif; ?>
+  </div>
 </div>
 
 <style>
+  .news-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ✅ أنماط قائمة الفئات */
+  .categories-menu-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .categories-menu-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .categories-menu-section h3 {
+    color: #34495e;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 8px;
+    position: relative;
+  }
+
+  .categories-menu-section h3:before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #e74c3c;
+  }
+
+  /* شجرة الفئات الهرمية */
+  .hierarchical-categories {
+    margin-bottom: 35px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .category-tree ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .category-tree-level-0>.category-tree-item {
+    margin-bottom: 18px;
+  }
+
+  .category-tree ul ul {
+    padding-left: 30px;
+    margin-top: 10px;
+    border-left: 2px dotted #bdc3c7;
+  }
+
+  .category-tree-item {
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .category-tree ul ul .category-tree-item:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 15px;
+    width: 20px;
+    height: 2px;
+    background: #bdc3c7;
+  }
+
+  .category-item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .category-item-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    border-left-color: #e74c3c;
+  }
+
+  .category-link {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .category-link:hover {
+    color: #1abc9c;
+  }
+
+  .category-link i {
+    font-size: 1.1rem;
+  }
+
+  .category-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-left: auto;
+    background: #ecf0f1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  /* مسارات الفئات */
+  .category-paths {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .paths-list {
+    display: grid;
+    gap: 18px;
+  }
+
+  .path-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .path-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .path-string {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+  }
+
+  .path-string i {
+    font-size: 1.2rem;
+    color: #f39c12;
+  }
+
+  .path-text {
+    color: #2980b9;
+    flex: 1;
+  }
+
+  .news-count {
+    color: #27ae60;
+    font-size: 0.95rem;
+    background: #d5f4e6;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+  }
+
+  .path-hierarchy {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+
+  .hierarchy-link {
+    text-decoration: none;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+
+  .hierarchy-link:hover {
+    background: #3498db;
+    color: white;
+    transform: translateX(3px);
+  }
+
+  .hierarchy-link.level-1 {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .hierarchy-link.level-2 {
+    color: #f39c12;
+    font-weight: 600;
+  }
+
+  .hierarchy-link.level-3 {
+    color: #9b59b6;
+    font-weight: 500;
+  }
+
+  .hierarchy-link.level-4 {
+    color: #1abc9c;
+  }
+
+  .hierarchy-link.level-5 {
+    color: #34495e;
+  }
+
+  /* مستويات مختلفة للمسارات */
+  .path-item.level-1 {
+    border-left: 6px solid #e74c3c;
+  }
+
+  .path-item.level-2 {
+    border-left: 6px solid #f39c12;
+  }
+
+  .path-item.level-3 {
+    border-left: 6px solid #9b59b6;
+  }
+
+  .path-item.level-4 {
+    border-left: 6px solid #1abc9c;
+  }
+
+  .path-item.level-5 {
+    border-left: 6px solid #34495e;
+  }
+
+  /* أنماط قائمة الأخبار */
+  .news-list-container {
+    margin-top: 40px;
+  }
+
+  .news-list-container h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
   .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
   }
 
   .news-card {
     background: #ffffff;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
   }
 
   .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
   }
 
   .news-card-content {
-    padding: 20px;
+    padding: 25px;
+    flex-grow: 1;
+  }
+
+  .news-title {
+    margin-bottom: 15px;
   }
 
   .news-title a {
     text-decoration: none;
-    color: #333;
+    color: #2c3e50;
     font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: color 0.3s ease;
   }
 
   .news-title a:hover {
-    color: #007bff;
+    color: #3498db;
   }
 
   .news-excerpt {
     color: #555;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .news-categories {
-    margin-top: 15px;
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .category-tag {
     display: inline-block;
-    background-color: #f0f0f0;
-    color: #555;
-    padding: 4px 10px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
     font-size: 0.8rem;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .category-tag:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
   }
 
   .news-card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #f9f9f9;
+    padding: 18px 25px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     border-top: 1px solid #e0e0e0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
   }
 
   .news-meta {
     font-size: 0.85rem;
-    color: #777;
+    color: #7f8c8d;
+    font-weight: 500;
   }
 
   .btn-read-more {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s ease-in-out;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
   }
 
   .btn-read-more:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
     color: white;
+  }
+
+  /* رسالة عدم وجود أخبار */
+  .message.info.empty {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px dashed #bdc3c7;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+  }
+
+  /* تصميم متجاوب */
+  @media (max-width: 992px) {
+    .news-page-container {
+      padding: 15px;
+    }
+
+    .categories-menu-section {
+      padding: 20px;
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .categories-menu-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .news-list-container h1 {
+      font-size: 2rem;
+    }
+
+    .path-hierarchy {
+      margin-top: 10px;
+    }
+
+    .hierarchy-link {
+      margin-left: 0 !important;
+      padding-left: calc(var(--level, 0) * 15px);
+    }
+
+    .category-item-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .category-meta {
+      margin-left: 0;
+      align-self: flex-end;
+    }
+
+    .news-card-footer {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .category-tree ul ul {
+      padding-left: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .categories-menu-section {
+      padding: 15px;
+    }
+
+    .hierarchical-categories,
+    .category-paths {
+      padding: 15px;
+    }
+
+    .path-item {
+      padding: 15px;
+    }
+
+    .news-card-content {
+      padding: 20px;
+    }
+  }
+
+  /* تحسينات إضافية للتفاعل */
+  .icon-folder:before,
+  .icon-file:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+  .icon-folder:before {
+    content: '\f07b';
+    color: #f39c12;
+  }
+
+  .icon-file:before {
+    content: '\f15b';
+    color: #3498db;
+  }
+
+  /* تأثيرات الانتقال المحسنة */
+  * {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* تحسين إمكانية الوصول */
+  .category-link:focus,
+  .hierarchy-link:focus,
+  .btn-read-more:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
   }
 </style>
