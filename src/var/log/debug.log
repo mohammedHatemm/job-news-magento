@@ -10989,3 +10989,295 @@ Trace: <pre>#1 Magento\Framework\DB\Adapter\Pdo\Mysql->_query() called at [vendo
  LIMIT 4 [] []
 [2025-08-07T07:38:09.350231+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
 [2025-08-07T07:38:09.350882+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:56:29.543978+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:56:29.622767+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:56:30.412064+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:56:30.412527+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:56:47.666107+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:56:47.708712+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:56:48.056382+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:56:48.056920+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:02.645343+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:58:02.730108+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:58:03.086058+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:03.086421+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:07.743823+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:07.744193+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:07.744591+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:07.822891+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:58:08.151422+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:08.151913+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:09.842475+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:58:09.878242+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:58:10.201896+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:10.202532+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:14.164658+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:14.165112+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:14.165664+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T07:58:14.236651+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:58:14.545318+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:14.545778+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:16.453596+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:58:16.488944+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:58:16.815165+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:58:16.815541+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:59:37.107933+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:59:37.150587+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:59:37.400548+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:59:37.401053+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:59:53.525949+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T07:59:53.569901+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T07:59:53.874520+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T07:59:53.874910+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:00:14.843033+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:00:14.888483+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:00:15.216814+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:00:15.217209+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:05:09.129555+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:05:09.187677+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:05:09.528832+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:05:09.529472+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:05:51.959259+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:05:52.012673+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:05:52.352502+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:05:52.352905+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:22.099249+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:06:22.118248+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:06:22.460081+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:22.460677+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:24.333378+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:06:24.371745+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:06:24.664049+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:24.664471+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:28.792349+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:06:28.810688+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:06:29.129855+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:29.130192+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:30.486603+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:06:30.522880+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:06:30.857092+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:06:30.857482+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:07:14.887525+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:07:14.903723+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:07:15.226675+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:07:15.227008+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:07:18.992827+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:07:19.012809+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:07:19.307617+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:07:19.308024+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:00.286045+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:14:00.332925+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:14:01.051151+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:01.052446+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:26.616557+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:14:26.655764+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:14:26.991147+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:26.991706+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:30.580717+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:14:30.581176+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:14:30.581687+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:14:30.672383+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:14:30.976128+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:30.976753+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:33.259108+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:14:33.279031+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:14:33.568260+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:14:33.568679+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:16:28.480568+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:16:28.517665+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:16:28.810865+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:16:28.811269+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:06.077124+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:17:06.112205+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '37') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:17:06.421936+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:06.422435+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:11.759138+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:17:11.775948+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:17:12.110415+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:12.110824+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:13.440304+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:17:13.464392+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '34') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:17:13.851643+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:13.852153+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:18.037081+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:17:18.055176+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:17:18.373408+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:18.373730+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:19.890806+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:17:19.927470+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:17:20.246815+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:17:20.247247+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:19:41.465385+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:19:41.518954+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:19:41.835895+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:19:41.836338+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:19:55.912752+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:19:55.977284+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:19:56.283078+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:19:56.283495+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:21:13.758897+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:21:13.777938+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:21:14.096490+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:21:14.097182+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:21:17.245834+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:21:17.281962+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:21:17.595439+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:21:17.595873+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:05.961359+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:05.997176+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:34:06.689533+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:06.690230+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:09.452133+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:09.475160+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '32') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:34:09.880369+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:09.880874+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:12.400015+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:12.422589+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:34:12.747322+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:12.747747+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:14.058178+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:14.077530+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '34') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:34:14.389212+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:14.389581+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:20.161154+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:20.178861+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:34:20.498305+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:20.498721+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:22.307841+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:22.339586+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:34:22.657009+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:22.657368+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:48.663083+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:34:48.663501+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:34:48.663838+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:34:48.744234+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:49.049933+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:49.050441+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:50.769176+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:34:50.800196+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:34:51.154932+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:34:51.155312+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:35:00.217912+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:35:00.218353+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:35:02.413321+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:35:02.446039+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:35:02.767350+00:00] main.ERROR: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:35:02.767763+00:00] main.CRITICAL: Unable to resolve the source file for 'frontend/Magento/luma/en_US/underscore-umd.js.map' [] []
+[2025-08-07T08:46:18.912581+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:18.913175+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:18.913808+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:19.005891+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:24.663757+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:24.687241+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '44')) AND (n.id != '34') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:46:37.130311+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:37.170473+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:46:40.833999+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:40.834576+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:40.835206+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2025-08-07T08:46:40.926135+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:43.733445+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:43.780005+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('43', '46', '51')) AND (n.id != '31') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:46:49.988868+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:50.019671+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:46:55.466833+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:46:55.491739+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('45', '46')) AND (n.id != '39') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:47:04.404026+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:04.427249+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('45', '46')) AND (n.id != '39') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:47:06.801699+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:06.829332+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN ('42', '43', '46', '47')) AND (n.id != '29') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:47:10.683105+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:10.700315+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:47:14.074961+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:14.092090+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '30') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:47:16.590045+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:16.606728+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []
+[2025-08-07T08:47:19.181681+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:19.203903+00:00] main.ERROR: Error getting related news: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.id' in 'SELECT', query was: SELECT `n`.`id`, `n`.`news_title`, `n`.`excerpt`, `n`.`created_at`, `n`.`slug`, `n`.`featured_image` FROM `news_news` AS `n`
+ INNER JOIN `news_news_category` AS `nc` ON n.id = nc.news_id WHERE (nc.category_id IN (NULL)) AND (n.id != '36') AND (n.news_status = 1) GROUP BY `n`.`id` ORDER BY `n`.`created_at` DESC
+ LIMIT 4 [] []
+[2025-08-07T08:47:22.096232+00:00] main.ERROR: Braintree\Configuration::merchantId needs to be set (or accessToken needs to be passed to Braintree\Gateway). [] []
+[2025-08-07T08:47:22.111823+00:00] main.ERROR: Error getting hierarchical categories: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'WHERE', query was: SELECT `main_table`.* FROM `news_category` AS `main_table` WHERE (`status` = '1') ORDER BY `level` ASC, sort_order ASC, category_name ASC
+ [] []

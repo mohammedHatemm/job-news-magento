@@ -319,7 +319,7 @@ class Category extends AbstractModel implements IdentityInterface, CategoryInter
     foreach ($this->getFormattedPaths($separator) as $path) {
       $paths[] = $path;
     }
-    // عرض كل مسار في سطر منفصل
+
     return implode("\n", $paths);
   }
 
