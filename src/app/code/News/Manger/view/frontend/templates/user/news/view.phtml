@@ -36,78 +36,30 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
     </div>
 
     <?php if (!empty($finalCategories)): ?>
-      <div class="category-dropdown-container">
-        <?php foreach ($finalCategories as $categoryIndex => $finalCategory): ?>
-          <?php if (!empty($finalCategory['paths'])): ?>
-            <?php
-            $mainPath = $finalCategory['paths'][0];
-            $mainCategory = $mainPath[count($mainPath) - 1];
-            $reversedPath = array_reverse($mainPath);
-            ?>
+      <?php if (!empty($finalCategories)): ?>
+        <div class="news-view-categories">
+          <h4><?= $block->escapeHtml(__('Categories')) ?></h4>
+          <div class="category-links">
+            <?php foreach ($finalCategories as $finalCategory): ?>
+              <?php if (!empty($finalCategory['paths'])): ?>
+                <?php
 
-            <div class="category-dropdown-wrapper">
-              <div class="category-dropdown-btn" onclick="toggleCategoryDropdown(<?= $categoryIndex ?>)">
-                <span class="category-name"><?= $block->escapeHtml($mainCategory['name']) ?></span>
-                <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8">
-                  <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-
-              <div class="category-dropdown-menu" id="categoryDropdown<?= $categoryIndex ?>">
-                <div class="dropdown-header">
-                  <h4><?= $block->escapeHtml(__('Category Path')) ?></h4>
-                </div>
-
-                <div class="dropdown-content">
-                  <?php foreach ($reversedPath as $pathIndex => $pathCategory): ?>
-                    <a href="<?= $block->escapeUrl($block->getUrl('newsuser/category/view', ['id' => $pathCategory['id'] ?? null])) ?>"
-                      class="dropdown-item <?= ($pathIndex === 0) ? 'current-category' : 'parent-category' ?>">
-                      <div class="item-content">
-                        <span class="category-title"><?= $block->escapeHtml($pathCategory['name']) ?></span>
-
-                      </div>
-                      <?php if (isset($pathCategory['description']) && $pathCategory['description']): ?>
-                        <span class="category-description"><?= $block->escapeHtml($pathCategory['description']) ?></span>
-                      <?php endif; ?>
-                    </a>
-                  <?php endforeach; ?>
-                </div>
-
-                <?php if (count($finalCategory['paths']) > 1): ?>
-                  <?php foreach ($finalCategory['paths'] as $altPathIndex => $altPath): ?>
-                    <?php if ($altPathIndex > 0): ?>
-                      <?php
-                      $reversedAltPath = array_reverse($altPath);
-                      ?>
-                      <div class="alternative-path-wrapper" style="margin-top: 20px; border-top: 1px solid #dee2e6; padding-top: 10px;">
-                        <div class="dropdown-header" style="padding-left:0;">
-                          <h4><?= $block->escapeHtml(__('Alternative Path') . ' ' . ($altPathIndex + 1)) ?></h4>
-                        </div>
-                        <div class="dropdown-content">
-                          <?php foreach ($reversedAltPath as $pathIndex => $pathCategory): ?>
-                            <a href="<?= $block->escapeUrl($block->getUrl('newsuser/category/view', ['id' => $pathCategory['id'] ?? null])) ?>"
-                              class="dropdown-item <?= ($pathIndex === 0) ? 'current-category' : 'parent-category' ?>">
-                              <div class="item-content">
-                                <span class="category-title"><?= $block->escapeHtml($pathCategory['name']) ?></span>
-
-                              </div>
-                              <?php if (isset($pathCategory['description']) && $pathCategory['description']): ?>
-                                <span class="category-description"><?= $block->escapeHtml($pathCategory['description']) ?></span>
-                              <?php endif; ?>
-                            </a>
-                          <?php endforeach; ?>
-                        </div>
-                      </div>
-                    <?php endif; ?>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-              </div>
-            </div>
-
-          <?php endif; ?>
-        <?php endforeach; ?>
-      </div>
-
+                $mainPath = $finalCategory['paths'][0];
+                $mainCategory = $mainPath[count($mainPath) - 1];
+                ?>
+                <a href="<?= $block->escapeUrl($block->getUrl('newsuser/category/view', ['id' => $mainCategory['id']])) ?>"
+                  class="category-tag">
+                  <?= $block->escapeHtml($mainCategory['name']) ?>
+                </a>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      <?php else: ?>
+        <div class="news-view-categories">
+          <p><?= $block->escapeHtml(__('No Categories Assigned')) ?></p>
+        </div>
+      <?php endif; ?>
 
       <script>
         function toggleCategoryDropdown(index) {
@@ -388,6 +340,49 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       /* transform: translateY(-1px); */
     }
 
+
+    /*  */
+
+
+    .news-view-categories {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .news-view-categories h4 {
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .category-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .category-tag:hover {
+      background: linear-gradient(135deg, #2980b9, #1f618d);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    }
+
+    /*  */
     .category-dropdown-btn.active {
       /* background: linear-gradient(135deg, #3498db, #2980b9); */
       /* color: white; */
@@ -575,11 +570,11 @@ $finalCategories = $block->getUniqueFinalCategoryWithPaths();
       height: auto;
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      transition: transform 0.3s ease;
+      /* transition: transform 0.3s ease; */
     }
 
     .featured-image:hover {
-      transform: scale(1.02);
+      /* transform: scale(1.02); */
     }
 
     /* المقتطف */
