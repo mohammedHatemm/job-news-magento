@@ -9,6 +9,7 @@ use News\Manger\Model\ResourceModel\News\CollectionFactory;
 use News\Manger\Model\ResourceModel\Category\CollectionFactory as CategoryCollectionFactory;
 use Magento\Framework\App\ResourceConnection;
 use Psr\Log\LoggerInterface;
+use Magento\Framework\App\RequestInterface;
 
 class Index extends Template
 {
@@ -16,6 +17,8 @@ class Index extends Template
   protected $categoryCollectionFactory;
   protected $resourceConnection;
   protected $logger;
+  protected $request;
+  protected $itemsPerPage = 5;
 
   public function __construct(
     Context $context,
@@ -23,6 +26,7 @@ class Index extends Template
     CategoryCollectionFactory $categoryCollectionFactory,
     ResourceConnection $resourceConnection,
     LoggerInterface $logger,
+    RequestInterface $request,
     array $data = []
   ) {
     parent::__construct($context, $data);
@@ -30,18 +34,84 @@ class Index extends Template
     $this->categoryCollectionFactory = $categoryCollectionFactory;
     $this->resourceConnection = $resourceConnection;
     $this->logger = $logger;
+    $this->request = $request;
   }
 
   public function getNewsCollection()
   {
+    $currentPage = (int)$this->request->getParam('p', 1);
     $collection = $this->newsCollectionFactory->create();
     $collection->addFieldToFilter('news_status', 1);
     $collection->setOrder('created_at', 'DESC');
+
+    // Apply pagination
+    $collection->setPageSize($this->itemsPerPage);
+    $collection->setCurPage($currentPage);
+
     return $collection;
   }
 
+  public function getPagerHtml()
+  {
+    $collection = $this->getNewsCollection();
+    $totalItems = $collection->getSize();
+    $currentPage = (int)$this->request->getParam('p', 1);
+    $lastPage = ceil($totalItems / $this->itemsPerPage);
+
+    if ($lastPage <= 1) {
+      return '';
+    }
+
+    $html = '<div class="pagination">';
+
+    // Previous page link
+    if ($currentPage > 1) {
+      $html .= sprintf(
+        '<a href="%s" class="page-prev">%s</a>',
+        $this->getPagerUrl($currentPage - 1),
+        __('Previous')
+      );
+    }
+
+    // Page numbers
+    $html .= '<div class="pages">';
+    for ($i = 1; $i <= $lastPage; $i++) {
+      if ($i == $currentPage) {
+        $html .= sprintf('<strong class="current">%s</strong>', $i);
+      } else {
+        $html .= sprintf(
+          '<a href="%s" class="page">%s</a>',
+          $this->getPagerUrl($i),
+          $i
+        );
+      }
+    }
+    $html .= '</div>';
+
+    // Next page link
+    if ($currentPage < $lastPage) {
+      $html .= sprintf(
+        '<a href="%s" class="page-next">%s</a>',
+        $this->getPagerUrl($currentPage + 1),
+        __('Next')
+      );
+    }
+
+    $html .= '</div>';
+    return $html;
+  }
+
+  protected function getPagerUrl($page)
+  {
+    return $this->getUrl('*/*/*', [
+      '_current' => true,
+      '_use_rewrite' => true,
+      '_query' => ['p' => $page]
+    ]);
+  }
+
   /**
-   * جلب أسماء التصنيفات المباشرة للخبر
+   *
    * @param int $newsId
    * @return array
    */
@@ -71,14 +141,14 @@ class Index extends Template
   }
 
   /**
-   * جلب جميع الفئات مع تنظيمها حسب المستوى والأب
+   *
    * @return array
    */
   public function getHierarchicalCategories(): array
   {
     try {
       $collection = $this->categoryCollectionFactory->create();
-      $collection->addFieldToFilter('status', 1); // الفئات النشطة فقط
+      $collection->addFieldToFilter('status', 1);
       $collection->setOrder('level', 'ASC');
       $collection->setOrder('sort_order', 'ASC');
       $collection->setOrder('category_name', 'ASC');
@@ -104,7 +174,7 @@ class Index extends Template
   }
 
   /**
-   * بناء التسلسل الهرمي للفئات
+   *
    * @param array $categories
    * @param int $parentId
    * @return array
@@ -132,47 +202,50 @@ class Index extends Template
    */
   // public function getCategoryPaths(): array
   // {
-  //   try {
-  //     $collection = $this->categoryCollectionFactory->create();
-  //     $collection->addFieldToFilter('status', 1);
+  //     try {
+  //         $collection = $this->categoryCollectionFactory->create();
+  //         $collection->addFieldToFilter('status', 1);
 
-  //     $paths = [];
-  //     foreach ($collection as $category) {
-  //       // استخدام الدالة الموجودة في الموديل
-  //       $breadcrumbPaths = $category->getBreadcrumbPaths();
+  //         $paths = [];
+  //         foreach ($collection as $category) {
+  //             // استخدام الدالة الموجودة في الموديل
+  //             $breadcrumbPaths = $category->getBreadcrumbPaths();
 
-  //       foreach ($breadcrumbPaths as $breadcrumb) {
-  //         $pathNames = array_column($breadcrumb, 'name');
-  //         $pathString = implode(' > ', $pathNames);
+  //             foreach ($breadcrumbPaths as $breadcrumb) {
+  //                 $pathNames = array_column($breadcrumb, 'name');
+  //                 $pathString = implode(' > ', $pathNames);
 
-  //         // تجنب التكرار
-  //         $pathKey = md5($pathString);
-  //         if (!isset($paths[$pathKey])) {
-  //           $paths[$pathKey] = [
-  //             'category_id' => $category->getCategoryId(),
-  //             'path_string' => $pathString,
-  //             'path_array' => $breadcrumb,
-  //             'level' => count($breadcrumb),
-  //             'url' => $this->getUrl('newsuser/category/view', ['id' => $category->getCategoryId()])
-  //           ];
+  //                 // تجنب التكرار
+  //                 $pathKey = md5($pathString);
+  //                 if (!isset($paths[$pathKey])) {
+  //                     $paths[$pathKey] = [
+  //                         'category_id' => $category->getCategoryId(),
+  //                         'path_string' => $pathString,
+  //                         'path_array' => $breadcrumb,
+  //                         'level' => count($breadcrumb),
+  //                         'url' => $this->getUrl('newsuser/category/view', ['id' => $category->getCategoryId()])
+  //                     ];
+  //                 }
+  //             }
   //         }
-  //       }
+
+  //         // ترتيب المسارات حسب المستوى ثم حسب الاسم
+  //         usort($paths, function ($a, $b) {
+  //             if ($a['level'] == $b['level']) {
+  //                 return strcmp($a['path_string'], $b['path_string']);
+  //             }
+  //             return $a['level'] - $b['level'];
+  //         });
+
+  //         return array_values($paths);
+  //     } catch (\Exception $e) {
+  //         $this->logger->error('Error getting category paths: ' . $e->getMessage());
+  //         return [];
   //     }
-
-  //     // ترتيب المسارات حسب المستوى ثم حسب الاسم
-  //     usort($paths, function ($a, $b) {
-  //       if ($a['level'] == $b['level']) {
-  //         return strcmp($a['path_string'], $b['path_string']);
-  //       }
-  //       return $a['level'] - $b['level'];
-  //     });
-
-  //     return array_values($paths);
-  //   } catch (\Exception $e) {
-  //     $this->logger->error('Error getting category paths: ' . $e->getMessage());
-  //     return [];
-  //   }
   // }
+
+
+
 
   /**
    * جلب عدد الأخبار لكل فئة
@@ -207,15 +280,15 @@ class Index extends Template
    */
   // public function hasSubCategories(int $categoryId): bool
   // {
-  //   try {
-  //     $collection = $this->categoryCollectionFactory->create();
-  //     $collection->addFieldToFilter('parent_id', $categoryId);
-  //     $collection->addFieldToFilter('status', 1);
+  //     try {
+  //         $collection = $this->categoryCollectionFactory->create();
+  //         $collection->addFieldToFilter('parent_id', $categoryId);
+  //         $collection->addFieldToFilter('status', 1);
 
-  //     return $collection->getSize() > 0;
-  //   } catch (\Exception $e) {
-  //     $this->logger->error('Error checking sub categories: ' . $e->getMessage());
-  //     return false;
-  //   }
+  //         return $collection->getSize() > 0;
+  //     } catch (\Exception $e) {
+  //         $this->logger->error('Error checking sub categories: ' . $e->getMessage());
+  //         return false;
+  //     }
   // }
 }

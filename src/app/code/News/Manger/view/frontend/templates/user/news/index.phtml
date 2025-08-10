@@ -2,7 +2,6 @@
 
 /** @var \News\Manger\Block\User\News\Index $block */
 
-// دالة مساعدة لعرض الشجرة الهرمية
 function renderCategoryTree($categories, $block, $level = 0)
 {
   if (empty($categories)) {
@@ -34,15 +33,15 @@ function renderCategoryTree($categories, $block, $level = 0)
   $html .= '</ul>';
   return $html;
 }
+
+// Get paginated news collection
+$newsCollection = $block->getNewsCollection();
 ?>
 
 <div class="news-page-container">
-
-  <!-- ✅ قائمة الفئات الهرمية -->
+  <!-- Categories Menu Section -->
   <div class="categories-menu-section">
     <h2><?= $block->escapeHtml(__('Categories Menu')) ?></h2>
-
-    <!-- عرض الفئات كتسلسل هرمي -->
     <?php $hierarchicalCategories = $block->getHierarchicalCategories(); ?>
     <?php if (!empty($hierarchicalCategories)): ?>
       <div class="hierarchical-categories">
@@ -52,46 +51,15 @@ function renderCategoryTree($categories, $block, $level = 0)
         </div>
       </div>
     <?php endif; ?>
-
-    <!-- عرض جميع المسارات -->
-    <?php $categoryPaths = $block->getCategoryPaths(); ?>
-    <?php if (!empty($categoryPaths)): ?>
-      <div class="category-paths">
-        <h3><?= $block->escapeHtml(__('All Category Paths')) ?></h3>
-        <div class="paths-list">
-          <?php foreach ($categoryPaths as $path): ?>
-            <div class="path-item level-<?= $path['level'] ?>">
-              <div class="path-string">
-                <i class="icon-folder"></i>
-                <span class="path-text"><?= $block->escapeHtml($path['path_string']) ?></span>
-                <span class="news-count">(<?= $block->getNewsCountForCategory($path['category_id']) ?> <?= __('news') ?>)</span>
-              </div>
-              <div class="path-hierarchy">
-                <?php foreach ($path['path_array'] as $index => $pathItem): ?>
-                  <a href="<?= $block->getUrl('newsuser/category/view', ['id' => $pathItem['id']]) ?>"
-                    class="hierarchy-link level-<?= $index + 1 ?>"
-                    style="margin-left: <?= $index * 20 ?>px;">
-                    <?php if ($index > 0): ?>↳ <?php endif; ?>
-                  <?= $block->escapeHtml($pathItem['name']) ?>
-                  </a>
-                <?php endforeach; ?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    <?php endif; ?>
   </div>
 
-  <!-- قائمة الأخبار -->
+  <!-- News List Section -->
   <div class="news-list-container">
     <h1><?= $block->escapeHtml(__('Latest News')) ?></h1>
 
-    <?php $collection = $block->getNewsCollection(); ?>
-
-    <?php if ($collection && $collection->count()): ?>
+    <?php if ($newsCollection->count() > 0): ?>
       <div class="news-grid">
-        <?php foreach ($collection as $news): ?>
+        <?php foreach ($newsCollection as $news): ?>
           <div class="news-card">
             <div class="news-card-content">
               <h2 class="news-title">
@@ -125,6 +93,9 @@ function renderCategoryTree($categories, $block, $level = 0)
           </div>
         <?php endforeach; ?>
       </div>
+
+      <!-- Pagination -->
+      <?= $block->getPagerHtml() ?>
     <?php else: ?>
       <div class="message info empty">
         <div><?= $block->escapeHtml(__('There are no news items to display.')) ?></div>
@@ -140,7 +111,6 @@ function renderCategoryTree($categories, $block, $level = 0)
     padding: 20px;
   }
 
-  /* ✅ أنماط قائمة الفئات */
   .categories-menu-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 30px;
@@ -178,7 +148,7 @@ function renderCategoryTree($categories, $block, $level = 0)
     background: #e74c3c;
   }
 
-  /* شجرة الفئات الهرمية */
+
   .hierarchical-categories {
     margin-bottom: 35px;
     background: white;
@@ -226,13 +196,13 @@ function renderCategoryTree($categories, $block, $level = 0)
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 8px;
     border-left: 4px solid #3498db;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .category-item-content:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    /* transform: translateX(5px); */
+    /* box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2); */
     border-left-color: #e74c3c;
   }
 
@@ -244,7 +214,7 @@ function renderCategoryTree($categories, $block, $level = 0)
     align-items: center;
     gap: 8px;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    /* transition: color 0.3s ease; */
   }
 
   .category-link:hover {
@@ -284,12 +254,12 @@ function renderCategoryTree($categories, $block, $level = 0)
     padding: 20px;
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
   }
 
   .path-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); */
   }
 
   .path-string {
@@ -335,7 +305,7 @@ function renderCategoryTree($categories, $block, $level = 0)
     text-decoration: none;
     color: #7f8c8d;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     display: block;
     padding: 5px 10px;
     border-radius: 5px;
@@ -343,9 +313,9 @@ function renderCategoryTree($categories, $block, $level = 0)
   }
 
   .hierarchy-link:hover {
-    background: #3498db;
+    /* background: #3498db; */
     color: white;
-    transform: translateX(3px);
+    /* transform: translateX(3px); */
   }
 
   .hierarchy-link.level-1 {
@@ -417,18 +387,18 @@ function renderCategoryTree($categories, $block, $level = 0)
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     overflow: hidden;
   }
 
   .news-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    border-color: #3498db;
+    /* transform: translateY(-8px); */
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); */
+    /* border-color: #3498db; */
   }
 
   .news-card-content {
@@ -446,11 +416,11 @@ function renderCategoryTree($categories, $block, $level = 0)
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.4;
-    transition: color 0.3s ease;
+    /* transition: color 0.3s ease; */
   }
 
   .news-title a:hover {
-    color: #3498db;
+    /* color: #3498db; */
   }
 
   .news-excerpt {
@@ -475,12 +445,12 @@ function renderCategoryTree($categories, $block, $level = 0)
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
   }
 
   .category-tag:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    /* transform: scale(1.05); */
+    /* background: linear-gradient(135deg, #e74c3c, #c0392b); */
   }
 
   .news-card-footer {
@@ -506,14 +476,14 @@ function renderCategoryTree($categories, $block, $level = 0)
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
   }
 
   .btn-read-more:hover {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    /* background: linear-gradient(135deg, #e74c3c, #c0392b); */
+    /* transform: translateY(-2px); */
+    /* box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4); */
     color: white;
   }
 
@@ -626,7 +596,7 @@ function renderCategoryTree($categories, $block, $level = 0)
 
   /* تأثيرات الانتقال المحسنة */
   * {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
   }
 
   /* تحسين إمكانية الوصول */
@@ -635,5 +605,223 @@ function renderCategoryTree($categories, $block, $level = 0)
   .btn-read-more:focus {
     outline: 2px solid #3498db;
     outline-offset: 2px;
+  }
+
+  .news-pagination {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .load-more-container {
+    margin-bottom: 20px;
+  }
+
+  .load-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #1979c3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    /* transition: background-color 0.3s; */
+  }
+
+  .load-more:hover {
+    /* background-color: #006bb4; */
+    text-decoration: none;
+  }
+
+  .news-prompt {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    display: inline-block;
+    animation: fadeIn 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      /* transform: translateY(10px); */
+    }
+
+    to {
+      opacity: 1;
+      /* transform: translateY(0); */
+    }
+  }
+
+  .pager {
+    margin-top: 20px;
+    color: #6c757d;
+    font-size: 14px;
+  }
+
+  .show-more {
+    /* transition: background-color 0.3s; */
+  }
+
+  .show-more:hover {
+    /* background-color: #006bb4; */
+    text-decoration: none;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .news-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  }
+
+  .news-card:hover {
+    /* transform: translateY(-5px); */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+  }
+
+  .news-card-content {
+    padding: 20px;
+  }
+
+  .news-title {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    line-height: 1.4;
+  }
+
+  .news-title a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .news-title a:hover {
+    /* color: #1979c3; */
+  }
+
+  .news-excerpt {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .news-categories {
+    margin-top: 10px;
+  }
+
+  .category-tag {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .news-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+  }
+
+  .news-meta {
+    color: #777;
+    font-size: 0.9em;
+  }
+
+  .btn-read-more {
+    /* color: #1979c3; */
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .btn-read-more:hover {
+    text-decoration: underline;
+  }
+
+  /* Pagination Styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    gap: 10px;
+  }
+
+  .pagination .pages {
+    display: flex;
+    gap: 5px;
+  }
+
+  .pagination a,
+  .pagination strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .pagination a:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+  }
+
+  .pagination .current {
+    /* background: #1979c3; */
+    /* color: #fff; */
+    border-color: #1979c3;
+  }
+
+  .pagination .page-prev,
+  .pagination .page-next {
+    padding: 0 15px;
+  }
+
+  .pagination .page-prev {
+    margin-right: 10px;
+  }
+
+  .pagination .page-next {
+    margin-left: 10px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pagination {
+      flex-wrap: wrap;
+    }
+
+    .pagination .pages {
+      order: 1;
+      width: 100%;
+      justify-content: center;
+      margin: 10px 0;
+    }
   }
 </style>

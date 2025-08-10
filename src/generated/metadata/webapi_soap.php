@@ -251587,7 +251587,7 @@ Line: %line%
         ),
       ),
     ),
-    'News\\Manger\\Block\\User\\News\\Index' => 
+    'News\\Manger\\Block\\User\\News\\Index\\Interceptor' => 
     array (
       'context' => 
       array (
@@ -251608,6 +251608,10 @@ Line: %line%
       'logger' => 
       array (
         '_i_' => 'Magento\\Framework\\Logger\\LoggerProxy',
+      ),
+      'request' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\Request\\Http',
       ),
       'data' => 
       array (
@@ -252445,6 +252449,28 @@ Line: %line%
       'connectionName' => 
       array (
         '_vn_' => true,
+      ),
+    ),
+    'News\\Manger\\Plugin\\Block\\User\\News\\IndexPlugin' => 
+    array (
+      'request' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\Request\\Http',
+      ),
+      'customerSession' => 
+      array (
+        '_i_' => 'Magento\\Customer\\Model\\Session\\Interceptor',
+      ),
+    ),
+    'News\\Manger\\Plugin\\Controller\\User\\News\\IndexPlugin' => 
+    array (
+      'request' => 
+      array (
+        '_i_' => 'Magento\\Framework\\App\\Request\\Http',
+      ),
+      'customerSession' => 
+      array (
+        '_i_' => 'Magento\\Customer\\Model\\Session\\Interceptor',
       ),
     ),
     'News\\Manger\\Ui\\Component\\Listing\\Column\\CategoryActions' => 
@@ -266877,6 +266903,7 @@ Line: %line%
     'News\\Manger\\Api\\NewsRepositoryInterface' => 'News\\Manger\\Model\\NewsRepository',
     'News\\Manger\\Block\\Adminhtml\\Category\\Edit\\Form' => 'News\\Manger\\Block\\Adminhtml\\Category\\Edit\\Form\\Interceptor',
     'News\\Manger\\Block\\Adminhtml\\News\\Edit\\Form' => 'News\\Manger\\Block\\Adminhtml\\News\\Edit\\Form\\Interceptor',
+    'News\\Manger\\Block\\User\\News\\Index' => 'News\\Manger\\Block\\User\\News\\Index\\Interceptor',
     'News\\Manger\\Controller\\Adminhtml\\Category\\Delete' => 'News\\Manger\\Controller\\Adminhtml\\Category\\Delete\\Interceptor',
     'News\\Manger\\Controller\\Adminhtml\\Category\\Edit' => 'News\\Manger\\Controller\\Adminhtml\\Category\\Edit\\Interceptor',
     'News\\Manger\\Controller\\Adminhtml\\Category\\Index' => 'News\\Manger\\Controller\\Adminhtml\\Category\\Index\\Interceptor',

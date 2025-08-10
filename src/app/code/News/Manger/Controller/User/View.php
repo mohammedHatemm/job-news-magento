@@ -43,7 +43,7 @@ class View extends Action
 
     $news = $this->newsFactory->create()->load($newsId);
 
-    // 🚀 تصحيح: استخدام الدالة الصحيحة getNewsStatus()
+
     if (!$news->getId() || !$news->getNewsStatus()) {
       return $this->_forward('noroute');
     }
@@ -52,7 +52,7 @@ class View extends Action
 
     $resultPage = $this->resultPageFactory->create();
 
-    // 🚀 تصحيح: استخدام الدالة الصحيحة getNewsTitle()
+
     $resultPage->getConfig()->getTitle()->set($news->getNewsTitle());
     return $resultPage;
   }

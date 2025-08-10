@@ -3765,6 +3765,24 @@
         'instance' => 'Magento\\Wishlist\\Plugin\\Helper\\Product\\View',
       ),
     ),
+    'News\\Manger\\Block\\User\\News\\Index' => 
+    array (
+      'news_pagination_plugin' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'News\\Manger\\Plugin\\Block\\User\\News\\IndexPlugin',
+      ),
+    ),
+    'News\\Manger\\Controller\\User\\News\\Index' => 
+    array (
+      'news_controller_plugin' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'News\\Manger\\Plugin\\Controller\\User\\News\\IndexPlugin',
+      ),
+    ),
     'Magento\\Catalog\\Block\\Product\\ListProduct' => 
     array (
       'braintreeProductDetailsBlockPlugin' => 
@@ -10163,6 +10181,24 @@
         'instance' => 'Magento\\Wishlist\\Plugin\\Helper\\Product\\View',
       ),
     ),
+    'News\\Manger\\Block\\User\\News\\Index' => 
+    array (
+      'news_pagination_plugin' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'News\\Manger\\Plugin\\Block\\User\\News\\IndexPlugin',
+      ),
+    ),
+    'News\\Manger\\Controller\\User\\News\\Index' => 
+    array (
+      'news_controller_plugin' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'News\\Manger\\Plugin\\Controller\\User\\News\\IndexPlugin',
+      ),
+    ),
     'Magento\\Catalog\\Block\\Product\\ListProduct' => 
     array (
       'add_product_object_to_image_data_array' => 
@@ -14698,6 +14734,17 @@
       1 => 
       array (
         0 => 'pre_render_product_options_from_wishlist',
+      ),
+    ),
+    'News\\Manger\\Block\\User\\News\\Index_getNewsCollection___self' => 
+    array (
+      2 => 'news_pagination_plugin',
+    ),
+    'News\\Manger\\Controller\\User\\News\\Index_execute___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'news_controller_plugin',
       ),
     ),
     'Magento\\Catalog\\Block\\Product\\ListProduct_getImage___self' => 
