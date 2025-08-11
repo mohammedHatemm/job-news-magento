@@ -28,19 +28,16 @@ $children = $block->getChildCategories($categoryId);
 </li>
 
 <style>
-  /* Dropdown Arrow */
   .dropdown-arrow {
     margin-right: 5px;
     display: inline-block;
     transition: transform 0.3s ease;
   }
 
-  /* Rotate arrow when parent is hovered */
   li:hover>a>.dropdown-arrow {
     transform: rotate(90deg);
   }
 
-  /* Ensure submenus are positioned correctly */
   .submenu {
     position: absolute;
     top: 0;
@@ -53,13 +50,11 @@ $children = $block->getChildCategories($categoryId);
     transition: all 0.3s ease;
   }
 
-  /* Show submenu on hover */
   li:hover>.submenu {
     opacity: 1;
     visibility: visible;
   }
 
-  /* Responsive styles */
   @media (max-width: 991px) {
     .submenu {
       position: static;
